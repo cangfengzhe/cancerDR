@@ -1,0 +1,1099 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"select",
+				"select_value"
+			],
+			[
+				"get",
+				"getCookie"
+			],
+			[
+				"bl",
+				"inline-block"
+			],
+			[
+				"b",
+				"inline-block"
+			],
+			[
+				"tex",
+				"text-align"
+			],
+			[
+				"border",
+				"border-bottom"
+			],
+			[
+				"ra",
+				"border-radius"
+			],
+			[
+				"text",
+				"text-decoration:   (property)"
+			],
+			[
+				"ind",
+				"z-index"
+			],
+			[
+				"send",
+				"sendResponse"
+			],
+			[
+				"create",
+				"createElement  (function)"
+			],
+			[
+				"onmouse",
+				"onmousemove  (function)"
+			],
+			[
+				"onmo",
+				"onmousemove	Attr"
+			],
+			[
+				"getEle",
+				"getElementById  (function)"
+			],
+			[
+				"getEleme",
+				"getElementById  (function)"
+			],
+			[
+				"getElemetn",
+				"getElementsByTagName  (function)"
+			],
+			[
+				"onm",
+				"onmousemove	Attr"
+			],
+			[
+				"border-color",
+				"border-bottom-color"
+			],
+			[
+				"ulShort",
+				"ulShortCut"
+			],
+			[
+				"lists",
+				"list-style"
+			],
+			[
+				"fonts",
+				"font-size"
+			],
+			[
+				"font",
+				"font-style"
+			],
+			[
+				"list",
+				"list-style"
+			],
+			[
+				"loca",
+				"localStorage"
+			],
+			[
+				"json",
+				"JSONObject"
+			],
+			[
+				"Json",
+				"JSONObject"
+			],
+			[
+				"loc",
+				"localStorage"
+			],
+			[
+				"back",
+				"background"
+			],
+			[
+				"background-ima",
+				"background-image:   (property)"
+			],
+			[
+				"z",
+				"z-index"
+			],
+			[
+				"in",
+				"inline-block"
+			],
+			[
+				"visi",
+				"visible"
+			],
+			[
+				"marg",
+				"margin-left"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"contents": "<?php\ninclude('header.php');\n?>\n<div class=\"left\">\n\n		<h2>Left</h2>\n		<ul>\n			<li>dd</li>\n			<li>ff</li>\n			<li>aa</li>\n		</ul>\n</div>\n\n<div id='search'>\n  <ul id=\"tabs\">\n  <li><a href=\"#\" title=\"tab1\" >Drug</a></li>\n  <li><a href=\"#\" title=\"tab4\">Cell Lines</a></li>\n  <li><a href=\"#\" title=\"tab4\">Cancer Type</a></li>\n  <li><a href=\"#\" title=\"tab2\">Gene</a></li>\n  \n  \n</ul>\n<div id='form'>\n            <form action=\"search.php\" method='get'>\n\n                <input type=\"text\" id='text' name='name' value=\"eg. Aspirin\" onfocus=\"if(value=='eg. Aspirin'){value='';style.color='black';style.fontStyle='normal';}\" onblur=\"if(value==''){value='eg. Aspirin';style.color='silver';style.fontStyle='italic';}\" />\n                <input type=\"hidden\" name='type' id='hidden' value='aaa' />\n                <div>\n\n                    <ul class='example'>\n                        <li>aaa</li>\n                        <li>aaa</li>\n                        <li>aaa</li>\n                        <li>aaa</li>\n                        <li>aaa</li>\n                    </ul>\n                </div>\n                <input type='submit' id='btn' value='Search' />\n            </form>\n        </div>\n</div>\n\n<!-- search tab js -->\n<script src=\"./js/jquery-2.1.1.min.js\"></script>\n<script>\n$(document).ready(function() {\n\n	$(\"#tabs li:first\").attr(\"id\",\"current\"); // Activate first tab\n\n  $(\"#hidden\")[0].value=$(\"#tabs a:first\").html();\n\n    $('#tabs a').click(function(e) {\n        e.preventDefault();        \n       \n        $(\"#tabs li\").attr(\"id\",\"\"); //Reset id's\n        $(this).parent().attr(\"id\",\"current\"); // Activate this\n         $(\"#hidden\")[0].value=$(this).html();\n\n        // Show content for current tab\n    });\n});\n\n</script>\n\n\n\n\n\n\n\n\n\n\n\n<?php\ninclude('footer.php');\n?>",
+			"file": "index.php",
+			"file_size": 1843,
+			"file_write_time": 130652823298722430,
+			"settings":
+			{
+				"buffer_size": 1768,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "grid.php",
+			"settings":
+			{
+				"buffer_size": 3314,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": ".jqx-widget-custom {\n    font-family: Verdana\n}\n.jqx-widget-content-custom {\n    color: #222;\n    text-shadow: none;\n    border-color: #42acdc;\n    background: #fff;\n    font-family: Verdana\n}\n.jqx-widget-header-custom, .jqx-grid-custom .jqx-widget-header-custom {\n    color: #222;\n    text-shadow: none;\n    border-color: #aaa;\n    background-color: transparent;\n    background-image: -moz-linear-gradient(top, transparent, transparent);\n    background-image: -ms-linear-gradient(top, transparent, transparent);\n    background-image: -o-linear-gradient(top, transparent, transparent);\n    background-image: -webkit-gradient(linear, center top, center bottom, from(transparent), to(transparent));\n    background-image: -webkit-linear-gradient(top, transparent, transparent);\n    background-image: linear-gradient(top, transparent, transparent);\n    background-image: linear-gradient(to bottom, transparent, transparent);\n    -moz-background-clip: padding;\n    background-clip: padding-box;\n    -webkit-background-clip: padding-box;\n    font-family: Verdana\n}\n.jqx-grid-column-menubutton-custom, .jqx-widget-custom.jqx-grid-column-menubutton-custom {\n    border-color: #aaa\n}\n.jqx-grid-cell-custom, .jqx-widget-custom .jqx-grid-cell-custom {\n    background-color: #fff;\n    color: #222;\n    text-shadow: none\n}\n.jqx-fill-state-normal-custom {\n    color: #222;\n    text-shadow: none;\n    border-color: #042acd;\n    background-color: transparent;\n    background-image: -moz-linear-gradient(top, transparent, transparent);\n    background-image: -ms-linear-gradient(top, transparent, transparent);\n    background-image: -o-linear-gradient(top, transparent, transparent);\n    background-image: -webkit-gradient(linear, center top, center bottom, from(transparent), to(transparent));\n    background-image: -webkit-linear-gradient(top, transparent, transparent);\n    background-image: linear-gradient(top, transparent, transparent);\n    background-image: linear-gradient(to bottom, transparent, transparent);\n    -moz-background-clip: padding;\n    background-clip: padding-box;\n    -webkit-background-clip: padding-box;\n    font-family: Verdana\n}\n.jqx-button-custom {\n    color: #222;\n    text-shadow: none;\n    border-color: #aaa;\n    background-color: #efefef;\n    background-image: -moz-linear-gradient(top, #efefef, #efefef);\n    background-image: -ms-linear-gradient(top, #efefef, #efefef);\n    background-image: -o-linear-gradient(top, #efefef, #efefef);\n    background-image: -webkit-gradient(linear, center top, center bottom, from(#efefef), to(#efefef));\n    background-image: -webkit-linear-gradient(top, #efefef, #efefef);\n    background-image: linear-gradient(top, #efefef, #efefef);\n    background-image: linear-gradient(to bottom, #efefef, #efefef);\n    -moz-background-clip: padding;\n    background-clip: padding-box;\n    -webkit-background-clip: padding-box;\n    font-family: Verdana\n}\n.jqx-grid-selectionarea-custom {\n    border-color: #042acd;\n    background-color: transparent\n}\n.jqx-widget-custom .jqx-grid-cell-sort-custom, .jqx-widget-custom .jqx-grid-cell-filter-custom, .jqx-widget-custom .jqx-grid-cell-pinned-custom, .jqx-grid-cell-sort-custom, .jqx-grid-cell-filter-custom, .jqx-grid-cell-pinned-custom {\n    background-color: #aaa;\n    color: #222;\n    text-shadow: none\n}\n.jqx-widget-custom .jqx-grid-cell-alt-custom, .jqx-widget-custom .jqx-grid-cell-sort-alt-custom, .jqx-widget-custom .jqx-grid-cell-pinned-alt-custom, .jqx-widget-custom .jqx-grid-cell-filter-alt-custom, .jqx-grid-cell-alt-custom, .jqx-grid-cell-sort-alt-custom, .jqx-grid-cell-filter-alt-custom {\n    background-color: #f9f9f9;\n    color: #222;\n    text-shadow: none\n}\n.jqx-fill-state-hover-custom, .jqx-widget-custom .jqx-grid-cell-hover-custom {\n    color: #222;\n    text-shadow: none;\n    border-color: #999;\n    background-color: #e8e8e8;\n    background-image: -moz-linear-gradient(top, #e8e8e8, #e8e8e8);\n    background-image: -ms-linear-gradient(top, #e8e8e8, #e8e8e8);\n    background-image: -o-linear-gradient(top, #e8e8e8, #e8e8e8);\n    background-image: -webkit-gradient(linear, center top, center bottom, from(#e8e8e8), to(#e8e8e8));\n    background-image: -webkit-linear-gradient(top, #e8e8e8, #e8e8e8);\n    background-image: linear-gradient(top, #e8e8e8, #e8e8e8);\n    background-image: linear-gradient(to bottom, #e8e8e8, #e8e8e8);\n    -moz-background-clip: padding;\n    background-clip: padding-box;\n    -webkit-background-clip: padding-box;\n    font-family: Verdana\n}\n.jqx-fill-state-pressed-custom, .jqx-widget-custom .jqx-grid-cell-selected-custom {\n    color: #222;\n    text-shadow: none;\n    border-color: #999;\n    background-color: #d1d1d1;\n    background-image: -moz-linear-gradient(top, #d1d1d1, #d1d1d1);\n    background-image: -ms-linear-gradient(top, #d1d1d1, #d1d1d1);\n    background-image: -o-linear-gradient(top, #d1d1d1, #d1d1d1);\n    background-image: -webkit-gradient(linear, center top, center bottom, from(#d1d1d1), to(#d1d1d1));\n    background-image: -webkit-linear-gradient(top, #d1d1d1, #d1d1d1);\n    background-image: linear-gradient(top, #d1d1d1, #d1d1d1);\n    background-image: linear-gradient(to bottom, #d1d1d1, #d1d1d1);\n    -moz-background-clip: padding;\n    background-clip: padding-box;\n    -webkit-background-clip: padding-box;\n    font-family: Verdana\n}\n.jqx-switchbutton-label-on-custom {\n    color: #222;\n    text-shadow: none;\n    border-color: #999;\n    background-color: #d1d1d1;\n    background-image: -moz-linear-gradient(top, #d1d1d1, #d1d1d1);\n    background-image: -ms-linear-gradient(top, #d1d1d1, #d1d1d1);\n    background-image: -o-linear-gradient(top, #d1d1d1, #d1d1d1);\n    background-image: -webkit-gradient(linear, center top, center bottom, from(#d1d1d1), to(#d1d1d1));\n    background-image: -webkit-linear-gradient(top, #d1d1d1, #d1d1d1);\n    background-image: linear-gradient(top, #d1d1d1, #d1d1d1);\n    background-image: linear-gradient(to bottom, #d1d1d1, #d1d1d1);\n    -moz-background-clip: padding;\n    background-clip: padding-box;\n    -webkit-background-clip: padding-box\n}\n.jqx-tabs-title-selected-top-custom, .jqx-tabs-selection-tracker-top-custom {\n    color: #222;\n    text-shadow: none;\n    border-color: #42acdc;\n    border-bottom: 1px solid #fff;\n    background-image: none;\n    background-color: #fff\n}\n.jqx-tabs-title-selected-bottom-custom, .jqx-tabs-selection-tracker-bottom-custom {\n    color: #222;\n    text-shadow: none;\n    border-color: #42acdc;\n    border-top: 1px solid #fff;\n    background-image: none;\n    background-color: #fff\n}\n.jqx-splitter-splitbar-hover-custom {\n    background: #e8e8e8\n}\n.jqx-splitter-splitbar-vertical-custom, .jqx-splitter-splitbar-horizontal-custom, .jqx-slider-track-horizontal-custom, .jqx-slider-track-vertical-custom {\n    background: transparent\n}\n.jqx-splitter-collapse-button-horizontal-custom, .jqx-splitter-collapse-button-vertical-custom, .jqx-slider-rangebar-custom {\n    background: #d1d1d1\n}\n.jqx-scrollbar-state-normal-custom {\n    background-color: #efefef;\n    border-color: #efefef\n}\n.jqx-grid-bottomright-custom, .jqx-panel-bottomright-custom, .jqx-listbox-bottomright-custom {\n    background-color: #efefef\n}\n.jqx-scrollbar-thumb-state-normal-custom {\n    background-color: #efefef;\n    background-color: #efefef;\n    background-image: -moz-linear-gradient(left, #efefef, #efefef);\n    background-image: -ms-linear-gradient(left, #efefef, #efefef);\n    background-image: -o-linear-gradient(left, #efefef, #efefef);\n    background-image: -webkit-gradient(linear, left top, right top, from(#efefef), to(#efefef));\n    background-image: -webkit-linear-gradient(left, #efefef, #efefef);\n    background-image: linear-gradient(left, #efefef, #efefef);\n    background-image: linear-gradient(left right, #efefef, #efefef)\n}\n.jqx-scrollbar-thumb-state-normal-horizontal-custom {\n    background-color: #efefef;\n    background-color: #efefef;\n    background-image: -moz-linear-gradient(top, #efefef, #efefef);\n    background-image: -ms-linear-gradient(top, #efefef, #efefef);\n    background-image: -o-linear-gradient(top, #efefef, #efefef);\n    background-image: -webkit-gradient(linear, center top, center bottom, from(#efefef), to(#efefef));\n    background-image: -webkit-linear-gradient(top, #efefef, #efefef);\n    background-image: linear-gradient(top, #efefef, #efefef);\n    background-image: linear-gradient(to bottom, #efefef, #efefef);\n    -moz-background-clip: padding;\n    background-clip: padding-box;\n    -webkit-background-clip: padding-box\n}\n.jqx-scrollbar-thumb-state-hover-custom {\n    background-color: #e8e8e8;\n    border-color: #e8e8e8;\n    background-image: -moz-linear-gradient(left, #e8e8e8, #e8e8e8);\n    background-image: -ms-linear-gradient(left, #e8e8e8, #e8e8e8);\n    background-image: -o-linear-gradient(left, #e8e8e8, #e8e8e8);\n    background-image: -webkit-gradient(linear, left top, right top, from(#e8e8e8), to(#e8e8e8));\n    background-image: -webkit-linear-gradient(left, #e8e8e8, #e8e8e8);\n    background-image: linear-gradient(left, #e8e8e8, #e8e8e8);\n    background-image: linear-gradient(left right, #e8e8e8, #e8e8e8)\n}\n.jqx-scrollbar-thumb-state-hover-horizontal-custom {\n    background-color: #e8e8e8;\n    border-color: #e8e8e8;\n    background-image: -moz-linear-gradient(top, #e8e8e8, #e8e8e8);\n    background-image: -ms-linear-gradient(top, #e8e8e8, #e8e8e8);\n    background-image: -o-linear-gradient(top, #e8e8e8, #e8e8e8);\n    background-image: -webkit-gradient(linear, center top, center bottom, from(#e8e8e8), to(#e8e8e8));\n    background-image: -webkit-linear-gradient(top, #e8e8e8, #e8e8e8);\n    background-image: linear-gradient(top, #e8e8e8, #e8e8e8);\n    background-image: linear-gradient(to bottom, #e8e8e8, #e8e8e8);\n    -moz-background-clip: padding;\n    background-clip: padding-box;\n    -webkit-background-clip: padding-box\n}\n.jqx-scrollbar-thumb-state-pressed-custom {\n    background-color: #d1d1d1;\n    border-color: #d1d1d1;\n    background-image: -moz-linear-gradient(left, #d1d1d1, #d1d1d1);\n    background-image: -ms-linear-gradient(left, #d1d1d1, #d1d1d1);\n    background-image: -o-linear-gradient(left, #d1d1d1, #d1d1d1);\n    background-image: -webkit-gradient(linear, left top, right top, from(#d1d1d1), to(#d1d1d1));\n    background-image: -webkit-linear-gradient(left, #d1d1d1, #d1d1d1);\n    background-image: linear-gradient(left, #d1d1d1, #d1d1d1);\n    background-image: linear-gradient(left right, #d1d1d1, #d1d1d1)\n}\n.jqx-scrollbar-thumb-state-pressed-horizontal-custom {\n    background-color: #d1d1d1;\n    border-color: #d1d1d1;\n    background-image: -moz-linear-gradient(top, #d1d1d1, #d1d1d1);\n    background-image: -ms-linear-gradient(top, #d1d1d1, #d1d1d1);\n    background-image: -o-linear-gradient(top, #d1d1d1, #d1d1d1);\n    background-image: -webkit-gradient(linear, center top, center bottom, from(#d1d1d1), to(#d1d1d1));\n    background-image: -webkit-linear-gradient(top, #d1d1d1, #d1d1d1);\n    background-image: linear-gradient(top, #d1d1d1, #d1d1d1);\n    background-image: linear-gradient(to bottom, #d1d1d1, #d1d1d1);\n    -moz-background-clip: padding;\n    background-clip: padding-box;\n    -webkit-background-clip: padding-box\n}\n.jqx-scrollbar-button-state-normal-custom {\n    background-color: #efefef;\n    background-image: -moz-linear-gradient(top, #efefef, #efefef);\n    background-image: -ms-linear-gradient(top, #efefef, #efefef);\n    background-image: -o-linear-gradient(top, #efefef, #efefef);\n    background-image: -webkit-gradient(linear, center top, center bottom, from(#efefef), to(#efefef));\n    background-image: -webkit-linear-gradient(top, #efefef, #efefef);\n    background-image: linear-gradient(top, #efefef, #efefef);\n    background-image: linear-gradient(to bottom, #efefef, #efefef);\n    -moz-background-clip: padding;\n    background-clip: padding-box;\n    -webkit-background-clip: padding-box\n}\n.jqx-scrollbar-button-state-hover-custom {\n    background-color: #e8e8e8;\n    border-color: #aaa;\n    background-image: -moz-linear-gradient(top, #e8e8e8, #e8e8e8);\n    background-image: -ms-linear-gradient(top, #e8e8e8, #e8e8e8);\n    background-image: -o-linear-gradient(top, #e8e8e8, #e8e8e8);\n    background-image: -webkit-gradient(linear, center top, center bottom, from(#e8e8e8), to(#e8e8e8));\n    background-image: -webkit-linear-gradient(top, #e8e8e8, #e8e8e8);\n    background-image: linear-gradient(top, #e8e8e8, #e8e8e8);\n    background-image: linear-gradient(to bottom, #e8e8e8, #e8e8e8);\n    -moz-background-clip: padding;\n    background-clip: padding-box;\n    -webkit-background-clip: padding-box\n}\n.jqx-scrollbar-button-state-pressed-custom {\n    background-color: #d1d1d1;\n    border-color: #909090;\n    background-image: -moz-linear-gradient(top, #d1d1d1, #d1d1d1);\n    background-image: -ms-linear-gradient(top, #d1d1d1, #d1d1d1);\n    background-image: -o-linear-gradient(top, #d1d1d1, #d1d1d1);\n    background-image: -webkit-gradient(linear, center top, center bottom, from(#d1d1d1), to(#d1d1d1));\n    background-image: -webkit-linear-gradient(top, #d1d1d1, #d1d1d1);\n    background-image: linear-gradient(top, #d1d1d1, #d1d1d1);\n    background-image: linear-gradient(to bottom, #d1d1d1, #d1d1d1);\n    -moz-background-clip: padding;\n    background-clip: padding-box;\n    -webkit-background-clip: padding-box\n}\n.jqx-radiobutton-check-checked-custom {\n    background: #111;\n    width: 7px;\n    height: 7px;\n    margin-left: 2px;\n    margin-top: 2px;\n    border-width: 1px;\n    border-style: solid\n}\n.jqx-rc-tl-custom {\n    -moz-border-radius-topleft: 3px;\n    -webkit-border-radius-topleft: 3px;\n    border-radius-topleft: 3px\n}\n.jqx-rc-tr-custom {\n    -moz-border-radius-topright: 3px;\n    -webkit-border-radius-topright: 3px;\n    border-radius-topright: 3px\n}\n.jqx-rc-bl-custom {\n    -moz-border-radius-bottomleft: 3px;\n    -webkit-border-radius-bottomleft: 3px;\n    border-radius-bottomleft: 3px\n}\n.jqx-rc-br-custom {\n    -moz-border-radius-bottomright: 3px;\n    -webkit-border-radius-bottomright: 3px;\n    border-radius-bottomright: 3px\n}\n.jqx-rc-t-custom {\n    -moz-border-radius-topleft: 3px;\n    -webkit-border-top-left-radius: 3px;\n    border-top-left-radius: 3px;\n    -moz-border-radius-topright: 3px;\n    -webkit-border-top-right-radius: 3px;\n    border-top-right-radius: 3px\n}\n.jqx-rc-b-custom {\n    -moz-border-radius-bottomleft: 3px;\n    -webkit-border-bottom-left-radius: 3px;\n    border-bottom-left-radius: 3px;\n    -moz-border-radius-bottomright: 3px;\n    -webkit-border-bottom-right-radius: 3px;\n    border-bottom-right-radius: 3px\n}\n.jqx-rc-r-custom {\n    -moz-border-radius-topright: 3px;\n    -webkit-border-top-right-radius: 3px;\n    border-top-right-radius: 3px;\n    -moz-border-radius-bottomright: 3px;\n    -webkit-border-bottom-right-radius: 3px;\n    border-bottom-right-radius: 3px\n}\n.jqx-rc-l-custom {\n    -moz-border-radius-topleft: 3px;\n    -webkit-border-top-left-radius: 3px;\n    border-top-left-radius: 3px;\n    -moz-border-radius-bottomleft: 3px;\n    -webkit-border-bottom-left-radius: 3px;\n    border-bottom-left-radius: 3px\n}\n.jqx-radiobutton-default-custom, .jqx-radiobutton-custom, .jqx-radiobutton-check-checked-custom, .jqx-radiobutton-hover-custom, .jqx-radiobutton-check-indeterminate-custom, .jqx-radiobutton-check-indeterminate-disabled-custom, .jqx-slider-button-custom {\n    -moz-border-radius: 100%!important;\n    -webkit-border-radius: 100%!important;\n    border-radius: 100%!important\n}\n.jqx-rc-all-custom, .jqx-tooltip-custom, .jqx-tooltip-text-custom, .jqx-tooltip-main-custom {\n    -moz-border-radius: 3px;\n    -webkit-border-radius: 3px;\n    border-radius: 3px\n}\n.jqx-grid-column-sortascbutton-custom, .jqx-expander-arrow-bottom-custom, .jqx-window-collapse-button-custom, .jqx-menu-item-arrow-up-custom, .jqx-menu-item-arrow-top-up-custom, .jqx-icon-arrow-up-custom {\n    background-image: url('images/icon-up.png')\n}\n.jqx-icon-arrow-up-hover-custom {\n    background-image: url('images/icon-up.png')\n}\n.jqx-menu-item-arrow-up-selected-custom, .jqx-icon-arrow-up-selected-custom.jqx-expander-arrow-expanded-custom {\n    background-image: url('images/icon-up.png')\n}\n.jqx-grid-column-menubutton-custom, .jqx-grid-column-sortdescbutton-custom, .jqx-expander-arrow-top-custom, .jqx-window-collapse-button-collapsed-custom, .jqx-menu-item-arrow-down-custom, .jqx-menu-item-arrow-down-custom, .jqx-tree-item-arrow-expand-custom, .jqx-grid-group-expand-custom, .jqx-widget-custom .jqx-grid-group-expand-custom, .jqx-icon-arrow-down-custom {\n    background-image: url('images/icon-down.png')\n}\n.jqx-icon-arrow-down-hover-custom {\n    background-image: url('images/icon-down.png')\n}\n.jqx-menu-item-arrow-down-selected-custom, .jqx-icon-arrow-down-selected-custom {\n    background-image: url('images/icon-down.png')\n}\n.jqx-tabs-arrow-left-custom, .jqx-menu-item-arrow-top-left-custom, .jqx-grid-group-collapse-rtl-custom, .jqx-widget-custom .jqx-grid-group-collapse-rtl-custom, .jqx-icon-arrow-left-custom, .jqx-icon-arrow-down-left-custom {\n    background-image: url('images/icon-left.png')\n}\n.jqx-icon-arrow-left-hover-custom {\n    background-image: url('images/icon-left.png')\n}\n.jqx-menu-vertical-custom {\n    background: #fff\n}\n.jqx-menu-item-arrow-left-selected-custom, .jqx-icon-arrow-left-selected-custom {\n    background-image: url('images/icon-left.png')\n}\n.jqx-tabs-arrow-right-custom, .jqx-menu-item-arrow-top-right-custom, .jqx-menu-item-arrow-collapse-custom, .jqx-grid-group-collapse-custom, .jqx-widget-custom .jqx-grid-group-collapse-custom, .jqx-icon-arrow-right-custom {\n    background-image: url('images/icon-right.png')\n}\n.jqx-icon-arrow-right-hover-custom {\n    background-image: url('images/icon-right.png')\n}\n.jqx-menu-item-arrow-right-selected-custom, .jqx-icon-arrow-right-selected-custom {\n    background-image: url('images/icon-right.png')\n}\n.jqx-window-close-button-custom, .jqx-tabs-close-button-custom, .icon-close-custom {\n    background-image: url('images/close.png')\n}\n.jqx-tabs-close-button-selected-custom {\n    background-image: url('images/close.png')\n}\n.jqx-tabs-close-button-hover-custom {\n    background-image: url('images/close.png')\n}\n.jqx-widget-custom .jqx-grid-column-header-custom, .jqx-widget-custom .jqx-grid-cell-custom, .jqx-widget-custom .jqx-grid-group-cell-custom, .jqx-grid-cell-custom {\n    border-color: #aaa\n}\n.jqx-checkbox-check-checked-custom {\n    background-image: url('images/check_black.png')\n}\n.jqx-checkbox-check-indeterminate-custom {\n    background-image: url('images/check_indeterminate_black.png')\n}\n.jqx-tooltip-custom, .jqx-tooltip-main-custom {\n    color: #222;\n    text-shadow: none;\n    border-color: #aaa;\n    background-color: #efefef\n}\n.jqx-combobox-content-custom, .jqx-input-custom {\n    color: #222;\n    text-shadow: none;\n    border-color: #aaa;\n    background-color: #fff\n}\n.jqx-combobox-input-custom {\n    color: #222;\n    text-shadow: none\n}\n.jqx-input-content-custom {\n    color: #222;\n    text-shadow: none;\n    background-color: #fff\n}\n.jqx-fill-state-focus-custom, .jqx-popup-custom .jqx-fill-state-focus-custom {\n    border-color: #111\n}\n.jqx-popup-custom.jqx-listbox-custom, .jqx-popup-custom.jqx-calendar-custom, .jqx-menu-dropdown-custom, .jqx-popup-custom.jqx-dropdownbutton-popup-custom {\n    color: #222;\n    text-shadow: none;\n    border-color: #111;\n    background-color: #fff\n}\n.jqx-menu-item-arrow-right-custom, .jqx-tree-item-arrow-collapse-custom {\n    background-image: url('images/icon-right.png')\n}\n.jqx-menu-item-arrow-left-custom {\n    background-image: url('images/icon-left.png')\n}\n.jqx-tree-item-arrow-expand-custom {\n    background-image: url('images/icon-down.png')\n}\n.jqx-scrollbar-custom .jqx-icon-arrow-up-custom {\n    background-image: url('images/icon-up.png')\n}\n.jqx-scrollbar-custom .jqx-icon-arrow-left-custom {\n    background-image: url('images/icon-left.png')\n}\n.jqx-scrollbar-custom .jqx-icon-arrow-right-custom {\n    background-image: url('images/icon-right.png')\n}\n.jqx-scrollbar-custom .jqx-icon-arrow-bottom-custom {\n    background-image: url('images/icon-bottom.png')\n}\n.jqx-scrollbar-custom .jqx-icon-arrow-up-hover-custom {\n    background-image: url('images/icon-up.png')\n}\n.jqx-scrollbar-custom .jqx-icon-arrow-left-hover-custom {\n    background-image: url('images/icon-left.png')\n}\n.jqx-scrollbar-custom .jqx-icon-arrow-right-hover-custom {\n    background-image: url('images/icon-right.png')\n}\n.jqx-scrollbar-custom .jqx-icon-arrow-bottom-hover-custom {\n    background-image: url('images/icon-bottom.png')\n}\n.jqx-scrollbar-custom .jqx-icon-arrow-up-selected-custom {\n    background-image: url('images/icon-up.png')\n}\n.jqx-scrollbar-custom .jqx-icon-arrow-left-selected-custom {\n    background-image: url('images/icon-left.png')\n}\n.jqx-scrollbar-custom .jqx-icon-arrow-right-selected-custom {\n    background-image: url('images/icon-right.png')\n}\n.jqx-scrollbar-custom .jqx-icon-arrow-bottom-selected-custom {\n    background-image: url('images/icon-bottom.png')\n}\n.jqx-widget-custom .jqx-grid-cell-custom, .jqx-listitem-state-normal-custom, .jqx-menu-item-normal-custom, .jqx-tree-item-normal-custom, .jqx-calendar-cell-custom, .jqx-grid-cell-custom, .jqx-menu-vertical-custom .jqx-menu-item-top-normal-custom, .jqx-input-popup-custom .jqx-fill-state-normal-custom {\n    font-family: Verdana\n}\n.jqx-widget-custom .jqx-grid-cell-hover-custom, .jqx-listitem-state-hover-custom, .jqx-menu-item-hover-custom, .jqx-tree-item-hover-custom, .jqx-calendar-cell-hover-custom, .jqx-grid-cell-hover-custom, .jqx-menu-vertical-custom .jqx-menu-item-top-hover-custom, .jqx-input-popup-custom .jqx-fill-state-hover-custom, .jqx-input-button-header-custom, .jqx-input-popup-custom .jqx-fill-state-pressed-custom, .jqx-input-button-header-custom {\n    font-family: Verdana\n}\n.jqx-widget-custom .jqx-grid-cell-selected-custom, .jqx-listitem-state-selected-custom, .jqx-menu-item-selected-custom, .jqx-tree-item-selected-custom, .jqx-calendar-cell-selected-custom, .jqx-grid-cell-selected-custom, .jqx-menu-vertical-custom .jqx-menu-item-top-selected-custom, .jqx-grid-selectionarea-custom {\n    font-family: Verdana\n}\n.jqx-icon-calendar-custom {\n    background-image: url('images/icon-calendar.png')\n}\n.jqx-icon-calendar-hover-custom {\n    background-image: url('images/icon-calendar.png')\n}\n.jqx-icon-calendar-pressed-custom {\n    background-image: url('images/icon-calendar.png')\n}\n.jqx-icon-first-custom {\n    background-image: url('images/icon-first.png')\n}\n.jqx-icon-first-hover-custom {\n    background-image: url('images/icon-first.png')\n}\n.jqx-icon-first-selected-custom {\n    background-image: url('images/icon-first.png')\n}\n.jqx-icon-last-custom {\n    background-image: url('images/icon-last.png')\n}\n.jqx-icon-last-hover-custom {\n    background-image: url('images/icon-last.png')\n}\n.jqx-icon-last-selected-custom {\n    background-image: url('images/icon-last.png')\n}\n.jqx-grid-cell-custom.jqx-grid-cell-custom>.jqx-grid-group-expand-custom {\n    background-image: url('images/icon-down.png')\n}\n.jqx-grid-cell-custom.jqx-grid-cell-hover-custom>.jqx-grid-group-expand-custom {\n    background-image: url('images/icon-down.png')\n}\n.jqx-grid-cell-custom.jqx-grid-cell-selected-custom>.jqx-grid-group-expand-custom {\n    background-image: url('images/icon-down.png')\n}\n.jqx-grid-cell-custom.jqx-grid-cell-custom>.jqx-grid-group-collapse-custom {\n    background-image: url('images/icon-right.png')\n}\n.jqx-grid-cell-custom.jqx-grid-cell-hover-custom>.jqx-grid-group-collapse-custom {\n    background-image: url('images/icon-right.png')\n}\n.jqx-grid-cell-custom.jqx-grid-cell-selected-custom>.jqx-grid-group-collapse-custom {\n    background-image: url('images/icon-right.png')\n}\n.jqx-grid-cell-custom.jqx-grid-cell-custom>.jqx-grid-group-expand-rtl-custom {\n    background-image: url('images/icon-down.png')\n}\n.jqx-grid-cell-custom.jqx-grid-cell-hover-custom>.jqx-grid-group-expand-rtl-custom {\n    background-image: url('images/icon-down.png')\n}\n.jqx-grid-cell-custom.jqx-grid-cell-selected-custom>.jqx-grid-group-expand-rtl-custom {\n    background-image: url('images/icon-down.png')\n}\n.jqx-grid-cell-custom.jqx-grid-cell-custom>.jqx-grid-group-collapse-rtl-custom {\n    background-image: url('images/icon-left.png')\n}\n.jqx-grid-cell-custom.jqx-grid-cell-hover-custom>.jqx-grid-group-collapse-rtl-custom {\n    background-image: url('images/icon-left.png')\n}\n.jqx-grid-cell-custom.jqx-grid-cell-selected-custom>.jqx-grid-group-collapse-rtl-custom {\n    background-image: url('images/icon-left.png')\n}\n.jqx-grid-column-menubutton-custom, .jqx-grid-column-sortdescbutton-custom {\n    background-image: url('images/icon-down.png')\n}\n.jqx-grid-column-sortascbutton-custom {\n    background-image: url('images/icon-up.png')\n}\n.jqx-icon-delete-custom {\n    background-image: url('images/icon-delete.png')\n}\n.jqx-icon-edit-custom {\n    background-image: url('images/icon-edit.png')\n}\n.jqx-icon-save-custom {\n    background-image: url('images/icon-save.png')\n}\n.jqx-icon-cancel-custom {\n    background-image: url('images/icon-cancel.png')\n}\n.jqx-icon-search-custom {\n    background-image: url('images/icon-search.png')\n}\n.jqx-icon-plus-custom {\n    background-image: url('images/icon-plus.png')\n}\n",
+			"file": "tmp.css",
+			"file_size": 22262,
+			"file_write_time": 130652903456434794,
+			"settings":
+			{
+				"buffer_size": 25073,
+				"line_ending": "Windows",
+				"name": ".jqx-widget-custom{font-family:Verdana}.jqx-widget"
+			}
+		},
+		{
+			"file": "css/jqxcustom.css",
+			"settings":
+			{
+				"buffer_size": 108866,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/F/blog/_posts/2015-01-09-javascript.md",
+			"settings":
+			{
+				"buffer_size": 530,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/F/blog/_posts/template.md",
+			"settings":
+			{
+				"buffer_size": 294,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "data.php",
+			"settings":
+			{
+				"buffer_size": 5025,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "header.php",
+			"settings":
+			{
+				"buffer_size": 2603,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "drug.php",
+			"settings":
+			{
+				"buffer_size": 637,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "search.php",
+			"settings":
+			{
+				"buffer_size": 200,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "footer.php",
+			"settings":
+			{
+				"buffer_size": 76,
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"selected_items":
+		[
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"markdown",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"preview",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"mark",
+				"Set Syntax: Markdown Extended"
+			],
+			[
+				"previ",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"prev",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"markdwonpre",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"markdow",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"markd pre",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"markdownpreview",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"markdownbro",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"",
+				":0 - BOF"
+			],
+			[
+				"sidebar",
+				"View: Toggle Open Files in Side Bar"
+			],
+			[
+				"instll",
+				"Package Control: Install Package"
+			],
+			[
+				"package",
+				"Package Control: Enable Package"
+			],
+			[
+				"markdownex",
+				"Set Syntax: Markdown Extended"
+			],
+			[
+				"markdpre",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"mar",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"markdwonp",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"markd",
+				"Markdown Preview: Open Markdown Cheat sheet"
+			],
+			[
+				"markdownbr",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"utf",
+				"ConvertToUTF8: Reload with Encoding"
+			],
+			[
+				"remove ",
+				"Package Control: Remove Package"
+			],
+			[
+				"web",
+				"Web Inspector"
+			],
+			[
+				"sideb",
+				"Side Bar: Refresh"
+			],
+			[
+				"install	",
+				"Package Control: Install Package"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 512.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"import urllib.request,os; pr='Preferences.sublime-settings'; ip='ignored_packages'; n='Package Control'; s=sublime.load_settings(pr); ig=s.get(ip); ig.append(n); s.set(ip,ig); sublime.save_settings('Preferences.sublime-settings'); pf=n+'.sublime-package'; urllib.request.install_opener(urllib.request.build_opener(urllib.request.ProxyHandler())); by=urllib.request.urlopen('https://packagecontrol.io/'+pf.replace(' ','%20')).read(); open(os.path.join(sublime.installed_packages_path(),pf),'wb').write(by); ig.remove(n); s.set(ip,ig); sublime.save_settings(pr); print('Package Control: 3.0.0 upgrade successful!')",
+			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)  ",
+			"import urllib2,os; pf='Package Control.sublime-package'; ipp=sublime.installed_packages_path(); os.makedirs(ipp) if not os.path.exists(ipp) else None; urllib2.install_opener(urllib2.build_opener(urllib2.ProxyHandler())); open(os.path.join(ipp,pf),'wb').write(urllib2.urlopen('http://sublime.wbond.net/'+pf.replace(' ','%20')).read()); print('Please restart Sublime Text to finish installation')  "
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/F/web",
+		"/F/web/css"
+	],
+	"file_history":
+	[
+		"/F/web/css/jqxcustom.css",
+		"/F/web/css/css.css",
+		"/F/web/tmp.html",
+		"/F/web/js/grid.js",
+		"/F/web/search.php",
+		"/F/blog/_posts/2015-1-7-Systematic identification of genomic.md",
+		"/F/cancerDR/grid.php",
+		"/F/cancerDR/headerTable.php",
+		"/F/web/search_box.html",
+		"/F/web/mutation.php",
+		"/F/web/tmp/index.php",
+		"/F/cancerDR/cell.php",
+		"/F/迅雷下载/14.1-1-(1+3)-1/index.html",
+		"/F/迅雷下载/14.1-1-(1+3)-1/layout.css",
+		"/F/cancerDR/css/layout.css",
+		"/C/Users/Administrator.7J3FXA4TRMAIT95/AppData/Roaming/Sublime Text 3/Packages/HTML-CSS-JS Prettify/HTMLPrettify.sublime-settings",
+		"/F/cancerDR/header.php",
+		"/F/web/search.html",
+		"/F/web/index.html",
+		"/C/Users/Administrator.7J3FXA4TRMAIT95/AppData/Roaming/Sublime Text 3/Packages/HTML-CSS-JS Prettify/.jsbeautifyrc",
+		"/F/web/footer.php",
+		"/F/web/css/lanrenzhijia.css",
+		"/F/cancerDR/index.php",
+		"/C/Users/Administrator.7J3FXA4TRMAIT95/AppData/Roaming/Sublime Text 3/Settings/SideBarEnhancements.json",
+		"/F/cancerDR/search.html",
+		"/F/迅雷下载/1-13032FKI4/纯CSS3实现的tab标签/css/lanrenzhijia.css",
+		"/F/迅雷下载/1-13032FKI4/纯CSS3实现的tab标签/index.html",
+		"/F/blog/_posts/2014-12-30-advR_vocabulary.md",
+		"/C/Users/Administrator.7J3FXA4TRMAIT95/AppData/Roaming/Sublime Text 3/Packages/User/Default (Windows).sublime-keymap",
+		"/C/Users/Administrator.7J3FXA4TRMAIT95/AppData/Roaming/Sublime Text 3/Packages/Default/Default (Windows).sublime-keymap",
+		"/C/Users/Administrator.7J3FXA4TRMAIT95/AppData/Roaming/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
+		"/D/Desktop/aa.md",
+		"/F/cancerDR/table/index.php",
+		"/F/cancerDR/table.php",
+		"/C/Users/Administrator.7J3FXA4TRMAIT95/AppData/Roaming/Sublime Text 3/Packages/User/MarkdownPreview.sublime-settings",
+		"/F/cancerDR/data.php",
+		"/C/Users/Administrator.7J3FXA4TRMAIT95/AppData/Local/Temp/22.html",
+		"/C/Users/Administrator.7J3FXA4TRMAIT95/AppData/Local/Temp/30.html",
+		"/C/Users/Administrator.7J3FXA4TRMAIT95/AppData/Local/Temp/24.html",
+		"/F/blog/_layouts/blog.html",
+		"/D/Program Files/RStudio/RFile/MarkDown/2014-12-30-advR_vocabulary.html",
+		"/F/cancerDR/table/connect.php",
+		"/F/cancerDR/table/data.php",
+		"/F/cancerDR/cancerDR.sublime-project",
+		"/F/cancerDR/aa.html",
+		"/F/cancerDR/jqwidgets-ver3.5.0/phpdemos/server_side_grid_filtering_and_sorting_and_paging/index.php",
+		"/F/cancerDR/css/jqxcustom.css",
+		"/F/blog/css/JekyllPure.css",
+		"/D/Program Files/RStudio/RFile/Learn/funSet.md",
+		"/F/blog/_posts/template.md",
+		"/F/blog/_posts/2014-12-26-funSet.md",
+		"/D/deskTop/highlight/README.md",
+		"/D/Desktop/sfdad.css",
+		"/F/cancerDR/jqwidgets-ver3.5.0/phpdemos/server_side_grid_filtering_and_sorting_and_paging/connect.php",
+		"/D/deskTop/BSOA-SVM.md",
+		"/D/Desktop/BSOA-SVM.md",
+		"/C/Users/Administrator.7J3FXA4TRMAIT95/AppData/Roaming/Sublime Text 3/Packages/Markdown Preview/MarkdownPreview.sublime-settings",
+		"/D/Desktop/Markdown Cheatsheet",
+		"/F/cancerDR/jqwidgets-ver3.5.0/demos/jqxsplitter/horizontal-splitter-collapsible-second-panel.htm",
+		"/F/cancerDR/kendo-ui-core/styles/web/common/inputs.less",
+		"/F/cancerDR/jqwidgets-ver3.5.0/demos/jqxinput/input-fluid-size.htm",
+		"/F/blog/index.html",
+		"/F/blog/css/code.css",
+		"/C/Users/ADMINI~1/AppData/Local/Temp/Rar$DRa0.218/live-headers/headers.html",
+		"/C/Users/Administrator/AppData/Local/Temp/Rar$DIa0.511/manifest.json",
+		"/C/Users/Administrator/AppData/Local/Temp/Rar$DIa0.365/background.js",
+		"/C/Users/Administrator/AppData/Local/Temp/Rar$DIa0.192/headers.js",
+		"/C/Users/Administrator/AppData/Local/Temp/Rar$DIa0.253/background.js",
+		"/F/blog/Public/search.html",
+		"/F/webSytle/extension/zan/manifest.json",
+		"/F/cancerDR/js/common.js",
+		"/D/deskTop/MyWebrequest-master/MyWebrequest-master/options/opt.js",
+		"/D/deskTop/MyWebrequest-master/MyWebrequest-master/background/bg.js",
+		"/C/Users/Administrator/AppData/Local/Temp/Rar$DIa0.180/manifest.json",
+		"/C/Users/Administrator/AppData/Local/Temp/Rar$DIa0.648/headers.js",
+		"/C/Users/Administrator/AppData/Local/Temp/Rar$DIa0.614/background.js",
+		"/D/deskTop/MyWebrequest-master/MyWebrequest-master/background/FileSaver.min.js",
+		"/D/deskTop/MyWebrequest-master/MyWebrequest-master/background/index.html",
+		"/D/deskTop/1214.html",
+		"/F/blog/_layouts/post.html",
+		"/D/deskTop/bg.js",
+		"/F/blog/JekyllPure/_layouts/blog.html",
+		"/F/blog/_includes/head.html",
+		"/F/blog/JekyllPure/index.html",
+		"/F/blog/JekyllPure/css/JekyllPure.css",
+		"/F/blog/JekyllPure/css/code.css",
+		"/F/blog/JekyllPure/_layouts/post.html",
+		"/F/blog/JekyllPure/Public/Timing.html",
+		"/F/blog/JekyllPure/Public/tag.html",
+		"/F/blog/JekyllPure/_config.yml",
+		"/F/blog/JekyllPure/css/min/grids-responsive-min.css",
+		"/F/blog/JekyllPure/css/min/pure-min.css",
+		"/D/deskTop/tab1.html",
+		"/F/webSytle/extension/zan/myscript.js",
+		"/F/webSytle/extension/zan/background.js",
+		"/F/webSytle/extension/zan/popup.html",
+		"/F/webSytle/extension/zan/pop.js",
+		"/F/webSytle/extension/zan/test.html",
+		"/F/blog/_includes/header.html",
+		"/F/webSytle/extension/zan/background.html",
+		"/F/webSytle/extension/zan/aa.js",
+		"/D/Downloads/webSytle/manifest.json",
+		"/D/Downloads/webSytle/WebMark/myscript.js",
+		"/D/deskTop/test.html",
+		"/D/Downloads/webSytle/extension/zan/background.js",
+		"/D/Downloads/webSytle/extension/zan/myscript.js",
+		"/C/Users/Administrator/AppData/Roaming/Sublime Text 3/Packages/HTML-CSS-JS Prettify/HTMLPrettify.sublime-settings",
+		"/D/Downloads/webSytle/aa.html",
+		"/D/Downloads/webSytle/color.js",
+		"/D/Downloads/webSytle/extension/zan/manifest.json",
+		"/D/Downloads/webSytle/ColorPicker.js",
+		"/D/Downloads/webSytle/popup.html",
+		"/D/deskTop/clock/popup.html",
+		"/D/deskTop/clock/my_clock.js",
+		"/D/deskTop/clock/manifest.json",
+		"/D/Downloads/test/popup.html",
+		"/D/Downloads/test/manifest.json",
+		"/D/Downloads/test/popup.js",
+		"/D/Downloads/webSytle/popup.js",
+		"/F/cancerDR/test.html",
+		"/F/blog/_layouts/default.html",
+		"/D/Downloads/webSytle/background.js",
+		"/C/Users/Administrator/AppData/Local/Google/Chrome/User Data/Default/Extensions/ccaikggmppdolhcehimngikgiafmdcep/1.4_0/settings/settings.html",
+		"/D/deskTop/jiaoben1875/jiaoben1875/test.html",
+		"/D/deskTop/jiaoben1875/jiaoben1875/说明.htm",
+		"/F/cancerDR/jqwidgets-ver3.5.0/jqwidgets/styles/jqxcustom.css",
+		"/F/cancerDR/test.php",
+		"/F/cancerDR/jqwidgets-ver3.5.0/phpdemos/server_side_grid_filtering_and_sorting_and_paging/data.php"
+	],
+	"find":
+	{
+		"height": 39.0
+	},
+	"find_in_files":
+	{
+		"height": 102.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": true,
+		"find_history":
+		[
+			"颜色",
+			".边框",
+			"边框",
+			"border-color",
+			"jqx-widget-header-custom",
+			".jqx-widget-header-custom, .jqx-grid-custom",
+			".jqx-widget-header-custom, .jqx-grid-custom .jqx-widget-header-custom",
+			"42ACDC",
+			"data",
+			"datafields",
+			"php",
+			"url",
+			"search.box",
+			"heading",
+			"#tabs_search",
+			"tabs_search",
+			"tabs",
+			"#tabs",
+			"tabs",
+			"tab",
+			"search",
+			"hover",
+			"二级",
+			"header",
+			"border-bott",
+			"footer",
+			"width",
+			"search",
+			"left",
+			"[\\.]left",
+			"[^-]left",
+			".left",
+			"left",
+			"z-index",
+			"\\.left",
+			"left",
+			"\\.left",
+			"right",
+			"main",
+			"position",
+			"main",
+			"footer",
+			"main",
+			"\\.left",
+			"\\#left",
+			"\\.left",
+			"other",
+			"php",
+			"footer",
+			"left",
+			"search",
+			"current",
+			"padding",
+			"search",
+			"tabbed",
+			"blue",
+			"ignored_packages",
+			"filterquery",
+			"where",
+			"query",
+			"php",
+			"search",
+			".jqx-grid-",
+			".jqx-grid-column",
+			".jqx-grid-column-filterbutton",
+			"title",
+			"posts",
+			"post",
+			".post",
+			"parseURL",
+			"bg",
+			"bg.js",
+			"logNum",
+			"log",
+			"protocol",
+			"log",
+			"button",
+			"opt_addrule_btn",
+			"添加",
+			"png",
+			"xinyu",
+			"liyouhai",
+			"grcode",
+			"48px",
+			"48",
+			"padding",
+			"pure-u-md-3-4",
+			"content",
+			"post",
+			"class='post'",
+			"pure-u-md-6-24",
+			".pure-u-md-1-4, .pure-u-md-6-24",
+			"25%",
+			"width",
+			"border",
+			"setColor",
+			"btn",
+			"CPBtnStyle",
+			"CreateCPBtn",
+			"贾宝玉",
+			"#d6e0ee",
+			"border",
+			"rgb",
+			"#69a6db",
+			"#d6e0ee",
+			"border",
+			"color",
+			"tab1",
+			"Orders",
+			"tab1",
+			"SELECT",
+			"select",
+			"them",
+			"test",
+			"main-flink",
+			".new-2",
+			"main",
+			"code",
+			">",
+			"log",
+			".nav li a:hover,.nav .nav-select a:link,.nav-select a:visited,.nav-select a:hover{border-bottom:3px solid #1383C6;color:#000;}",
+			"header-nav",
+			"Aliquam metus neque",
+			"Aliquam metus neque,",
+			"content-about-bottom-text",
+			"container",
+			"contan",
+			"get in touch"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": true,
+		"replace_history":
+		[
+			"tabs",
+			"tabs_search",
+			"#tabs_search",
+			"#42ACDC",
+			"rgb(157, 79, 81)",
+			"rgb(140, 31, 34)",
+			"tab1",
+			"\" . $tableName . \"",
+			""
+		],
+		"reverse": false,
+		"show_context": false,
+		"use_buffer2": true,
+		"whole_word": true,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 3,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "index.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1768,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								188,
+								188
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 9,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "grid.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3314,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1360,
+								1554
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 483.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "tmp.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 25073,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								193,
+								262
+							]
+						],
+						"settings":
+						{
+							"auto_name": ".jqx-widget-custom{font-family:Verdana}.jqx-widget",
+							"syntax": "Packages/CSS/CSS.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 138.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "css/jqxcustom.css",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 108866,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								80839,
+								80839
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 75558.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "/F/blog/_posts/2015-01-09-javascript.md",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 530,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								530,
+								530
+							]
+						],
+						"settings":
+						{
+							"parser": "github",
+							"syntax": "Packages/Markdown Extended/Syntaxes/Markdown Extended.tmLanguage",
+							"target": "disk"
+						},
+						"translation.x": 0.0,
+						"translation.y": 222.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "/F/blog/_posts/template.md",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 294,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								294,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Markdown Extended/Syntaxes/Markdown Extended.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 6,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "data.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5025,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								523,
+								523
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "header.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2603,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2409,
+								2409
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1449.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "drug.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 637,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								52,
+								52
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "search.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 200,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								160,
+								160
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "footer.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 76,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								9,
+								9
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 10,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 31.0
+	},
+	"input":
+	{
+		"height": 38.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 142.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.markdown":
+	{
+		"height": 130.0
+	},
+	"project": "web.sublime-project",
+	"replace":
+	{
+		"height": 58.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"css",
+				"css\\css.css"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": false,
+	"side_bar_width": 240.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

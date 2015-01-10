@@ -1,0 +1,205 @@
+@charset "utf-8";
+
+/*start header.php*/
+*{
+		margin:0 0;
+		padding: 0 0;
+		font-family: Tahoma;
+		
+	}
+	li{
+		list-style: none;
+	}
+	a:link,a:visited{
+		/*去除超链接下划线*/
+		text-decoration:none; 
+	}
+	#logo{
+		height:50px;
+	}
+	#nav{
+		margin:0px 0 0 0;
+		background-color: #42ACDC;
+		height:50px;
+	}
+	#heading{
+		margin-left: 100px;
+	}
+
+	
+	#heading >li{
+		position: relative;
+		float:left;
+		margin:20px 20px;
+		
+		font-size: 20px;
+	}
+
+	#heading li a{
+		color:white;
+	}
+
+	#subhead{
+
+	}
+	/*二级标题*/
+	#heading li ul{
+		position: absolute;
+		left:-15px;
+		z-index: 1;
+	}
+	#heading li ul li{ 
+
+		display: none;
+		list-style: none;
+		float: none;
+		background-color: #42ACDC;
+		font-size:18px;
+		padding: 5px 15px;
+
+	}
+
+	#heading li:hover ul  li{ 
+		display: block;
+	}
+#main{
+	position: absolute;
+	margin:0 0 0 5%;
+}
+	.left{
+	position: relative;
+    width: 200px;
+    height: 225px;
+    float: left;
+    background: url(./images/panel-bg.png) repeat-x;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    border: 1px solid #42ACDC;
+    margin-top: 10px;
+
+	}
+/*end header.php*/
+
+/*start search*/
+#search{
+	float:left;
+	border:1px solid #69a6db;
+	width:600px;
+	background-color: rgb(214,224,238);
+	border-radius: 3px;
+}
+#tabs {
+	overflow: hidden;
+	width: 100%;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+#tabs li {
+	float: left;
+	margin: 0 .5em 0 0;
+}
+#tabs a {
+	font-size: 15px;
+	position: relative;
+	background: #ddd;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#ddd));
+	background-image: -webkit-linear-gradient(top, #fff, #ddd);
+	background-image: -moz-linear-gradient(top, #fff, #ddd);
+	background-image: -ms-linear-gradient(top, #fff, #ddd);
+	background-image: -o-linear-gradient(top, #fff, #ddd);
+	background-image: linear-gradient(to bottom, #fff, #ddd);
+	padding: .7em 1.5em;
+	float: left;
+	text-decoration: none;
+	color: #444;
+	text-shadow: 0 1px 0 rgba(255, 255, 255, .8);
+	-webkit-border-radius: 5px 0 0 0;
+	-moz-border-radius: 5px 0 0 0;
+	border-radius: 5px 0 0 0;
+	-moz-box-shadow: 0 2px 2px rgba(0, 0, 0, .4);
+	-webkit-box-shadow: 0 2px 2px rgba(0, 0, 0, .4);
+	box-shadow: 0 2px 2px rgba(0, 0, 0, .4);
+}
+
+ #tabs a:hover, #tabs a:hover::after, #tabs a:focus, #tabs a:focus::after {
+ background: #fff;
+}
+
+
+#tabs a:focus {
+	outline: 0;
+}
+ #tabs a::after {
+ content:'';
+ position:absolute;
+ z-index: 1;
+ top: 0;
+ right: -.5em;
+ bottom: 0;
+ width: 1em;
+ background: #ddd;
+ background-image: -webkit-gradient(linear, left top, left bottom, from(#fff), to(#ddd));
+ background-image: -webkit-linear-gradient(top, #fff, #ddd);
+ background-image: -moz-linear-gradient(top, #fff, #ddd);
+ background-image: -ms-linear-gradient(top, #fff, #ddd);
+ background-image: -o-linear-gradient(top, #fff, #ddd);
+ background-image: linear-gradient(to bottom, #fff, #ddd);
+ -moz-box-shadow: 2px 2px 2px rgba(0, 0, 0, .4);
+ -webkit-box-shadow: 2px 2px 2px rgba(0, 0, 0, .4);
+ box-shadow: 2px 2px 2px rgba(0, 0, 0, .4);
+ -webkit-transform: skew(10deg);
+ -moz-transform: skew(10deg);
+ -ms-transform: skew(10deg);
+ -o-transform: skew(10deg);
+ transform: skew(10deg);
+ -webkit-border-radius: 0 5px 0 0;
+ -moz-border-radius: 0 5px 0 0;
+ border-radius: 0 5px 0 0;
+}
+ #tabs #current a, #tabs #current a::after {
+ background: rgb(214,224,238);
+ z-index: 3;
+}
+/* ------------------------------------------------- */
+
+ #text {
+        /* #输入框 */
+        
+        font-size: 20px;
+        font-style: italic;
+        color: silver;
+        /*font-size:20px;*/
+        
+        border: 2px solid #69a6db;
+        width: 450px;
+        height: 30px;
+        border-radius: 5px;
+        margin: 20px 25px 5px 25px;
+        box-shadow: 2px 2px 2px #888888;
+        /*color:silver;*/
+    }
+    .example li {
+        font-size: 20px;
+        list-style: none;
+        float: left;
+        border-left: 1px solid #888888;
+        margin: 0px 25px 0px 25px;
+    }
+    #btn {
+        font-size: 24px;
+        height: 35px;
+        width: 150px;
+        border-radius: 5px;
+        border: 2px solid #69a6db;
+        clear: both;
+        /*float: left;*/
+        
+        display: block;
+        margin: 60px auto 40px 170px;
+        box-shadow: 2px 2px 2px #888888;
+        background-color: #f0f0eb;
+    }
+
+    /*end search*/

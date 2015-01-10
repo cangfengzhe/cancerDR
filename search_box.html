@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+	#search_box{
+		border: 1px solid #ddd;
+		width:450px;
+	}
+	select, input {
+		margin: 3px 0px;
+	}
+	#btn_box{
+		padding:8px 15px;
+                background:rgb(50, 50, 50);
+                border:0px solid #dbdbdb;
+	}
+	</style>
+</head>
+<body>
+	<div id="search_box">
+	<form action="search.php" method='get'>
+		<select>
+			<option value="Drug">Drug</option>
+			<option value="Gene">Gene</option>
+			<option value="CancerType">Cancer Type</option>
+			<option value="CellLine">Cell Line</option>
+		</select>
+		<input type="text" />
+		<input type='submit' id='btn_box' value='search'/>
+
+	</form>
+		
+			</div>
+</body>
+</html>
