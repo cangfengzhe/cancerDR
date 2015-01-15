@@ -16,9 +16,7 @@
 	<script type="text/javascript" src="./js/jqxdropdownlist.js"></script>
 	<!-- php调用javacript -->
     <script type="text/javascript">
-    <?php 
-
-    ?>
+  
         $(document).ready(function () {
             // prepare the data
             var theme = 'darkblue';
@@ -71,14 +69,16 @@
 			);
 	
 
-# lpd 添加 链接
+// # lpd 添加 链接
+
 var cellsrenderer = function (row, columnfield, value, defaulthtml, columnproperties, rowdata) {
               
                 return '<a href="./drug.php?value='+ value + '">'+ value + '</a>';
             }
 
-var crossRef =  function (row, columnfield, value, defaulthtml, columnproperties) {
-   return '<a href="drug.php?value=' + rowdata.drugID + '">' + value + '</a>';
+
+var crossRef =  function (row, columnfield, value, defaulthtml, columnproperties, rowdata) {
+   return '<a href="./drug.php?value=' + rowdata.drugID + '">' + value + '</a>';
                 
 }
             // initialize jqxGrid
@@ -101,23 +101,23 @@ var crossRef =  function (row, columnfield, value, defaulthtml, columnproperties
 				enablehover: false,
 				enablebrowserselection:'enable', //是否可以选中字体
 				autoheight: true,
-				width: 700,
+				width: 850,
 				rendergridrows: function(obj)
 				{
 					 return obj.data;    
 				},
 			    columns: [
-                      // { text: 'Drug ID' , datafield:'<a href="./drug.php?drugID=afd'">drugID</a>', width: 200 },
+                      // { text: 'Drug ID' , datafield:'<a href="./drug.php?drugID=afd'">drugID</a>', width: 200 , cellsrenderer:cellsrenderer},
                        { text: 'Drug ID', datafield: 'drugID', width: 200 , cellsrenderer:cellsrenderer},
-                      { text: 'Drug Name', datafield: 'drugName', width: 200, cellsrenderer:crossRef },
+                      { text: 'Drug Name', datafield: 'drugName', width: 250 , cellsrenderer:crossRef},
                       { text: 'Drugbank ID', datafield: 'drugBankID', width: 200 },
-                      { text: 'Pubchem ID', datafield: 'pubchemID', width: 100 }
+                      { text: 'Pubchem ID', datafield: 'pubchemID', width: 200 }
                   ]
             });
         });
     </script>
 
-    <div id='jqxWidget'>
+    <div id='jqxWidget'>	
         <div id="jqxgrid"></div>
     </div>
 

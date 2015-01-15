@@ -19,41 +19,42 @@ a:link, a:visited {
 }
 #nav {
     /*修改为inline-block后不占位*/
-    
+    position: fixed;
     display: inline-block;
     margin: 0px 0 0 0;
     width: 100%;
     background-color: #42ACDC;
     height: 50px;
+    z-index: 100000;
 }
-#heading {
+.heading {
     margin-left: 250px;
     /*当宽度是px是不随窗口大小改变*/
     
     width: 800px;
 }
-#heading >li {
+.heading >li {
     position: relative;
     float: left;
     margin: 15px 30px;
     padding-bottom: 7px;
     font-size: 20px;
 }
-#heading li a {
+.heading li a {
     color: white;
 }
-#heading li:hover {
+.heading li:hover {
     border-bottom: 3px solid white;
 }
 /*二级标题*/
 
-#heading li ul {
+.heading li ul {
     position: absolute;
     left: -22px;
     top: 30px;
     z-index: 5;
 }
-#heading li ul li {
+.heading li ul li {
     display: none;
     list-style: none;
     background-color: #42ACDC;
@@ -61,13 +62,14 @@ a:link, a:visited {
     padding: 5px 15px;
     text-align: center;
 }
-#heading li:hover ul li {
+.heading li:hover ul li {
     display: block;
 }
 #main {
     position: relative;
+    top:50px;
     width: 1000px;
-    margin: 0 auto;
+    margin: 0px auto ;
 }
 .left {
     position: relative;
@@ -282,13 +284,47 @@ h2 {
 /*end grid*/
 
 
+/*start result*/
+#resultHead{
+    height: 50px;
+    /*background-color: rgb(214, 224, 238);*/
+    color:black;
+}
+.resultul{
+    margin-left:240px;
+    display: block;
+}
+.resultul li{
+    list-style: none;
+    float: left;
+    margin: 5px 20px;
+    font-size: 20px;
+    padding: 5px;
+}
 
+#act{
+    display:block;
+    height: 500px;
+    width:800px;
+    background-color: blue;
+}
+
+.resultInfo{
+    display: none;
+}
+
+#cur{
+    display:block;
+}
+/*end result*/
 
 
 /*FOOTER*/
 
 .footer {
+    position: relative;
     float: left;
+    top:50px;
     width: 100%;
     margin: 20px 0;
     text-align: center;

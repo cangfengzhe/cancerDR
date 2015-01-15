@@ -37,9 +37,9 @@ function getCookie(c_name) {　　　　
 <body>
 <div id="container">
 	<div class="header">
-	<div id="logo"></div>
+	<!-- <div id="logo"></div> -->
 	<div id="nav">
-		<ul id='heading'>
+		<ul class='heading'>
 			<li><a href="./index.php">Home</a></li>
 			<li><a href="">Browser</a>
 			<ul id='subhead'>
