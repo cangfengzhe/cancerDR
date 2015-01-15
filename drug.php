@@ -25,31 +25,12 @@ table,th, td
 </style>
 
 
-<table border="2">
+<table border="0">
 <thead>
 	
 </thead>
 	<tbody>
-	<tr>
-		<th>name</th>
-		<!-- 和并列 -->
-		<td rowspan="2">lipidong</td>  
-		<td>abcdef</td>
-	</tr>
-	<tr>
-		<th>name</th>
-		<td>abcdef</td>
-	</tr>
-	<tr>
-		<th>name</th>
-		<td>lipidong</td>
-		<td>abcdef</td>
-	</tr>
-	<tr>
-		<th>name</th>
-		<td colspan="2">lipidong</td>
-		
-	</tr>
+	
 	</tbody>
 </table>
 

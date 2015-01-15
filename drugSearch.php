@@ -28,12 +28,14 @@
                  datatype: "json",
                  datafields: [
 					 
-					 { name: 'var1', type: 'double'},
-					 { name: 'var2', type: 'string'},
-					 { name: 'var3', type: 'string'},
-					 { name: 'var4', type: 'string'}
+					 { name: 'drugID', type: 'string'},
+					 { name: 'drugName', type: 'string'},
+					 { name: 'drugBankID', type: 'string'},
+					 { name: 'pubchemID', type: 'string'}
                 ],
-			    url: 'data.php?table='+ "<?php echo $_GET['type']; ?>" + '&value=' + "<?php echo $_GET['value']; ?>",
+			    url: 'data.php?table=ref_drug' + '&value=' + "<?php echo $_GET['value']; ?>" +
+			     '&colName=drugName',
+				
 				cache: false,
 				filter: function()
 				{
@@ -68,6 +70,17 @@
 				}
 			);
 	
+
+# lpd 添加 链接
+var cellsrenderer = function (row, columnfield, value, defaulthtml, columnproperties, rowdata) {
+              
+                return '<a href="./drug.php?value='+ value + '">'+ value + '</a>';
+            }
+
+var crossRef =  function (row, columnfield, value, defaulthtml, columnproperties) {
+   return '<a href="drug.php?value=' + rowdata.drugID + '">' + value + '</a>';
+                
+}
             // initialize jqxGrid
             $("#jqxgrid").jqxGrid(
             {		
@@ -94,10 +107,11 @@
 					 return obj.data;    
 				},
 			    columns: [
-                      { text: 'lie1', datafield: 'var1' , width: 200 },
-                      { text: 'lie2', datafield: 'var2', width: 200 },
-                      { text: 'Address', datafield: 'var3', width: 200 },
-                      { text: 'City', datafield: 'var4', width: 100 }
+                      // { text: 'Drug ID' , datafield:'<a href="./drug.php?drugID=afd'">drugID</a>', width: 200 },
+                       { text: 'Drug ID', datafield: 'drugID', width: 200 , cellsrenderer:cellsrenderer},
+                      { text: 'Drug Name', datafield: 'drugName', width: 200, cellsrenderer:crossRef },
+                      { text: 'Drugbank ID', datafield: 'drugBankID', width: 200 },
+                      { text: 'Pubchem ID', datafield: 'pubchemID', width: 100 }
                   ]
             });
         });

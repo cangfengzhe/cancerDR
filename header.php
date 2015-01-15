@@ -40,7 +40,7 @@ function getCookie(c_name) {　　　　
 	<div id="logo"></div>
 	<div id="nav">
 		<ul id='heading'>
-			<li><a href="">Home</a></li>
+			<li><a href="./index.php">Home</a></li>
 			<li><a href="">Browser</a>
 			<ul id='subhead'>
 				<li><a href="">Mutation</a></li>
@@ -61,12 +61,14 @@ function getCookie(c_name) {　　　　
 	<form action="search.php" method='get'>
 
 		<select id='sel' name='type'>
-			<option value="Drug">Drug</option>
-			<option value="Gene">Gene</option>
-			<option value="CancerType">Cancer Type</option>
-			<option value="CellLine">Cell Line</option>
+		<option value="cellLine">Cell Line</option>
+			<option value="cancerType">Cancer Type</option>
+			
+			<option value="drug">Drug</option>
+			<option value="gene">Gene</option>
+			
 		</select>
-		<input type="text" id='input_box' name='name'/>
+		<input type="text" id='input_box' name='value'/>
 		<input type='submit' id = 'btn_box' value='search' onclick='setCookie("select_value",document.getElementById("sel").selectedIndex,30)'/>
 	<script>
      function setSelectValue(){

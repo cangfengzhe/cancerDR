@@ -28,12 +28,14 @@
                  datatype: "json",
                  datafields: [
 					 
-					 { name: 'var1', type: 'double'},
-					 { name: 'var2', type: 'string'},
-					 { name: 'var3', type: 'string'},
-					 { name: 'var4', type: 'string'}
+					 { name: 'drugID', type: 'string'},
+					 { name: 'drugName', type: 'string'},
+					 { name: 'drugBankID', type: 'string'},
+					 { name: 'pubchemID', type: 'string'}
                 ],
-			    url: 'data.php?table='+ "<?php echo $_GET['type']; ?>" + '&value=' + "<?php echo $_GET['value']; ?>",
+			    url: 'data.php?table=drug' + '&q=' + "<?php echo $_GET['name']; ?>" 
+			    		,
+				
 				cache: false,
 				filter: function()
 				{
@@ -94,10 +96,10 @@
 					 return obj.data;    
 				},
 			    columns: [
-                      { text: 'lie1', datafield: 'var1' , width: 200 },
-                      { text: 'lie2', datafield: 'var2', width: 200 },
-                      { text: 'Address', datafield: 'var3', width: 200 },
-                      { text: 'City', datafield: 'var4', width: 100 }
+                      { text: '<a href="./drug.php?drugID='+'Drug ID'+'"</a>', datafield: 'drugID' , width: 200 },
+                      { text: 'Drug Name', datafield: 'drugName', width: 200 },
+                      { text: 'Drugbank ID', datafield: 'drugBankID', width: 200 },
+                      { text: 'Pubchem ID', datafield: 'pubchemID', width: 100 }
                   ]
             });
         });

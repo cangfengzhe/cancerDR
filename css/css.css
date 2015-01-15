@@ -80,7 +80,8 @@ a:link, a:visited {
     -webkit-border-radius: 3px;
     border-radius: 3px;
     border: 1px solid #42ACDC;
-    margin: 10px 0px 0px 40px;
+    margin: 10px 0px 0px 0px;
+    left: -150px;
 }
 h2 {
     font-size: 16px;
@@ -96,7 +97,7 @@ h2 {
     
     float: left;
     position: relative;
-    margin: 50px 0px 0px 150px;
+    margin: 50px 0px 0px 50px;
     border: 1px solid #69a6db;
     /*width: 600px;*/
     

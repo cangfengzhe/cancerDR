@@ -6,7 +6,8 @@ error_reporting(E_ALL ^ E_DEPRECATED);
 	//connection String
 	// $tableName='tab1';
 	$tableName=$_GET['table'];
-	$keyword = $_GET['q'];
+	$keyword = $_GET['value'];
+	$colName = $_GET['colName'];
 	$connect = mysql_connect($hostname, $username, $password)
 	or die('Could not connect: ' . mysql_error());
 	//Select The database
@@ -18,7 +19,7 @@ error_reporting(E_ALL ^ E_DEPRECATED);
 	$pagenum = $_GET['pagenum'];
 	$pagesize = $_GET['pagesize'];
 	$start = $pagenum * $pagesize;
-	$where = " WHERE var1='" . $keyword . "' ";
+	$where = ' WHERE ' . $colName . " like '%" . $keyword . "%' ";
 	$query = "SELECT SQL_CALC_FOUND_ROWS * FROM " . $tableName . $where . " LIMIT $start, $pagesize";
 	
 	$result = mysql_query($query) or die("SQL Error 1: " . mysql_error());
@@ -161,15 +162,31 @@ error_reporting(E_ALL ^ E_DEPRECATED);
 
 	$orders = null;
 	// get data and store in a json array
-	while ($row = mysql_fetch_array($result, MYSQL_ASSOC)) {
-		$orders[] = array(
+	switch ($tableName) {
+		case 'ref_drug':
 			
-			'var1' => $row['var1'] ,
-			'var2' => $row['var2'],
-			'var3' => $row['var3'],
-			'var4' => $row['var4']
+		while ($row = mysql_fetch_array($result, MYSQL_ASSOC)) {
+
+		$orders[] = array(
+			# lpd
+			"drugID" => $row['drugID'] ,
+			'drugName' => $row['drugName'],
+			'drugBankID' => $row['drugBankID'],
+			'pubchemID' => $row['pubchemID']
 		  );
+
+
 	}
+
+			break;
+		
+		default:
+			echo 'error';
+			break;
+	}
+
+    
+
       $data[] = array(
        'TotalRows' => $total_rows,
 	   'Rows' => $orders

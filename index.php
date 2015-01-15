@@ -13,17 +13,17 @@ include('header.php');
 
 <div id='search'>
   <ul id="tabs">
-  <li><a href="#" title="tab1">Drug</a></li>
-  <li><a href="#" title="tab4">Cell Lines</a></li>
-  <li><a href="#" title="tab4">Cancer Type</a></li>
-  <li><a href="#" title="tab2">Gene</a></li>
+  <li><a href="#"  id='drug' >Drug</a></li>
+  <li><a href="#"  id='cellLine'>Cell Line</a></li>
+  <li><a href="#"  id='cancerType'>Cancer Type</a></li>
+  <li><a href="#" id='gene'>Gene</a></li>
   
   
 </ul>
 <div id='form'>
             <form action="search.php" method='get'>
 
-                <input type="text" id='text' name='name' value="eg. Aspirin" onfocus="if(value=='eg. Aspirin'){value='';style.color='black';style.fontStyle='normal';}" onblur="if(value==''){value='eg. Aspirin';style.color='silver';style.fontStyle='italic';}" />
+                <input type="text" id='text' name='value' value="eg. Aspirin" onfocus="if(value=='eg. Aspirin'){value='';style.color='black';style.fontStyle='normal';}" onblur="if(value==''){value='eg. Aspirin';style.color='silver';style.fontStyle='italic';}" />
                 <input type="hidden" name='type' id='hidden' value='aaa' />
                 <div>
 
@@ -47,14 +47,14 @@ $(document).ready(function() {
 
 	$("#tabs li:first").attr("id","current"); // Activate first tab
 
-  $("#hidden")[0].value=$("#tabs a:first").html();
+  $("#hidden")[0].value=$("#tabs a:first").attr("id");
 
     $('#tabs a').click(function(e) {
         e.preventDefault();        
        
         $("#tabs li").attr("id",""); //Reset id's
         $(this).parent().attr("id","current"); // Activate this
-         $("#hidden")[0].value=$(this).html();
+         $("#hidden")[0].value=$(this).attr("id");
 
         // Show content for current tab
     });

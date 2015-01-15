@@ -4,6 +4,18 @@
 		"selected_items":
 		[
 			[
+				"drug",
+				"drugName"
+			],
+			[
+				"show",
+				"showqisqus"
+			],
+			[
+				"border-b",
+				"border-bottom-color"
+			],
+			[
 				"select",
 				"select_value"
 			],
@@ -140,81 +152,50 @@
 	"buffers":
 	[
 		{
-			"contents": "<?php\ninclude('header.php');\n?>\n<div class=\"left\">\n\n		<h2>Left</h2>\n		<ul>\n			<li>dd</li>\n			<li>ff</li>\n			<li>aa</li>\n		</ul>\n</div>\n\n<div id='search'>\n  <ul id=\"tabs\">\n  <li><a href=\"#\" title=\"tab1\" >Drug</a></li>\n  <li><a href=\"#\" title=\"tab4\">Cell Lines</a></li>\n  <li><a href=\"#\" title=\"tab4\">Cancer Type</a></li>\n  <li><a href=\"#\" title=\"tab2\">Gene</a></li>\n  \n  \n</ul>\n<div id='form'>\n            <form action=\"search.php\" method='get'>\n\n                <input type=\"text\" id='text' name='name' value=\"eg. Aspirin\" onfocus=\"if(value=='eg. Aspirin'){value='';style.color='black';style.fontStyle='normal';}\" onblur=\"if(value==''){value='eg. Aspirin';style.color='silver';style.fontStyle='italic';}\" />\n                <input type=\"hidden\" name='type' id='hidden' value='aaa' />\n                <div>\n\n                    <ul class='example'>\n                        <li>aaa</li>\n                        <li>aaa</li>\n                        <li>aaa</li>\n                        <li>aaa</li>\n                        <li>aaa</li>\n                    </ul>\n                </div>\n                <input type='submit' id='btn' value='Search' />\n            </form>\n        </div>\n</div>\n\n<!-- search tab js -->\n<script src=\"./js/jquery-2.1.1.min.js\"></script>\n<script>\n$(document).ready(function() {\n\n	$(\"#tabs li:first\").attr(\"id\",\"current\"); // Activate first tab\n\n  $(\"#hidden\")[0].value=$(\"#tabs a:first\").html();\n\n    $('#tabs a').click(function(e) {\n        e.preventDefault();        \n       \n        $(\"#tabs li\").attr(\"id\",\"\"); //Reset id's\n        $(this).parent().attr(\"id\",\"current\"); // Activate this\n         $(\"#hidden\")[0].value=$(this).html();\n\n        // Show content for current tab\n    });\n});\n\n</script>\n\n\n\n\n\n\n\n\n\n\n\n<?php\ninclude('footer.php');\n?>",
-			"file": "index.php",
-			"file_size": 1843,
-			"file_write_time": 130652823298722430,
+			"file": "drugSearch.php",
 			"settings":
 			{
-				"buffer_size": 1768,
+				"buffer_size": 3782,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "grid.php",
+			"file": "connect.php",
 			"settings":
 			{
-				"buffer_size": 3314,
+				"buffer_size": 118,
 				"line_ending": "Windows"
-			}
-		},
-		{
-			"contents": ".jqx-widget-custom {\n    font-family: Verdana\n}\n.jqx-widget-content-custom {\n    color: #222;\n    text-shadow: none;\n    border-color: #42acdc;\n    background: #fff;\n    font-family: Verdana\n}\n.jqx-widget-header-custom, .jqx-grid-custom .jqx-widget-header-custom {\n    color: #222;\n    text-shadow: none;\n    border-color: #aaa;\n    background-color: transparent;\n    background-image: -moz-linear-gradient(top, transparent, transparent);\n    background-image: -ms-linear-gradient(top, transparent, transparent);\n    background-image: -o-linear-gradient(top, transparent, transparent);\n    background-image: -webkit-gradient(linear, center top, center bottom, from(transparent), to(transparent));\n    background-image: -webkit-linear-gradient(top, transparent, transparent);\n    background-image: linear-gradient(top, transparent, transparent);\n    background-image: linear-gradient(to bottom, transparent, transparent);\n    -moz-background-clip: padding;\n    background-clip: padding-box;\n    -webkit-background-clip: padding-box;\n    font-family: Verdana\n}\n.jqx-grid-column-menubutton-custom, .jqx-widget-custom.jqx-grid-column-menubutton-custom {\n    border-color: #aaa\n}\n.jqx-grid-cell-custom, .jqx-widget-custom .jqx-grid-cell-custom {\n    background-color: #fff;\n    color: #222;\n    text-shadow: none\n}\n.jqx-fill-state-normal-custom {\n    color: #222;\n    text-shadow: none;\n    border-color: #042acd;\n    background-color: transparent;\n    background-image: -moz-linear-gradient(top, transparent, transparent);\n    background-image: -ms-linear-gradient(top, transparent, transparent);\n    background-image: -o-linear-gradient(top, transparent, transparent);\n    background-image: -webkit-gradient(linear, center top, center bottom, from(transparent), to(transparent));\n    background-image: -webkit-linear-gradient(top, transparent, transparent);\n    background-image: linear-gradient(top, transparent, transparent);\n    background-image: linear-gradient(to bottom, transparent, transparent);\n    -moz-background-clip: padding;\n    background-clip: padding-box;\n    -webkit-background-clip: padding-box;\n    font-family: Verdana\n}\n.jqx-button-custom {\n    color: #222;\n    text-shadow: none;\n    border-color: #aaa;\n    background-color: #efefef;\n    background-image: -moz-linear-gradient(top, #efefef, #efefef);\n    background-image: -ms-linear-gradient(top, #efefef, #efefef);\n    background-image: -o-linear-gradient(top, #efefef, #efefef);\n    background-image: -webkit-gradient(linear, center top, center bottom, from(#efefef), to(#efefef));\n    background-image: -webkit-linear-gradient(top, #efefef, #efefef);\n    background-image: linear-gradient(top, #efefef, #efefef);\n    background-image: linear-gradient(to bottom, #efefef, #efefef);\n    -moz-background-clip: padding;\n    background-clip: padding-box;\n    -webkit-background-clip: padding-box;\n    font-family: Verdana\n}\n.jqx-grid-selectionarea-custom {\n    border-color: #042acd;\n    background-color: transparent\n}\n.jqx-widget-custom .jqx-grid-cell-sort-custom, .jqx-widget-custom .jqx-grid-cell-filter-custom, .jqx-widget-custom .jqx-grid-cell-pinned-custom, .jqx-grid-cell-sort-custom, .jqx-grid-cell-filter-custom, .jqx-grid-cell-pinned-custom {\n    background-color: #aaa;\n    color: #222;\n    text-shadow: none\n}\n.jqx-widget-custom .jqx-grid-cell-alt-custom, .jqx-widget-custom .jqx-grid-cell-sort-alt-custom, .jqx-widget-custom .jqx-grid-cell-pinned-alt-custom, .jqx-widget-custom .jqx-grid-cell-filter-alt-custom, .jqx-grid-cell-alt-custom, .jqx-grid-cell-sort-alt-custom, .jqx-grid-cell-filter-alt-custom {\n    background-color: #f9f9f9;\n    color: #222;\n    text-shadow: none\n}\n.jqx-fill-state-hover-custom, .jqx-widget-custom .jqx-grid-cell-hover-custom {\n    color: #222;\n    text-shadow: none;\n    border-color: #999;\n    background-color: #e8e8e8;\n    background-image: -moz-linear-gradient(top, #e8e8e8, #e8e8e8);\n    background-image: -ms-linear-gradient(top, #e8e8e8, #e8e8e8);\n    background-image: -o-linear-gradient(top, #e8e8e8, #e8e8e8);\n    background-image: -webkit-gradient(linear, center top, center bottom, from(#e8e8e8), to(#e8e8e8));\n    background-image: -webkit-linear-gradient(top, #e8e8e8, #e8e8e8);\n    background-image: linear-gradient(top, #e8e8e8, #e8e8e8);\n    background-image: linear-gradient(to bottom, #e8e8e8, #e8e8e8);\n    -moz-background-clip: padding;\n    background-clip: padding-box;\n    -webkit-background-clip: padding-box;\n    font-family: Verdana\n}\n.jqx-fill-state-pressed-custom, .jqx-widget-custom .jqx-grid-cell-selected-custom {\n    color: #222;\n    text-shadow: none;\n    border-color: #999;\n    background-color: #d1d1d1;\n    background-image: -moz-linear-gradient(top, #d1d1d1, #d1d1d1);\n    background-image: -ms-linear-gradient(top, #d1d1d1, #d1d1d1);\n    background-image: -o-linear-gradient(top, #d1d1d1, #d1d1d1);\n    background-image: -webkit-gradient(linear, center top, center bottom, from(#d1d1d1), to(#d1d1d1));\n    background-image: -webkit-linear-gradient(top, #d1d1d1, #d1d1d1);\n    background-image: linear-gradient(top, #d1d1d1, #d1d1d1);\n    background-image: linear-gradient(to bottom, #d1d1d1, #d1d1d1);\n    -moz-background-clip: padding;\n    background-clip: padding-box;\n    -webkit-background-clip: padding-box;\n    font-family: Verdana\n}\n.jqx-switchbutton-label-on-custom {\n    color: #222;\n    text-shadow: none;\n    border-color: #999;\n    background-color: #d1d1d1;\n    background-image: -moz-linear-gradient(top, #d1d1d1, #d1d1d1);\n    background-image: -ms-linear-gradient(top, #d1d1d1, #d1d1d1);\n    background-image: -o-linear-gradient(top, #d1d1d1, #d1d1d1);\n    background-image: -webkit-gradient(linear, center top, center bottom, from(#d1d1d1), to(#d1d1d1));\n    background-image: -webkit-linear-gradient(top, #d1d1d1, #d1d1d1);\n    background-image: linear-gradient(top, #d1d1d1, #d1d1d1);\n    background-image: linear-gradient(to bottom, #d1d1d1, #d1d1d1);\n    -moz-background-clip: padding;\n    background-clip: padding-box;\n    -webkit-background-clip: padding-box\n}\n.jqx-tabs-title-selected-top-custom, .jqx-tabs-selection-tracker-top-custom {\n    color: #222;\n    text-shadow: none;\n    border-color: #42acdc;\n    border-bottom: 1px solid #fff;\n    background-image: none;\n    background-color: #fff\n}\n.jqx-tabs-title-selected-bottom-custom, .jqx-tabs-selection-tracker-bottom-custom {\n    color: #222;\n    text-shadow: none;\n    border-color: #42acdc;\n    border-top: 1px solid #fff;\n    background-image: none;\n    background-color: #fff\n}\n.jqx-splitter-splitbar-hover-custom {\n    background: #e8e8e8\n}\n.jqx-splitter-splitbar-vertical-custom, .jqx-splitter-splitbar-horizontal-custom, .jqx-slider-track-horizontal-custom, .jqx-slider-track-vertical-custom {\n    background: transparent\n}\n.jqx-splitter-collapse-button-horizontal-custom, .jqx-splitter-collapse-button-vertical-custom, .jqx-slider-rangebar-custom {\n    background: #d1d1d1\n}\n.jqx-scrollbar-state-normal-custom {\n    background-color: #efefef;\n    border-color: #efefef\n}\n.jqx-grid-bottomright-custom, .jqx-panel-bottomright-custom, .jqx-listbox-bottomright-custom {\n    background-color: #efefef\n}\n.jqx-scrollbar-thumb-state-normal-custom {\n    background-color: #efefef;\n    background-color: #efefef;\n    background-image: -moz-linear-gradient(left, #efefef, #efefef);\n    background-image: -ms-linear-gradient(left, #efefef, #efefef);\n    background-image: -o-linear-gradient(left, #efefef, #efefef);\n    background-image: -webkit-gradient(linear, left top, right top, from(#efefef), to(#efefef));\n    background-image: -webkit-linear-gradient(left, #efefef, #efefef);\n    background-image: linear-gradient(left, #efefef, #efefef);\n    background-image: linear-gradient(left right, #efefef, #efefef)\n}\n.jqx-scrollbar-thumb-state-normal-horizontal-custom {\n    background-color: #efefef;\n    background-color: #efefef;\n    background-image: -moz-linear-gradient(top, #efefef, #efefef);\n    background-image: -ms-linear-gradient(top, #efefef, #efefef);\n    background-image: -o-linear-gradient(top, #efefef, #efefef);\n    background-image: -webkit-gradient(linear, center top, center bottom, from(#efefef), to(#efefef));\n    background-image: -webkit-linear-gradient(top, #efefef, #efefef);\n    background-image: linear-gradient(top, #efefef, #efefef);\n    background-image: linear-gradient(to bottom, #efefef, #efefef);\n    -moz-background-clip: padding;\n    background-clip: padding-box;\n    -webkit-background-clip: padding-box\n}\n.jqx-scrollbar-thumb-state-hover-custom {\n    background-color: #e8e8e8;\n    border-color: #e8e8e8;\n    background-image: -moz-linear-gradient(left, #e8e8e8, #e8e8e8);\n    background-image: -ms-linear-gradient(left, #e8e8e8, #e8e8e8);\n    background-image: -o-linear-gradient(left, #e8e8e8, #e8e8e8);\n    background-image: -webkit-gradient(linear, left top, right top, from(#e8e8e8), to(#e8e8e8));\n    background-image: -webkit-linear-gradient(left, #e8e8e8, #e8e8e8);\n    background-image: linear-gradient(left, #e8e8e8, #e8e8e8);\n    background-image: linear-gradient(left right, #e8e8e8, #e8e8e8)\n}\n.jqx-scrollbar-thumb-state-hover-horizontal-custom {\n    background-color: #e8e8e8;\n    border-color: #e8e8e8;\n    background-image: -moz-linear-gradient(top, #e8e8e8, #e8e8e8);\n    background-image: -ms-linear-gradient(top, #e8e8e8, #e8e8e8);\n    background-image: -o-linear-gradient(top, #e8e8e8, #e8e8e8);\n    background-image: -webkit-gradient(linear, center top, center bottom, from(#e8e8e8), to(#e8e8e8));\n    background-image: -webkit-linear-gradient(top, #e8e8e8, #e8e8e8);\n    background-image: linear-gradient(top, #e8e8e8, #e8e8e8);\n    background-image: linear-gradient(to bottom, #e8e8e8, #e8e8e8);\n    -moz-background-clip: padding;\n    background-clip: padding-box;\n    -webkit-background-clip: padding-box\n}\n.jqx-scrollbar-thumb-state-pressed-custom {\n    background-color: #d1d1d1;\n    border-color: #d1d1d1;\n    background-image: -moz-linear-gradient(left, #d1d1d1, #d1d1d1);\n    background-image: -ms-linear-gradient(left, #d1d1d1, #d1d1d1);\n    background-image: -o-linear-gradient(left, #d1d1d1, #d1d1d1);\n    background-image: -webkit-gradient(linear, left top, right top, from(#d1d1d1), to(#d1d1d1));\n    background-image: -webkit-linear-gradient(left, #d1d1d1, #d1d1d1);\n    background-image: linear-gradient(left, #d1d1d1, #d1d1d1);\n    background-image: linear-gradient(left right, #d1d1d1, #d1d1d1)\n}\n.jqx-scrollbar-thumb-state-pressed-horizontal-custom {\n    background-color: #d1d1d1;\n    border-color: #d1d1d1;\n    background-image: -moz-linear-gradient(top, #d1d1d1, #d1d1d1);\n    background-image: -ms-linear-gradient(top, #d1d1d1, #d1d1d1);\n    background-image: -o-linear-gradient(top, #d1d1d1, #d1d1d1);\n    background-image: -webkit-gradient(linear, center top, center bottom, from(#d1d1d1), to(#d1d1d1));\n    background-image: -webkit-linear-gradient(top, #d1d1d1, #d1d1d1);\n    background-image: linear-gradient(top, #d1d1d1, #d1d1d1);\n    background-image: linear-gradient(to bottom, #d1d1d1, #d1d1d1);\n    -moz-background-clip: padding;\n    background-clip: padding-box;\n    -webkit-background-clip: padding-box\n}\n.jqx-scrollbar-button-state-normal-custom {\n    background-color: #efefef;\n    background-image: -moz-linear-gradient(top, #efefef, #efefef);\n    background-image: -ms-linear-gradient(top, #efefef, #efefef);\n    background-image: -o-linear-gradient(top, #efefef, #efefef);\n    background-image: -webkit-gradient(linear, center top, center bottom, from(#efefef), to(#efefef));\n    background-image: -webkit-linear-gradient(top, #efefef, #efefef);\n    background-image: linear-gradient(top, #efefef, #efefef);\n    background-image: linear-gradient(to bottom, #efefef, #efefef);\n    -moz-background-clip: padding;\n    background-clip: padding-box;\n    -webkit-background-clip: padding-box\n}\n.jqx-scrollbar-button-state-hover-custom {\n    background-color: #e8e8e8;\n    border-color: #aaa;\n    background-image: -moz-linear-gradient(top, #e8e8e8, #e8e8e8);\n    background-image: -ms-linear-gradient(top, #e8e8e8, #e8e8e8);\n    background-image: -o-linear-gradient(top, #e8e8e8, #e8e8e8);\n    background-image: -webkit-gradient(linear, center top, center bottom, from(#e8e8e8), to(#e8e8e8));\n    background-image: -webkit-linear-gradient(top, #e8e8e8, #e8e8e8);\n    background-image: linear-gradient(top, #e8e8e8, #e8e8e8);\n    background-image: linear-gradient(to bottom, #e8e8e8, #e8e8e8);\n    -moz-background-clip: padding;\n    background-clip: padding-box;\n    -webkit-background-clip: padding-box\n}\n.jqx-scrollbar-button-state-pressed-custom {\n    background-color: #d1d1d1;\n    border-color: #909090;\n    background-image: -moz-linear-gradient(top, #d1d1d1, #d1d1d1);\n    background-image: -ms-linear-gradient(top, #d1d1d1, #d1d1d1);\n    background-image: -o-linear-gradient(top, #d1d1d1, #d1d1d1);\n    background-image: -webkit-gradient(linear, center top, center bottom, from(#d1d1d1), to(#d1d1d1));\n    background-image: -webkit-linear-gradient(top, #d1d1d1, #d1d1d1);\n    background-image: linear-gradient(top, #d1d1d1, #d1d1d1);\n    background-image: linear-gradient(to bottom, #d1d1d1, #d1d1d1);\n    -moz-background-clip: padding;\n    background-clip: padding-box;\n    -webkit-background-clip: padding-box\n}\n.jqx-radiobutton-check-checked-custom {\n    background: #111;\n    width: 7px;\n    height: 7px;\n    margin-left: 2px;\n    margin-top: 2px;\n    border-width: 1px;\n    border-style: solid\n}\n.jqx-rc-tl-custom {\n    -moz-border-radius-topleft: 3px;\n    -webkit-border-radius-topleft: 3px;\n    border-radius-topleft: 3px\n}\n.jqx-rc-tr-custom {\n    -moz-border-radius-topright: 3px;\n    -webkit-border-radius-topright: 3px;\n    border-radius-topright: 3px\n}\n.jqx-rc-bl-custom {\n    -moz-border-radius-bottomleft: 3px;\n    -webkit-border-radius-bottomleft: 3px;\n    border-radius-bottomleft: 3px\n}\n.jqx-rc-br-custom {\n    -moz-border-radius-bottomright: 3px;\n    -webkit-border-radius-bottomright: 3px;\n    border-radius-bottomright: 3px\n}\n.jqx-rc-t-custom {\n    -moz-border-radius-topleft: 3px;\n    -webkit-border-top-left-radius: 3px;\n    border-top-left-radius: 3px;\n    -moz-border-radius-topright: 3px;\n    -webkit-border-top-right-radius: 3px;\n    border-top-right-radius: 3px\n}\n.jqx-rc-b-custom {\n    -moz-border-radius-bottomleft: 3px;\n    -webkit-border-bottom-left-radius: 3px;\n    border-bottom-left-radius: 3px;\n    -moz-border-radius-bottomright: 3px;\n    -webkit-border-bottom-right-radius: 3px;\n    border-bottom-right-radius: 3px\n}\n.jqx-rc-r-custom {\n    -moz-border-radius-topright: 3px;\n    -webkit-border-top-right-radius: 3px;\n    border-top-right-radius: 3px;\n    -moz-border-radius-bottomright: 3px;\n    -webkit-border-bottom-right-radius: 3px;\n    border-bottom-right-radius: 3px\n}\n.jqx-rc-l-custom {\n    -moz-border-radius-topleft: 3px;\n    -webkit-border-top-left-radius: 3px;\n    border-top-left-radius: 3px;\n    -moz-border-radius-bottomleft: 3px;\n    -webkit-border-bottom-left-radius: 3px;\n    border-bottom-left-radius: 3px\n}\n.jqx-radiobutton-default-custom, .jqx-radiobutton-custom, .jqx-radiobutton-check-checked-custom, .jqx-radiobutton-hover-custom, .jqx-radiobutton-check-indeterminate-custom, .jqx-radiobutton-check-indeterminate-disabled-custom, .jqx-slider-button-custom {\n    -moz-border-radius: 100%!important;\n    -webkit-border-radius: 100%!important;\n    border-radius: 100%!important\n}\n.jqx-rc-all-custom, .jqx-tooltip-custom, .jqx-tooltip-text-custom, .jqx-tooltip-main-custom {\n    -moz-border-radius: 3px;\n    -webkit-border-radius: 3px;\n    border-radius: 3px\n}\n.jqx-grid-column-sortascbutton-custom, .jqx-expander-arrow-bottom-custom, .jqx-window-collapse-button-custom, .jqx-menu-item-arrow-up-custom, .jqx-menu-item-arrow-top-up-custom, .jqx-icon-arrow-up-custom {\n    background-image: url('images/icon-up.png')\n}\n.jqx-icon-arrow-up-hover-custom {\n    background-image: url('images/icon-up.png')\n}\n.jqx-menu-item-arrow-up-selected-custom, .jqx-icon-arrow-up-selected-custom.jqx-expander-arrow-expanded-custom {\n    background-image: url('images/icon-up.png')\n}\n.jqx-grid-column-menubutton-custom, .jqx-grid-column-sortdescbutton-custom, .jqx-expander-arrow-top-custom, .jqx-window-collapse-button-collapsed-custom, .jqx-menu-item-arrow-down-custom, .jqx-menu-item-arrow-down-custom, .jqx-tree-item-arrow-expand-custom, .jqx-grid-group-expand-custom, .jqx-widget-custom .jqx-grid-group-expand-custom, .jqx-icon-arrow-down-custom {\n    background-image: url('images/icon-down.png')\n}\n.jqx-icon-arrow-down-hover-custom {\n    background-image: url('images/icon-down.png')\n}\n.jqx-menu-item-arrow-down-selected-custom, .jqx-icon-arrow-down-selected-custom {\n    background-image: url('images/icon-down.png')\n}\n.jqx-tabs-arrow-left-custom, .jqx-menu-item-arrow-top-left-custom, .jqx-grid-group-collapse-rtl-custom, .jqx-widget-custom .jqx-grid-group-collapse-rtl-custom, .jqx-icon-arrow-left-custom, .jqx-icon-arrow-down-left-custom {\n    background-image: url('images/icon-left.png')\n}\n.jqx-icon-arrow-left-hover-custom {\n    background-image: url('images/icon-left.png')\n}\n.jqx-menu-vertical-custom {\n    background: #fff\n}\n.jqx-menu-item-arrow-left-selected-custom, .jqx-icon-arrow-left-selected-custom {\n    background-image: url('images/icon-left.png')\n}\n.jqx-tabs-arrow-right-custom, .jqx-menu-item-arrow-top-right-custom, .jqx-menu-item-arrow-collapse-custom, .jqx-grid-group-collapse-custom, .jqx-widget-custom .jqx-grid-group-collapse-custom, .jqx-icon-arrow-right-custom {\n    background-image: url('images/icon-right.png')\n}\n.jqx-icon-arrow-right-hover-custom {\n    background-image: url('images/icon-right.png')\n}\n.jqx-menu-item-arrow-right-selected-custom, .jqx-icon-arrow-right-selected-custom {\n    background-image: url('images/icon-right.png')\n}\n.jqx-window-close-button-custom, .jqx-tabs-close-button-custom, .icon-close-custom {\n    background-image: url('images/close.png')\n}\n.jqx-tabs-close-button-selected-custom {\n    background-image: url('images/close.png')\n}\n.jqx-tabs-close-button-hover-custom {\n    background-image: url('images/close.png')\n}\n.jqx-widget-custom .jqx-grid-column-header-custom, .jqx-widget-custom .jqx-grid-cell-custom, .jqx-widget-custom .jqx-grid-group-cell-custom, .jqx-grid-cell-custom {\n    border-color: #aaa\n}\n.jqx-checkbox-check-checked-custom {\n    background-image: url('images/check_black.png')\n}\n.jqx-checkbox-check-indeterminate-custom {\n    background-image: url('images/check_indeterminate_black.png')\n}\n.jqx-tooltip-custom, .jqx-tooltip-main-custom {\n    color: #222;\n    text-shadow: none;\n    border-color: #aaa;\n    background-color: #efefef\n}\n.jqx-combobox-content-custom, .jqx-input-custom {\n    color: #222;\n    text-shadow: none;\n    border-color: #aaa;\n    background-color: #fff\n}\n.jqx-combobox-input-custom {\n    color: #222;\n    text-shadow: none\n}\n.jqx-input-content-custom {\n    color: #222;\n    text-shadow: none;\n    background-color: #fff\n}\n.jqx-fill-state-focus-custom, .jqx-popup-custom .jqx-fill-state-focus-custom {\n    border-color: #111\n}\n.jqx-popup-custom.jqx-listbox-custom, .jqx-popup-custom.jqx-calendar-custom, .jqx-menu-dropdown-custom, .jqx-popup-custom.jqx-dropdownbutton-popup-custom {\n    color: #222;\n    text-shadow: none;\n    border-color: #111;\n    background-color: #fff\n}\n.jqx-menu-item-arrow-right-custom, .jqx-tree-item-arrow-collapse-custom {\n    background-image: url('images/icon-right.png')\n}\n.jqx-menu-item-arrow-left-custom {\n    background-image: url('images/icon-left.png')\n}\n.jqx-tree-item-arrow-expand-custom {\n    background-image: url('images/icon-down.png')\n}\n.jqx-scrollbar-custom .jqx-icon-arrow-up-custom {\n    background-image: url('images/icon-up.png')\n}\n.jqx-scrollbar-custom .jqx-icon-arrow-left-custom {\n    background-image: url('images/icon-left.png')\n}\n.jqx-scrollbar-custom .jqx-icon-arrow-right-custom {\n    background-image: url('images/icon-right.png')\n}\n.jqx-scrollbar-custom .jqx-icon-arrow-bottom-custom {\n    background-image: url('images/icon-bottom.png')\n}\n.jqx-scrollbar-custom .jqx-icon-arrow-up-hover-custom {\n    background-image: url('images/icon-up.png')\n}\n.jqx-scrollbar-custom .jqx-icon-arrow-left-hover-custom {\n    background-image: url('images/icon-left.png')\n}\n.jqx-scrollbar-custom .jqx-icon-arrow-right-hover-custom {\n    background-image: url('images/icon-right.png')\n}\n.jqx-scrollbar-custom .jqx-icon-arrow-bottom-hover-custom {\n    background-image: url('images/icon-bottom.png')\n}\n.jqx-scrollbar-custom .jqx-icon-arrow-up-selected-custom {\n    background-image: url('images/icon-up.png')\n}\n.jqx-scrollbar-custom .jqx-icon-arrow-left-selected-custom {\n    background-image: url('images/icon-left.png')\n}\n.jqx-scrollbar-custom .jqx-icon-arrow-right-selected-custom {\n    background-image: url('images/icon-right.png')\n}\n.jqx-scrollbar-custom .jqx-icon-arrow-bottom-selected-custom {\n    background-image: url('images/icon-bottom.png')\n}\n.jqx-widget-custom .jqx-grid-cell-custom, .jqx-listitem-state-normal-custom, .jqx-menu-item-normal-custom, .jqx-tree-item-normal-custom, .jqx-calendar-cell-custom, .jqx-grid-cell-custom, .jqx-menu-vertical-custom .jqx-menu-item-top-normal-custom, .jqx-input-popup-custom .jqx-fill-state-normal-custom {\n    font-family: Verdana\n}\n.jqx-widget-custom .jqx-grid-cell-hover-custom, .jqx-listitem-state-hover-custom, .jqx-menu-item-hover-custom, .jqx-tree-item-hover-custom, .jqx-calendar-cell-hover-custom, .jqx-grid-cell-hover-custom, .jqx-menu-vertical-custom .jqx-menu-item-top-hover-custom, .jqx-input-popup-custom .jqx-fill-state-hover-custom, .jqx-input-button-header-custom, .jqx-input-popup-custom .jqx-fill-state-pressed-custom, .jqx-input-button-header-custom {\n    font-family: Verdana\n}\n.jqx-widget-custom .jqx-grid-cell-selected-custom, .jqx-listitem-state-selected-custom, .jqx-menu-item-selected-custom, .jqx-tree-item-selected-custom, .jqx-calendar-cell-selected-custom, .jqx-grid-cell-selected-custom, .jqx-menu-vertical-custom .jqx-menu-item-top-selected-custom, .jqx-grid-selectionarea-custom {\n    font-family: Verdana\n}\n.jqx-icon-calendar-custom {\n    background-image: url('images/icon-calendar.png')\n}\n.jqx-icon-calendar-hover-custom {\n    background-image: url('images/icon-calendar.png')\n}\n.jqx-icon-calendar-pressed-custom {\n    background-image: url('images/icon-calendar.png')\n}\n.jqx-icon-first-custom {\n    background-image: url('images/icon-first.png')\n}\n.jqx-icon-first-hover-custom {\n    background-image: url('images/icon-first.png')\n}\n.jqx-icon-first-selected-custom {\n    background-image: url('images/icon-first.png')\n}\n.jqx-icon-last-custom {\n    background-image: url('images/icon-last.png')\n}\n.jqx-icon-last-hover-custom {\n    background-image: url('images/icon-last.png')\n}\n.jqx-icon-last-selected-custom {\n    background-image: url('images/icon-last.png')\n}\n.jqx-grid-cell-custom.jqx-grid-cell-custom>.jqx-grid-group-expand-custom {\n    background-image: url('images/icon-down.png')\n}\n.jqx-grid-cell-custom.jqx-grid-cell-hover-custom>.jqx-grid-group-expand-custom {\n    background-image: url('images/icon-down.png')\n}\n.jqx-grid-cell-custom.jqx-grid-cell-selected-custom>.jqx-grid-group-expand-custom {\n    background-image: url('images/icon-down.png')\n}\n.jqx-grid-cell-custom.jqx-grid-cell-custom>.jqx-grid-group-collapse-custom {\n    background-image: url('images/icon-right.png')\n}\n.jqx-grid-cell-custom.jqx-grid-cell-hover-custom>.jqx-grid-group-collapse-custom {\n    background-image: url('images/icon-right.png')\n}\n.jqx-grid-cell-custom.jqx-grid-cell-selected-custom>.jqx-grid-group-collapse-custom {\n    background-image: url('images/icon-right.png')\n}\n.jqx-grid-cell-custom.jqx-grid-cell-custom>.jqx-grid-group-expand-rtl-custom {\n    background-image: url('images/icon-down.png')\n}\n.jqx-grid-cell-custom.jqx-grid-cell-hover-custom>.jqx-grid-group-expand-rtl-custom {\n    background-image: url('images/icon-down.png')\n}\n.jqx-grid-cell-custom.jqx-grid-cell-selected-custom>.jqx-grid-group-expand-rtl-custom {\n    background-image: url('images/icon-down.png')\n}\n.jqx-grid-cell-custom.jqx-grid-cell-custom>.jqx-grid-group-collapse-rtl-custom {\n    background-image: url('images/icon-left.png')\n}\n.jqx-grid-cell-custom.jqx-grid-cell-hover-custom>.jqx-grid-group-collapse-rtl-custom {\n    background-image: url('images/icon-left.png')\n}\n.jqx-grid-cell-custom.jqx-grid-cell-selected-custom>.jqx-grid-group-collapse-rtl-custom {\n    background-image: url('images/icon-left.png')\n}\n.jqx-grid-column-menubutton-custom, .jqx-grid-column-sortdescbutton-custom {\n    background-image: url('images/icon-down.png')\n}\n.jqx-grid-column-sortascbutton-custom {\n    background-image: url('images/icon-up.png')\n}\n.jqx-icon-delete-custom {\n    background-image: url('images/icon-delete.png')\n}\n.jqx-icon-edit-custom {\n    background-image: url('images/icon-edit.png')\n}\n.jqx-icon-save-custom {\n    background-image: url('images/icon-save.png')\n}\n.jqx-icon-cancel-custom {\n    background-image: url('images/icon-cancel.png')\n}\n.jqx-icon-search-custom {\n    background-image: url('images/icon-search.png')\n}\n.jqx-icon-plus-custom {\n    background-image: url('images/icon-plus.png')\n}\n",
-			"file": "tmp.css",
-			"file_size": 22262,
-			"file_write_time": 130652903456434794,
-			"settings":
-			{
-				"buffer_size": 25073,
-				"line_ending": "Windows",
-				"name": ".jqx-widget-custom{font-family:Verdana}.jqx-widget"
-			}
-		},
-		{
-			"file": "css/jqxcustom.css",
-			"settings":
-			{
-				"buffer_size": 108866,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/F/blog/_posts/2015-01-09-javascript.md",
-			"settings":
-			{
-				"buffer_size": 530,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "/F/blog/_posts/template.md",
-			"settings":
-			{
-				"buffer_size": 294,
-				"line_ending": "Unix"
 			}
 		},
 		{
 			"file": "data.php",
 			"settings":
 			{
-				"buffer_size": 5025,
+				"buffer_size": 5119,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "header.php",
+			"file": "test.php",
 			"settings":
 			{
-				"buffer_size": 2603,
+				"buffer_size": 971,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "drug.php",
+			"file": "tmp.php",
 			"settings":
 			{
-				"buffer_size": 637,
+				"buffer_size": 1895,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "index.php",
+			"settings":
+			{
+				"buffer_size": 1777,
 				"line_ending": "Windows"
 			}
 		},
@@ -222,32 +203,36 @@
 			"file": "search.php",
 			"settings":
 			{
-				"buffer_size": 200,
+				"buffer_size": 480,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "footer.php",
+			"file": "header.php",
 			"settings":
 			{
-				"buffer_size": 76,
+				"buffer_size": 2622,
 				"line_ending": "Windows"
 			}
 		}
 	],
-	"build_system": "",
+	"build_system": "Packages/User/php.sublime-build",
 	"command_palette":
 	{
-		"height": 392.0,
+		"height": 311.0,
 		"selected_items":
 		[
+			[
+				"markdown",
+				"Markdown Slideshow"
+			],
 			[
 				"install",
 				"Package Control: Install Package"
 			],
 			[
-				"markdown",
-				"Markdown Preview: Preview in Browser"
+				"package",
+				"Package Control: Remove Package"
 			],
 			[
 				"preview",
@@ -306,10 +291,6 @@
 				"Package Control: Install Package"
 			],
 			[
-				"package",
-				"Package Control: Enable Package"
-			],
-			[
 				"markdownex",
 				"Set Syntax: Markdown Extended"
 			],
@@ -358,7 +339,7 @@
 				"Package Control: Install Package"
 			]
 		],
-		"width": 512.0
+		"width": 528.0
 	},
 	"console":
 	{
@@ -386,11 +367,39 @@
 	],
 	"file_history":
 	[
+		"/F/web/drug.php",
+		"/F/cancerDR/data.php",
+		"/F/web/grid.php",
+		"/F/blog/js/min/duoshuo.js",
+		"/F/blog/_posts/2015-01-09-javascript.md",
+		"/F/web/geneSearch.php",
+		"/F/web/index.php",
+		"/F/web/search.php",
+		"/F/blog/_layouts/post.html",
+		"/F/blog/_posts/template.md",
+		"/F/web/tmp.php",
+		"/F/web/data.php",
+		"/F/web/connect.php",
+		"/C/Users/Administrator.7J3FXA4TRMAIT95/AppData/Local/Temp/lncRNA-2015-1-13-11-24-40.txt",
+		"/F/blog/_includes/duoshuo.html",
+		"/F/blog/_posts/2014-12-30-advR_vocabulary.md",
+		"/F/blog/_posts/2014-12-13-New-Blog-Sytle.md",
+		"/F/blog/Public/sitemap.txt",
+		"/C/Users/Administrator.7J3FXA4TRMAIT95/AppData/Roaming/Sublime Text 3/Packages/User/php.sublime-build",
+		"/F/web/header.php",
+		"/C/Users/Administrator.7J3FXA4TRMAIT95/AppData/Roaming/Sublime Text 3/Packages/User/Default (Windows).sublime-keymap",
+		"/C/Users/Administrator.7J3FXA4TRMAIT95/AppData/Roaming/Sublime Text 3/Packages/SublimeLinter/Default (Windows).sublime-keymap",
+		"/C/Users/Administrator.7J3FXA4TRMAIT95/AppData/Roaming/Sublime Text 3/Packages/CodeFormatter/CodeFormatter.sublime-settings",
+		"/C/Users/Administrator.7J3FXA4TRMAIT95/AppData/Roaming/Sublime Text 3/Packages/Alignment/Default (Windows).sublime-keymap",
+		"/C/Users/Administrator.7J3FXA4TRMAIT95/AppData/Roaming/Sublime Text 3/Packages/BracketHighlighter/bh_core.sublime-settings",
+		"/C/Users/Administrator.7J3FXA4TRMAIT95/AppData/Roaming/Sublime Text 3/Packages/BracketHighlighter/Example.sublime-keymap",
 		"/F/web/css/jqxcustom.css",
+		"/F/blog/_posts/2014-12-26-funSet.md",
 		"/F/web/css/css.css",
+		"/F/web/footer.php",
+		"/F/web/tmp.css",
 		"/F/web/tmp.html",
 		"/F/web/js/grid.js",
-		"/F/web/search.php",
 		"/F/blog/_posts/2015-1-7-Systematic identification of genomic.md",
 		"/F/cancerDR/grid.php",
 		"/F/cancerDR/headerTable.php",
@@ -406,22 +415,18 @@
 		"/F/web/search.html",
 		"/F/web/index.html",
 		"/C/Users/Administrator.7J3FXA4TRMAIT95/AppData/Roaming/Sublime Text 3/Packages/HTML-CSS-JS Prettify/.jsbeautifyrc",
-		"/F/web/footer.php",
 		"/F/web/css/lanrenzhijia.css",
 		"/F/cancerDR/index.php",
 		"/C/Users/Administrator.7J3FXA4TRMAIT95/AppData/Roaming/Sublime Text 3/Settings/SideBarEnhancements.json",
 		"/F/cancerDR/search.html",
 		"/F/迅雷下载/1-13032FKI4/纯CSS3实现的tab标签/css/lanrenzhijia.css",
 		"/F/迅雷下载/1-13032FKI4/纯CSS3实现的tab标签/index.html",
-		"/F/blog/_posts/2014-12-30-advR_vocabulary.md",
-		"/C/Users/Administrator.7J3FXA4TRMAIT95/AppData/Roaming/Sublime Text 3/Packages/User/Default (Windows).sublime-keymap",
 		"/C/Users/Administrator.7J3FXA4TRMAIT95/AppData/Roaming/Sublime Text 3/Packages/Default/Default (Windows).sublime-keymap",
 		"/C/Users/Administrator.7J3FXA4TRMAIT95/AppData/Roaming/Sublime Text 3/Packages/Default/Preferences.sublime-settings",
 		"/D/Desktop/aa.md",
 		"/F/cancerDR/table/index.php",
 		"/F/cancerDR/table.php",
 		"/C/Users/Administrator.7J3FXA4TRMAIT95/AppData/Roaming/Sublime Text 3/Packages/User/MarkdownPreview.sublime-settings",
-		"/F/cancerDR/data.php",
 		"/C/Users/Administrator.7J3FXA4TRMAIT95/AppData/Local/Temp/22.html",
 		"/C/Users/Administrator.7J3FXA4TRMAIT95/AppData/Local/Temp/30.html",
 		"/C/Users/Administrator.7J3FXA4TRMAIT95/AppData/Local/Temp/24.html",
@@ -435,8 +440,6 @@
 		"/F/cancerDR/css/jqxcustom.css",
 		"/F/blog/css/JekyllPure.css",
 		"/D/Program Files/RStudio/RFile/Learn/funSet.md",
-		"/F/blog/_posts/template.md",
-		"/F/blog/_posts/2014-12-26-funSet.md",
 		"/D/deskTop/highlight/README.md",
 		"/D/Desktop/sfdad.css",
 		"/F/cancerDR/jqwidgets-ver3.5.0/phpdemos/server_side_grid_filtering_and_sorting_and_paging/connect.php",
@@ -465,7 +468,6 @@
 		"/D/deskTop/MyWebrequest-master/MyWebrequest-master/background/FileSaver.min.js",
 		"/D/deskTop/MyWebrequest-master/MyWebrequest-master/background/index.html",
 		"/D/deskTop/1214.html",
-		"/F/blog/_layouts/post.html",
 		"/D/deskTop/bg.js",
 		"/F/blog/JekyllPure/_layouts/blog.html",
 		"/F/blog/_includes/head.html",
@@ -492,28 +494,7 @@
 		"/D/deskTop/test.html",
 		"/D/Downloads/webSytle/extension/zan/background.js",
 		"/D/Downloads/webSytle/extension/zan/myscript.js",
-		"/C/Users/Administrator/AppData/Roaming/Sublime Text 3/Packages/HTML-CSS-JS Prettify/HTMLPrettify.sublime-settings",
-		"/D/Downloads/webSytle/aa.html",
-		"/D/Downloads/webSytle/color.js",
-		"/D/Downloads/webSytle/extension/zan/manifest.json",
-		"/D/Downloads/webSytle/ColorPicker.js",
-		"/D/Downloads/webSytle/popup.html",
-		"/D/deskTop/clock/popup.html",
-		"/D/deskTop/clock/my_clock.js",
-		"/D/deskTop/clock/manifest.json",
-		"/D/Downloads/test/popup.html",
-		"/D/Downloads/test/manifest.json",
-		"/D/Downloads/test/popup.js",
-		"/D/Downloads/webSytle/popup.js",
-		"/F/cancerDR/test.html",
-		"/F/blog/_layouts/default.html",
-		"/D/Downloads/webSytle/background.js",
-		"/C/Users/Administrator/AppData/Local/Google/Chrome/User Data/Default/Extensions/ccaikggmppdolhcehimngikgiafmdcep/1.4_0/settings/settings.html",
-		"/D/deskTop/jiaoben1875/jiaoben1875/test.html",
-		"/D/deskTop/jiaoben1875/jiaoben1875/说明.htm",
-		"/F/cancerDR/jqwidgets-ver3.5.0/jqwidgets/styles/jqxcustom.css",
-		"/F/cancerDR/test.php",
-		"/F/cancerDR/jqwidgets-ver3.5.0/phpdemos/server_side_grid_filtering_and_sorting_and_paging/data.php"
+		"/C/Users/Administrator/AppData/Roaming/Sublime Text 3/Packages/HTML-CSS-JS Prettify/HTMLPrettify.sublime-settings"
 	],
 	"find":
 	{
@@ -531,6 +512,21 @@
 		"case_sensitive": true,
 		"find_history":
 		[
+			"var",
+			"jqxgrid",
+			"mysqli",
+			"\\.left",
+			"/.left",
+			"\\.left",
+			"font-size",
+			"font",
+			"darkblue",
+			"jqx-widget-content-darkblue",
+			"jqx-widget-content",
+			"jqx-grid-content",
+			"border",
+			"颜色",
+			"main",
 			"颜色",
 			".边框",
 			"边框",
@@ -643,22 +639,7 @@
 			"tab1",
 			"SELECT",
 			"select",
-			"them",
-			"test",
-			"main-flink",
-			".new-2",
-			"main",
-			"code",
-			">",
-			"log",
-			".nav li a:hover,.nav .nav-select a:link,.nav-select a:visited,.nav-select a:hover{border-bottom:3px solid #1383C6;color:#000;}",
-			"header-nav",
-			"Aliquam metus neque",
-			"Aliquam metus neque,",
-			"content-about-bottom-text",
-			"container",
-			"contan",
-			"get in touch"
+			"them"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -666,6 +647,7 @@
 		"regex": true,
 		"replace_history":
 		[
+			"mysql",
 			"tabs",
 			"tabs_search",
 			"#tabs_search",
@@ -685,177 +667,530 @@
 	"groups":
 	[
 		{
-			"selected": 3,
+			"selected": 2,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "index.php",
+					"file": "drugSearch.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1768,
+						"buffer_size": 3782,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								188,
-								188
+								3384,
+								3384
 							]
 						],
 						"settings":
 						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content"
+							],
 							"syntax": "Packages/PHP/PHP.tmLanguage"
 						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 9,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "grid.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3314,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1360,
-								1554
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 483.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "tmp.css",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 25073,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								193,
-								262
-							]
-						],
-						"settings":
-						{
-							"auto_name": ".jqx-widget-custom{font-family:Verdana}.jqx-widget",
-							"syntax": "Packages/CSS/CSS.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 138.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
-					"file": "css/jqxcustom.css",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 108866,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								80839,
-								80839
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/CSS/CSS.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 75558.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "/F/blog/_posts/2015-01-09-javascript.md",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 530,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								530,
-								530
-							]
-						],
-						"settings":
-						{
-							"parser": "github",
-							"syntax": "Packages/Markdown Extended/Syntaxes/Markdown Extended.tmLanguage",
-							"target": "disk"
-						},
-						"translation.x": 0.0,
-						"translation.y": 222.0,
+						"translation.x": 138.0,
+						"translation.y": 2208.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 4,
 					"type": "text"
 				},
 				{
-					"buffer": 5,
-					"file": "/F/blog/_posts/template.md",
+					"buffer": 1,
+					"file": "connect.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 294,
+						"buffer_size": 118,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								294,
-								0
+								97,
+								97
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Markdown Extended/Syntaxes/Markdown Extended.tmLanguage"
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content"
+							],
+							"syntax": "Packages/PHP/PHP.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "data.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5119,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4675,
+								4675
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content"
+							],
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1246.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "test.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 971,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								953,
+								953
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content"
+							],
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 759.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "tmp.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1895,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								816,
+								816
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content"
+							],
+							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 1449.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "index.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1777,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1424,
+								1424
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content"
+							],
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 828.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 6,
@@ -863,109 +1198,82 @@
 				},
 				{
 					"buffer": 6,
-					"file": "data.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 5025,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								523,
-								523
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": "header.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2603,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2409,
-								2409
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 1449.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 8,
-					"type": "text"
-				},
-				{
-					"buffer": 8,
-					"file": "drug.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 637,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								52,
-								52
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 7,
-					"type": "text"
-				},
-				{
-					"buffer": 9,
 					"file": "search.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 200,
+						"buffer_size": 480,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								160,
-								160
+								334,
+								308
 							]
 						],
 						"settings":
 						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content"
+							],
 							"syntax": "Packages/PHP/PHP.tmLanguage"
 						},
 						"translation.x": 0.0,
@@ -976,31 +1284,90 @@
 					"type": "text"
 				},
 				{
-					"buffer": 10,
-					"file": "footer.php",
+					"buffer": 7,
+					"file": "header.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 76,
+						"buffer_size": 2622,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								9,
-								9
+								2527,
+								2527
 							]
 						],
 						"settings":
 						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content"
+							],
 							"syntax": "Packages/PHP/PHP.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 1587.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 10,
+					"stack_index": 7,
 					"type": "text"
 				}
 			]
@@ -1039,7 +1406,7 @@
 	"menu_visible": true,
 	"output.exec":
 	{
-		"height": 142.0
+		"height": 231.0
 	},
 	"output.find_results":
 	{
@@ -1052,14 +1419,18 @@
 	"project": "web.sublime-project",
 	"replace":
 	{
-		"height": 58.0
+		"height": 72.0
 	},
-	"save_all_on_build": true,
+	"save_all_on_build": false,
 	"select_file":
 	{
 		"height": 0.0,
 		"selected_items":
 		[
+			[
+				"css.",
+				"css\\css.css"
+			],
 			[
 				"css",
 				"css\\css.css"
@@ -1090,7 +1461,7 @@
 	"show_minimap": true,
 	"show_open_files": true,
 	"show_tabs": true,
-	"side_bar_visible": false,
+	"side_bar_visible": true,
 	"side_bar_width": 240.0,
 	"status_bar_visible": true,
 	"template_settings":

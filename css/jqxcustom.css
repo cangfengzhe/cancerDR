@@ -848,7 +848,7 @@ button.jqx-button, input[type=button].jqx-button, input[type=submit].jqx-button 
     float: none;
     margin: 0px;
     height: 100%;
-    padding: 0px;
+    padding-bottom: 15px;
     overflow: hidden;
     text-align: left;
 }

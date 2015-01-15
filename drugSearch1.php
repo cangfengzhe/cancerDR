@@ -33,7 +33,9 @@
 					 { name: 'var3', type: 'string'},
 					 { name: 'var4', type: 'string'}
                 ],
-			    url: 'data.php?table='+ "<?php echo $_GET['type']; ?>" + '&value=' + "<?php echo $_GET['value']; ?>",
+			    url: 'data.php?table=infodrug' + '&value=' + "<?php echo $_GET['value']; ?>" 
+			    		+'&sql=',
+				
 				cache: false,
 				filter: function()
 				{
