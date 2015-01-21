@@ -19,7 +19,14 @@ error_reporting(E_ALL ^ E_DEPRECATED);
 	$pagenum = $_GET['pagenum'];
 	$pagesize = $_GET['pagesize'];
 	$start = $pagenum * $pagesize;
-	$where = ' WHERE ' . $colName . " like '%" . $keyword . "%' ";
+	$where = null;
+	if($tableName=='meth_view'){
+		$where = ' WHERE ' . $colName . " = $keyword";
+	}
+	else{
+		$where = ' WHERE ' . $colName . " like '%" . $keyword . "%' ";
+	}
+	
 	$query = "SELECT SQL_CALC_FOUND_ROWS * FROM " . $tableName . $where . " LIMIT $start, $pagesize";
 	
 	$result = mysql_query($query) or die("SQL Error 1: " . mysql_error());
@@ -163,16 +170,43 @@ error_reporting(E_ALL ^ E_DEPRECATED);
 	$orders = null;
 	// get data and store in a json array
 	switch ($tableName) {
-		case 'ref_drug':
+		case 'info_drug':
 			
 		while ($row = mysql_fetch_array($result, MYSQL_ASSOC)) {
 
 		$orders[] = array(
 			# lpd
-			"drugID" => $row['drugID'] ,
-			'drugName' => $row['drugName'],
-			'drugBankID' => $row['drugBankID'],
-			'pubchemID' => $row['pubchemID']
+			"id" => $row['id'] ,
+			"drug_id" => $row['drug_id'] ,
+			'drug_name' => $row['drug_name'],
+			'drugbank_id' => $row['drugbank_id'],
+			'pubchem_id' => $row['pubchem_id'],
+			'mut'=>$row['mut'],
+			'meth'=> $row['meth'],
+			'mir'=> $row['mir'],
+			'lnc' => $row['lnc'],
+			'msi' => $row['msi']
+		  );
+
+
+	}
+
+			break;
+		case 'meth_view':
+			
+		while ($row = mysql_fetch_array($result, MYSQL_ASSOC)) {
+
+		$orders[] = array(
+			# lpd
+				'pub_id' => $row['pub_id'],
+			'disease_id' => $row['disease_id'],
+			'disease_name' => $row['disease_name'],
+			'cell_id' => $row['cell_id'],
+			'cell_name' => $row['cell_name'],
+			'gene_id' => $row['gene_id'],
+			'gene_name' => $row['gene_name'],
+			'pmid' => $row['pmid'],
+			'detail' => $row['detail']
 		  );
 
 

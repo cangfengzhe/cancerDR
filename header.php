@@ -3,7 +3,8 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Drug Resistance</title>
-	<link href="css/css.css" type="text/css" rel="stylesheet">
+	<link href="/css/css.css" type="text/css" rel="stylesheet">
+	<script src="/js/jquery-2.1.1.min.js"></script>
 	<script>
 
 function setCookie(c_name, value, expiredays) {　　　　
@@ -40,7 +41,7 @@ function getCookie(c_name) {　　　　
 	<!-- <div id="logo"></div> -->
 	<div id="nav">
 		<ul class='heading'>
-			<li><a href="./index.php">Home</a></li>
+			<li><a href="/index.php">Home</a></li>
 			<li><a href="">Browser</a>
 			<ul id='subhead'>
 				<li><a href="">Mutation</a></li>

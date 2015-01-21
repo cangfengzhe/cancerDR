@@ -1,25 +1,25 @@
 
     <link rel="stylesheet" href="./css/jqxcustom.css" type="text/css" />
     <!-- <link rel="stylesheet" href="../../jqwidgets/styles/jqxcustom.css" type="text/css" /> -->
-    <script type="text/javascript" src="./js/jquery-1.10.2.min.js"></script>  
-	<script type="text/javascript" src="./js/jqxcore.js"></script>
-    <script type="text/javascript" src="./js/jqxbuttons.js"></script>
-    <script type="text/javascript" src="./js/jqxscrollbar.js"></script>
-    <script type="text/javascript" src="./js/jqxmenu.js"></script>
-    <script type="text/javascript" src="./js/jqxgrid.js"></script>
-    <script type="text/javascript" src="./js/jqxgrid.selection.js"></script>	
-	<script type="text/javascript" src="./js/jqxgrid.filter.js"></script>	
-	<script type="text/javascript" src="./js/jqxgrid.sort.js"></script>		
-    <script type="text/javascript" src="./js/jqxdata.js"></script>	
-	<script type="text/javascript" src="./js/jqxlistbox.js"></script>	
-	<script type="text/javascript" src="./js/jqxgrid.pager.js"></script>		
-	<script type="text/javascript" src="./js/jqxdropdownlist.js"></script>
+    <script type="text/javascript" src="/js/jquery-1.10.2.min.js"></script>  
+	<script type="text/javascript" src="/js/jqxcore.js"></script>
+    <script type="text/javascript" src="/js/jqxbuttons.js"></script>
+    <script type="text/javascript" src="/js/jqxscrollbar.js"></script>
+    <script type="text/javascript" src="/js/jqxmenu.js"></script>
+    <script type="text/javascript" src="/js/jqxgrid.js"></script>
+    <script type="text/javascript" src="/js/jqxgrid.selection.js"></script>	
+	<script type="text/javascript" src="/js/jqxgrid.filter.js"></script>	
+	<script type="text/javascript" src="/js/jqxgrid.sort.js"></script>		
+    <script type="text/javascript" src="/js/jqxdata.js"></script>	
+	<script type="text/javascript" src="/js/jqxlistbox.js"></script>	
+	<script type="text/javascript" src="/js/jqxgrid.pager.js"></script>		
+	<script type="text/javascript" src="/js/jqxdropdownlist.js"></script>
 	<!-- php调用javacript -->
     <script type="text/javascript">
   
         $(document).ready(function () {
             // prepare the data
-            var theme = 'darkblue';
+            var theme = 'energyblue';
       
             var source =
             {
@@ -31,7 +31,7 @@
 					 { name: 'drugBankID', type: 'string'},
 					 { name: 'pubchemID', type: 'string'}
                 ],
-			    url: 'data.php?table=ref_drug' + '&value=' + "<?php echo $_GET['value']; ?>" +
+			    url: 'data.php?table=info_drug' + '&value=' + "<?php echo $_GET['value']; ?>" +
 			     '&colName=drugName',
 				
 				cache: false,

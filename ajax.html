@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src='/js/jquery-2.1.1.min.js'></script>
+    <style>
+    #page li {
+        float: left;
+        list-style: none;
+        margin: 0 5px;
+    }
+    </style>
+</head>
+
+<body>
+<input type='submit' onclick="show()"/>
+    <div id="table"></div>
+    <div id='page'>
+        <ul>
+            <li>1</li>
+            <li >2</li>
+            <li >3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li>
+        </ul>
+    </div>
+    <script>
+$(document).ready(function(){
+
+
+
+$('li').click(function(){
+	show(this);
+	alert(this
+		)
+}
+
+	
+
+)
+
+
+
+
+
+});
+
+
+    var xmlHttp
+
+    function show(aa) {
+    	// var num = this.innerHTML();
+        var url = 'ajax.php?num=' + aa.innerText;
+        
+        xmlHttp = GetXmlHttpObject()
+        if (xmlHttp == null) {
+            alert("Browser does not support HTTP Request")
+            return
+        }
+       
+        xmlHttp.onreadystatechange = stateChanged
+        xmlHttp.open("GET", url, true)
+        xmlHttp.send(null)
+    }
+
+    function stateChanged() {
+        if (xmlHttp.readyState == 4 || xmlHttp.readyState == "complete") {
+            document.getElementById("table").innerHTML = xmlHttp.responseText
+        }
+    }
+
+    function GetXmlHttpObject() {
+        var xmlHttp = null;
+        try {
+            // Firefox, Opera 8.0+, Safari
+            xmlHttp = new XMLHttpRequest();
+        } catch (e) {
+            //Internet Explorer
+            try {
+                xmlHttp = new ActiveXObject("Msxml2.XMLHTTP");
+            } catch (e) {
+                xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
+            }
+        }
+        return xmlHttp;
+    }
+    </script>
+
+</body>
+
+</html>

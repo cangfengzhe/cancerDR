@@ -21,7 +21,9 @@ a:link, a:visited {
     /*修改为inline-block后不占位*/
     position: fixed;
     display: inline-block;
-    margin: 0px 0 0 0;
+
+    top:0;
+    left:0;
     width: 100%;
     background-color: #42ACDC;
     height: 50px;
@@ -94,19 +96,23 @@ h2 {
 /*end header.php*/
 /*start search*/
 
-#search {
+#search , #kind{
     /*top:100px;*/
     
     float: left;
     position: relative;
-    margin: 50px 0px 0px 50px;
+    
     border: 1px solid #69a6db;
     /*width: 600px;*/
     
     background-color: rgb(214, 224, 238);
     border-radius: 5px;
-    z-index: -3;
+    
     box-shadow: 2px 3px 5px #888888;
+}
+#search{
+    margin: 50px 0px 0px 50px;
+    z-index: -3;
 }
 #tabs {
     overflow: hidden;
