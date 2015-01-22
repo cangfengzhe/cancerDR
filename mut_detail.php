@@ -14,15 +14,15 @@
                 	
                     {name: 'cell_id', type: 'string'},
                     { name: 'cell_name', type: 'string'},
-                   { name: 'IC25', type: 'string'},
-                    { name: 'IC50', type: 'string'},
-                   { name: 'IC75', type: 'string'},
-                   { name: 'IC90', type: 'string'},
-                    { name: 'Z_Score', type: 'string'},
-                   	{ name : 'type', type: 'string'}
+                   { name: 'IC25', type: 'float'},
+                    { name: 'IC50', type: 'float'},
+                   { name: 'IC75', type: 'float'},
+                   { name: 'IC90', type: 'float'},
+                    { name: 'Z_Score', type: 'float'},
+                   	{ name : 'type', type: 'float'}
                 ],
 				id: 'cell_id',
-                url: 'mut_data.php?drug_id='+'<?php echo $drug_id; ?>',
+                url: 'mut_data.php?drug_id='+'<?php echo $value; ?>',
                 
 				root: 'Rows',
 				cache: true,
@@ -126,8 +126,8 @@
 					columns: [
 						 
 						 
-						  { text: 'gene_name', datafield: 'gene_name', width: 120, cellsrenderer:empty },
-						  { text: 'cn', datafield: 'cn', width: 40 },
+						  { text: 'Gene Name', datafield: 'gene_name', width: 120, cellsrenderer:empty },
+						  { text: 'Copy Numer', datafield: 'cn', width: 40 },
 						  { text: 'mut_aa', datafield: 'mut_aa', width: 180 },
 						  // { text: 'mut_cds', datafield: 'mut_cds', width: 200 },
 						  { text: 'mut_desc', datafield: 'mut_desc', width: 240 },
@@ -190,7 +190,7 @@ var crossLink =  function (row, columnfield, value, defaulthtml, columnpropertie
 				selectionmode: 'none',
 				altrows: true,//交替颜色
 				autoshowfiltericon: false,
-				showpinnedcolumnbackground: false,
+				
 				// showrowdetailscolumn:false,
 
 				pagesize: 10,
@@ -204,11 +204,11 @@ var crossLink =  function (row, columnfield, value, defaulthtml, columnpropertie
                 columns: [
                
                 // { text: 'cell_id', datafield: 'cell_id', width: 150},
-                { text: 'cell_name', datafield: 'cell_name', width: 150, cellsrenderer:crossLink},
-               { text: 'IC25', datafield: 'IC25', width: 150},
-                { text: 'IC50', datafield: 'IC50', width: 150},
-               { text: 'IC75', datafield: 'IC75', width: 150},
-               { text: 'IC90', datafield: 'IC90', width: 150},
+                { text: 'Cell Name', datafield: 'cell_name', width: 150, cellsrenderer:crossLink},
+               { text: 'Log(ic25)', datafield: 'IC25', width: 150},
+                { text: 'Log(ic50)', datafield: 'IC50', width: 150},
+               { text: 'Log(ic75)', datafield: 'IC75', width: 150},
+               { text: 'Log(ic90)', datafield: 'IC90', width: 150},
                   { text: 'Z-Score', datafield: 'Z_Score', width: 150 },
                   { text: 'type', datafield: 'type', width:50, cellsrenderer:crossRef}
               ]

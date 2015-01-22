@@ -4,36 +4,35 @@
         $(document).ready(function () {
             // prepare the data
             var theme = 'energyblue';
+      		
       		var colName = '<?php echo $colName; ?>';
-
             var source =
             {
                  datatype: "json",
                  datafields: [
-					 
-					 {name: 'pub_id', type: 'string'},
+					  { name: 'drug_id', type: 'string'},
+					  { name: 'drug_name', type: 'string'},
                       { name: 'disease_id', type: 'string'},
                       { name: 'disease_name', type: 'string'},
                       { name: 'cell_id', type: 'string'},
                       { name: 'cell_name', type: 'string'},
-                        { name: 'drug_id', type: 'string'},
-                          { name: 'drug_name', type: 'string'},
-                      { name: 'gene_id', type: 'string'},
-                      { name: 'gene_name', type: 'string'},
+                      { name: 'mir_id', type: 'string'},
+                      { name: 'mir_name', type: 'string'},
                       { name: 'pmid', type: 'string'},
                       { name: 'detail', type: 'string'},
                 ],
-			     url: 'data.php?table='+ "meth_view" +'&colName='+ colName + '&value=' + '<?php echo $value; ?>',
+			     url: 'data.php?table='+ "mir_view" +'&colName='+ colName + '&value=' + '<?php echo $value; ?>',
+				
 				cache: false,
 				filter: function()
 				{
 					// update the grid and send a request to the server.
-					$("#meth").jqxGrid('updatebounddata', 'filter');
+					$("#mir").jqxGrid('updatebounddata', 'filter');
 				},
 				sort: function()
 				{
 					// update the grid and send a request to the server.
-					$("#meth").jqxGrid('updatebounddata', 'sort');
+					$("#mir").jqxGrid('updatebounddata', 'sort');
 				},
 				root: 'Rows',
 				
@@ -57,10 +56,33 @@
 					}
 				}
 			);
-	
+			// var disease_link = function(row, columnfield, value, defaulthtml, columnproperties, rowdata){
+				
+			// 	return '<div style="margin:10px  10px;"><a href="/disease.php?diseaseid=' + rowdata.disease_id + '">'+value+'</a></div>';
+			// }
+			// var cell_link = function(row, columnfield, value, defaulthtml, columnproperties, rowdata){
+				
+			// 	return '<div style="margin:10px  10px;"><a href="/cell.php?cellid=' + rowdata.cell_id + '">'+value+'</a></div>';
+			// }
+			// var mir_link = function(row, columnfield, value, defaulthtml, columnproperties, rowdata){
+				
+			// 	return '<div style="margin:10px  10px;"><a href="/mir.php?mirid=' + rowdata.ms_id + '">'+value+'</a></div>';
+			// }
+
+			// var pub_link = function(row, columnfield, value, defaulthtml, columnproperties, rowdata){
+				
+			// 	return '<div style="margin:10px  10px;"><a href="http://www.ncbi.nlm.nih.gov/pubmed/?term=' + rowdata.pmid + '">'+value+'</a></div>';
+			// }
+
+			// var drug_link = function(row, columnfield, value, defaulthtml, columnproperties, rowdata){
+				
+			// 	return '<div style="margin:10px  10px;"><a href="/drug.php?drugid=' + rowdata.drug_id + '">'+value+'</a></div>';
+			// }
+
+
             // initialize jqxGrid
             if(colName=='drug_id'){
-            	$("#meth").jqxGrid(
+            	 $("#mir").jqxGrid(
             {		
                 source: dataadapter,
                  width:930,
@@ -70,7 +92,6 @@
 				autoheight: true,
 				rowsheight: 30,
 				columnsheight: 40,
-				// height:40px;
                 virtualmode: true,
                 
                 filterable: true,
@@ -88,29 +109,27 @@
 				{
 					 return obj.data;    
 				},
-				columns: [
-                       { text: 'disease_name', datafield: 'disease_name', width: 200},
-               { text: 'cell_name', datafield: 'cell_name', width: 120},
-                { text: 'gene_name', datafield: 'gene_name', width:120},
-               { text: 'pmid', datafield: 'pmid', width: 90},
-               { text: 'detail', datafield: 'detail', width: 400},
+			    columns: [
+                    { text: 'Disease', datafield: 'disease_name', width: 200, cellsrenderer:disease_link},
+               		{ text: 'Cell Line', datafield: 'cell_name', width: 120, cellsrenderer:cell_link},
+                	{ text: 'miRNA', datafield: 'mir_name', width:120, cellsrenderer:mir_link},
+               		{ text: 'pmid', datafield: 'pmid', width: 90, cellsrenderer: pub_link},
+               		{ text: 'Detail', datafield: 'detail', width: 400},
                   ]
-			   
             });
             }
-
+           
             if(colName=='cell_id'){
-            	$("#meth").jqxGrid(
+            	 $("#mir").jqxGrid(
             {		
                 source: dataadapter,
-                width:930,
+                 width:930,
                 theme: 'energyblue',
 				pageable: true,
 				sortable: true,
 				autoheight: true,
 				rowsheight: 30,
 				columnsheight: 40,
-				// height:40px;
                 virtualmode: true,
                 
                 filterable: true,
@@ -128,29 +147,27 @@
 				{
 					 return obj.data;    
 				},
-				columns: [
-               // { text: 'drug ID', datafield: 'drug_id', width: 200},
-               { text: 'drug_name', datafield: 'drug_name', width: 120},
-                { text: 'gene_name', datafield: 'gene_name', width:120},
-               { text: 'pmid', datafield: 'pmid', width: 90},
-               { text: 'detail', datafield: 'detail', width: 400},
+			    columns: [
+                    // { text: 'Disease', datafield: 'disease_name', width: 200, cellsrenderer:disease_link},
+               		{ text: 'Drug Name', datafield: 'drug_name', width: 120, cellsrenderer:drug_link},
+                	{ text: 'miRNA', datafield: 'mir_name', width:120, cellsrenderer:mir_link},
+               		{ text: 'pmid', datafield: 'pmid', width: 90, cellsrenderer: pub_link},
+               		{ text: 'Detail', datafield: 'detail', width: 400},
                   ]
-			   
             });
             }
 
-             if(colName=='disease_id'){
-            	$("#meth").jqxGrid(
+            if(colName=='disease_id'){
+            	 $("#mir").jqxGrid(
             {		
                 source: dataadapter,
-                width:930,
+                 width:930,
                 theme: 'energyblue',
 				pageable: true,
 				sortable: true,
 				autoheight: true,
 				rowsheight: 30,
 				columnsheight: 40,
-				// height:40px;
                 virtualmode: true,
                 
                 filterable: true,
@@ -168,25 +185,23 @@
 				{
 					 return obj.data;    
 				},
-				columns: [
-               { text: 'cell_name', datafield: 'cell_name', width: 200},
-               { text: 'drug_name', datafield: 'drug_name', width: 120},
-                { text: 'gene_name', datafield: 'gene_name', width:120},
-               { text: 'pmid', datafield: 'pmid', width: 90},
-               { text: 'detail', datafield: 'detail', width: 400},
+			    columns: [
+                    // { text: 'Disease', datafield: 'disease_name', width: 200, cellsrenderer:disease_link},
+               		{ text: 'Cell Name', datafield: 'cell_name', width: 120, cellsrenderer:cell_link},
+               		{ text: 'Drug Name', datafield: 'drug_name', width:120, cellsrenderer:drug_link},
+                	{ text: 'miRNA', datafield: 'mir_name', width:120, cellsrenderer:mir_link},
+               		{ text: 'pmid', datafield: 'pmid', width: 90, cellsrenderer: pub_link},
+               		{ text: 'Detail', datafield: 'detail', width: 400},
                   ]
-			   
             });
             }
-            
-
-});
 
 
 
-   </script>
+        });
+    </script>
 
    
-      
+        <!-- <div id="meth" class='factor'></div> -->
  
 

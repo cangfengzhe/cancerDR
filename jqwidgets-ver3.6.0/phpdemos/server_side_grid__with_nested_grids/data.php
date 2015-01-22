@@ -217,7 +217,7 @@ else
 		
 		if ($filterscount > 0)
 		{
-			$where = " WHERE ( drug_id = $drug_id AND ";
+			$where = " WHERE ( drug_id = $durg_id AND";
 			$tmpdatafield = "";
 			$tmpfilteroperator = "";
 			for ($i=0; $i < $filterscount; $i++)
@@ -316,11 +316,11 @@ else
 			{
 				if ($sortorder == "desc")
 				{
-					$query = "SELECT * FROM $tab1 where drug_id = " . $drug_id . ' ORDER BY ' . $sortfield . " DESC LIMIT $start, $pagesize";
+					$query = "SELECT * FROM $tab1 ORDER BY" . " " . $sortfield . " DESC LIMIT $start, $pagesize";
 				}
 				else if ($sortorder == "asc")
 				{
-					$query = "SELECT * FROM $tab1 where drug_id = " . $drug_id . ' ORDER BY ' . $sortfield . " ASC LIMIT $start, $pagesize";
+					$query = "SELECT * FROM $tab1 ORDER BY" . " " . $sortfield . " ASC LIMIT $start, $pagesize";
 				}
 			}
 			else

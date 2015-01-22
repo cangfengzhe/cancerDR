@@ -32,7 +32,7 @@
 					 { name: 'pubchemID', type: 'string'}
                 ],
 			    url: 'data.php?table=info_drug' + '&value=' + "<?php echo $_GET['value']; ?>" +
-			     '&colName=drugName',
+			     '&colName=drug_name',
 				
 				cache: false,
 				filter: function()

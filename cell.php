@@ -18,8 +18,7 @@ include('header.php');
   <script type="text/javascript" src="/js/jqxgrid.selection.js"></script>
     <script type="text/javascript" src="/js/jqxgrid.pager.js"></script>
   <script type="text/javascript" src="/js/jqxgrid.filter.js"></script>
-  <script type="text/javascript" src="/js/link.js"></script>
-
+    <script type="text/javascript" src="/js/link.js"></script>
 <div id='baseinfo'>
 <?php
 error_reporting(E_ALL ^ E_DEPRECATED);
@@ -32,9 +31,9 @@ error_reporting(E_ALL ^ E_DEPRECATED);
   // $keyword = $_GET['value'];
  // $colName = $_GET['colName'];
   
- if (isset($_GET['drugid']) & !empty($_GET['drugid'])){
-    $drug_id = $_GET['drugid'];
-    if(intval($drug_id)>200){
+ if (isset($_GET['cellid']) & !empty($_GET['cellid'])){
+    $cell_id = $_GET['cellid'];
+    if(intval($cell_id)>1000){
       include('footer.php');
       die();
     }
@@ -43,6 +42,8 @@ error_reporting(E_ALL ^ E_DEPRECATED);
     include('footer.php');
     die();
  }
+ $colName ='cell_id'; //传入*_detail.php
+ $value =$cell_id;
   $connect = mysql_connect($hostname, $username, $password)
   or die('Could not connect: ' . mysql_error());
   //Select The database
@@ -50,23 +51,23 @@ error_reporting(E_ALL ^ E_DEPRECATED);
   if ($bool === False){
      print "can't find $database";
   }
- $sql = 'select * from info_drug  where drug_id=' . $drug_id;
+ $sql = 'select * from info_cell  where cell_id=' . $cell_id;
  $result = mysql_query($sql) or die(mysql_error());
  $row = mysql_fetch_assoc($result);
- $value=$drug_id;
- $colName = 'drug_id';// 传入*_detail.php
- echo '<h1 id="name">', $row['drug_name'], '</h2>';
+
+ 
+ echo '<h1 id="name">', $row['cell_name'], '</h2>';
  echo '<table border=0><tr><th>Drug ID</th><td>', $row['id'], '</td></tr>';
  
  echo '<tr><th>Synonyms</th><td>' , 'temp', '</td>';
- echo '<tr><th>DrugBank ID</th><td>', $row['drugbank_id'], '</td><th>      PubChem ID</th><td>', $row['pubchem_id'],'</td></tr>';
+ // echo '<tr><th>DrugBank ID</th><td>', $row['drugbank_id'], '</td><th>      PubChem ID</th><td>', $row['pubchem_id'],'</td></tr>';
  echo '</table></div>';
  echo '<div id="kind"><ul id="tabs">';
- $colName = 'drug_id';
- $value = $drug_id;
+
+
 if($row['mut']==1){
   echo '<li  factor="jqxgrid"><a href="#" >Mutation</a></li>';
- include('mut_detail.php');
+ // include('mut_detail.php');
 
 }
 
@@ -83,12 +84,12 @@ if($row['mir']==1){
 
 if($row['lnc']==1){
   echo '<li  factor="lnc"><a href="#">lncRNA</a></li>';
-  include('lnc_detail.php');
+  // include('lnc_detail.php');
 }
 
-if($row['msi']==1){
+if($row['ms']==1){
   echo '<li  factor="ms"><a href="#">MSI</a></li></ul>';
-  include('ms_detail.php');
+  // include('ms_detail.php');
 }
 
 echo '</ul></div>';

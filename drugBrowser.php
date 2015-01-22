@@ -1,28 +1,34 @@
 
-    <link rel="stylesheet" href="./css/jqxcustom.css" type="text/css" />
-    <!-- <link rel="stylesheet" href="../../jqwidgets/styles/jqxcustom.css" type="text/css" /> -->
-    <script type="text/javascript" src="/js/jquery-1.10.2.min.js"></script>  
-	<script type="text/javascript" src="/js/jqxcore.js"></script>
-    <script type="text/javascript" src="/js/jqxbuttons.js"></script>
-    <script type="text/javascript" src="/js/jqxscrollbar.js"></script>
-    <script type="text/javascript" src="/js/jqxmenu.js"></script>
-    <script type="text/javascript" src="/js/jqxgrid.js"></script>
-    <script type="text/javascript" src="/js/jqxgrid.selection.js"></script>	
-	<script type="text/javascript" src="/js/jqxgrid.filter.js"></script>	
-	<script type="text/javascript" src="/js/jqxgrid.sort.js"></script>		
-    <script type="text/javascript" src="/js/jqxdata.js"></script>	
-	<script type="text/javascript" src="/js/jqxlistbox.js"></script>	
-	<script type="text/javascript" src="/js/jqxgrid.pager.js"></script>		
-	<script type="text/javascript" src="/js/jqxdropdownlist.js"></script>
 	<style type="text/css">
-     #mut, #meth, #mir, #lnc, #ms{
-     	width:5px;
-     	height:5px;
-     	background-color: red;
+     .cir{
+     	width:15px;
+     	height: 15px;
+     	float:left;
+     	display: block;
      	border-radius: 50%;
+     	margin: 10px 0px 0 10px;
      }
+	#cir0{
+		background-color: grey;
+	}
+     #cir_mut{
+		background-color: red;
+     }
+     #cir_meth{
+		background-color: orange;
+     }
+     #cir_mir{
+     	background-color: yellow;
+     }
+	#cir_lnc{
+		background-color: green;
+	}
+	#cir_msi{
+		background-color: blue;
+	}
 
-	</style>
+</style>
+
 	<!-- php调用javacript -->
     <script type="text/javascript">
   
@@ -44,9 +50,9 @@
 					 { name: 'mir', type: 'string'},
 					 { name: 'lnc', type: 'string'},
 					 { name: 'msi', type: 'string'},
-					 { name: 'type', type: 'string'}
+					 { name: 'sum', type: 'float'}
                 ],
-			    url: 'data.php?table=info_drug' + '&value=' + "" +
+			    url: 'data.php?table=info_drug' + '&value=' + "<?php echo $_GET['value']; ?>" +
 			     '&colName=drug_name',
 				
 				cache: false,
@@ -90,15 +96,63 @@
 
 
 var crossRef =  function (row, columnfield, value, defaulthtml, columnproperties, rowdata) {
-   return '<a href="./drug.php?drugid=' + rowdata.drug_id + '">' + value + '</a>';
+   return '<div style="margin:5px 0 0 10px;"><a href="./drug.php?drugid=' + rowdata.drug_id + '">' + value + '</a></div>';
                 
 }
 
 var factorType =  function (row, columnfield, value, defaulthtml, columnproperties, rowdata) {
-   return '<span id="mut"> &nbsp; </span><span id="meth"> &nbsp; </span><span id="mir">  &nbsp;  </span><span id="lnc"></span>';
+  // txt='<a id="tip" href="#"><span id="tip_info">Mutation:red; Methylation:orange; miRNA:yellow; lncRNA:green; MSI:blue; None:grey</span>';
+   txt='';
+   if(rowdata.mut==1){
+   	txt += '<span class="cir" id="cir_mut"></span>';
+   }
+   else{
+   	txt += '<span class="cir" id="cir0"></span>';
+   }
+   if(rowdata.meth==1){
+   	txt += '<span class="cir"  id="cir_meth"></span>';
+   }
+   else{
+   	txt += '<span class="cir"  id="cir0"></span>';
+   }
+
+   if(rowdata.mir==1){
+   	txt += '<span class="cir"  id="cir_mir"></span>';
+   }
+   else{
+  	txt += '<span class="cir"  id="cir0"></span>';
+   }
+
+   if(rowdata.lnc==1){
+  	txt += '<span class="cir"  id="cir_lnc"></span>';
+   }
+   else{
+   	txt += '<span class="cir"  id="cir0"></span>';
+
+   }
+
+   if(rowdata.msi==1){
+   	   	txt += '<span class="cir" id="cir_msi"></span>';
+
+   }
+   else{
+   	txt += '<span class="cir" id="cir0"></span>';
+
+   }
+   
+
+
+   return txt;
                 
 }
-
+var columnsrenderer = function (value) {
+	return '<div style="margin: 15px 0 0 14px;">' + value + '</div>';
+}
+// <a href="#" title="Mutation:red; Methylation:orange;<br/> miRNA:yellow; lncRNA:green; MSI:blue; None:grey">
+ var colType = function(value){
+ 	txt = 'which factor to show'; 
+ 	return txt;
+ }    
             // initialize jqxGrid
             $("#jqxgrid").jqxGrid(
             {		
@@ -126,11 +180,11 @@ var factorType =  function (row, columnfield, value, defaulthtml, columnproperti
 				},
 			    columns: [
                       // { text: 'Drug ID' , datafield:'<a href="./drug.php?drugID=afd'">drugID</a>', width: 200 , cellsrenderer:cellsrenderer},
-                       { text: 'Drug ID', datafield: 'id', width: 130 , cellsrenderer:crossRef},
-                      { text: 'Drug Name', datafield: 'drug_name', width: 200 , cellsrenderer:crossRef},
-                      { text: 'Drugbank ID', datafield: 'drugbank_id', width: 130 },
-                      { text: 'Pubchem ID', datafield: 'pubchem_id', width: 150 },
-                      { text: 'type', datafield: 'type', width: 190, cellsrenderer:factorType }
+                       { text: 'Drug ID', datafield: 'id', width: 130 , cellsrenderer:crossRef, renderer:columnsrenderer},
+                      { text: 'Drug Name', datafield: 'drug_name', width: 200 , cellsrenderer:crossRef,renderer:columnsrenderer},
+                      { text: 'Drugbank ID', datafield: 'drugbank_id', width: 130 ,renderer:columnsrenderer},
+                      { text: 'Pubchem ID', datafield: 'pubchem_id', width: 150 ,renderer:columnsrenderer},
+                      { text: 'type', datafield: 'sum', width: 190, cellsrenderer:factorType }
                   ]
             });
         });

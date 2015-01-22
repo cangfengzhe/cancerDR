@@ -198,9 +198,11 @@ error_reporting(E_ALL ^ E_DEPRECATED);
 
 		$orders[] = array(
 			# lpd
-				'pub_id' => $row['pub_id'],
+			'pub_id' => $row['pub_id'],
 			'disease_id' => $row['disease_id'],
 			'disease_name' => $row['disease_name'],
+			'drug_id' => $row['drug_id'],
+			'drug_name' => $row['drug_name'],
 			'cell_id' => $row['cell_id'],
 			'cell_name' => $row['cell_name'],
 			'gene_id' => $row['gene_id'],
@@ -213,7 +215,73 @@ error_reporting(E_ALL ^ E_DEPRECATED);
 	}
 
 			break;
-		
+		case 'mir_view':
+			
+		while ($row = mysql_fetch_array($result, MYSQL_ASSOC)) {
+
+		$orders[] = array(
+			# lpd
+			'drug_id' => $row['drug_id'],
+			'drug_name' => $row['drug_name'],
+			'disease_id' => $row['disease_id'],
+			'disease_name' => $row['disease_name'],
+			'cell_id' => $row['cell_id'],
+			'cell_name' => $row['cell_name'],
+			'mir_id' => $row['mir_id'],
+			'mir_name' => $row['mir_name'],
+			'pmid' => $row['pmid'],
+			'detail' => $row['detail']
+		  );
+
+
+	}
+
+			break;
+		case 'ms_view':
+			
+		while ($row = mysql_fetch_array($result, MYSQL_ASSOC)) {
+
+		$orders[] = array(
+			# lpd
+			'drug_id' => $row['drug_id'],
+			'drug_name' => $row['drug_name'],
+			'disease_id' => $row['disease_id'],
+			'disease_name' => $row['disease_name'],
+			'cell_id' => $row['cell_id'],
+			'cell_name' => $row['cell_name'],
+			'ms_id' => $row['ms_id'],
+			'ms_name' => $row['ms_name'],
+			'pmid' => $row['pmid'],
+			'detail' => $row['detail']
+		  );
+
+
+	}
+
+			break;
+
+	  case 'lnc_view':
+			
+		while ($row = mysql_fetch_array($result, MYSQL_ASSOC)) {
+
+		$orders[] = array(
+			# lpd
+			'drug_id' => $row['drug_id'],
+			'drug_name' => $row['drug_name'],
+			'disease_id' => $row['disease_id'],
+			'disease_name' => $row['disease_name'],
+			'cell_id' => $row['cell_id'],
+			'cell_name' => $row['cell_name'],
+			'lnc_id' => $row['lnc_id'],
+			'lnc_name' => $row['lnc_name'],
+			'pmid' => $row['pmid'],
+			'detail' => $row['detail']
+		  );
+
+
+	}
+
+			break;
 		default:
 			echo 'error';
 			break;
