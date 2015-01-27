@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link href="style.css" rel="stylesheet" />
+    <script src="./build/cytoscape.js"></script>
+    <script src='./build/jquery-2.1.1.min.js'></script>
+<script src="./lib/dagre.js"></script>
+
+
+    <script>
+    $(function() { // on dom ready
+        var url = './data.php';
+        $.ajax(url, {
+            async: false,
+            success: function(data) {
+                bb = data; // bb为全局变量
+
+
+            },
+
+
+        });
+        // console.log(bb);
+
+        // cy.load({nodes:bb});
+        var aa = eval(bb);
+        var cy = cytoscape({
+
+            container: document.getElementById('cy'),
+            elements: {
+                nodes: aa[0].nodes,
+                edges: aa[0].edges
+            },
+            ready: function() {
+                console.log('ready')
+            }
+
+
+
+        })
+
+        cy.on('tap', function(evt) {
+            evt.cyTarget.css('background-color', 'blue');
+            evt.cyTarget.neighborhood().css('background-color','orange');
+            var x=evt.cyTarget.position('x');
+            var y = evt.cyTarget.position('y');
+evt.cyTarget.neighborhood().animate({
+  position: { x: x, y: y },
+  css: { backgroundColor: 'red' }
+}, {
+  duration: 1000
+});
+
+
+
+        });
+        // cy.load({nodes:aa[0].nodes,edges:aa[0].edges});
+        // cy.nodes().animate({
+        //     position: {
+        //         x: 100,
+        //         y: 100
+        //     },
+        //     css: {
+        //         backgroundColor: 'red'
+        //     }
+        // }, {
+        //     duration: 100000
+        // });
+
+
+// cy.filter('node[id ^= "g"]').css('background-color','yellow');
+
+
+
+
+
+    })
+    </script>
+</head>
+
+<body>
+    <!-- <div id="cy"></div> -->
+    <div id='cy'></div>
+</body>
+
+</html>

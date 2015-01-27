@@ -22,28 +22,24 @@ include('header.php');
 <div id='baseinfo'>
 <?php
 error_reporting(E_ALL ^ E_DEPRECATED);
-  #Include the connect.php file
+
   include('connect.php');
-  #Connect to the database
-  //connection String
-  // $tableName='tab1';
-  // $tableName=$_GET['table'];
-  // $keyword = $_GET['value'];
- // $colName = $_GET['colName'];
-  
- if (isset($_GET['cellid']) & !empty($_GET['cellid'])){
-    $cell_id = $_GET['cellid'];
-    if(intval($cell_id)>1000){
-      include('footer.php');
-      die();
-    }
+ 
+  // echo $_GET['mirid'];
+ if (isset($_GET['mirid']) & !empty($_GET['mirid'])){
+    $mir_id = $_GET['mirid'];
+    // if(intval($mir_id)>1000){
+    //   include('footer.php');
+    //   die();
+    // }
+    
  }
   else{
     include('footer.php');
-    die();
+    // die();
  }
- $colName ='cell_id'; //传入*_detail.php
- $value =$cell_id;
+ $colName ='mir_id'; //传入*_detail.php
+ $value =$mir_id;
   $connect = mysql_connect($hostname, $username, $password)
   or die('Could not connect: ' . mysql_error());
   //Select The database
@@ -51,50 +47,27 @@ error_reporting(E_ALL ^ E_DEPRECATED);
   if ($bool === False){
      print "can't find $database";
   }
- $sql = 'select * from info_cell  where cell_id=' . $cell_id;
+ $sql = 'select * from info_mir  where mir_id=' . $mir_id;
  $result = mysql_query($sql) or die(mysql_error());
  $row = mysql_fetch_assoc($result);
 
  
- echo '<h1 id="name">', $row['cell_name'], '</h2>';
- echo '<table border=0><tr><th>Cell Line ID</th><td>', $row['id'], '</td></tr>';
- 
- echo '<tr><th>Tissue</th><td>' , $row['tissue'], '</td>';
+ echo '<h1 id="name">', $row['mir_name'], '</h2>';
+ echo '<table border=0><tr><th>miRNA ID</th><td>', $row['id'], '</td></tr>';
+ echo '<tr><th>miRBase ID</th><td><a href="http://mirbase.org/cgi-bin/mirna_entry.pl?acc=' , $row['miRbase_id'], '" target="_blank">', $row['miRbase_id'], '  </a></td>';
+ // echo '<tr><th>Synonyms</th><td>' , 'temp', '</td>';
  // echo '<tr><th>DrugBank ID</th><td>', $row['drugbank_id'], '</td><th>      PubChem ID</th><td>', $row['pubchem_id'],'</td></tr>';
  echo '</table></div>';
  echo '<div id="kind"><ul id="tabs">';
 
-if($row['ic50']==1){
-  echo '<li  factor="ic50"><a href="#" >IC50</a></li>';
-  include('ic50_detail.php');
 
-}
-if($row['mut']==1){
-  echo '<li  factor="mut"><a href="#" >Mutation</a></li>';
-  include('mut2_detail.php');
 
-}
 
-if($row['meth']==1){
-  echo '<li  factor="meth"><a href="#">Methylation</a></li>';
- 
-    include('meth_detail.php');
-}
-
-if($row['mir']==1){
   echo '<li  factor="mir"><a href="#">miRNA</a></li>';
   include('mir_detail.php');
-}
 
-if($row['lnc']==1){
-  echo '<li  factor="lnc"><a href="#">lncRNA</a></li>';
-  include('lnc_detail.php');
-}
 
-if($row['ms']==1){
-  echo '<li  factor="ms"><a href="#">MSI</a></li></ul>';
-  include('ms_detail.php');
-}
+
 
 echo '</ul></div>';
  mysql_close();
@@ -134,7 +107,7 @@ padding: 5px;
 <div id="mut" class='factor'></div>
   <div id="jqxgrid" class='facor'></div>
     
-  <div id="ic50" class='factor'></div>
+  
   <div id="meth" class='factor'></div>
   <div id="mir" class='factor'></div>
   <div id="ms" class='factor'></div>

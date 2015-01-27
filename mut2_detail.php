@@ -9,29 +9,29 @@
             {
                  datatype: "json",
                  datafields: [
-					 { name: 'drug_id', type: 'string'},
-					 { name: 'drug_name', type: 'string'},
-                      { name: 'disease_id', type: 'string'},
-                      { name: 'disease_name', type: 'string'},
-                      { name: 'cell_id', type: 'string'},
-                      { name: 'cell_name', type: 'string'},
-                      { name: 'ms_id', type: 'string'},
-                      { name: 'ms_name', type: 'string'},
-                      { name: 'pmid', type: 'string'},
-                      { name: 'detail', type: 'string'},
+				{ name: 'gene_id' , type: 'string'},
+				{namae: 'cell_id', type: 'string'},
+
+				{name: 'cell_name', type: 'string'},
+				{ name: 'gene_name' , type: 'string'},
+				{ name: 'cn' , type: 'string'},
+				{ name: 'mut_aa' , type: 'string'},
+				{ name: 'mut_cds' , type: 'string'},
+				{ name: 'mut_desc' , type: 'string'},
+				{ name: 'mut_pos' , type: 'string'}
                 ],
-			     url: 'data.php?table='+ "ms_view" +'&colName='+ colName + '&value=' + '<?php echo $value; ?>',
+			     url: 'data.php?table='+ "mut_view" +'&colName='+ colName + '&value=' + '<?php echo $value; ?>',
 				
 				cache: false,
 				filter: function()
 				{
 					// update the grid and send a request to the server.
-					$("#ms").jqxGrid('updatebounddata', 'filter');
+					$("#mut").jqxGrid('updatebounddata', 'filter');
 				},
 				sort: function()
 				{
 					// update the grid and send a request to the server.
-					$("#ms").jqxGrid('updatebounddata', 'sort');
+					$("#mut").jqxGrid('updatebounddata', 'sort');
 				},
 				root: 'Rows',
 				
@@ -59,7 +59,7 @@
 
             // initialize jqxGrid
             if(colName == 'drug_id'){
-            	$("#ms").jqxGrid(
+            	$("#mut").jqxGrid(
             {		
                 source: dataadapter,
                 width:930,
@@ -88,17 +88,19 @@
 					 return obj.data;    
 				},
 			    columns: [
-                    { text: 'Disease', datafield: 'disease_name', width: 200, cellsrenderer:disease_link},
-               		{ text: 'Cell Line', datafield: 'cell_name', width: 120, cellsrenderer:cell_link},
-                	{ text: 'Microsatelite', datafield: 'ms_name', width:120, cellsrenderer:ms_link},
-               		{ text: 'Pubmed ID', datafield: 'pmid', width: 90, cellsrenderer: pub_link},
-               		{ text: 'Detail', datafield: 'detail', width: 400},
-                  ]
+                    { text: 'Cell Line', datafield: 'cell_name', width: 200, cellsrenderer:cell_link},
+               	  		{ text: 'Gene Name', datafield: 'gene_name', width: 120, cellsrenderer:gene_link },
+						  { text: 'Copy Numer', datafield: 'cn', width: 40 },
+						  { text: 'mut_aa', datafield: 'mut_aa', width: 180 },
+						  // { text: 'mut_cds', datafield: 'mut_cds', width: 200 },
+						  { text: 'mut_desc', datafield: 'mut_desc', width: 240 },
+						  { text: 'mut_pos', datafield: 'mut_pos', width: 240 },
+						 ]
             });
             }
 
             if(colName == 'cell_id'){
-            	 $("#ms").jqxGrid(
+            	 $("#mut").jqxGrid(
             {		
                 source: dataadapter,
                 width:930,
@@ -127,21 +129,22 @@
 					 return obj.data;    
 				},
 			    columns: [
-                   
-               		{ text: 'Drug Name', datafield: 'drug_name', width: 120, cellsrenderer:drug_link},
-                	{ text: 'Microsatelite', datafield: 'ms_name', width:120, cellsrenderer:ms_link},
-               		{ text: 'pmid', datafield: 'pmid', width: 90, cellsrenderer: pub_link},
-               		{ text: 'Detail', datafield: 'detail', width: 400},
-                  ]
+                   			// { text: 'Drug', datafield: 'drug_name', width: 120, cellsrenderer:drug_link },
+               			 
+						  { text: 'Gene Name', datafield: 'gene_name', width: 120, cellsrenderer:gene_link },
+						  { text: 'Copy Numer', datafield: 'cn', width: 40 },
+						  { text: 'mut_aa', datafield: 'mut_aa', width: 180 },
+						  // { text: 'mut_cds', datafield: 'mut_cds', width: 200 },
+						  { text: 'mut_desc', datafield: 'mut_desc', width: 240 },
+						  { text: 'mut_pos', datafield: 'mut_pos', width: 240 },
+						  ]
             });
             }
-            
-
-                  if(colName == 'ms_id'){
-            	 $("#ms").jqxGrid(
+              if(colName == 'gene_id'){
+            	 $("#mut").jqxGrid(
             {		
                 source: dataadapter,
-                width:930,
+                width:900,
                 theme: 'energyblue',
 				pageable: true,
 				sortable: true,
@@ -167,20 +170,21 @@
 					 return obj.data;    
 				},
 			    columns: [
-                   // { text: 'Disease Name', datafield: 'disease_name', width: 120},
-                   { text: 'Disease', datafield: 'disease_name', width: 120, cellsrenderer:disease_link},
-                   { text: 'Cell Line', datafield: 'cell_name', width: 120, cellsrenderer:cell_link},
-               		{ text: 'Drug', datafield: 'drug_name', width: 120, cellsrenderer:drug_link},
-                	
-               		{ text: 'Pubmed ID', datafield: 'pmid', width: 90, cellsrenderer: pub_link},
-               		{ text: 'Detail', datafield: 'detail', width: 400},
-                  ]
+                   			{ text: 'Cell Line', datafield: 'cell_name', width: 120, cellsrenderer:cell_link },
+               			 
+						  // { text: 'Drug Name', datafield: 'drug_name', width: 120, cellsrenderer:drug_link },
+						  { text: 'Copy Number', datafield: 'cn', width: 140 },
+						  { text: 'mut_aa', datafield: 'mut_aa', width: 180 },
+						  // { text: 'mut_cds', datafield: 'mut_cds', width: 200 },
+						  { text: 'mut_desc', datafield: 'mut_desc', width: 240 },
+						  { text: 'mut_pos', datafield: 'mut_pos', width: 240 },
+						  ]
             });
             }
         });
     </script>
 
    
-        <!-- <div id="meth" class='factor'></div> -->
+      
  
 

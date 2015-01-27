@@ -56,31 +56,7 @@
 					}
 				}
 			);
-			// var disease_link = function(row, columnfield, value, defaulthtml, columnproperties, rowdata){
-				
-			// 	return '<div style="margin:10px  10px;"><a href="/disease.php?diseaseid=' + rowdata.disease_id + '">'+value+'</a></div>';
-			// }
-			// var cell_link = function(row, columnfield, value, defaulthtml, columnproperties, rowdata){
-				
-			// 	return '<div style="margin:10px  10px;"><a href="/cell.php?cellid=' + rowdata.cell_id + '">'+value+'</a></div>';
-			// }
-			// var mir_link = function(row, columnfield, value, defaulthtml, columnproperties, rowdata){
-				
-			// 	return '<div style="margin:10px  10px;"><a href="/mir.php?mirid=' + rowdata.ms_id + '">'+value+'</a></div>';
-			// }
 
-			// var pub_link = function(row, columnfield, value, defaulthtml, columnproperties, rowdata){
-				
-			// 	return '<div style="margin:10px  10px;"><a href="http://www.ncbi.nlm.nih.gov/pubmed/?term=' + rowdata.pmid + '">'+value+'</a></div>';
-			// }
-
-			// var drug_link = function(row, columnfield, value, defaulthtml, columnproperties, rowdata){
-				
-			// 	return '<div style="margin:10px  10px;"><a href="/drug.php?drugid=' + rowdata.drug_id + '">'+value+'</a></div>';
-			// }
-
-
-            // initialize jqxGrid
             if(colName=='drug_id'){
             	 $("#mir").jqxGrid(
             {		
@@ -113,7 +89,7 @@
                     { text: 'Disease', datafield: 'disease_name', width: 200, cellsrenderer:disease_link},
                		{ text: 'Cell Line', datafield: 'cell_name', width: 120, cellsrenderer:cell_link},
                 	{ text: 'miRNA', datafield: 'mir_name', width:120, cellsrenderer:mir_link},
-               		{ text: 'pmid', datafield: 'pmid', width: 90, cellsrenderer: pub_link},
+               		{ text: 'Pubmed ID', datafield: 'pmid', width: 90, cellsrenderer: pub_link},
                		{ text: 'Detail', datafield: 'detail', width: 400},
                   ]
             });
@@ -195,7 +171,43 @@
                   ]
             });
             }
-
+               if(colName=='mir_id'){
+            	 $("#mir").jqxGrid(
+            {		
+                source: dataadapter,
+                 width:930,
+                theme: 'energyblue',
+				pageable: true,
+				sortable: true,
+				autoheight: true,
+				rowsheight: 30,
+				columnsheight: 40,
+                virtualmode: true,
+                
+                filterable: true,
+				sortable: true,
+				selectionmode: 'none',
+				altrows: true,//交替颜色
+				autoshowfiltericon: false,
+				showpinnedcolumnbackground: false,
+				// showrowdetailscolumn:false,
+				autorowheight: true,
+				pagesize: 10,
+				enablehover: false,
+				enablebrowserselection:'enable', //是否可以选中字体
+				rendergridrows: function(obj)
+				{
+					 return obj.data;    
+				},
+			    columns: [
+                    { text: 'Disease', datafield: 'disease_name', width: 200, cellsrenderer:disease_link},
+               		{ text: 'Cell Line', datafield: 'cell_name', width: 120, cellsrenderer:cell_link},
+                	{ text: 'Drug Name', datafield: 'drug_name', width:120, cellsrenderer:drug_link},
+               		{ text: 'pubmed ID', datafield: 'pmid', width: 90, cellsrenderer: pub_link},
+               		{ text: 'Detail', datafield: 'detail', width: 400},
+                  ]
+            });
+            }
 
 
         });

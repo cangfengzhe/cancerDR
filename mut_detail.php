@@ -204,7 +204,7 @@ var crossLink =  function (row, columnfield, value, defaulthtml, columnpropertie
                 columns: [
                
                 // { text: 'cell_id', datafield: 'cell_id', width: 150},
-                { text: 'Cell Name', datafield: 'cell_name', width: 150, cellsrenderer:crossLink},
+                { text: 'Cell Name', datafield: 'cell_name', width: 150, cellsrenderer:cell_link},
                { text: 'Log(ic25)', datafield: 'IC25', width: 150},
                 { text: 'Log(ic50)', datafield: 'IC50', width: 150},
                { text: 'Log(ic75)', datafield: 'IC75', width: 150},

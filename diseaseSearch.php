@@ -41,19 +41,19 @@
                  datatype: "json",
                  datafields: [
 					 { name: 'id', type: 'string'},
-					 { name: 'drug_id', type: 'string'},
-					 { name: 'drug_name', type: 'string'},
-					 { name: 'other_name', type: 'string'},
-					 { name: 'pubchem_id', type: 'string'},
-					 { name: 'mut', type: 'string'},
+					 { name: 'disease_id', type: 'string'},
+					 { name: 'disease_name', type: 'string'},
+					 // { name: 'tissue', type: 'string'},
+					 // { name: 'cosmic_id', type: 'string'},
+					 { name: 'mesh_id', type: 'string'},
 					 { name: 'meth', type: 'string'},
 					 { name: 'mir', type: 'string'},
 					 { name: 'lnc', type: 'string'},
 					 { name: 'msi', type: 'string'},
-					 { name: 'sum', type: 'float'}
+					 
                 ],
-			    url: 'data.php?table=info_drug' + '&value=' + "<?php echo $_GET['value']; ?>" +
-			     '&colName=other_name',
+			    url: 'data.php?table=info_disease' + '&value=' + "<?php echo $_GET['value']; ?>" +
+			     '&colName=disease_name',
 				
 				cache: false,
 				filter: function()
@@ -100,51 +100,7 @@ var crossRef =  function (row, columnfield, value, defaulthtml, columnproperties
                 
 }
 
-var factorType =  function (row, columnfield, value, defaulthtml, columnproperties, rowdata) {
-  // txt='<a id="tip" href="#"><span id="tip_info">Mutation:red; Methylation:orange; miRNA:yellow; lncRNA:green; MSI:blue; None:grey</span>';
-   txt='';
-   if(rowdata.mut==1){
-   	txt += '<span class="cir" id="cir_mut"></span>';
-   }
-   else{
-   	txt += '<span class="cir" id="cir0"></span>';
-   }
-   if(rowdata.meth==1){
-   	txt += '<span class="cir"  id="cir_meth"></span>';
-   }
-   else{
-   	txt += '<span class="cir"  id="cir0"></span>';
-   }
 
-   if(rowdata.mir==1){
-   	txt += '<span class="cir"  id="cir_mir"></span>';
-   }
-   else{
-  	txt += '<span class="cir"  id="cir0"></span>';
-   }
-
-   if(rowdata.lnc==1){
-  	txt += '<span class="cir"  id="cir_lnc"></span>';
-   }
-   else{
-   	txt += '<span class="cir"  id="cir0"></span>';
-
-   }
-
-   if(rowdata.msi==1){
-   	   	txt += '<span class="cir" id="cir_msi"></span>';
-
-   }
-   else{
-   	txt += '<span class="cir" id="cir0"></span>';
-
-   }
-   
-
-
-   return txt;
-                
-}
 var columnsrenderer = function (value) {
 	return '<div style="margin: 15px 0 0 14px;">' + value + '</div>';
 }
@@ -173,20 +129,17 @@ var columnsrenderer = function (value) {
 				enablehover: false,
 				enablebrowserselection:'enable', //是否可以选中字体
 				autoheight: true,
-				width: 900,
-				autorowheight: true,
+				width: 800,
 				rendergridrows: function(obj)
 				{
 					 return obj.data;    
 				},
 			    columns: [
                       // { text: 'Drug ID' , datafield:'<a href="./drug.php?drugID=afd'">drugID</a>', width: 200 , cellsrenderer:cellsrenderer},
-                      { text: 'Search Value', datafield: 'other_name', width: 380 ,renderer:columnsrenderer},
-                       
-                      { text: 'Drug Name', datafield: 'drug_name', width: 200 , cellsrenderer:crossRef,renderer:columnsrenderer},
-                      { text: 'Drug ID', datafield: 'id', width: 130 , cellsrenderer:crossRef, renderer:columnsrenderer},
-                      // { text: 'Search Value', datafield: 'other_name', width: 330 ,renderer:columnsrenderer},
-                      // { text: 'Pubchem ID', datafield: 'pubchem_id', width: 150 ,renderer:columnsrenderer},
+                       { text: 'Disease ID', datafield: 'id', width: 130 , cellsrenderer:disease_link, renderer:columnsrenderer},
+                      { text: 'Disease', datafield: 'disease_name', width: 300 , cellsrenderer:disease_link,renderer:columnsrenderer},
+                      // { text: 'Tissue', datafield: 'tissue', width: 130 ,renderer:columnsrenderer},
+                      { text: 'Mesh ID', datafield: 'mesh_id', width: 150 ,renderer:columnsrenderer},
                       { text: 'type', datafield: 'sum', width: 190, cellsrenderer:factorType }
                   ]
             });

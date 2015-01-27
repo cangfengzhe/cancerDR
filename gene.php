@@ -24,26 +24,18 @@ include('header.php');
 error_reporting(E_ALL ^ E_DEPRECATED);
   #Include the connect.php file
   include('connect.php');
-  #Connect to the database
-  //connection String
-  // $tableName='tab1';
-  // $tableName=$_GET['table'];
-  // $keyword = $_GET['value'];
- // $colName = $_GET['colName'];
+
   
- if (isset($_GET['cellid']) & !empty($_GET['cellid'])){
-    $cell_id = $_GET['cellid'];
-    if(intval($cell_id)>1000){
-      include('footer.php');
-      die();
-    }
+ if (isset($_GET['geneid']) & !empty($_GET['geneid'])){
+    $gene_id = $_GET['geneid'];
+
  }
   else{
     include('footer.php');
     die();
  }
- $colName ='cell_id'; //传入*_detail.php
- $value =$cell_id;
+ $colName ='gene_id'; //传入*_detail.php
+ $value =$gene_id;
   $connect = mysql_connect($hostname, $username, $password)
   or die('Could not connect: ' . mysql_error());
   //Select The database
@@ -51,24 +43,21 @@ error_reporting(E_ALL ^ E_DEPRECATED);
   if ($bool === False){
      print "can't find $database";
   }
- $sql = 'select * from info_cell  where cell_id=' . $cell_id;
+ $sql = 'select * from info_gene  where gene_id=' . $gene_id;
  $result = mysql_query($sql) or die(mysql_error());
  $row = mysql_fetch_assoc($result);
 
  
- echo '<h1 id="name">', $row['cell_name'], '</h2>';
- echo '<table border=0><tr><th>Cell Line ID</th><td>', $row['id'], '</td></tr>';
+ echo '<h1 id="name">', $row['gene_name'], '</h2>';
+ echo '<table border=0><tr><th>Gene ID</th><td>', $row['id'], '</td></tr>';
  
- echo '<tr><th>Tissue</th><td>' , $row['tissue'], '</td>';
- // echo '<tr><th>DrugBank ID</th><td>', $row['drugbank_id'], '</td><th>      PubChem ID</th><td>', $row['pubchem_id'],'</td></tr>';
+ echo '<tr><th>Synonyms</th><td>' , 'temp', '</td>';
+ echo '<tr><th>EntrezGene ID</th><td><a target= "_blank" href="http://www.ncbi.nlm.nih.gov/gene/?term=', $row['entrez_id'],'"</a>',$row['entrez_id'], '</td></tr>';
+ echo '<tr><th>Description</th><td>' , $row['description'], '</td>';
  echo '</table></div>';
  echo '<div id="kind"><ul id="tabs">';
 
-if($row['ic50']==1){
-  echo '<li  factor="ic50"><a href="#" >IC50</a></li>';
-  include('ic50_detail.php');
 
-}
 if($row['mut']==1){
   echo '<li  factor="mut"><a href="#" >Mutation</a></li>';
   include('mut2_detail.php');
@@ -81,20 +70,6 @@ if($row['meth']==1){
     include('meth_detail.php');
 }
 
-if($row['mir']==1){
-  echo '<li  factor="mir"><a href="#">miRNA</a></li>';
-  include('mir_detail.php');
-}
-
-if($row['lnc']==1){
-  echo '<li  factor="lnc"><a href="#">lncRNA</a></li>';
-  include('lnc_detail.php');
-}
-
-if($row['ms']==1){
-  echo '<li  factor="ms"><a href="#">MSI</a></li></ul>';
-  include('ms_detail.php');
-}
 
 echo '</ul></div>';
  mysql_close();
@@ -134,23 +109,12 @@ padding: 5px;
 <div id="mut" class='factor'></div>
   <div id="jqxgrid" class='facor'></div>
     
-  <div id="ic50" class='factor'></div>
+  
   <div id="meth" class='factor'></div>
   <div id="mir" class='factor'></div>
   <div id="ms" class='factor'></div>
   <div id="lnc" class='factor'></div>
 </div>
-  
-
-
-  
-
-
-<?php
-// include('meth_detail.php');
-// include('mut_detail.php');
-?>
-
 
 <script type="text/javascript">
   $(document).ready(function(){

@@ -15,8 +15,8 @@ include('header.php');
   <ul id="tabs">
   <li><a href="#"  id='drug' >Drug</a></li>
   <li><a href="#"  id='cellLine'>Cell Line</a></li>
-  <li><a href="#"  id='cancerType'>Cancer Type</a></li>
-  <li><a href="#" id='gene'>Gene</a></li>
+  <li><a href="#"  id='disease'>Disease</a></li>
+  <li><a href="#" id='gene'>Gene&Transcript</a></li>
   
   
 </ul>

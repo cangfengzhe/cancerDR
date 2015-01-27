@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="UTF-8">
+	
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
 	<title>Drug Resistance</title>
 	<link href="/css/css.css" type="text/css" rel="stylesheet">
 	<script src="/js/jquery-2.1.1.min.js"></script>
@@ -44,11 +45,10 @@ function getCookie(c_name) {　　　　
 			<li><a href="/index.php">Home</a></li>
 			<li><a href="">Browser</a>
 			<ul id='subhead'>
-				<li><a href="">Mutation</a></li>
-				<li><a href="">Methylation</a></li>
-				<li><a href="">miRNA</a></li>
-				<li><a href="">lncRNA</a></li>
-				<li><a href="">MSI</a></li>
+				<li><a href="">Cell Lines</a></li>
+				<li><a href="">Drugs</a></li>
+				<li><a href="">Gene&<br/>Transcription</a></li>
+				
 			</ul></li>
 			<li><a href="">Download</a>
 			</li>
@@ -63,7 +63,7 @@ function getCookie(c_name) {　　　　
 
 		<select id='sel' name='type'>
 		<option value="cellLine">Cell Line</option>
-			<option value="cancerType">Cancer Type</option>
+			<option value="disease">Disease</option>
 			
 			<option value="drug">Drug</option>
 			<option value="gene">Gene</option>

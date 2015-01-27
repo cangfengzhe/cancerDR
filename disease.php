@@ -31,19 +31,19 @@ error_reporting(E_ALL ^ E_DEPRECATED);
   // $keyword = $_GET['value'];
  // $colName = $_GET['colName'];
   
- if (isset($_GET['cellid']) & !empty($_GET['cellid'])){
-    $cell_id = $_GET['cellid'];
-    if(intval($cell_id)>1000){
-      include('footer.php');
-      die();
-    }
+ if (isset($_GET['diseaseid']) & !empty($_GET['diseaseid'])){
+    $disease_id = $_GET['diseaseid'];
+    // if(intval($disease_id)>1000){
+    //   include('footer.php');
+    //   die();
+    // }
  }
   else{
     include('footer.php');
     die();
  }
- $colName ='cell_id'; //传入*_detail.php
- $value =$cell_id;
+ $colName ='disease_id'; //传入*_detail.php
+ $value =$disease_id;
   $connect = mysql_connect($hostname, $username, $password)
   or die('Could not connect: ' . mysql_error());
   //Select The database
@@ -51,29 +51,21 @@ error_reporting(E_ALL ^ E_DEPRECATED);
   if ($bool === False){
      print "can't find $database";
   }
- $sql = 'select * from info_cell  where cell_id=' . $cell_id;
+ $sql = 'select * from info_disease  where disease_id=' . $disease_id;
  $result = mysql_query($sql) or die(mysql_error());
  $row = mysql_fetch_assoc($result);
 
  
- echo '<h1 id="name">', $row['cell_name'], '</h2>';
- echo '<table border=0><tr><th>Cell Line ID</th><td>', $row['id'], '</td></tr>';
+ echo '<h1 id="name">', $row['disease_name'], '</h1>';
+ echo '<table border=0><tr><th>Disease ID</th><td>', $row['id'], '</td></tr>';
  
- echo '<tr><th>Tissue</th><td>' , $row['tissue'], '</td>';
+ echo '<tr><th>Mesh ID</th><td>' , $row['mesh_id'], '</td>';
  // echo '<tr><th>DrugBank ID</th><td>', $row['drugbank_id'], '</td><th>      PubChem ID</th><td>', $row['pubchem_id'],'</td></tr>';
  echo '</table></div>';
  echo '<div id="kind"><ul id="tabs">';
 
-if($row['ic50']==1){
-  echo '<li  factor="ic50"><a href="#" >IC50</a></li>';
-  include('ic50_detail.php');
 
-}
-if($row['mut']==1){
-  echo '<li  factor="mut"><a href="#" >Mutation</a></li>';
-  include('mut2_detail.php');
 
-}
 
 if($row['meth']==1){
   echo '<li  factor="meth"><a href="#">Methylation</a></li>';
@@ -134,7 +126,7 @@ padding: 5px;
 <div id="mut" class='factor'></div>
   <div id="jqxgrid" class='facor'></div>
     
-  <div id="ic50" class='factor'></div>
+  
   <div id="meth" class='factor'></div>
   <div id="mir" class='factor'></div>
   <div id="ms" class='factor'></div>

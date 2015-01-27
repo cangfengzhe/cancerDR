@@ -1,4 +1,5 @@
 <?php
+// header('Content-type: application/json');
 error_reporting(E_ALL ^ E_DEPRECATED);
 	#Include the connect.php file
 	include('connect.php');
@@ -23,9 +24,14 @@ error_reporting(E_ALL ^ E_DEPRECATED);
 	if($tableName=='meth_view'){
 		$where = ' WHERE ' . $colName . " = $keyword";
 	}
-	else{
-		$where = ' WHERE ' . $colName . " like '%" . $keyword . "%' ";
+	elseif ($tableName == 'info_drug') {
+		// $where = 'WHERE other_name like "%' . $keyword . '%"'; 
+		$where = ' WHERE other_name like "%' . $keyword . '%" ';
 	}
+	else{
+		$where = ' WHERE ' . $colName . ' like "%' . $keyword . '%" ';
+	}
+
 	
 	$query = "SELECT SQL_CALC_FOUND_ROWS * FROM " . $tableName . $where . " LIMIT $start, $pagesize";
 	
@@ -173,7 +179,27 @@ error_reporting(E_ALL ^ E_DEPRECATED);
 		case 'info_drug':
 			
 		while ($row = mysql_fetch_array($result, MYSQL_ASSOC)) {
+			
+			$other_name = $row['other_name'];
+			$str_pos = stripos($other_name,$keyword);
+			$offset = 50;
+			if ($str_pos< $offset){
+				if( (strlen($other_name)-$str_pos)<$offset){
+					// $str_show = substr(string,$str_pos,strlen($keyword)+20);
+					$str_show = $other_name;
+				}else{
+					$str_show = substr($other_name,0,strlen($keyword)+$offset*2);
+				}				
 
+			}else{
+				if( (strlen($other_name)-$str_pos)<$offset){
+					$str_show = substr($other_name,$str_pos-$offset);
+					// $str_show = $other_name;
+				}else{
+					$str_show = substr($other_name,$str_pos-$offset,strlen($keyword)+$offset*2);
+				}	
+			}
+		    $str_show =  preg_replace("/$keyword/i",'<span style="background-color:yellow">' . $keyword . '</span>', $str_show);
 		$orders[] = array(
 			# lpd
 			"id" => $row['id'] ,
@@ -181,6 +207,7 @@ error_reporting(E_ALL ^ E_DEPRECATED);
 			'drug_name' => $row['drug_name'],
 			'drugbank_id' => $row['drugbank_id'],
 			'pubchem_id' => $row['pubchem_id'],
+			'other_name' => $str_show,
 			'mut'=>$row['mut'],
 			'meth'=> $row['meth'],
 			'mir'=> $row['mir'],
@@ -199,6 +226,8 @@ error_reporting(E_ALL ^ E_DEPRECATED);
 		$orders[] = array(
 			# lpd
 			'pub_id' => $row['pub_id'],
+			'tissue_id' => $row['tissue_id'],
+			'tissue_name' => $row['tissue_name'],
 			'disease_id' => $row['disease_id'],
 			'disease_name' => $row['disease_name'],
 			'drug_id' => $row['drug_id'],
@@ -223,6 +252,8 @@ error_reporting(E_ALL ^ E_DEPRECATED);
 			# lpd
 			'drug_id' => $row['drug_id'],
 			'drug_name' => $row['drug_name'],
+			'tissue_id' => $row['tissue_id'],
+			'tissue_name' => $row['tissue_name'],
 			'disease_id' => $row['disease_id'],
 			'disease_name' => $row['disease_name'],
 			'cell_id' => $row['cell_id'],
@@ -245,6 +276,8 @@ error_reporting(E_ALL ^ E_DEPRECATED);
 			# lpd
 			'drug_id' => $row['drug_id'],
 			'drug_name' => $row['drug_name'],
+			// 'tissue_id' => $row['tissue_id'],
+			// 'tissue_name' => $row['tissue_name'],
 			'disease_id' => $row['disease_id'],
 			'disease_name' => $row['disease_name'],
 			'cell_id' => $row['cell_id'],
@@ -268,6 +301,8 @@ error_reporting(E_ALL ^ E_DEPRECATED);
 			# lpd
 			'drug_id' => $row['drug_id'],
 			'drug_name' => $row['drug_name'],
+			'tissue_id' => $row['tissue_id'],
+			'tissue_name' => $row['tissue_name'],
 			'disease_id' => $row['disease_id'],
 			'disease_name' => $row['disease_name'],
 			'cell_id' => $row['cell_id'],
@@ -276,6 +311,122 @@ error_reporting(E_ALL ^ E_DEPRECATED);
 			'lnc_name' => $row['lnc_name'],
 			'pmid' => $row['pmid'],
 			'detail' => $row['detail']
+		  );
+
+
+	}
+
+			break;
+			case 'mut_view':
+			
+		while ($row = mysql_fetch_array($result, MYSQL_ASSOC)) {
+
+		$orders[] = array(
+			# lpd
+			'cell_id' => $row['cell_id'],
+			'cell_name' => $row['cell_name'],
+			// 'drug_id' => $row['drug_id'],
+			// 'drug_name' => $row['drug_name'],
+			'gene_id' => $row['gene_id'],
+			'gene_name' => $row['gene_name'],
+			'cn' => $row['cn'],
+			'mut_aa' => $row['mut_aa'],
+			'mut_cds' => $row['mut_cds'],
+			'mut_desc' => $row['mut_desc'],
+			'mut_pos' => $row['mut_pos']
+		  );
+
+
+	}
+
+			break;
+		case 'info_cell':
+			
+		while ($row = mysql_fetch_array($result, MYSQL_ASSOC)) {
+
+		$orders[] = array(
+			# lpd
+			"id" => $row['id'] ,
+			"cell_id" => $row['cell_id'] ,
+			'cell_name' => $row['cell_name'],
+			'tissue' => $row['tissue'],
+			'cosmic_id' => $row['cosmic_id'],
+			'mut'=>$row['mut'],
+			'meth'=> $row['meth'],
+			'mir'=> $row['mir'],
+			'lnc' => $row['lnc'],
+			'msi' => $row['ms']
+		  );
+
+
+	}
+
+			break;
+		case 'ic50':
+		while($row = mysql_fetch_array($result, MYSQL_ASSOC)){
+			$orders[] = array(
+			'cell_id' => $row['cell_id'],
+			'cell_name' => $row['cell_name'],
+			'drug_name' => $row['drug_name'],
+			'drug_id' => $row['drug_id'],
+			'IC25' => $row['IC25'],
+			'IC50' => $row['IC50'],
+			'IC75' => $row['IC75'],
+			'IC90' => $row['IC90'],
+			'Z_Score' => $row['Z_Score'],
+			'type' => $row['type']
+			);
+		}
+		break;
+		case 'info_gene_transcript':
+		while($row = mysql_fetch_array($result, MYSQL_ASSOC)){
+			$other_name = $row['other_name'];
+			$str_pos = stripos($other_name,$keyword);
+			$offset = 50;
+			if ($str_pos< $offset){
+				if( (strlen($other_name)-$str_pos)<$offset){
+					// $str_show = substr(string,$str_pos,strlen($keyword)+20);
+					$str_show = $other_name;
+				}else{
+					$str_show = substr($other_name,0,strlen($keyword)+$offset*2);
+				}				
+
+			}else{
+				if( (strlen($other_name)-$str_pos)<$offset){
+					$str_show = substr($other_name,$str_pos-$offset);
+					// $str_show = $other_name;
+				}else{
+					$str_show = substr($other_name,$str_pos-$offset,strlen($keyword)+$offset*2);
+				}	
+			}
+		    $str_show =  preg_replace("/$keyword/i",'<span style="background-color:yellow">' . $keyword . '</span>', $str_show);
+		
+			$orders[] = array(
+			'id' => $row['id'],
+			'other_name' => $str_show,
+			'gene_name' => $row['gene_name'],
+			'all_id' => $row['all_id'],
+			'type' => $row['type']
+			);
+		}
+		break;
+
+		case 'info_disease':
+			
+		while ($row = mysql_fetch_array($result, MYSQL_ASSOC)) {
+
+		$orders[] = array(
+			# lpd
+			"id" => $row['id'] ,
+			"disease_id" => $row['disease_id'] ,
+			'disease_name' => $row['disease_name'],
+			'mesh_id' => $row['mesh_id'],
+			
+			
+			'meth'=> $row['meth'],
+			'mir'=> $row['mir'],
+			'lnc' => $row['lnc'],
+			'msi' => $row['ms']
 		  );
 
 

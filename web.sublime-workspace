@@ -4,6 +4,38 @@
 		"selected_items":
 		[
 			[
+				"drug",
+				"drug_node"
+			],
+			[
+				"gene_",
+				"gene_node"
+			],
+			[
+				"arramer",
+				"array_merge"
+			],
+			[
+				"mysqlf",
+				"mysql_fetch_array"
+			],
+			[
+				"jq",
+				"jqxGrid"
+			],
+			[
+				"cell",
+				"cell_id"
+			],
+			[
+				"pub",
+				"pub_link"
+			],
+			[
+				"drug_id",
+				"drug_id"
+			],
+			[
 				"IC",
 				"IC50"
 			],
@@ -24,10 +56,6 @@
 				"showdetail"
 			],
 			[
-				"cell",
-				"cellsrenderer"
-			],
-			[
 				"column",
 				"columnproperties"
 			],
@@ -42,10 +70,6 @@
 			[
 				"lpd",
 				"lpd_jj"
-			],
-			[
-				"drug",
-				"drugName"
 			],
 			[
 				"show",
@@ -192,85 +216,29 @@
 	"buffers":
 	[
 		{
-			"contents": "<?php\n#Include the connect.php file\ninclude('connect.php');\n#Connect to the database\n//connection String\nerror_reporting(E_ALL ^ E_DEPRECATED);\n$tab1 = 'ic50';//Customers\n$tab2 = 'mut_view'; //Orders\n$drug_id=$_GET['drug_id'];\n// ;\n$connect = mysql_connect($hostname, $username, $password)\nor die('Could not connect: ' . mysql_error());\n//Select The database\n$bool = mysql_select_db($database, $connect);\nif ($bool === False){\n	print \"can't find $database\";\n}\n// get data and store in a json array\n$query = \"SELECT * FROM customers\";\n\nif (isset($_GET['cell_id']))\n{\n	$pagenum = $_GET['pagenum'];\n	$pagesize = $_GET['pagesize'];\n	$start = $pagenum * $pagesize;\n	$query = \"SELECT SQL_CALC_FOUND_ROWS * FROM \" . $tab2 . \" WHERE cell_id='\" .$_GET['cell_id'] . \"'\";\n	$query .= \" LIMIT $start, $pagesize\";\n	$result = mysql_query($query) or die(\"SQL Error 1: \" . mysql_error());\n	$sql = \"SELECT FOUND_ROWS() AS `found_rows`;\"; // get the number of row\n	$rows = mysql_query($sql);\n	$rows = mysql_fetch_assoc($rows);  // get the assosiation array\n	$total_rows = $rows['found_rows'];	\n\n\n\n   $filterquery = \"\";\n	\n	// filter data.\n	if (isset($_GET['filterscount']))\n	{\n		$filterscount = $_GET['filterscount'];\n		\n		if ($filterscount > 0)\n		{\n			// $where = \" WHERE (\";\n			$where = \" WHERE cell_id='\" .$_GET['cell_id'] . \"' AND (\";\n			$tmpdatafield = \"\";\n			$tmpfilteroperator = \"\";\n			for ($i=0; $i < $filterscount; $i++)\n		    {\n				// get the filter's value.\n				$filtervalue = $_GET[\"filtervalue\" . $i];\n				// get the filter's condition./contains\n				$filtercondition = $_GET[\"filtercondition\" . $i];\n				// get the filter's column./ column name\n				$filterdatafield = $_GET[\"filterdatafield\" . $i];\n				// get the filter's operator. /0\n				$filteroperator = $_GET[\"filteroperator\" . $i];\n				\n				if ($tmpdatafield == \"\")\n				{\n					$tmpdatafield = $filterdatafield;			\n				}\n				else if ($tmpdatafield <> $filterdatafield)\n				{\n					$where .= \")AND(\";\n				}\n				else if ($tmpdatafield == $filterdatafield)\n				{\n					if ($tmpfilteroperator == 0)\n					{\n						$where .= \" AND \";\n					}\n					else $where .= \" OR \";	\n				}\n				\n				// build the \"WHERE\" clause depending on the filter's condition, value and datafield.\n				switch($filtercondition)\n				{\n					case \"CONTAINS\":\n						$where .= \" \" . $filterdatafield . \" LIKE '%\" . $filtervalue .\"%'\";\n						break;\n					case \"DOES_NOT_CONTAIN\":\n						$where .= \" \" . $filterdatafield . \" NOT LIKE '%\" . $filtervalue .\"%'\";\n						break;\n					case \"EQUAL\":\n						$where .= \" \" . $filterdatafield . \" = '\" . $filtervalue .\"'\";\n						break;\n					case \"NOT_EQUAL\":\n						$where .= \" \" . $filterdatafield . \" <> '\" . $filtervalue .\"'\";\n						break;\n					case \"GREATER_THAN\":\n						$where .= \" \" . $filterdatafield . \" > '\" . $filtervalue .\"'\";\n						break;\n					case \"LESS_THAN\":\n						$where .= \" \" . $filterdatafield . \" < '\" . $filtervalue .\"'\";\n						break;\n					case \"GREATER_THAN_OR_EQUAL\":\n						$where .= \" \" . $filterdatafield . \" >= '\" . $filtervalue .\"'\";\n						break;\n					case \"LESS_THAN_OR_EQUAL\":\n						$where .= \" \" . $filterdatafield . \" <= '\" . $filtervalue .\"'\";\n						break;\n					case \"STARTS_WITH\":\n						$where .= \" \" . $filterdatafield . \" LIKE '\" . $filtervalue .\"%'\";\n						break;\n					case \"ENDS_WITH\":\n						$where .= \" \" . $filterdatafield . \" LIKE '%\" . $filtervalue .\"'\";\n						break;\n				}\n								\n				if ($i == $filterscount - 1)\n				{\n					$where .= \")\";\n				}\n				\n				$tmpfilteroperator = $filteroperator;\n				$tmpdatafield = $filterdatafield;			\n			}\n			// build the query.\n			$query = \"SELECT * FROM $tab2 \". $where;\n			$filterquery = $query;\n			$result = mysql_query($query) or die(\"SQL Error 1: \" . mysql_error());\n			$sql = \"SELECT FOUND_ROWS() AS `found_rows`;\";\n			$rows = mysql_query($sql);\n			$rows = mysql_fetch_assoc($rows);\n			$new_total_rows = $rows['found_rows'];		\n			$query = \"SELECT * FROM $tab2 \".$where.\" LIMIT $start, $pagesize\";		\n			$total_rows = $new_total_rows;	\n		}\n	}\n	\n	if (isset($_GET['sortdatafield']))\n	{\n	\n		$sortfield = $_GET['sortdatafield'];\n		$sortorder = $_GET['sortorder'];\n		\n		if ($sortorder != '')\n		{\n			if ($_GET['filterscount'] == 0)\n			{\n				if ($sortorder == \"desc\")\n				{\n					// \" WHERE cell_name='\" .$_GET['cell_name']\n					$query = \"SELECT * FROM $tab2 WHERE cell_id = '\" . $_GET['cell_id'] . \"' ORDER BY\" . \" \" . $sortfield . \" DESC LIMIT $start, $pagesize\";\n				}\n				else if ($sortorder == \"asc\")\n				{\n					$query = \"SELECT * FROM $tab2 WHERE cell_id = '\" . $_GET['cell_id'] . \"' ORDER BY\" . \" \" . $sortfield . \" ASC LIMIT $start, $pagesize\";\n				}\n\n			}\n			else\n			{\n				if ($sortorder == \"desc\")\n				{\n					$filterquery .= \" ORDER BY\" . \" \" . $sortfield . \" DESC LIMIT $start, $pagesize\";\n				}\n				else if ($sortorder == \"asc\")	\n				{\n					$filterquery .= \" ORDER BY\" . \" \" . $sortfield . \" ASC LIMIT $start, $pagesize\";\n				}\n				$query = $filterquery;\n			}		\n		}\n	}\n	\n	$result = mysql_query($query) or die(\"SQL Error 1: \" . mysql_error());\n// $orders = null;\n\n\n	// get data and store in a json array\n	while ($row = mysql_fetch_array($result, MYSQL_ASSOC)) {\n		$orders[] = array(\n			\n			'cell_id' => $row['cell_id'],\n			'cell_name' => $row['cell_name'],\n			'gene_id' => $row['gene_id'],\n			'gene_name' => $row['gene_name'],\n			'cn' => $row['cn'],\n			'mut_aa' => $row['mut_aa'],\n			'mut_cds' => $row['mut_cds'],\n			'mut_desc' => $row['mut_desc'],\n			'mut_pos' => $row['mut_pos']\n			\n\n\n		  );\n	}\n    $data[] = array(\n       'TotalRows' => $total_rows,\n	   'Rows' => $orders\n	);\n	echo json_encode($data);    	\n}\n\n\n\nelse\n{\n	$pagenum = $_GET['pagenum'];\n	$pagesize = $_GET['pagesize'];\n	$start = $pagenum * $pagesize;\n	$query = \"SELECT SQL_CALC_FOUND_ROWS * FROM $tab1 where drug_id = $drug_id LIMIT $start, $pagesize\";\n	$result = mysql_query($query) or die(\"SQL Error 1: \" . mysql_error());\n	$sql = \"SELECT FOUND_ROWS() AS `found_rows`;\";\n	$rows = mysql_query($sql);\n	$rows = mysql_fetch_assoc($rows);\n	$total_rows = $rows['found_rows'];\n	$filterquery = \"\";\n	\n	// filter data.\n	if (isset($_GET['filterscount']))\n	{\n		$filterscount = $_GET['filterscount'];\n		\n		if ($filterscount > 0)\n		{\n			$where = \" WHERE ( drug_id = $durg_id AND\";\n			$tmpdatafield = \"\";\n			$tmpfilteroperator = \"\";\n			for ($i=0; $i < $filterscount; $i++)\n		    {\n				// get the filter's value.\n				$filtervalue = $_GET[\"filtervalue\" . $i];\n				// get the filter's condition.\n				$filtercondition = $_GET[\"filtercondition\" . $i];\n				// get the filter's column.\n				$filterdatafield = $_GET[\"filterdatafield\" . $i];\n				// get the filter's operator.\n				$filteroperator = $_GET[\"filteroperator\" . $i];\n				\n				if ($tmpdatafield == \"\")\n				{\n					$tmpdatafield = $filterdatafield;			\n				}\n				else if ($tmpdatafield <> $filterdatafield)\n				{\n					$where .= \")AND(\";\n				}\n				else if ($tmpdatafield == $filterdatafield)\n				{\n					if ($tmpfilteroperator == 0)\n					{\n						$where .= \" AND \";\n					}\n					else $where .= \" OR \";	\n				}\n				\n				// build the \"WHERE\" clause depending on the filter's condition, value and datafield.\n				switch($filtercondition)\n				{\n					case \"CONTAINS\":\n						$where .= \" \" . $filterdatafield . \" LIKE '%\" . $filtervalue .\"%'\";\n						break;\n					case \"DOES_NOT_CONTAIN\":\n						$where .= \" \" . $filterdatafield . \" NOT LIKE '%\" . $filtervalue .\"%'\";\n						break;\n					case \"EQUAL\":\n						$where .= \" \" . $filterdatafield . \" = '\" . $filtervalue .\"'\";\n						break;\n					case \"NOT_EQUAL\":\n						$where .= \" \" . $filterdatafield . \" <> '\" . $filtervalue .\"'\";\n						break;\n					case \"GREATER_THAN\":\n						$where .= \" \" . $filterdatafield . \" > '\" . $filtervalue .\"'\";\n						break;\n					case \"LESS_THAN\":\n						$where .= \" \" . $filterdatafield . \" < '\" . $filtervalue .\"'\";\n						break;\n					case \"GREATER_THAN_OR_EQUAL\":\n						$where .= \" \" . $filterdatafield . \" >= '\" . $filtervalue .\"'\";\n						break;\n					case \"LESS_THAN_OR_EQUAL\":\n						$where .= \" \" . $filterdatafield . \" <= '\" . $filtervalue .\"'\";\n						break;\n					case \"STARTS_WITH\":\n						$where .= \" \" . $filterdatafield . \" LIKE '\" . $filtervalue .\"%'\";\n						break;\n					case \"ENDS_WITH\":\n						$where .= \" \" . $filterdatafield . \" LIKE '%\" . $filtervalue .\"'\";\n						break;\n				}\n								\n				if ($i == $filterscount - 1)\n				{\n					$where .= \")\";\n				}\n				\n				$tmpfilteroperator = $filteroperator;\n				$tmpdatafield = $filterdatafield;			\n			}\n			// build the query.\n			$query = \"SELECT * FROM $tab1 \".$where;\n			$filterquery = $query;\n			$result = mysql_query($query) or die(\"SQL Error 1: \" . mysql_error());\n			$sql = \"SELECT FOUND_ROWS() AS `found_rows`;\";\n			$rows = mysql_query($sql);\n			$rows = mysql_fetch_assoc($rows);\n			$new_total_rows = $rows['found_rows'];		\n			$query = \"SELECT * FROM $tab1 \".$where.\" LIMIT $start, $pagesize\";		\n			$total_rows = $new_total_rows;	\n		}\n	}\n	\n	if (isset($_GET['sortdatafield']))\n	{\n	\n		$sortfield = $_GET['sortdatafield'];\n		$sortorder = $_GET['sortorder'];\n		\n		if ($sortorder != '')\n		{\n			if ($_GET['filterscount'] == 0)\n			{\n				if ($sortorder == \"desc\")\n				{\n					$query = \"SELECT * FROM $tab1 ORDER BY\" . \" \" . $sortfield . \" DESC LIMIT $start, $pagesize\";\n				}\n				else if ($sortorder == \"asc\")\n				{\n					$query = \"SELECT * FROM $tab1 ORDER BY\" . \" \" . $sortfield . \" ASC LIMIT $start, $pagesize\";\n				}\n			}\n			else\n			{\n				if ($sortorder == \"desc\")\n				{\n					$filterquery .= \" ORDER BY\" . \" \" . $sortfield . \" DESC LIMIT $start, $pagesize\";\n				}\n				else if ($sortorder == \"asc\")	\n				{\n					$filterquery .= \" ORDER BY\" . \" \" . $sortfield . \" ASC LIMIT $start, $pagesize\";\n				}\n				$query = $filterquery;\n			}		\n		}\n	}\n	\n	\n	$result = mysql_query($query) or die(\"SQL Error 1: \" . mysql_error());\n\n	// $customers = null;\n\n	while ($row = mysql_fetch_array($result, MYSQL_ASSOC)) {\n		$customers[] = array(\n			'cell_id' => $row['cell_id'],\n			'cell_name' => $row['cell_name'],\n			'IC25' => $row['IC25'],\n			'IC50' => $row['IC50'],\n			'IC75' => $row['IC75'],\n			'IC90' => $row['IC90'],\n			'Z_Score' => $row['Z_Score'],\n			'type' => $row['type']\n			\n		  );\n	}\n    $data[] = array(\n       'TotalRows' => $total_rows,\n	   'Rows' => $customers\n	);\n	echo json_encode($data);\n}\n?>",
-			"file": "jqwidgets-ver3.6.0/phpdemos/server_side_grid__with_nested_grids/data.php",
-			"file_size": -1,
-			"file_write_time": -1,
+			"file": "cytoscape.js-2.3.7/data.php",
 			"settings":
 			{
-				"buffer_size": 10118,
+				"buffer_size": 1507,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "mut_detail.php",
+			"contents": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n	<meta charset=\"UTF-8\">\n	<title>Document</title>\n	<script src='./jquery-2.1.1.min.js'></script>\n	<script>\n$(document).ready(function(){\n	// response.setContentType(\"application/json\");\n	var url = './data.php';\n      $.ajax(url, {\n        // data: {\n        //   'cityname': '襄阳',\n        //   'dtype': 'jsonp',\n        //   'key': 'xxxx',\n        //   '_': new Date().getTime()\n        // },\n\n        // dataType: 'json',\n        // crossDomain: true,\n        async:false,\n        success: function(data) {\n         // \n          bb = data;// bb为全局变量\n           \n         \n        },\n        \n        \n      });\n\n      alert(data[0].TotalRows);\n     // alert(bb[0].TotalRows);\n    \n      // alert('afds');\n	\n})\n\n\n	</script>\n</head>\n<body>\n	\n</body>\n</html>",
+			"file": "cytoscape.js-2.3.7/ajax.html",
+			"file_size": 1014,
+			"file_write_time": 130664081305189398,
 			"settings":
 			{
-				"buffer_size": 7686,
+				"buffer_size": 796,
 				"line_ending": "Windows"
 			}
 		},
 		{
-			"file": "data.php",
+			"file": "cytoscape.js-2.3.7/test.html",
 			"settings":
 			{
-				"buffer_size": 5940,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "drug.php",
-			"settings":
-			{
-				"buffer_size": 3594,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "drugSearch.php",
-			"settings":
-			{
-				"buffer_size": 4038,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "drugBrowser.php",
-			"settings":
-			{
-				"buffer_size": 4594,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "css/css.css",
-			"settings":
-			{
-				"buffer_size": 6671,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "index.php",
-			"settings":
-			{
-				"buffer_size": 1777,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "header.php",
-			"settings":
-			{
-				"buffer_size": 2683,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "meth_detail.php",
-			"settings":
-			{
-				"buffer_size": 2841,
+				"buffer_size": 1091,
 				"line_ending": "Windows"
 			}
 		},
@@ -489,22 +457,44 @@
 	},
 	"expanded_folders":
 	[
-		"/F/web",
-		"/F/web/css",
-		"/F/web/css/images",
-		"/F/web/jqwidgets-ver3.6.0/phpdemos",
-		"/F/web/jqwidgets-ver3.6.0/phpdemos/server_side_grid_filtering",
-		"/F/web/jqwidgets-ver3.6.0/phpdemos/server_side_grid_filtering_and_sorting_and_paging",
-		"/F/web/jqwidgets-ver3.6.0/phpdemos/server_side_grid_paging"
+		"/F/web"
 	],
 	"file_history":
 	[
+		"/F/web/mut_detail.php",
+		"/F/web/lnc_detail.php",
+		"/F/web/js/link.js",
+		"/F/web/ms_detail.php",
+		"/F/web/data.php",
+		"/F/web/cytoscape.js-2.3.7/ajax.html",
+		"/F/web/drug.php",
+		"/F/web/meth_detail.php",
+		"/F/web/cytoscape.js-2.3.7/aa.html",
+		"/F/web/mut2_detail.php",
+		"/D/deskTop/cytoscape.js-2.3.7/test.html",
+		"/D/Desktop/cytoscape.js-2.3.7/aa.html",
+		"/D/Desktop/cytoscape.js-2.3.7/ajax.html",
+		"/F/web/cell.php",
+		"/D/deskTop/cytoscape.js-2.3.7/code.js",
+		"/F/web/mir_detail.php",
+		"/F/web/aaa.php",
+		"/D/deskTop/cytoscape_qtip/gist546dd8ca4872cc87106a-d092e31cc462e0fbb6ae22257520a1ba59f477b6/code.js",
+		"/F/web/ms_detail",
+		"/F/web/mut_data.php",
+		"/F/web/header.php",
+		"/F/web/search.php",
+		"/F/web/index.php",
+		"/F/web/jqwidgets-ver3.6.0/phpdemos/server_side_grid__with_nested_grids/data.php",
+		"/F/web/drugBrowser.php",
+		"/F/web/css/css.css",
+		"/F/web/drugSearch.php",
+		"/F/web/search.html",
+		"/F/web/jqwidgets-ver3.6.0/demos/jqxslider/jquery-slider-events.htm",
 		"/F/web/grid2.php",
 		"/F/web/grid - 副本.php",
 		"/F/web/jqwidgets-ver3.6.0/phpdemos/server_side_grid__with_nested_grids/methDetail.php",
 		"/F/web/jqwidgets-ver3.6.0/phpdemos/server_side_grid__with_nested_grids/methdata.php",
 		"/F/web/jqwidgets-ver3.6.0/phpdemos/server_side_grid__with_nested_grids/index.php",
-		"/D/deskTop/cytoscape.js-2.3.7/code.js",
 		"/D/Desktop/cytoscape.js-2.3.7/test.html",
 		"/F/web/meth_data.php",
 		"/F/web/jqwidgets-ver3.6.0/phpdemos/server_side_grid__with_nested_grids/Methdata.php",
@@ -525,7 +515,6 @@
 		"/F/web/jqwidgets-ver3.5.0/phpdemos/server_side_grid__with_nested_grids/data.php",
 		"/F/web/jqwidgets-ver3.5.0/phpdemos/server_side_grid__with_nested_grids/index.php",
 		"/F/web/jqwidgets-ver3.5.0/phpdemos/server_side_grid_filtering_and_sorting_and_paging/data.php",
-		"/F/web/data.php",
 		"/F/web/jqwidgets-ver3.5.0/demos/jqxgrid/nestedgrids.htm",
 		"/F/web/jqwidgets-ver3.5.0/demos/jqxdatatable/javascript-datatable-nested-tables.htm",
 		"/F/cancerDR/jqwidgets-ver3.5.0/demos/jqxdatatable/javascript-datatable-nested-tables.htm",
@@ -545,14 +534,8 @@
 		"/C/Users/Administrator.7J3FXA4TRMAIT95/AppData/Local/Temp/HZ$D.189.2929/HZ$D.189.2930/1287296827076534733.txt",
 		"/C/Users/Administrator.7J3FXA4TRMAIT95/AppData/Local/Temp/HZ$D.443.4747/HZ$D.443.4749/4529342934346600784.txt",
 		"/D/deskTop/ip.txt",
-		"/F/web/drugSearch.php",
-		"/F/web/search.php",
-		"/F/web/index.php",
-		"/F/web/header.php",
 		"/F/web/footer.php",
-		"/F/web/drug.php",
 		"/F/web/css/layout.css",
-		"/F/web/css/css.css",
 		"/F/cancerDR/jqwidgets-ver3.5.0/demos/jqxgrid/generatedata.js",
 		"/F/cancerDR/jqwidgets-ver3.5.0/demos/jqxgrid/filtering.htm",
 		"/F/cancerDR/jqwidgets-ver3.5.0/demos/jqxgrid/filterrow.htm",
@@ -589,7 +572,6 @@
 		"/F/cancerDR/css/layout.css",
 		"/C/Users/Administrator.7J3FXA4TRMAIT95/AppData/Roaming/Sublime Text 3/Packages/HTML-CSS-JS Prettify/HTMLPrettify.sublime-settings",
 		"/F/cancerDR/header.php",
-		"/F/web/search.html",
 		"/F/web/index.html",
 		"/C/Users/Administrator.7J3FXA4TRMAIT95/AppData/Roaming/Sublime Text 3/Packages/HTML-CSS-JS Prettify/.jsbeautifyrc",
 		"/F/web/css/lanrenzhijia.css",
@@ -606,27 +588,7 @@
 		"/C/Users/Administrator.7J3FXA4TRMAIT95/AppData/Roaming/Sublime Text 3/Packages/User/MarkdownPreview.sublime-settings",
 		"/C/Users/Administrator.7J3FXA4TRMAIT95/AppData/Local/Temp/22.html",
 		"/C/Users/Administrator.7J3FXA4TRMAIT95/AppData/Local/Temp/30.html",
-		"/C/Users/Administrator.7J3FXA4TRMAIT95/AppData/Local/Temp/24.html",
-		"/F/blog/_layouts/blog.html",
-		"/D/Program Files/RStudio/RFile/MarkDown/2014-12-30-advR_vocabulary.html",
-		"/F/cancerDR/table/connect.php",
-		"/F/cancerDR/table/data.php",
-		"/F/cancerDR/cancerDR.sublime-project",
-		"/F/cancerDR/aa.html",
-		"/F/cancerDR/jqwidgets-ver3.5.0/phpdemos/server_side_grid_filtering_and_sorting_and_paging/index.php",
-		"/F/cancerDR/css/jqxcustom.css",
-		"/F/blog/css/JekyllPure.css",
-		"/D/Program Files/RStudio/RFile/Learn/funSet.md",
-		"/D/deskTop/highlight/README.md",
-		"/D/Desktop/sfdad.css",
-		"/F/cancerDR/jqwidgets-ver3.5.0/phpdemos/server_side_grid_filtering_and_sorting_and_paging/connect.php",
-		"/D/deskTop/BSOA-SVM.md",
-		"/D/Desktop/BSOA-SVM.md",
-		"/C/Users/Administrator.7J3FXA4TRMAIT95/AppData/Roaming/Sublime Text 3/Packages/Markdown Preview/MarkdownPreview.sublime-settings",
-		"/D/Desktop/Markdown Cheatsheet",
-		"/F/cancerDR/jqwidgets-ver3.5.0/demos/jqxsplitter/horizontal-splitter-collapsible-second-panel.htm",
-		"/F/cancerDR/kendo-ui-core/styles/web/common/inputs.less",
-		"/F/cancerDR/jqwidgets-ver3.5.0/demos/jqxinput/input-fluid-size.htm"
+		"/C/Users/Administrator.7J3FXA4TRMAIT95/AppData/Local/Temp/24.html"
 	],
 	"find":
 	{
@@ -644,6 +606,37 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"term_link",
+			"$(\"#ms\")",
+			"mir",
+			"value",
+			"binding",
+			"colName",
+			"cellName",
+			"drug",
+			"option",
+			"mi",
+			"mir",
+			"ms_name",
+			"$(\"#mir\")",
+			"mir",
+			"$(\"#ms\")",
+			"ms-name",
+			"$(\"#mir\")",
+			"meth",
+			"mir",
+			"$(\"#meth\")",
+			"tab1",
+			"DESC",
+			"drug_id",
+			"intval($drug_id)",
+			"drug_id",
+			"$drug_id",
+			"dataAdapter",
+			"render",
+			"&nbsp;&nbsp;&nbsp;",
+			"&nbsp;&nbsp;&nbsp;&nbsp;",
+			"&nbsp;&nbsp;",
 			"url",
 			"switch",
 			"$(\"#jqxgrid\")",
@@ -740,38 +733,7 @@
 			"border-color",
 			"jqx-widget-header-custom",
 			".jqx-widget-header-custom, .jqx-grid-custom",
-			".jqx-widget-header-custom, .jqx-grid-custom .jqx-widget-header-custom",
-			"42ACDC",
-			"data",
-			"datafields",
-			"php",
-			"url",
-			"search.box",
-			"heading",
-			"#tabs_search",
-			"tabs_search",
-			"tabs",
-			"#tabs",
-			"tabs",
-			"tab",
-			"search",
-			"hover",
-			"二级",
-			"header",
-			"border-bott",
-			"footer",
-			"width",
-			"search",
-			"left",
-			"[\\.]left",
-			"[^-]left",
-			".left",
-			"left",
-			"z-index",
-			"\\.left",
-			"left",
-			"\\.left",
-			"right"
+			".jqx-widget-header-custom, .jqx-grid-custom .jqx-widget-header-custom"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -779,6 +741,15 @@
 		"regex": false,
 		"replace_history":
 		[
+			"$(\"#mut\")",
+			"$(\"#ms\")",
+			"$(\"#lnc\")",
+			"$(\"#ms\")",
+			"$(\"#mir\")",
+			"$drug_id",
+			"",
+			"&nbsp;&nbsp;&nbsp;",
+			"&nbsp;&nbsp;&nbsp;&nbsp;",
 			"$(\"#mut\")",
 			"$(\"#meth\")",
 			"/js/",
@@ -806,24 +777,24 @@
 	"groups":
 	[
 		{
-			"selected": 5,
+			"selected": 2,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "jqwidgets-ver3.6.0/phpdemos/server_side_grid__with_nested_grids/data.php",
+					"file": "cytoscape.js-2.3.7/data.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 10118,
+						"buffer_size": 1507,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								5266,
-								5266
+								593,
+								593
 							]
 						],
 						"settings":
@@ -831,261 +802,87 @@
 							"BracketHighlighterBusy": false,
 							"bh_regions":
 							[
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
 								"bh_tag",
 								"bh_tag_center",
 								"bh_tag_open",
 								"bh_tag_close",
 								"bh_tag_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content"
-							],
-							"syntax": "Packages/PHP/PHP.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 3630.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 9,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "mut_detail.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 7686,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								834,
-								834
-							]
-						],
-						"settings":
-						{
-							"BracketHighlighterBusy": false,
-							"bh_regions":
-							[
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
 								"bh_angle",
 								"bh_angle_center",
 								"bh_angle_open",
 								"bh_angle_close",
 								"bh_angle_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
 								"bh_c_define",
 								"bh_c_define_center",
 								"bh_c_define_open",
 								"bh_c_define_close",
 								"bh_c_define_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
 								"bh_curly",
 								"bh_curly_center",
 								"bh_curly_open",
 								"bh_curly_close",
-								"bh_curly_content"
-							],
-							"syntax": "Packages/PHP/PHP.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 462.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 5,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "data.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 5940,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								5215,
-								5215
-							]
-						],
-						"settings":
-						{
-							"BracketHighlighterBusy": false,
-							"bh_regions":
-							[
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
+								"bh_curly_content",
 								"bh_double_quote",
 								"bh_double_quote_center",
 								"bh_double_quote_open",
 								"bh_double_quote_close",
 								"bh_double_quote_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
 								"bh_unmatched",
 								"bh_unmatched_center",
 								"bh_unmatched_open",
 								"bh_unmatched_close",
 								"bh_unmatched_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
 								"bh_square",
 								"bh_square_center",
 								"bh_square_open",
 								"bh_square_close",
 								"bh_square_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content"
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content"
 							],
-							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"syntax": "Packages/HTML/HTML.tmLanguage",
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 3777.0,
+						"translation.y": 66.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 1,
 					"type": "text"
 				},
 				{
-					"buffer": 3,
-					"file": "drug.php",
+					"buffer": 1,
+					"file": "cytoscape.js-2.3.7/ajax.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3594,
+						"buffer_size": 796,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1654,
-								1654
+								623,
+								623
 							]
 						],
 						"settings":
@@ -1093,175 +890,88 @@
 							"BracketHighlighterBusy": false,
 							"bh_regions":
 							[
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
 								"bh_tag",
 								"bh_tag_center",
 								"bh_tag_open",
 								"bh_tag_close",
 								"bh_tag_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
 								"bh_curly",
 								"bh_curly_center",
 								"bh_curly_open",
 								"bh_curly_close",
-								"bh_curly_content"
+								"bh_curly_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content"
 							],
-							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"syntax": "Packages/HTML/HTML.tmLanguage",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 638.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "drugSearch.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 4038,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1526,
-								1526
-							]
-						],
-						"settings":
-						{
-							"BracketHighlighterBusy": false,
-							"bh_regions":
-							[
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content"
-							],
-							"syntax": "Packages/PHP/PHP.tmLanguage"
-						},
-						"translation.x": 74.0,
-						"translation.y": 330.0,
+						"translation.y": 396.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 2,
 					"type": "text"
 				},
 				{
-					"buffer": 5,
-					"file": "drugBrowser.php",
+					"buffer": 2,
+					"file": "cytoscape.js-2.3.7/test.html",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 4594,
+						"buffer_size": 1091,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								3169,
-								3169
+								978,
+								978
 							]
 						],
 						"settings":
@@ -1269,421 +979,71 @@
 							"BracketHighlighterBusy": false,
 							"bh_regions":
 							[
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
 								"bh_tag",
 								"bh_tag_center",
 								"bh_tag_open",
 								"bh_tag_close",
 								"bh_tag_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content"
-							],
-							"syntax": "Packages/PHP/PHP.tmLanguage"
-						},
-						"translation.x": 439.0,
-						"translation.y": 1848.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "css/css.css",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 6671,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								343,
-								343
-							]
-						],
-						"settings":
-						{
-							"BracketHighlighterBusy": false,
-							"bh_regions":
-							[
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
 								"bh_angle",
 								"bh_angle_center",
 								"bh_angle_open",
 								"bh_angle_close",
 								"bh_angle_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
 								"bh_c_define",
 								"bh_c_define_center",
 								"bh_c_define_open",
 								"bh_c_define_close",
 								"bh_c_define_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
 								"bh_curly",
 								"bh_curly_center",
 								"bh_curly_open",
 								"bh_curly_close",
-								"bh_curly_content"
-							],
-							"syntax": "Packages/CSS/CSS.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 169.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 6,
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": "index.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1777,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1514,
-								1542
-							]
-						],
-						"settings":
-						{
-							"BracketHighlighterBusy": false,
-							"bh_regions":
-							[
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
+								"bh_curly_content",
 								"bh_double_quote",
 								"bh_double_quote_center",
 								"bh_double_quote_open",
 								"bh_double_quote_close",
 								"bh_double_quote_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
 								"bh_unmatched",
 								"bh_unmatched_center",
 								"bh_unmatched_open",
 								"bh_unmatched_close",
 								"bh_unmatched_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
 								"bh_square",
 								"bh_square_center",
 								"bh_square_open",
 								"bh_square_close",
 								"bh_square_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content"
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content"
 							],
-							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"syntax": "Packages/HTML/HTML.tmLanguage",
 							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
-						"translation.y": 594.0,
+						"translation.y": 545.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 7,
-					"type": "text"
-				},
-				{
-					"buffer": 8,
-					"file": "header.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2683,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								110,
-								110
-							]
-						],
-						"settings":
-						{
-							"BracketHighlighterBusy": false,
-							"bh_regions":
-							[
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content"
-							],
-							"syntax": "Packages/PHP/PHP.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 8,
-					"type": "text"
-				},
-				{
-					"buffer": 9,
-					"file": "meth_detail.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 2841,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1747,
-								1757
-							]
-						],
-						"settings":
-						{
-							"BracketHighlighterBusy": false,
-							"bh_regions":
-							[
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content"
-							],
-							"syntax": "Packages/PHP/PHP.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 1115.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
+					"stack_index": 0,
 					"type": "text"
 				}
 			]
@@ -1693,7 +1053,7 @@
 			"sheets":
 			[
 				{
-					"buffer": 10,
+					"buffer": 3,
 					"semi_transient": false,
 					"settings":
 					{
@@ -1776,11 +1136,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 10,
+					"stack_index": 3,
 					"type": "text"
 				},
 				{
-					"buffer": 11,
+					"buffer": 4,
 					"semi_transient": false,
 					"settings":
 					{
@@ -1863,7 +1223,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 11,
+					"stack_index": 4,
 					"type": "text"
 				}
 			]
@@ -1873,7 +1233,7 @@
 			"sheets":
 			[
 				{
-					"buffer": 12,
+					"buffer": 5,
 					"semi_transient": false,
 					"settings":
 					{
@@ -1956,11 +1316,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 13,
+					"stack_index": 6,
 					"type": "text"
 				},
 				{
-					"buffer": 13,
+					"buffer": 6,
 					"semi_transient": false,
 					"settings":
 					{
@@ -2043,7 +1403,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 12,
+					"stack_index": 5,
 					"type": "text"
 				}
 			]
@@ -2089,14 +1449,14 @@
 		"rows":
 		[
 			0.0,
-			0.912216653033,
+			0.889923659402,
 			1.0
 		]
 	},
 	"menu_visible": true,
 	"output.exec":
 	{
-		"height": 103.0
+		"height": 250.0
 	},
 	"output.find_results":
 	{
@@ -2121,6 +1481,10 @@
 		"height": 0.0,
 		"selected_items":
 		[
+			[
+				"search.p",
+				"search.php"
+			],
 			[
 				"rowda",
 				"jqwidgets-ver3.6.0\\demos\\jqxdatatable\\javascript-datatable-rows-details.htm"

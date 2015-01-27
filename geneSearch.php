@@ -1,19 +1,4 @@
 
-    <link rel="stylesheet" href="./css/jqxcustom.css" type="text/css" />
-    <!-- <link rel="stylesheet" href="../../jqwidgets/styles/jqxcustom.css" type="text/css" /> -->
-    <script type="text/javascript" src="./js/jquery-1.10.2.min.js"></script>  
-	<script type="text/javascript" src="./js/jqxcore.js"></script>
-    <script type="text/javascript" src="./js/jqxbuttons.js"></script>
-    <script type="text/javascript" src="./js/jqxscrollbar.js"></script>
-    <script type="text/javascript" src="./js/jqxmenu.js"></script>
-    <script type="text/javascript" src="./js/jqxgrid.js"></script>
-    <script type="text/javascript" src="./js/jqxgrid.selection.js"></script>	
-	<script type="text/javascript" src="./js/jqxgrid.filter.js"></script>	
-	<script type="text/javascript" src="./js/jqxgrid.sort.js"></script>		
-    <script type="text/javascript" src="./js/jqxdata.js"></script>	
-	<script type="text/javascript" src="./js/jqxlistbox.js"></script>	
-	<script type="text/javascript" src="./js/jqxgrid.pager.js"></script>		
-	<script type="text/javascript" src="./js/jqxdropdownlist.js"></script>
 	<!-- php调用javacript -->
     <script type="text/javascript">
     <?php 
@@ -21,20 +6,19 @@
     ?>
         $(document).ready(function () {
             // prepare the data
-            var theme = 'darkblue';
+            var theme = 'energyblue';
       
             var source =
             {
                  datatype: "json",
                  datafields: [
-					 
-					 { name: 'drugID', type: 'string'},
-					 { name: 'drugName', type: 'string'},
-					 { name: 'drugBankID', type: 'string'},
-					 { name: 'pubchemID', type: 'string'}
+					 { name: 'id', type: 'string'},
+					 { name: 'other_name', type: 'string'},
+					 { name: 'all_id', type: 'string'},
+					 { name: 'gene_name', type: 'string'},
+					 { name: 'type', type: 'string'}
                 ],
-			    url: 'data.php?table=drug' + '&q=' + "<?php echo $_GET['name']; ?>" 
-			    		,
+			    url: 'data.php?table=info_gene_transcript&colName=other_name' + '&value=' + "<?php echo $_GET['value']; ?>" ,
 				
 				cache: false,
 				filter: function()
@@ -73,7 +57,7 @@
             // initialize jqxGrid
             $("#jqxgrid").jqxGrid(
             {		
-                source: dataadapter,
+                 source: dataadapter,
                 theme: theme,
 				filterable: true,
 				sortable: true,
@@ -90,16 +74,21 @@
 				enablehover: false,
 				enablebrowserselection:'enable', //是否可以选中字体
 				autoheight: true,
-				width: 700,
+				width: 900,
+				autorowheight: true,
 				rendergridrows: function(obj)
 				{
 					 return obj.data;    
 				},
 			    columns: [
-                      { text: '<a href="./drug.php?drugID='+'Drug ID'+'"</a>', datafield: 'drugID' , width: 200 },
-                      { text: 'Drug Name', datafield: 'drugName', width: 200 },
-                      { text: 'Drugbank ID', datafield: 'drugBankID', width: 200 },
-                      { text: 'Pubchem ID', datafield: 'pubchemID', width: 100 }
+                      // { text: 'Drug ID' , datafield:'<a href="./drug.php?drugID=afd'">drugID</a>', width: 200 , cellsrenderer:cellsrenderer},
+                      { text: 'Search Value', datafield: 'other_name', width: 380 },
+                       
+                      { text: 'Name', datafield: 'gene_name', width: 200,cellsrenderer: multi_link },
+                      { text: 'ID', datafield: 'all_id', width: 130 ,cellsrenderer: multi_link},
+                      // { text: 'Search Value', datafield: 'other_name', width: 330 ,renderer:columnsrenderer},
+                      // { text: 'Pubchem ID', datafield: 'pubchem_id', width: 150 ,renderer:columnsrenderer},
+                      { text: 'type', datafield: 'type', width: 190 }
                   ]
             });
         });

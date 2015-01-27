@@ -58,12 +58,13 @@ error_reporting(E_ALL ^ E_DEPRECATED);
  echo '<h1 id="name">', $row['drug_name'], '</h2>';
  echo '<table border=0><tr><th>Drug ID</th><td>', $row['id'], '</td></tr>';
  
- echo '<tr><th>Synonyms</th><td>' , 'temp', '</td>';
- echo '<tr><th>DrugBank ID</th><td>', $row['drugbank_id'], '</td><th>      PubChem ID</th><td>', $row['pubchem_id'],'</td></tr>';
+ echo '<tr><th>Synonyms</th><td>' ,$row['synonyms'] , '</td>';
+ echo '<tr><th>DrugBank ID</th><td><a target="_blank" href="http://www.drugbank.ca/drugs/', $row['drugbank_id'], '"</a>',$row['drugbank_id'], '</td></tr>';
+ echo '<tr><th>PubChem ID</th><td><a target="_blank" href="https://pubchem.ncbi.nlm.nih.gov/compound/', $row['pubchem_id'],'"</a>',$row['pubchem_id'], '</td></tr>';
+ echo '<tr><th>Description</th><td>' , $row['description'], '</td>';
  echo '</table></div>';
  echo '<div id="kind"><ul id="tabs">';
- $colName = 'drug_id';
- $value = $drug_id;
+
 if($row['mut']==1){
   echo '<li  factor="jqxgrid"><a href="#" >Mutation</a></li>';
  include('mut_detail.php');
@@ -112,6 +113,10 @@ th, td{
 
 padding: 5px;
 }
+
+th{
+  width:120px;
+}
 #jqxWidget{
   margin: 20px 0px 0px 0px;
 }
@@ -140,10 +145,7 @@ padding: 5px;
   
 
 
-<?php
-// include('meth_detail.php');
-// include('mut_detail.php');
-?>
+
 
 
 <script type="text/javascript">

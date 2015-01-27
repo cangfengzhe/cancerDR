@@ -89,10 +89,10 @@
 					 return obj.data;    
 				},
 				columns: [
-                       { text: 'disease_name', datafield: 'disease_name', width: 200},
-               { text: 'cell_name', datafield: 'cell_name', width: 120},
-                { text: 'gene_name', datafield: 'gene_name', width:120},
-               { text: 'pmid', datafield: 'pmid', width: 90},
+                       { text: 'disease_name', datafield: 'disease_name', width: 200, cellsrenderer:disease_link},
+               { text: 'cell_name', datafield: 'cell_name', width: 120, cellsrenderer:cell_link},
+                { text: 'gene_name', datafield: 'gene_name', width:120, cellsrenderer:gene_link},
+               { text: 'pmid', datafield: 'pmid', width: 90, cellsrenderer:pub_link},
                { text: 'detail', datafield: 'detail', width: 400},
                   ]
 			   
@@ -130,10 +130,10 @@
 				},
 				columns: [
                // { text: 'drug ID', datafield: 'drug_id', width: 200},
-               { text: 'drug_name', datafield: 'drug_name', width: 120},
-                { text: 'gene_name', datafield: 'gene_name', width:120},
-               { text: 'pmid', datafield: 'pmid', width: 90},
-               { text: 'detail', datafield: 'detail', width: 400},
+               { text: 'Drug Name', datafield: 'drug_name', width: 120, cellsrenderer:drug_link},
+                { text: 'Gene Name', datafield: 'gene_name', width:120, cellsrenderer:gene_link},
+               { text: 'Pubmed ID', datafield: 'pmid', width: 90,cellsrenderer:pub_link},
+               { text: 'Detail', datafield: 'detail', width: 400},
                   ]
 			   
             });
@@ -169,11 +169,51 @@
 					 return obj.data;    
 				},
 				columns: [
-               { text: 'cell_name', datafield: 'cell_name', width: 200},
-               { text: 'drug_name', datafield: 'drug_name', width: 120},
-                { text: 'gene_name', datafield: 'gene_name', width:120},
-               { text: 'pmid', datafield: 'pmid', width: 90},
-               { text: 'detail', datafield: 'detail', width: 400},
+               { text: 'Cell Name', datafield: 'cell_name', width: 200, cellsrenderer:cell_link},
+               { text: 'Drug Name', datafield: 'drug_name', width: 120, cellsrenderer:drug_link},
+                { text: 'Gene Name', datafield: 'gene_name', width:120,cellsrenderer: gene_link},
+               { text: 'Pubmed ID', datafield: 'pmid', width: 90, cellsrenderer:pub_link},
+               { text: 'Detail', datafield: 'detail', width: 400},
+                  ]
+			   
+            });
+            }
+
+             if(colName=='gene_id'){
+            	$("#meth").jqxGrid(
+            {		
+                source: dataadapter,
+                width:930,
+                theme: 'energyblue',
+				pageable: true,
+				sortable: true,
+				autoheight: true,
+				rowsheight: 30,
+				columnsheight: 40,
+				// height:40px;
+                virtualmode: true,
+                
+                filterable: true,
+				sortable: true,
+				selectionmode: 'none',
+				altrows: true,//交替颜色
+				autoshowfiltericon: false,
+				showpinnedcolumnbackground: false,
+				// showrowdetailscolumn:false,
+				autorowheight: true,
+				pagesize: 10,
+				enablehover: false,
+				enablebrowserselection:'enable', //是否可以选中字体
+				rendergridrows: function(obj)
+				{
+					 return obj.data;    
+				},
+				columns: [
+               { text: 'Cell Name', datafield: 'cell_name', width: 200, cellsrenderer:cell_link},
+               { text: 'Drug Name', datafield: 'drug_name', width: 120, cellsrenderer:drug_link},
+                // { text: 'Gene Name', datafield: 'gene_name', width:120,cellsrenderer: gene_link},
+               { text: 'Pubmed ID', datafield: 'pmid', width: 90, cellsrenderer:pub_link},
+               { text: 'Detail', datafield: 'detail', width: 400},
                   ]
 			   
             });

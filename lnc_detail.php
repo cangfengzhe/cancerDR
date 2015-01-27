@@ -90,8 +90,8 @@
 			    columns: [
                     { text: 'Disease', datafield: 'disease_name', width: 200, cellsrenderer:disease_link},
                		{ text: 'Cell Line', datafield: 'cell_name', width: 120, cellsrenderer:cell_link},
-                	{ text: 'lncRNA', datafield: 'lnc_name', width:120, cellsrenderer:term_link},
-               		{ text: 'pmid', datafield: 'pmid', width: 90, cellsrenderer: pub_link},
+                	{ text: 'lncRNA', datafield: 'lnc_name', width:120, cellsrenderer:lnc_link},
+               		{ text: 'Pubmed ID', datafield: 'pmid', width: 90, cellsrenderer: pub_link},
                		{ text: 'Detail', datafield: 'detail', width: 400},
                   ]
             });
@@ -132,7 +132,7 @@
                    
                 	{ text: 'lncRNA', datafield: 'lnc_name', width:120, cellsrenderer:lnc_link},
                 	{ text: 'Drug Name', datafield: 'drug_name', width:120, cellsrenderer:drug_link},
-               		{ text: 'pmid', datafield: 'pmid', width: 90, cellsrenderer: pub_link},
+               		{ text: 'Pubmed ID', datafield: 'pmid', width: 90, cellsrenderer: pub_link},
                		{ text: 'Detail', datafield: 'detail', width: 400},
                   ]
             });
@@ -171,14 +171,52 @@
                    { text: 'Cell Line', datafield: 'cell_name', width: 120, cellsrenderer:cell_link},
                 	{ text: 'lncRNA', datafield: 'lnc_name', width:120, cellsrenderer:lnc_link},
                 	{ text: 'Drug Name', datafield: 'drug_name', width:120, cellsrenderer:drug_link},
-               		{ text: 'pmid', datafield: 'pmid', width: 90, cellsrenderer: pub_link},
+               		{ text: 'Pubmed ID', datafield: 'pmid', width: 90, cellsrenderer: pub_link},
                		{ text: 'Detail', datafield: 'detail', width: 400},
                   ]
             });
             }
             
 
-
+  if(colName == 'lnc_id'){
+           $("#lnc").jqxGrid(
+            {		
+                source: dataadapter,
+                width:930,
+                theme: 'energyblue',
+				pageable: true,
+				sortable: true,
+				autoheight: true,
+				rowsheight: 30,
+				columnsheight: 40,
+				// height:40px;
+                virtualmode: true,
+                
+                filterable: true,
+				sortable: true,
+				selectionmode: 'none',
+				altrows: true,//交替颜色
+				autoshowfiltericon: false,
+				showpinnedcolumnbackground: false,
+				// showrowdetailscolumn:false,
+				autorowheight: true,
+				pagesize: 10,
+				enablehover: false,
+				enablebrowserselection:'enable', //是否可以选中字体
+				rendergridrows: function(obj)
+				{
+					 return obj.data;    
+				},
+			    columns: [
+			    { text: 'Disease Name', datafield: 'disease_name', width: 120, cellsrenderer:disease_link},
+                   { text: 'Cell Line', datafield: 'cell_name', width: 120, cellsrenderer:cell_link},
+             
+                	{ text: 'Drug Name', datafield: 'drug_name', width:120, cellsrenderer:drug_link},
+               		{ text: 'Pubmed ID', datafield: 'pmid', width: 90, cellsrenderer: pub_link},
+               		{ text: 'Detail', datafield: 'detail', width: 400},
+                  ]
+            });
+            }
 
 
 

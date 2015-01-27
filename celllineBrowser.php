@@ -41,19 +41,19 @@
                  datatype: "json",
                  datafields: [
 					 { name: 'id', type: 'string'},
-					 { name: 'drug_id', type: 'string'},
-					 { name: 'drug_name', type: 'string'},
-					 { name: 'other_name', type: 'string'},
-					 { name: 'pubchem_id', type: 'string'},
+					 { name: 'cell_id', type: 'string'},
+					 { name: 'cell_name', type: 'string'},
+					 { name: 'tissue', type: 'string'},
+					 { name: 'cosmic_id', type: 'string'},
 					 { name: 'mut', type: 'string'},
 					 { name: 'meth', type: 'string'},
 					 { name: 'mir', type: 'string'},
 					 { name: 'lnc', type: 'string'},
 					 { name: 'msi', type: 'string'},
-					 { name: 'sum', type: 'float'}
+					 
                 ],
-			    url: 'data.php?table=info_drug' + '&value=' + "<?php echo $_GET['value']; ?>" +
-			     '&colName=other_name',
+			    url: 'data.php?table=info_cell' + '&value=' + "<?php echo $_GET['value']; ?>" +
+			     '&colName=cell_name',
 				
 				cache: false,
 				filter: function()
@@ -173,20 +173,17 @@ var columnsrenderer = function (value) {
 				enablehover: false,
 				enablebrowserselection:'enable', //是否可以选中字体
 				autoheight: true,
-				width: 900,
-				autorowheight: true,
+				width: 800,
 				rendergridrows: function(obj)
 				{
 					 return obj.data;    
 				},
 			    columns: [
                       // { text: 'Drug ID' , datafield:'<a href="./drug.php?drugID=afd'">drugID</a>', width: 200 , cellsrenderer:cellsrenderer},
-                      { text: 'Search Value', datafield: 'other_name', width: 380 ,renderer:columnsrenderer},
-                       
-                      { text: 'Drug Name', datafield: 'drug_name', width: 200 , cellsrenderer:crossRef,renderer:columnsrenderer},
-                      { text: 'Drug ID', datafield: 'id', width: 130 , cellsrenderer:crossRef, renderer:columnsrenderer},
-                      // { text: 'Search Value', datafield: 'other_name', width: 330 ,renderer:columnsrenderer},
-                      // { text: 'Pubchem ID', datafield: 'pubchem_id', width: 150 ,renderer:columnsrenderer},
+                       { text: 'Cell Line ID', datafield: 'id', width: 130 , cellsrenderer:cell_link, renderer:columnsrenderer},
+                      { text: 'Cell Line', datafield: 'cell_name', width: 200 , cellsrenderer:cell_link,renderer:columnsrenderer},
+                      { text: 'Tissue', datafield: 'tissue', width: 130 ,renderer:columnsrenderer},
+                      { text: 'Cosimic ID', datafield: 'cosmic_id', width: 150 ,renderer:columnsrenderer},
                       { text: 'type', datafield: 'sum', width: 190, cellsrenderer:factorType }
                   ]
             });

@@ -5,8 +5,13 @@ include('header.php');
 
 $type = $_GET['type'];
 $value = $_GET['value'];
-if (!(empty($type) and empty($value))){
+if (!empty($value)){
 echo $type . ':' . $value;
+}
+else{
+  echo 'the search word should not be empty';
+  include('footer.php');
+  die();
 }
 ?>
 
@@ -26,16 +31,17 @@ echo $type . ':' . $value;
   <script type="text/javascript" src="/js/jqxgrid.selection.js"></script>
     <script type="text/javascript" src="/js/jqxgrid.pager.js"></script>
   <script type="text/javascript" src="/js/jqxgrid.filter.js"></script>
+   <script type="text/javascript" src="/js/link.js"></script>
 <?php
 # 判断type
 
 switch ($type)
 {
 case 'cellLine':
-  include('cellLineSearch.php');
+  include('celllineBrowser.php');
   break;
-case 'cellType':
-  include('cellTypeSearch.php');
+case 'disease':
+  include('diseaseSearch.php');
   break;
 case 'drug':
   include('drugBrowser.php');
@@ -45,7 +51,7 @@ case 'gene':
 	break;
 
 default:
-  echo "No number between 1 and 3";
+  echo "No data";
 }
 
 ?>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src='./jquery-2.1.1.min.js'></script>
+	<script>
+$(document).ready(function(){
+	// response.setContentType("application/json");
+	var url = './data.php';
+      $.ajax(url, {
+        // data: {
+        //   'cityname': '襄阳',
+        //   'dtype': 'jsonp',
+        //   'key': 'xxxx',
+        //   '_': new Date().getTime()
+        // },
+
+        // dataType: 'json',
+        // crossDomain: true,
+        async:false,
+        success: function(data) {
+         // 
+          bb = data;// bb为全局变量
+           
+         
+        },
+        
+        
+      });
+
+      alert(data[0].TotalRows);
+     // alert(bb[0].TotalRows);
+    
+      // alert('afds');
+	
+})
+
+
+	</script>
+</head>
+<body>
+	
+</body>
+</html>
