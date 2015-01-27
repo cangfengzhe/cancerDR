@@ -7,7 +7,7 @@
     <link href="style.css" rel="stylesheet" />
     <script src="./build/cytoscape.js"></script>
     <script src='./build/jquery-2.1.1.min.js'></script>
-<script src="./lib/dagre.js"></script>
+    <script src="./lib/layout.concentric.js"></script>
 
 
     <script>
@@ -36,45 +36,109 @@
             },
             ready: function() {
                 console.log('ready')
-            }
-
-
-
-        })
-
-        cy.on('tap', function(evt) {
-            evt.cyTarget.css('background-color', 'blue');
-            evt.cyTarget.neighborhood().css('background-color','orange');
-            var x=evt.cyTarget.position('x');
-            var y = evt.cyTarget.position('y');
-evt.cyTarget.neighborhood().animate({
-  position: { x: x, y: y },
-  css: { backgroundColor: 'red' }
-}, {
-  duration: 1000
-});
-
-
-
-        });
-        // cy.load({nodes:aa[0].nodes,edges:aa[0].edges});
-        // cy.nodes().animate({
-        //     position: {
-        //         x: 100,
-        //         y: 100
+            },
+            layout: {
+                name: 'concentric',
+                concentric: function() {
+                    return this.data('score');
+                },
+                levelWidth: function(nodes) {
+                    return 0.5;
+                },
+                padding: 10
+            },
+        
+        // layout: {
+        //     name: 'concentric',
+        //     concentric: function() { // returns numeric value for each node, placing higher nodes in levels towards the centre
+        //         return this.degree();
         //     },
-        //     css: {
-        //         backgroundColor: 'red'
-        //     }
-        // }, {
-        //     duration: 100000
-        // });
+        //     levelWidth: function(nodes) { // the variation of concentric values in each level
+        //         return nodes.maxDegree() / 4;
+        //     },
+        //     padding: 30,
+        // },
 
 
-// cy.filter('node[id ^= "g"]').css('background-color','yellow');
+    })
+
+    // cy.on('tap', function(evt) {
+    //     evt.cyTarget.css('background-color', 'blue');
+    //     evt.cyTarget.neighborhood().css('background-color', 'black');
+    //     alert(evt.cyTarget.degree());
+    // });
+    // var x = evt.cyTarget.position('x');
+    // var y = evt.cyTarget.position('y');
+    // evt.cyTarget.neighborhood().animate({
+    //     position: {
+    //         x: x,
+    //         y: y
+    //     },
+    //     css: {
+    //         backgroundColor: 'red'
+    //     }
+    // }, {
+    //     duration: 1000
+    // });
 
 
 
+
+
+    // });
+    // cy.load({nodes:aa[0].nodes,edges:aa[0].edges});
+    // cy.nodes().animate({
+    //     position: {
+    //         x: 100,
+    //         y: 100
+    //     },
+    //     css: {
+    //         backgroundColor: 'red'
+    //     }
+    // }, {
+    //     duration: 100000
+    // });
+
+    var options = {
+        name: 'concentric',
+
+        fit: true, // whether to fit the viewport to the graph
+        padding: 30, // the padding on fit
+        startAngle: 3 / 2 * Math.PI, // the position of the first node
+        counterclockwise: false, // whether the layout should go counterclockwise/anticlockwise (true) or clockwise (false)
+        minNodeSpacing: 10, // min spacing between outside of nodes (used for radius adjustment)
+        boundingBox: undefined, // constrain layout bounds; { x1, y1, x2, y2 } or { x1, y1, w, h }
+        avoidOverlap: true, // prevents node overlap, may overflow boundingBox if not enough space
+        height: undefined, // height of layout area (overrides container height)
+        width: undefined, // width of layout area (overrides container width)
+        concentric: function() { // returns numeric value for each node, placing higher nodes in levels towards the centre
+            return this.degree();
+        },
+        levelWidth: function(nodes) { // the variation of concentric values in each level
+            return nodes.maxDegree() / 4;
+        },
+        animate: false, // whether to transition the node positions
+        animationDuration: 500, // duration of animation in ms if enabled
+        ready: undefined, // callback on layoutready
+        stop: undefined // callback on layoutstop
+    };
+
+    // var layout = cy.$('node[id ^= "gene"]').makeLayout({
+    //   name: 'random'
+    // });
+
+    // layout.run();
+
+    cy.$('node[id ^= "gene"]')
+        .css('background-color', 'red');
+
+    cy.filter('node[id ^= "mir"]').css('background-color', 'orange');
+    cy.filter('node[id ^= "lnc"]').css('background-color', 'yellow');
+    cy.filter('node[id ^= "ms"]').css('background-color', 'green');
+    cy.filter('node[id ^= "drug"]').css('background-color', 'blue');
+    cy.filter('node[id ^= "dis"]').css('background-color', 'purple');
+
+    // $('node[id ^= "dis"]').css('background-color', 'purple');
 
 
     })

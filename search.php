@@ -2,16 +2,16 @@
 
 <?php
 include('header.php');
-
+include('security.php');
 $type = $_GET['type'];
 $value = $_GET['value'];
 if (!empty($value)){
-echo $type . ':' . $value;
+echo '<div><h4>Search by ', $type, ' : ' , $value, '</h4></div>';
 }
+
+
 else{
-  echo 'the search word should not be empty';
-  include('footer.php');
-  die();
+  echo '<div><h4>Browser by ', $type, '</h4></div>';
 }
 ?>
 

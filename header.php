@@ -43,17 +43,19 @@ function getCookie(c_name) {　　　　
 	<div id="nav">
 		<ul class='heading'>
 			<li><a href="/index.php">Home</a></li>
-			<li><a href="">Browser</a>
+			<li><a href="">Browse</a>
 			<ul id='subhead'>
-				<li><a href="">Cell Lines</a></li>
-				<li><a href="">Drugs</a></li>
-				<li><a href="">Gene&<br/>Transcription</a></li>
+				<li><a href="./search.php?type=disease&value=">Diseases</a></li>
+				<li><a href="./search.php?type=cellLine&value=">Cell Lines</a></li>
+				<li><a href="./search.php?type=drug&value=">Drugs</a></li>
+				<li><a href="./search.php?type=gene&value=">Genes&<br/>Transcripts</a></li>
 				
 			</ul></li>
 			<li><a href="">Download</a>
 			</li>
+			<li><a href="">Submit</a></li>
 			<li><a href="">Help</a></li>
-			<li><a href="">Test</a></li>
+			
 
 		</ul>
 

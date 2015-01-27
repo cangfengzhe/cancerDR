@@ -24,10 +24,10 @@ error_reporting(E_ALL ^ E_DEPRECATED);
 	if($tableName=='meth_view'){
 		$where = ' WHERE ' . $colName . " = $keyword";
 	}
-	elseif ($tableName == 'info_drug') {
-		// $where = 'WHERE other_name like "%' . $keyword . '%"'; 
-		$where = ' WHERE other_name like "%' . $keyword . '%" ';
-	}
+	// elseif ($tableName == 'info_drug') {
+	// 	// $where = 'WHERE other_name like "%' . $keyword . '%"'; 
+	// 	$where = ' WHERE other_name like "%' . $keyword . '%" ';
+	// }
 	else{
 		$where = ' WHERE ' . $colName . ' like "%' . $keyword . '%" ';
 	}
@@ -205,8 +205,9 @@ error_reporting(E_ALL ^ E_DEPRECATED);
 			"id" => $row['id'] ,
 			"drug_id" => $row['drug_id'] ,
 			'drug_name' => $row['drug_name'],
-			'drugbank_id' => $row['drugbank_id'],
+			// 'drugbank_id' => $row['drugbank_id'],
 			'pubchem_id' => $row['pubchem_id'],
+			'description' => $row['description'],
 			'other_name' => $str_show,
 			'mut'=>$row['mut'],
 			'meth'=> $row['meth'],

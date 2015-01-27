@@ -35,7 +35,7 @@
         $(document).ready(function () {
             // prepare the data
             var theme = 'energyblue';
-      
+      		var value ="<?php echo $_GET['value']; ?>";
             var source =
             {
                  datatype: "json",
@@ -44,7 +44,9 @@
 					 { name: 'drug_id', type: 'string'},
 					 { name: 'drug_name', type: 'string'},
 					 { name: 'other_name', type: 'string'},
+					 { name: 'description', type: 'string'},
 					 { name: 'pubchem_id', type: 'string'},
+					 { name: 'desc', type: 'string'},
 					 { name: 'mut', type: 'string'},
 					 { name: 'meth', type: 'string'},
 					 { name: 'mir', type: 'string'},
@@ -52,7 +54,7 @@
 					 { name: 'msi', type: 'string'},
 					 { name: 'sum', type: 'float'}
                 ],
-			    url: 'data.php?table=info_drug' + '&value=' + "<?php echo $_GET['value']; ?>" +
+			    url: 'data.php?table=info_drug' + '&value=' + value +
 			     '&colName=other_name',
 				
 				cache: false,
@@ -100,51 +102,51 @@ var crossRef =  function (row, columnfield, value, defaulthtml, columnproperties
                 
 }
 
-var factorType =  function (row, columnfield, value, defaulthtml, columnproperties, rowdata) {
-  // txt='<a id="tip" href="#"><span id="tip_info">Mutation:red; Methylation:orange; miRNA:yellow; lncRNA:green; MSI:blue; None:grey</span>';
-   txt='';
-   if(rowdata.mut==1){
-   	txt += '<span class="cir" id="cir_mut"></span>';
-   }
-   else{
-   	txt += '<span class="cir" id="cir0"></span>';
-   }
-   if(rowdata.meth==1){
-   	txt += '<span class="cir"  id="cir_meth"></span>';
-   }
-   else{
-   	txt += '<span class="cir"  id="cir0"></span>';
-   }
+// var factorType =  function (row, columnfield, value, defaulthtml, columnproperties, rowdata) {
+//   // txt='<a id="tip" href="#"><span id="tip_info">Mutation:red; Methylation:orange; miRNA:yellow; lncRNA:green; MSI:blue; None:grey</span>';
+//    txt='';
+//    if(rowdata.mut==1){
+//    	txt += '<span class="cir" id="cir_mut"></span>';
+//    }
+//    else{
+//    	txt += '<span class="cir" id="cir0"></span>';
+//    }
+//    if(rowdata.meth==1){
+//    	txt += '<span class="cir"  id="cir_meth"></span>';
+//    }
+//    else{
+//    	txt += '<span class="cir"  id="cir0"></span>';
+//    }
 
-   if(rowdata.mir==1){
-   	txt += '<span class="cir"  id="cir_mir"></span>';
-   }
-   else{
-  	txt += '<span class="cir"  id="cir0"></span>';
-   }
+//    if(rowdata.mir==1){
+//    	txt += '<span class="cir"  id="cir_mir"></span>';
+//    }
+//    else{
+//   	txt += '<span class="cir"  id="cir0"></span>';
+//    }
 
-   if(rowdata.lnc==1){
-  	txt += '<span class="cir"  id="cir_lnc"></span>';
-   }
-   else{
-   	txt += '<span class="cir"  id="cir0"></span>';
+//    if(rowdata.lnc==1){
+//   	txt += '<span class="cir"  id="cir_lnc"></span>';
+//    }
+//    else{
+//    	txt += '<span class="cir"  id="cir0"></span>';
 
-   }
+//    }
 
-   if(rowdata.msi==1){
-   	   	txt += '<span class="cir" id="cir_msi"></span>';
+//    if(rowdata.msi==1){
+//    	   	txt += '<span class="cir" id="cir_msi"></span>';
 
-   }
-   else{
-   	txt += '<span class="cir" id="cir0"></span>';
+//    }
+//    else{
+//    	txt += '<span class="cir" id="cir0"></span>';
 
-   }
+//    }
    
 
 
-   return txt;
+//    return txt;
                 
-}
+// }
 var columnsrenderer = function (value) {
 	return '<div style="margin: 15px 0 0 14px;">' + value + '</div>';
 }
@@ -154,7 +156,8 @@ var columnsrenderer = function (value) {
  	return txt;
  }    
             // initialize jqxGrid
-            $("#jqxgrid").jqxGrid(
+            if(value!=''){
+            	$("#jqxgrid").jqxGrid(
             {		
                 source: dataadapter,
                 theme: theme,
@@ -190,6 +193,45 @@ var columnsrenderer = function (value) {
                       { text: 'type', datafield: 'sum', width: 190, cellsrenderer:factorType }
                   ]
             });
+			}else{
+				$("#jqxgrid").jqxGrid(
+            {		
+                source: dataadapter,
+                theme: theme,
+				filterable: true,
+				sortable: true,
+				// autoheight: false,
+				pagermode: "simple",
+				pageable: true,
+				virtualmode: true,
+				// height:300,
+				columnsheight: 40,
+				rowsheight: 30,
+				selectionmode: 'none',
+				pagerbuttonscount: 6,
+				pagesize: 20,
+				enablehover: false,
+				enablebrowserselection:'enable', //是否可以选中字体
+				autoheight: true,
+				width: 900,
+				// autorowheight: true,
+				rendergridrows: function(obj)
+				{
+					 return obj.data;    
+				},
+			    columns: [
+                      // { text: 'Drug ID' , datafield:'<a href="./drug.php?drugID=afd'">drugID</a>', width: 200 , cellsrenderer:cellsrenderer},
+                      // { text: 'Search Value', datafield: 'other_name', width: 380 ,renderer:columnsrenderer},
+                       
+                      { text: 'Drug Name', datafield: 'drug_name', width: 200 , cellsrenderer:crossRef,renderer:columnsrenderer},
+                      { text: 'Drug ID', datafield: 'id', width: 110 , cellsrenderer:crossRef, renderer:columnsrenderer},
+                      { text: 'Description', datafield: 'description', width: 440 ,renderer:columnsrenderer},
+                      // { text: 'Pubchem ID', datafield: 'pubchem_id', width: 150 ,renderer:columnsrenderer},
+                      { text: 'type', datafield: 'sum', width: 150, cellsrenderer:factorType }
+                  ]
+            });
+			}
+            
         });
     </script>
 

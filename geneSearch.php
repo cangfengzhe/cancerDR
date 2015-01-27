@@ -7,7 +7,7 @@
         $(document).ready(function () {
             // prepare the data
             var theme = 'energyblue';
-      
+      		var value = "<?php echo $_GET['value']; ?>";
             var source =
             {
                  datatype: "json",
@@ -18,7 +18,7 @@
 					 { name: 'gene_name', type: 'string'},
 					 { name: 'type', type: 'string'}
                 ],
-			    url: 'data.php?table=info_gene_transcript&colName=other_name' + '&value=' + "<?php echo $_GET['value']; ?>" ,
+			    url: 'data.php?table=info_gene_transcript&colName=other_name' + '&value=' + value ,
 				
 				cache: false,
 				filter: function()
@@ -55,6 +55,9 @@
 			);
 	
             // initialize jqxGrid
+            if(value!=''){
+
+
             $("#jqxgrid").jqxGrid(
             {		
                  source: dataadapter,
@@ -91,6 +94,46 @@
                       { text: 'type', datafield: 'type', width: 190 }
                   ]
             });
+		}
+		else{
+
+            $("#jqxgrid").jqxGrid(
+            {		
+                 source: dataadapter,
+                theme: theme,
+				filterable: true,
+				sortable: true,
+				// autoheight: false,
+				pagermode: "simple",
+				pageable: true,
+				virtualmode: true,
+				// height:300,
+				columnsheight: 40,
+				rowsheight: 30,
+				selectionmode: 'none',
+				pagerbuttonscount: 6,
+				pagesize: 20,
+				enablehover: false,
+				enablebrowserselection:'enable', //是否可以选中字体
+				autoheight: true,
+				width: 900,
+				autorowheight: true,
+				rendergridrows: function(obj)
+				{
+					 return obj.data;    
+				},
+			    columns: [
+                      // { text: 'Drug ID' , datafield:'<a href="./drug.php?drugID=afd'">drugID</a>', width: 200 , cellsrenderer:cellsrenderer},
+                      // { text: 'Search Value', datafield: 'other_name', width: 380 },
+                       
+                      { text: 'Name', datafield: 'gene_name', width: 200,cellsrenderer: multi_link },
+                      { text: 'ID', datafield: 'all_id', width: 130 ,cellsrenderer: multi_link},
+                      { text: 'Synonyms', datafield: 'other_name', width: 470 ,renderer:columnsrenderer},
+                      // { text: 'Pubchem ID', datafield: 'pubchem_id', width: 150 ,renderer:columnsrenderer},
+                      { text: 'type', datafield: 'type', width: 100 }
+                  ]
+            });
+		}
         });
     </script>
 

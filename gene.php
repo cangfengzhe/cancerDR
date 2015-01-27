@@ -51,7 +51,7 @@ error_reporting(E_ALL ^ E_DEPRECATED);
  echo '<h1 id="name">', $row['gene_name'], '</h2>';
  echo '<table border=0><tr><th>Gene ID</th><td>', $row['id'], '</td></tr>';
  
- echo '<tr><th>Synonyms</th><td>' , 'temp', '</td>';
+ // echo '<tr><th>Synonyms</th><td>' , 'temp', '</td>';
  echo '<tr><th>EntrezGene ID</th><td><a target= "_blank" href="http://www.ncbi.nlm.nih.gov/gene/?term=', $row['entrez_id'],'"</a>',$row['entrez_id'], '</td></tr>';
  echo '<tr><th>Description</th><td>' , $row['description'], '</td>';
  echo '</table></div>';

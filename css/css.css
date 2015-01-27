@@ -279,14 +279,14 @@ h2 {
 /*end search*/
 
 /*start grid*/
-#jqxWidget{
+/*#jqxWidget{
     position:relative;
 
     width: 800px;
     margin: 0 auto;
     z-index: 0;
 
-}
+}*/
 /*end grid*/
 
 

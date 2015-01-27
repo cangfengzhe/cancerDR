@@ -23,7 +23,8 @@ include('header.php');
 <div id='form'>
             <form action="search.php" method='get'>
 
-                <input type="text" id='text' name='value' value="eg. Aspirin" onfocus="if(value=='eg. Aspirin'){value='';style.color='black';style.fontStyle='normal';}" onblur="if(value==''){value='eg. Aspirin';style.color='silver';style.fontStyle='italic';}" />
+                <!-- <input type="text" id='text' name='value' value="eg. Aspirin" onfocus="if(value=='eg. Aspirin'){value='';style.color='black';style.fontStyle='normal';}" onblur="if(value==''){value='eg. Aspirin';style.color='silver';style.fontStyle='italic';}" /> -->
+                <input type="text" id='text' name='value' onfocus="style.color='black';style.fontStyle='normal';" placeholder='afds' />
                 <input type="hidden" name='type' id='hidden' value='aaa' />
                 <div>
 
