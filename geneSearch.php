@@ -1,13 +1,10 @@
 
 	<!-- php调用javacript -->
     <script type="text/javascript">
-    <?php 
-
-    ?>
         $(document).ready(function () {
             // prepare the data
             var theme = 'energyblue';
-      		var value = "<?php echo $_GET['value']; ?>";
+      		var value = "<?php echo $_GET['value'];?>";
             var source =
             {
                  datatype: "json",
@@ -16,10 +13,11 @@
 					 { name: 'other_name', type: 'string'},
 					 { name: 'all_id', type: 'string'},
 					 { name: 'gene_name', type: 'string'},
-					 { name: 'type', type: 'string'}
+					 { name: 'type', type: 'string'},
+					 { name: 'description', type: 'string'}
                 ],
 			    url: 'data.php?table=info_gene_transcript&colName=other_name' + '&value=' + value ,
-				
+
 				cache: false,
 				filter: function()
 				{
@@ -32,18 +30,18 @@
 					$("#jqxgrid").jqxGrid('updatebounddata', 'sort');
 				},
 				root: 'Rows',
-				
+
 				beforeprocessing: function(data)
-				{		
+				{
 					if (data != null)
 					{
-						source.totalrecords = data[0].TotalRows;					
+						source.totalrecords = data[0].TotalRows;
 					}
-					
+
 				}
 
 
-            };		
+            };
 
 
 		    var dataadapter = new $.jqx.dataAdapter(source, {
@@ -53,83 +51,89 @@
 					}
 				}
 			);
-	
+
             // initialize jqxGrid
             if(value!=''){
 
 
             $("#jqxgrid").jqxGrid(
-            {		
-                 source: dataadapter,
-                theme: theme,
-				filterable: true,
-				sortable: true,
-				// autoheight: false,
-				pagermode: "simple",
+            {
+                source: dataadapter,
+                width:1000,
+                theme: 'energyblue',
 				pageable: true,
-				virtualmode: true,
-				// height:300,
-				columnsheight: 40,
+				sortable: true,
+				autoheight: true,
 				rowsheight: 30,
+				columnsheight: 40,
+				// height:40px;
+                virtualmode: true,
+
+                filterable: true,
+				sortable: true,
 				selectionmode: 'none',
-				pagerbuttonscount: 6,
+				altrows: true,//交替颜色
+				autoshowfiltericon: false,
+				showpinnedcolumnbackground: false,
+				// showrowdetailscolumn:false,
+				autorowheight: true,
 				pagesize: 20,
 				enablehover: false,
 				enablebrowserselection:'enable', //是否可以选中字体
-				autoheight: true,
-				width: 900,
-				autorowheight: true,
 				rendergridrows: function(obj)
 				{
-					 return obj.data;    
+					 return obj.data;
 				},
 			    columns: [
                       // { text: 'Drug ID' , datafield:'<a href="./drug.php?drugID=afd'">drugID</a>', width: 200 , cellsrenderer:cellsrenderer},
-                      { text: 'Search Value', datafield: 'other_name', width: 380 },
-                       
+                      { text: 'Search Value', datafield: 'other_name', width: 520 },
+
                       { text: 'Name', datafield: 'gene_name', width: 200,cellsrenderer: multi_link },
-                      { text: 'ID', datafield: 'all_id', width: 130 ,cellsrenderer: multi_link},
+                      { text: 'ID', datafield: 'all_id', width: 180 ,cellsrenderer: multi_link},
                       // { text: 'Search Value', datafield: 'other_name', width: 330 ,renderer:columnsrenderer},
                       // { text: 'Pubchem ID', datafield: 'pubchem_id', width: 150 ,renderer:columnsrenderer},
-                      { text: 'type', datafield: 'type', width: 190 }
+                      { text: 'type', datafield: 'type', width: 100 }
                   ]
             });
 		}
 		else{
 
             $("#jqxgrid").jqxGrid(
-            {		
-                 source: dataadapter,
-                theme: theme,
-				filterable: true,
-				sortable: true,
-				// autoheight: false,
-				pagermode: "simple",
+            {
+                source: dataadapter,
+                width:1000,
+                theme: 'energyblue',
 				pageable: true,
-				virtualmode: true,
-				// height:300,
-				columnsheight: 40,
+				sortable: true,
+				autoheight: true,
 				rowsheight: 30,
+				columnsheight: 40,
+				// height:40px;
+                virtualmode: true,
+
+                filterable: true,
+				sortable: true,
 				selectionmode: 'none',
-				pagerbuttonscount: 6,
+				altrows: true,//交替颜色
+				autoshowfiltericon: false,
+				showpinnedcolumnbackground: false,
+				// showrowdetailscolumn:false,
+				autorowheight: true,
 				pagesize: 20,
 				enablehover: false,
 				enablebrowserselection:'enable', //是否可以选中字体
-				autoheight: true,
-				width: 900,
-				autorowheight: true,
 				rendergridrows: function(obj)
 				{
-					 return obj.data;    
+					 return obj.data;
 				},
 			    columns: [
                       // { text: 'Drug ID' , datafield:'<a href="./drug.php?drugID=afd'">drugID</a>', width: 200 , cellsrenderer:cellsrenderer},
                       // { text: 'Search Value', datafield: 'other_name', width: 380 },
-                       
+
                       { text: 'Name', datafield: 'gene_name', width: 200,cellsrenderer: multi_link },
-                      { text: 'ID', datafield: 'all_id', width: 130 ,cellsrenderer: multi_link},
-                      { text: 'Synonyms', datafield: 'other_name', width: 470 ,renderer:columnsrenderer},
-                      // { text: 'Pubchem ID', datafield: 'pubchem_id', width: 150 ,renderer:columnsrenderer},
+                      { text: 'ID', datafield: 'all_id', width: 180 ,cellsrenderer: multi_link},
+                      { text: 'Description', datafield: 'description', width: 520 ,renderer:columnsrenderer},
+
                       { text: 'type', datafield: 'type', width: 100 }
                   ]
             });

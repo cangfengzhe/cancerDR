@@ -1,0 +1,1001 @@
+cell_id,cell_name,tissue_id,tissue_name,gene_id,gene_name,cn,mut_aa,mut_cds,mut_desc,mut_pos
+401,BHY,16,"aero digestive tract",150,TP53,0<cn<8,p.Y220C,c.659A>G,"Substitution - Missense",17:7578190-7578190
+401,BHY,16,"aero digestive tract",110,NF2,0<cn<8,p.K228fs*23,c.683delA,"Deletion - Frameshift",22:30057201-30057201
+513,Detroit562,16,"aero digestive tract",150,TP53,0<cn<8,p.C135Y,c.404G>A,"Substitution - Missense",17:7578526-7578526
+513,Detroit562,16,"aero digestive tract",34,p16,0<cn<8,p.A76fs*70,c.225delC,"Deletion - Frameshift",9:21971133-21971133
+540,H4,30,"autonomic ganglia",150,TP53,0<cn<8,p.K132E,c.394A>G,"Substitution - Missense",17:7578536-7578536
+540,H4,30,"autonomic ganglia",8,RB1,0<cn<8,p.P21fs*5,,,
+524,EGI-1,24,"biliary tract",53,EGFR,0<cn<8,p.R832C,c.2494C>T,"Substitution - Missense",7:55259436-55259436
+524,EGI-1,24,"biliary tract",118,PIK3CA,0<cn<8,p.E545K,c.1633G>A,"Substitution - Missense",3:178936091-178936091
+524,EGI-1,24,"biliary tract",150,TP53,0<cn<8,p.C135F,c.404G>T,"Substitution - Missense",17:7578526-7578526
+528,ETK-1,24,"biliary tract",34,p16,0<cn<8,p.L78fs*41,c.233_234delTC,"Deletion - Frameshift",9:21971124-21971125
+528,ETK-1,24,"biliary tract",211,FBXW7,0<cn<8,p.R465C,c.1393C>T,"Substitution - Missense",4:153249385-153249385
+528,ETK-1,24,"biliary tract",94,KRAS,0<cn<8,p.G12D,c.35G>A,"Substitution - Missense",12:25398284-25398284
+528,ETK-1,24,"biliary tract",150,TP53,0<cn<8,p.C135fs*35,c.403delT,"Deletion - Frameshift",17:7578527-7578527
+326,5637,2,bladder,113,NRAS,0<cn<8,p.G12D,c.35G>A,"Substitution - Missense",1:115258747-115258747
+326,5637,2,bladder,111,NOTCH1,0<cn<8,p.Q2460*,,,
+326,5637,2,bladder,150,TP53,0<cn<8,p.G154fs*27,c.459_460insN,"Insertion - Frameshift",17:7578470-7578471
+489,639-V,2,bladder,150,TP53,0<cn<8,p.C176fs*6,,,
+488,647-V,2,bladder,113,NRAS,0<cn<8,p.G12D,c.35G>A,"Substitution - Missense",1:115258747-115258747
+488,647-V,2,bladder,150,TP53,0<cn<8,p.G245S,c.733G>A,"Substitution - Missense",17:7577548-7577548
+488,647-V,2,bladder,150,TP53,0<cn<8,p.R248Q,c.743G>A,"Substitution - Missense",17:7577538-7577538
+488,647-V,2,bladder,28,RUNX1,0<cn<8,p.R166fs*47,c.?,Unknown,
+490,697,1,blood,1,APC,0<cn<8,p.T1556fs*3,c.4666_4667insA,"Insertion - Frameshift",5:112175957-112175958
+490,697,1,blood,1,APC,0<cn<8,p.T1556fs*3,c.4660_4661insA,"Insertion - Frameshift",5:112175951-112175952
+490,697,1,blood,211,FBXW7,0<cn<8,p.R393*,c.1177C>T,"Substitution - Nonsense",4:153250883-153250883
+490,697,1,blood,94,KRAS,0<cn<8,p.G12D,c.35G>A,"Substitution - Missense",12:25398284-25398284
+490,697,1,blood,118,PIK3CA,0<cn<8,p.E545D,c.1635G>T,"Substitution - Missense",3:178936093-178936093
+490,697,1,blood,118,PIK3CA,0<cn<8,p.E545D,c.1635G>C,"Substitution - Missense",3:178936093-178936093
+490,697,1,blood,150,TP53,0<cn<8,p.R273C,c.817C>T,"Substitution - Missense",17:7577121-7577121
+490,697,1,blood,1,APC,0<cn<8,p.G1106fs*20,c.3317delG,"Deletion - Frameshift",5:112174608-112174608
+490,697,1,blood,150,TP53,0<cn<8,p.K382fs*40,,,
+482,ARH-77,1,blood,1,APC,0<cn<8,p.R1450*,c.4348C>T,"Substitution - Nonsense",5:112175639-112175639
+482,ARH-77,1,blood,1,APC,0<cn<8,p.R213*,c.637C>T,"Substitution - Nonsense",5:112116592-112116592
+482,ARH-77,1,blood,94,KRAS,0<cn<8,p.G12C,c.34G>T,"Substitution - Missense",12:25398285-25398285
+482,ARH-77,1,blood,150,TP53,0<cn<8,p.R248W,c.741_742CC>TT,"Substitution - Missense",17:7577539-7577540
+482,ARH-77,1,blood,150,TP53,0<cn<8,p.R248W,c.742C>T,"Substitution - Missense",17:7577539-7577539
+482,ARH-77,1,blood,225,FAM123B,0<cn<8,p.R497*,,,
+482,ARH-77,1,blood,211,FBXW7,0<cn<8,p.L403fs*34,c.1205_1206insT,"Insertion - Frameshift",4:153250854-153250855
+481,BE-13,1,blood,150,TP53,0<cn<8,p.R213*,c.637C>T,"Substitution - Nonsense",17:7578212-7578212
+36,BV173,1,blood,152,TSC1,0<cn<8,p.L557fs*72,c.1669delC,"Deletion - Frameshift",9:135781296-135781296
+43,CCRFCEM,1,blood,150,TP53,0<cn<8,p.N239_S240insN,,,
+509,Daudi,1,blood,135,SMARCA4,0<cn<8,p.?,c.4636-1G>C,Unknown,19:11170428-11170428
+509,Daudi,1,blood,135,SMARCA4,0<cn<8,p.?,c.1812+1G>T,Unknown,19:11107221-11107221
+509,Daudi,1,blood,135,SMARCA4,0<cn<8,p.?,c.3546+1G>T,Unknown,19:11141570-11141570
+509,Daudi,1,blood,135,SMARCA4,0<cn<8,p.?,c.2439-1G>A,Unknown,19:11129632-11129632
+509,Daudi,1,blood,135,SMARCA4,0<cn<8,p.?,c.355+1G>T,Unknown,19:11096082-11096082
+509,Daudi,1,blood,135,SMARCA4,0<cn<8,p.?,c.1593+2T>C,Unknown,19:11105679-11105679
+509,Daudi,1,blood,135,SMARCA4,0<cn<8,p.?,c.1813-2A>G,Unknown,19:11113703-11113703
+509,Daudi,1,blood,135,SMARCA4,0<cn<8,p.?,c.1943+2T>G,Unknown,19:11113837-11113837
+509,Daudi,1,blood,135,SMARCA4,0<cn<8,p.?,c.3547-2A>G,Unknown,19:11143964-11143964
+509,Daudi,1,blood,135,SMARCA4,0<cn<8,p.?,c.3082-1G>T,Unknown,19:11136097-11136097
+509,Daudi,1,blood,135,SMARCA4,0<cn<8,p.?,c.223-1G>T,Unknown,19:11095948-11095948
+509,Daudi,1,blood,135,SMARCA4,0<cn<8,p.?,c.2275-1G>T,Unknown,19:11123624-11123624
+509,Daudi,1,blood,135,SMARCA4,0<cn<8,p.?,c.3774+1G>A,Unknown,19:11144194-11144194
+509,Daudi,1,blood,135,SMARCA4,0<cn<8,p.?,c.1118+1G>A,Unknown,19:11098601-11098601
+509,Daudi,1,blood,150,TP53,0<cn<8,p.E62*,c.184G>T,"Substitution - Nonsense",17:7579503-7579503
+509,Daudi,1,blood,140,STK11,0<cn<8,p.T212fs*75,,,
+510,DB,1,blood,150,TP53,0<cn<8,p.I254D,c.760_761AT>GA,"Substitution - Missense",17:7577520-7577521
+512,DEL,1,blood,118,PIK3CA,0<cn<8,p.H1047L,c.3140A>T,"Substitution - Missense",3:178952085-178952085
+514,DG-75,1,blood,1,APC,0<cn<8,p.R302*,c.904C>T,"Substitution - Nonsense",5:112151261-112151261
+514,DG-75,1,blood,1,APC,0<cn<8,p.S1465fs*3,c.4385_4386delAG,"Deletion - Frameshift",5:112175676-112175677
+514,DG-75,1,blood,25,BRCA2,0<cn<8,p.Q2934*,c.8800C>T,"Substitution - Nonsense",13:32953499-32953499
+514,DG-75,1,blood,109,NF1,0<cn<8,p.?,c.655-1G>T,Unknown,17:29508727-29508727
+514,DG-75,1,blood,109,NF1,0<cn<8,p.?,c.4577+1G>C,Unknown,17:29587534-29587534
+514,DG-75,1,blood,109,NF1,0<cn<8,p.?,c.4578-2A>G,Unknown,17:29588727-29588727
+514,DG-75,1,blood,109,NF1,0<cn<8,p.?,c.1641+1G>A,Unknown,17:29546136-29546136
+514,DG-75,1,blood,109,NF1,0<cn<8,p.?,c.204+1G>A,Unknown,17:29483145-29483145
+514,DG-75,1,blood,109,NF1,0<cn<8,p.?,c.4333-1G>A,Unknown,17:29586049-29586049
+514,DG-75,1,blood,109,NF1,0<cn<8,p.?,c.6428-1G>A,Unknown,17:29664385-29664385
+514,DG-75,1,blood,109,NF1,0<cn<8,p.?,c.205-2A>G,Unknown,17:29486026-29486026
+514,DG-75,1,blood,109,NF1,0<cn<8,p.?,c.6820-1G>C,Unknown,17:29667522-29667522
+514,DG-75,1,blood,109,NF1,0<cn<8,p.?,c.3709-2A>G,Unknown,17:29562627-29562627
+514,DG-75,1,blood,109,NF1,0<cn<8,p.?,c.3975-2A>G,Unknown,17:29576000-29576000
+514,DG-75,1,blood,109,NF1,0<cn<8,p.?,c.731-1G>T,Unknown,17:29509525-29509525
+514,DG-75,1,blood,109,NF1,0<cn<8,p.?,c.1186-1G>A,Unknown,17:29528428-29528428
+514,DG-75,1,blood,109,NF1,0<cn<8,p.?,c.7971-1G>T,Unknown,17:29685497-29685497
+514,DG-75,1,blood,109,NF1,0<cn<8,p.?,c.8161-1G>T,Unknown,17:29687504-29687504
+514,DG-75,1,blood,109,NF1,0<cn<8,p.?,c.4110+1G>A,Unknown,17:29576138-29576138
+514,DG-75,1,blood,109,NF1,0<cn<8,p.?,c.3709-2A>T,Unknown,17:29562627-29562627
+514,DG-75,1,blood,109,NF1,0<cn<8,p.?,c.3870+1G>T,Unknown,17:29562791-29562791
+514,DG-75,1,blood,109,NF1,0<cn<8,p.?,c.1393-2_1400delagAG,Unknown,17:29541467-29541476
+514,DG-75,1,blood,109,NF1,0<cn<8,p.?,c.654+1_654+2insT,Unknown,17:29508508-29508509
+514,DG-75,1,blood,109,NF1,0<cn<8,p.?,c.4722_4724+1delTAGg,Unknown,17:29588873-29588876
+514,DG-75,1,blood,109,NF1,0<cn<8,p.?,c.5812+2T>A,Unknown,17:29657518-29657518
+514,DG-75,1,blood,109,NF1,0<cn<8,p.?,c.7063-2A>G,Unknown,17:29670025-29670025
+514,DG-75,1,blood,109,NF1,0<cn<8,p.?,c.6007-1G>T,Unknown,17:29663350-29663350
+514,DG-75,1,blood,109,NF1,0<cn<8,p.?,c.1392+1G>T,Unknown,17:29533390-29533390
+514,DG-75,1,blood,109,NF1,0<cn<8,p.?,c.1721+7G>A,Unknown,17:29548954-29548954
+514,DG-75,1,blood,109,NF1,0<cn<8,p.?,c.7063-1G>T,Unknown,17:29670026-29670026
+514,DG-75,1,blood,109,NF1,0<cn<8,p.?,c.4431-25_4434del29,Unknown,17:29587362-29587390
+514,DG-75,1,blood,109,NF1,0<cn<8,p.?,c.1642-2A>G,Unknown,17:29548866-29548866
+514,DG-75,1,blood,109,NF1,0<cn<8,p.?,c.2850+1G>A,Unknown,17:29556484-29556484
+514,DG-75,1,blood,109,NF1,0<cn<8,p.?,c.3975-2A>T,Unknown,17:29576000-29576000
+514,DG-75,1,blood,109,NF1,0<cn<8,p.?,c.4333-1G>T,Unknown,17:29586049-29586049
+514,DG-75,1,blood,109,NF1,0<cn<8,p.?,c.4578-2A>T,Unknown,17:29588727-29588727
+514,DG-75,1,blood,109,NF1,0<cn<8,p.?,c.7458-1G>A,Unknown,17:29679274-29679274
+514,DG-75,1,blood,109,NF1,0<cn<8,p.?,c.7458-1G>T,Unknown,17:29679274-29679274
+514,DG-75,1,blood,109,NF1,0<cn<8,p.?,c.7615+1G>A,Unknown,17:29679433-29679433
+514,DG-75,1,blood,109,NF1,0<cn<8,p.?,c.7870-2A>G,Unknown,17:29684285-29684285
+514,DG-75,1,blood,109,NF1,0<cn<8,p.?,c.7184_7189+1delTAAA,Unknown,17:29670148-29670154
+514,DG-75,1,blood,109,NF1,0<cn<8,p.?,c.5609+1G>T,Unknown,17:29654858-29654858
+514,DG-75,1,blood,109,NF1,0<cn<8,p.?,c.1186-2A>G,Unknown,17:29528427-29528427
+514,DG-75,1,blood,109,NF1,0<cn<8,p.?,c.2851-2A>T,Unknown,17:29556851-29556851
+514,DG-75,1,blood,109,NF1,0<cn<8,p.?,c.3497-5A>G,Unknown,17:29560015-29560015
+514,DG-75,1,blood,109,NF1,0<cn<8,p.?,c.6643-8delt,Unknown,17:29664829-29664829
+514,DG-75,1,blood,109,NF1,0<cn<8,p.?,c.586+2T>C,Unknown,17:29497017-29497017
+514,DG-75,1,blood,109,NF1,0<cn<8,p.?,c.730+2_730+4deltaa,Unknown,17:29508805-29508807
+514,DG-75,1,blood,109,NF1,0<cn<8,p.?,c.1186-1G>C,Unknown,17:29528428-29528428
+514,DG-75,1,blood,109,NF1,0<cn<8,p.?,c.7970+1G>T,Unknown,17:29684388-29684388
+514,DG-75,1,blood,109,NF1,0<cn<8,p.?,c.587-2A>G,Unknown,17:29508438-29508438
+514,DG-75,1,blood,109,NF1,0<cn<8,p.?,c.587-1G>A,Unknown,17:29508439-29508439
+514,DG-75,1,blood,109,NF1,0<cn<8,p.?,c.6007-2A>G,Unknown,17:29663349-29663349
+514,DG-75,1,blood,109,NF1,0<cn<8,p.?,c.205-1G>A,Unknown,17:29486027-29486027
+514,DG-75,1,blood,109,NF1,0<cn<8,p.?,c.1642-1G>A,Unknown,17:29548867-29548867
+514,DG-75,1,blood,109,NF1,0<cn<8,p.?,c.7739-1G>A,Unknown,17:29683977-29683977
+514,DG-75,1,blood,109,NF1,0<cn<8,p.?,c.6428-10T>G,Unknown,17:29664376-29664376
+514,DG-75,1,blood,109,NF1,0<cn<8,p.?,c.1393-1G>C,Unknown,17:29541468-29541468
+514,DG-75,1,blood,109,NF1,0<cn<8,p.?,c.3974+2T>C,Unknown,17:29563041-29563041
+514,DG-75,1,blood,109,NF1,0<cn<8,p.?,c.730+2T>G,Unknown,17:29508805-29508805
+514,DG-75,1,blood,109,NF1,0<cn<8,p.?,c.6819+3A>G,Unknown,17:29665160-29665160
+514,DG-75,1,blood,109,NF1,0<cn<8,p.?,c.7458-2A>G,Unknown,17:29679273-29679273
+514,DG-75,1,blood,109,NF1,0<cn<8,p.?,c.586+1G>A,Unknown,17:29497016-29497016
+514,DG-75,1,blood,109,NF1,0<cn<8,p.?,c.3975-1G>A,Unknown,17:29576001-29576001
+514,DG-75,1,blood,109,NF1,0<cn<8,p.?,c.6007-1G>C,Unknown,17:29663350-29663350
+514,DG-75,1,blood,109,NF1,0<cn<8,p.?,c.7189+2T>A,Unknown,17:29670155-29670155
+514,DG-75,1,blood,109,NF1,0<cn<8,p.?,c.730+1G>T,Unknown,17:29508804-29508804
+514,DG-75,1,blood,109,NF1,0<cn<8,p.?,c.730+2T>C,Unknown,17:29508805-29508805
+514,DG-75,1,blood,25,BRCA2,0<cn<8,p.N1287fs*6,,,
+514,DG-75,1,blood,6,MLH1,0<cn<8,p.Y130fs*6,,,
+514,DG-75,1,blood,109,NF1,0<cn<8,p.P2477fs*13,,,
+514,DG-75,1,blood,119,PIK3R1,0<cn<8,p.K448fs*32,,,
+516,DOHH-2,1,blood,150,TP53,0<cn<8,p.I255S,c.764T>G,"Substitution - Missense",17:7577517-7577517
+519,EB-3,1,blood,1,APC,0<cn<8,p.T1556fs*3,c.4666_4667insA,"Insertion - Frameshift",5:112175957-112175958
+519,EB-3,1,blood,1,APC,0<cn<8,p.T1556fs*3,c.4660_4661insA,"Insertion - Frameshift",5:112175951-112175952
+519,EB-3,1,blood,94,KRAS,0<cn<8,p.G12D,c.35G>A,"Substitution - Missense",12:25398284-25398284
+525,EHEB,1,blood,118,PIK3CA,0<cn<8,p.E545K,c.1633G>A,"Substitution - Missense",3:178936091-178936091
+525,EHEB,1,blood,150,TP53,0<cn<8,p.S241C,c.722C>G,"Substitution - Missense",17:7577559-7577559
+526,EM-2,1,blood,1,APC,0<cn<8,p.Q1367*,c.4099C>T,"Substitution - Nonsense",5:112175390-112175390
+526,EM-2,1,blood,150,TP53,0<cn<8,p.E204fs*10,c.610G>T,"Substitution - Nonsense",17:7578239-7578239
+527,EoL-1-cell,1,blood,150,TP53,0<cn<8,p.R209fs*6,c.625_626delAG,"Deletion - Frameshift",17:7578223-7578224
+527,EoL-1-cell,1,blood,150,TP53,0<cn<8,p.R209fs*6,c.626_627delGA,"Deletion - Frameshift",17:7578222-7578223
+181,BMSCs,20,bone,94,KRAS,0<cn<8,p.G12C,c.34G>T,"Substitution - Missense",12:25398285-25398285
+181,BMSCs,20,bone,150,TP53,0<cn<8,p.M246I,c.738G>C,"Substitution - Missense",17:7577543-7577543
+181,BMSCs,20,bone,150,TP53,0<cn<8,p.M246I,c.738G>A,"Substitution - Missense",17:7577543-7577543
+181,BMSCs,20,bone,140,STK11,0<cn<8,p.W332*,c.996G>A,"Substitution - Nonsense",19:1223059-1223059
+183,CADO,20,bone,150,TP53,0<cn<8,p.P191fs*56,c.571delC,"Deletion - Frameshift",17:7578278-7578278
+506,CAL-72,20,bone,44,CYLD,0<cn<8,p.?,c.2350+2T>A,Unknown,16:50826618-50826618
+506,CAL-72,20,bone,44,CYLD,0<cn<8,p.?,c.2241+1G>T,Unknown,16:50825602-50825602
+506,CAL-72,20,bone,44,CYLD,0<cn<8,p.?,c.1139-8_1139-7insT,Unknown,16:50813568-50813569
+506,CAL-72,20,bone,44,CYLD,0<cn<8,p.?,c.808-4C>A,Unknown,16:50788226-50788226
+506,CAL-72,20,bone,44,CYLD,0<cn<8,p.?,c.2470-7A>G,Unknown,16:50828116-50828116
+320,ES3,20,bone,3,BRAF,0<cn<8,p.K601N,c.1803A>T,"Substitution - Missense",7:140453132-140453132
+321,ES5,20,bone,7,PTEN,0<cn<8,p.R130*,c.388C>T,"Substitution - Nonsense",10:89692904-89692904
+321,ES5,20,bone,150,TP53,0<cn<8,p.S241F,c.722C>T,"Substitution - Missense",17:7577559-7577559
+321,ES5,20,bone,109,NF1,0<cn<8,p.D2635fs*9,,,
+322,ES7,20,bone,34,p16,0<cn<8,p.R80*,c.238C>T,"Substitution - Nonsense",9:21971120-21971120
+322,ES7,20,bone,211,FBXW7,0<cn<8,p.R505C,c.1513C>T,"Substitution - Missense",4:153247289-153247289
+322,ES7,20,bone,7,PTEN,0<cn<8,p.R335*,c.1003C>T,"Substitution - Nonsense",10:89720852-89720852
+322,ES7,20,bone,150,TP53,0<cn<8,p.R175H,c.524G>A,"Substitution - Missense",17:7578406-7578406
+322,ES7,20,bone,150,TP53,0<cn<8,p.R273C,c.817C>T,"Substitution - Missense",17:7577121-7577121
+322,ES7,20,bone,75,MSH6,0<cn<8,p.G770V,c.2309G>T,"Substitution - Missense",2:48027431-48027431
+322,ES7,20,bone,75,MSH6,0<cn<8,p.R495*,c.1483C>T,"Substitution - Nonsense",2:48026605-48026605
+322,ES7,20,bone,111,NOTCH1,0<cn<8,p.L1710P,,,
+323,EW-11,20,bone,150,TP53,0<cn<8,p.R273C,c.817C>T,"Substitution - Missense",17:7577121-7577121
+177,Bcap37,15,breast,34,p16,0<cn<8,p.R80*,c.238C>T,"Substitution - Nonsense",9:21971120-21971120
+177,Bcap37,15,breast,113,NRAS,0<cn<8,p.Q61L,c.182A>T,"Substitution - Missense",1:115256529-115256529
+491,BT-20,15,breast,113,NRAS,0<cn<8,p.G12D,c.35G>A,"Substitution - Missense",1:115258747-115258747
+491,BT-20,15,breast,150,TP53,0<cn<8,p.R174fs*3,,,
+456,BT-549,15,breast,150,TP53,0<cn<8,p.R248Q,c.743G>A,"Substitution - Missense",17:7577538-7577538
+456,BT-549,15,breast,60,EZH2,0<cn<8,p.Y646C,c.1937A>G,"Substitution - Missense",7:148508727-148508727
+456,BT-549,15,breast,60,EZH2,0<cn<8,p.Y646C,c.?,"Substitution - Missense",
+35,BT474,15,breast,150,TP53,0<cn<8,p.R280T,c.839G>C,"Substitution - Missense",17:7577099-7577099
+35,BT474,15,breast,8,RB1,0<cn<8,p.Y325*,c.975T>G,"Substitution - Nonsense",13:48941665-48941665
+184,CAL,15,breast,150,TP53,0<cn<8,p.L194F,c.580C>T,"Substitution - Missense",17:7578269-7578269
+505,CAL-120,15,breast,150,TP53,0<cn<8,p.D281Y,c.841G>T,"Substitution - Missense",17:7577097-7577097
+495,COLO-824,15,breast,118,PIK3CA,0<cn<8,p.H1047R,c.3140A>G,"Substitution - Missense",3:178952085-178952085
+495,COLO-824,15,breast,150,TP53,0<cn<8,p.R342*,c.1024C>T,"Substitution - Nonsense",17:7574003-7574003
+518,DU-4475,15,breast,111,NOTCH1,0<cn<8,p.F2267fs*87,,,
+518,DU-4475,15,breast,210,TET2,0<cn<8,p.W1847*,c.5541G>A,"Substitution - Nonsense",4:106197208-106197208
+518,DU-4475,15,breast,210,TET2,0<cn<8,p.W1847*,c.5540G>A,"Substitution - Nonsense",4:106197207-106197207
+523,EFM-19,15,breast,150,TP53,0<cn<8,p.C242fs*5,c.723delC,"Deletion - Frameshift",17:7577558-7577558
+523,EFM-19,15,breast,1,APC,0<cn<8,p.E1547*,c.4639G>T,"Substitution - Nonsense",5:112175930-112175930
+529,EVSA-T,15,breast,150,TP53,0<cn<8,p.R248Q,c.743G>A,"Substitution - Missense",17:7577538-7577538
+402,BOKU,17,cervix,1,APC,0<cn<8,p.Q1429*,c.4285C>T,"Substitution - Nonsense",5:112175576-112175576
+402,BOKU,17,cervix,94,KRAS,0<cn<8,p.G13D,c.38G>A,"Substitution - Missense",12:25398281-25398281
+402,BOKU,17,cervix,150,TP53,0<cn<8,p.R158L,c.473G>T,"Substitution - Missense",17:7578457-7578457
+402,BOKU,17,cervix,1,APC,0<cn<8,p.Q161*,,,
+38,C33A,17,cervix,118,PIK3CA,0<cn<8,p.E545K,c.1633G>A,"Substitution - Missense",3:178936091-178936091
+38,C33A,17,cervix,150,TP53,0<cn<8,p.E349*,c.1045G>T,"Substitution - Nonsense",17:7573982-7573982
+522,ECC4,23,"digestive system",7,PTEN,0<cn<8,p.R173C,c.517C>T,"Substitution - Missense",10:89711899-89711899
+522,ECC4,23,"digestive system",8,RB1,0<cn<8,p.R455*,c.1363C>T,"Substitution - Nonsense",13:48953760-48953760
+522,ECC4,23,"digestive system",150,TP53,0<cn<8,p.R282W,c.844C>T,"Substitution - Missense",17:7577094-7577094
+538,ESS-1,22,endometrium,113,NRAS,0<cn<8,p.Q61L,c.182A>T,"Substitution - Missense",1:115256529-115256529
+170,2102EP,33,"germ cell ",150,TP53,0<cn<8,p.M237I,c.711G>A,"Substitution - Missense",17:7577570-7577570
+170,2102EP,33,"germ cell ",150,TP53,0<cn<8,p.M237I,c.711G>T,"Substitution - Missense",17:7577570-7577570
+170,2102EP,33,"germ cell ",150,TP53,0<cn<8,p.M237I,c.711G>C,"Substitution - Missense",17:7577570-7577570
+189,CRL2631,31,"haematopoietic and lymphoid tissue",110,NF2,0<cn<8,p.R57*,c.169C>T,"Substitution - Nonsense",22:30032794-30032794
+194,DLBCL,31,"haematopoietic and lymphoid tissue",3,BRAF,0<cn<8,p.V600E,c.1799_1800TG>AA,"Substitution - Missense",7:140453135-140453136
+194,DLBCL,31,"haematopoietic and lymphoid tissue",3,BRAF,0<cn<8,p.V600E,c.1799T>A,"Substitution - Missense",7:140453136-140453136
+169,1Cc8SCC1,10,"head and neck",150,TP53,0<cn<8,p.C242Y,c.725G>A,"Substitution - Missense",17:7577556-7577556
+486,A253,10,"head and neck",3,BRAF,0<cn<8,p.V600E,c.1799_1800TG>AA,"Substitution - Missense",7:140453135-140453136
+486,A253,10,"head and neck",3,BRAF,0<cn<8,p.V600E,c.1799T>A,"Substitution - Missense",7:140453136-140453136
+398,BB30-HNC,10,"head and neck",8,RB1,0<cn<8,p.?,c.1216-2A>G,Unknown,13:48951052-48951052
+398,BB30-HNC,10,"head and neck",8,RB1,0<cn<8,p.?,c.1215+1G>A,Unknown,13:48947629-48947629
+398,BB30-HNC,10,"head and neck",8,RB1,0<cn<8,p.?,c.1499-1G>T,Unknown,13:48955382-48955382
+398,BB30-HNC,10,"head and neck",8,RB1,0<cn<8,p.?,c.1960+2T>C,Unknown,13:49030487-49030487
+398,BB30-HNC,10,"head and neck",8,RB1,0<cn<8,p.?,c.2107-2A>G,Unknown,13:49037865-49037865
+398,BB30-HNC,10,"head and neck",8,RB1,0<cn<8,p.?,c.265-1G>T,Unknown,13:48916734-48916734
+398,BB30-HNC,10,"head and neck",8,RB1,0<cn<8,p.?,c.1499-2A>G,Unknown,13:48955381-48955381
+398,BB30-HNC,10,"head and neck",8,RB1,0<cn<8,p.?,c.1215+1G>T,Unknown,13:48947629-48947629
+398,BB30-HNC,10,"head and neck",8,RB1,0<cn<8,p.?,c.1961-1G>T,Unknown,13:49033823-49033823
+398,BB30-HNC,10,"head and neck",8,RB1,0<cn<8,p.?,c.1814+2T>C,Unknown,13:49027249-49027249
+398,BB30-HNC,10,"head and neck",8,RB1,0<cn<8,p.?,c.2490-1G>C,Unknown,13:49047495-49047495
+398,BB30-HNC,10,"head and neck",8,RB1,0<cn<8,p.?,c.265-1G>A,Unknown,13:48916734-48916734
+398,BB30-HNC,10,"head and neck",8,RB1,0<cn<8,p.?,c.2107-1G>A,Unknown,13:49037866-49037866
+398,BB30-HNC,10,"head and neck",8,RB1,0<cn<8,p.?,c.1216-1G>C,Unknown,13:48951053-48951053
+398,BB30-HNC,10,"head and neck",8,RB1,0<cn<8,p.?,c.2664-10T>A,Unknown,13:49051481-49051481
+398,BB30-HNC,10,"head and neck",8,RB1,0<cn<8,p.?,c.2102_2106+8delACCA,Unknown,13:49033965-49033977
+398,BB30-HNC,10,"head and neck",8,RB1,0<cn<8,p.?,c.2326-1G>A,Unknown,13:49039340-49039340
+398,BB30-HNC,10,"head and neck",8,RB1,0<cn<8,p.?,c.608-1G>A,Unknown,13:48934152-48934152
+398,BB30-HNC,10,"head and neck",8,RB1,0<cn<8,p.?,c.2489+1G>C,Unknown,13:49039505-49039505
+398,BB30-HNC,10,"head and neck",8,RB1,0<cn<8,p.?,c.1695+1G>T,Unknown,13:48955580-48955580
+398,BB30-HNC,10,"head and neck",8,RB1,0<cn<8,p.?,c.2106+1G>T,Unknown,13:49033970-49033970
+398,BB30-HNC,10,"head and neck",8,RB1,0<cn<8,p.?,c.2212-2A>T,Unknown,13:49039132-49039132
+398,BB30-HNC,10,"head and neck",8,RB1,0<cn<8,p.?,c.1499-2A>C,Unknown,13:48955381-48955381
+398,BB30-HNC,10,"head and neck",8,RB1,0<cn<8,p.?,c.2106+1G>A,Unknown,13:49033970-49033970
+398,BB30-HNC,10,"head and neck",8,RB1,0<cn<8,p.?,c.381-2A>T,Unknown,13:48919214-48919214
+398,BB30-HNC,10,"head and neck",8,RB1,0<cn<8,p.?,c.265-2A>T,Unknown,13:48916733-48916733
+398,BB30-HNC,10,"head and neck",8,RB1,0<cn<8,p.?,c.138-1G>T,Unknown,13:48881415-48881415
+398,BB30-HNC,10,"head and neck",8,RB1,0<cn<8,p.?,c.1696-2A>G,Unknown,13:49027127-49027127
+398,BB30-HNC,10,"head and neck",8,RB1,0<cn<8,p.?,c.1333-2A>G,Unknown,13:48953728-48953728
+398,BB30-HNC,10,"head and neck",8,RB1,0<cn<8,p.?,c.380+2T>G,Unknown,13:48916852-48916852
+398,BB30-HNC,10,"head and neck",8,RB1,0<cn<8,p.?,c.265-2A>G,Unknown,13:48916733-48916733
+398,BB30-HNC,10,"head and neck",8,RB1,0<cn<8,p.?,c.2489+2T>A,Unknown,13:49039506-49039506
+398,BB30-HNC,10,"head and neck",8,RB1,0<cn<8,p.?,c.539+1G>A,Unknown,13:48922000-48922000
+398,BB30-HNC,10,"head and neck",8,RB1,0<cn<8,p.?,c.1499-2A>T,Unknown,13:48955381-48955381
+398,BB30-HNC,10,"head and neck",8,RB1,0<cn<8,p.?,c.1695+2T>A,Unknown,13:48955581-48955581
+398,BB30-HNC,10,"head and neck",8,RB1,0<cn<8,p.?,c.2107-2A>T,Unknown,13:49037865-49037865
+398,BB30-HNC,10,"head and neck",8,RB1,0<cn<8,p.?,c.2326-2A>G,Unknown,13:49039339-49039339
+398,BB30-HNC,10,"head and neck",8,RB1,0<cn<8,p.?,c.1050-2A>T,Unknown,13:48942661-48942661
+398,BB30-HNC,10,"head and neck",8,RB1,0<cn<8,p.?,c.1814+2T>A,Unknown,13:49027249-49027249
+398,BB30-HNC,10,"head and neck",8,RB1,0<cn<8,p.?,c.861+1G>A,Unknown,13:48937094-48937094
+398,BB30-HNC,10,"head and neck",8,RB1,0<cn<8,p.?,c.1421+2T>G,Unknown,13:48954222-48954222
+398,BB30-HNC,10,"head and neck",8,RB1,0<cn<8,p.?,c.1421+2T>A,Unknown,13:48954222-48954222
+398,BB30-HNC,10,"head and neck",8,RB1,0<cn<8,p.?,c.540-2_551delagGATA,Unknown,13:48923090-48923103
+398,BB30-HNC,10,"head and neck",8,RB1,0<cn<8,p.?,c.1498+2_1498+20del1,Unknown,13:48954379-48954397
+398,BB30-HNC,10,"head and neck",8,RB1,0<cn<8,p.?,c.2107-1_2109delgATT,Unknown,13:49037866-49037869
+398,BB30-HNC,10,"head and neck",8,RB1,0<cn<8,p.?,c.1499-1G>C,Unknown,13:48955382-48955382
+398,BB30-HNC,10,"head and neck",8,RB1,0<cn<8,p.?,c.1050-1G>C,Unknown,13:48942662-48942662
+398,BB30-HNC,10,"head and neck",8,RB1,0<cn<8,p.?,c.1128-2A>T,Unknown,13:48947539-48947539
+398,BB30-HNC,10,"head and neck",8,RB1,0<cn<8,p.?,c.264+1G>C,Unknown,13:48881543-48881543
+398,BB30-HNC,10,"head and neck",8,RB1,0<cn<8,p.?,c.1332+1G>A,Unknown,13:48951171-48951171
+398,BB30-HNC,10,"head and neck",8,RB1,0<cn<8,p.?,c.2489+1G>T,Unknown,13:49039505-49039505
+398,BB30-HNC,10,"head and neck",8,RB1,0<cn<8,p.?,c.540-1G>A,Unknown,13:48923091-48923091
+398,BB30-HNC,10,"head and neck",8,RB1,0<cn<8,p.?,c.1961-2A>C,Unknown,13:49033822-49033822
+398,BB30-HNC,10,"head and neck",8,RB1,0<cn<8,p.?,c.1049+1G>A,Unknown,13:48941740-48941740
+398,BB30-HNC,10,"head and neck",8,RB1,0<cn<8,p.?,c.939+1G>A,Unknown,13:48939108-48939108
+398,BB30-HNC,10,"head and neck",8,RB1,0<cn<8,p.?,c.607+1G>A,Unknown,13:48923160-48923160
+398,BB30-HNC,10,"head and neck",8,RB1,0<cn<8,p.?,c.2212-1G>C,Unknown,13:49039133-49039133
+398,BB30-HNC,10,"head and neck",8,RB1,0<cn<8,p.?,c.607+1G>T,Unknown,13:48923160-48923160
+398,BB30-HNC,10,"head and neck",8,RB1,0<cn<8,p.?,c.608-2A>T,Unknown,13:48934151-48934151
+398,BB30-HNC,10,"head and neck",8,RB1,0<cn<8,p.?,c.2520+6T>C,Unknown,13:49047532-49047532
+398,BB30-HNC,10,"head and neck",8,RB1,0<cn<8,p.?,c.2490-7T>G,Unknown,13:49047489-49047489
+398,BB30-HNC,10,"head and neck",8,RB1,0<cn<8,p.?,c.861+1G>T,Unknown,13:48937094-48937094
+398,BB30-HNC,10,"head and neck",150,TP53,0<cn<8,p.R273C,c.817C>T,"Substitution - Missense",17:7577121-7577121
+398,BB30-HNC,10,"head and neck",7,PTEN,0<cn<8,p.Q17del,c.49_51delCAA,"Deletion - In frame",10:89624275-89624277
+399,BB49-HNC,10,"head and neck",94,KRAS,0<cn<8,p.G13D,c.38G>A,"Substitution - Missense",12:25398281-25398281
+399,BB49-HNC,10,"head and neck",150,TP53,0<cn<8,p.C242fs*5,c.723delC,"Deletion - Frameshift",17:7577558-7577558
+403,Ca9-22,10,"head and neck",150,TP53,0<cn<8,p.E224D,c.672G>T,"Substitution - Missense",17:7578177-7578177
+403,Ca9-22,10,"head and neck",150,TP53,0<cn<8,p.E224D,c.672G>C,"Substitution - Missense",17:7578177-7578177
+405,CAL-33,10,"head and neck",94,KRAS,0<cn<8,p.G12V,c.35G>T,"Substitution - Missense",12:25398284-25398284
+405,CAL-33,10,"head and neck",150,TP53,0<cn<8,p.R158L,c.473G>T,"Substitution - Missense",17:7578457-7578457
+39,CAL27,10,"head and neck",211,FBXW7,0<cn<8,p.R465H,c.1394G>A,"Substitution - Missense",4:153249384-153249384
+39,CAL27,10,"head and neck",118,PIK3CA,0<cn<8,p.R88Q,c.263G>A,"Substitution - Missense",3:178916876-178916876
+39,CAL27,10,"head and neck",7,PTEN,0<cn<8,p.R233*,c.697C>T,"Substitution - Nonsense",10:89717672-89717672
+39,CAL27,10,"head and neck",7,PTEN,0<cn<8,p.R130*,c.388C>T,"Substitution - Nonsense",10:89692904-89692904
+39,CAL27,10,"head and neck",8,RB1,0<cn<8,p.?,c.1216-2A>G,Unknown,13:48951052-48951052
+39,CAL27,10,"head and neck",8,RB1,0<cn<8,p.?,c.1215+1G>A,Unknown,13:48947629-48947629
+39,CAL27,10,"head and neck",8,RB1,0<cn<8,p.?,c.1499-1G>T,Unknown,13:48955382-48955382
+39,CAL27,10,"head and neck",8,RB1,0<cn<8,p.?,c.1960+2T>C,Unknown,13:49030487-49030487
+39,CAL27,10,"head and neck",8,RB1,0<cn<8,p.?,c.2107-2A>G,Unknown,13:49037865-49037865
+39,CAL27,10,"head and neck",8,RB1,0<cn<8,p.?,c.265-1G>T,Unknown,13:48916734-48916734
+39,CAL27,10,"head and neck",8,RB1,0<cn<8,p.?,c.1499-2A>G,Unknown,13:48955381-48955381
+39,CAL27,10,"head and neck",8,RB1,0<cn<8,p.?,c.1215+1G>T,Unknown,13:48947629-48947629
+39,CAL27,10,"head and neck",8,RB1,0<cn<8,p.?,c.1961-1G>T,Unknown,13:49033823-49033823
+39,CAL27,10,"head and neck",8,RB1,0<cn<8,p.?,c.1814+2T>C,Unknown,13:49027249-49027249
+39,CAL27,10,"head and neck",8,RB1,0<cn<8,p.?,c.2490-1G>C,Unknown,13:49047495-49047495
+39,CAL27,10,"head and neck",8,RB1,0<cn<8,p.?,c.265-1G>A,Unknown,13:48916734-48916734
+39,CAL27,10,"head and neck",8,RB1,0<cn<8,p.?,c.2107-1G>A,Unknown,13:49037866-49037866
+39,CAL27,10,"head and neck",8,RB1,0<cn<8,p.?,c.1216-1G>C,Unknown,13:48951053-48951053
+39,CAL27,10,"head and neck",8,RB1,0<cn<8,p.?,c.2664-10T>A,Unknown,13:49051481-49051481
+39,CAL27,10,"head and neck",8,RB1,0<cn<8,p.?,c.2102_2106+8delACCA,Unknown,13:49033965-49033977
+39,CAL27,10,"head and neck",8,RB1,0<cn<8,p.?,c.2326-1G>A,Unknown,13:49039340-49039340
+39,CAL27,10,"head and neck",8,RB1,0<cn<8,p.?,c.608-1G>A,Unknown,13:48934152-48934152
+39,CAL27,10,"head and neck",8,RB1,0<cn<8,p.?,c.2489+1G>C,Unknown,13:49039505-49039505
+39,CAL27,10,"head and neck",8,RB1,0<cn<8,p.?,c.1695+1G>T,Unknown,13:48955580-48955580
+39,CAL27,10,"head and neck",8,RB1,0<cn<8,p.?,c.2106+1G>T,Unknown,13:49033970-49033970
+39,CAL27,10,"head and neck",8,RB1,0<cn<8,p.?,c.2212-2A>T,Unknown,13:49039132-49039132
+39,CAL27,10,"head and neck",8,RB1,0<cn<8,p.?,c.1499-2A>C,Unknown,13:48955381-48955381
+39,CAL27,10,"head and neck",8,RB1,0<cn<8,p.?,c.2106+1G>A,Unknown,13:49033970-49033970
+39,CAL27,10,"head and neck",8,RB1,0<cn<8,p.?,c.381-2A>T,Unknown,13:48919214-48919214
+39,CAL27,10,"head and neck",8,RB1,0<cn<8,p.?,c.265-2A>T,Unknown,13:48916733-48916733
+39,CAL27,10,"head and neck",8,RB1,0<cn<8,p.?,c.138-1G>T,Unknown,13:48881415-48881415
+39,CAL27,10,"head and neck",8,RB1,0<cn<8,p.?,c.1696-2A>G,Unknown,13:49027127-49027127
+39,CAL27,10,"head and neck",8,RB1,0<cn<8,p.?,c.1333-2A>G,Unknown,13:48953728-48953728
+39,CAL27,10,"head and neck",8,RB1,0<cn<8,p.?,c.380+2T>G,Unknown,13:48916852-48916852
+39,CAL27,10,"head and neck",8,RB1,0<cn<8,p.?,c.265-2A>G,Unknown,13:48916733-48916733
+39,CAL27,10,"head and neck",8,RB1,0<cn<8,p.?,c.2489+2T>A,Unknown,13:49039506-49039506
+39,CAL27,10,"head and neck",8,RB1,0<cn<8,p.?,c.539+1G>A,Unknown,13:48922000-48922000
+39,CAL27,10,"head and neck",8,RB1,0<cn<8,p.?,c.1499-2A>T,Unknown,13:48955381-48955381
+39,CAL27,10,"head and neck",8,RB1,0<cn<8,p.?,c.1695+2T>A,Unknown,13:48955581-48955581
+39,CAL27,10,"head and neck",8,RB1,0<cn<8,p.?,c.2107-2A>T,Unknown,13:49037865-49037865
+39,CAL27,10,"head and neck",8,RB1,0<cn<8,p.?,c.2326-2A>G,Unknown,13:49039339-49039339
+39,CAL27,10,"head and neck",8,RB1,0<cn<8,p.?,c.1050-2A>T,Unknown,13:48942661-48942661
+39,CAL27,10,"head and neck",8,RB1,0<cn<8,p.?,c.1814+2T>A,Unknown,13:49027249-49027249
+39,CAL27,10,"head and neck",8,RB1,0<cn<8,p.?,c.861+1G>A,Unknown,13:48937094-48937094
+39,CAL27,10,"head and neck",8,RB1,0<cn<8,p.?,c.1421+2T>G,Unknown,13:48954222-48954222
+39,CAL27,10,"head and neck",8,RB1,0<cn<8,p.?,c.1421+2T>A,Unknown,13:48954222-48954222
+39,CAL27,10,"head and neck",8,RB1,0<cn<8,p.?,c.540-2_551delagGATA,Unknown,13:48923090-48923103
+39,CAL27,10,"head and neck",8,RB1,0<cn<8,p.?,c.1498+2_1498+20del1,Unknown,13:48954379-48954397
+39,CAL27,10,"head and neck",8,RB1,0<cn<8,p.?,c.2107-1_2109delgATT,Unknown,13:49037866-49037869
+39,CAL27,10,"head and neck",8,RB1,0<cn<8,p.?,c.1499-1G>C,Unknown,13:48955382-48955382
+39,CAL27,10,"head and neck",8,RB1,0<cn<8,p.?,c.1050-1G>C,Unknown,13:48942662-48942662
+39,CAL27,10,"head and neck",8,RB1,0<cn<8,p.?,c.1128-2A>T,Unknown,13:48947539-48947539
+39,CAL27,10,"head and neck",8,RB1,0<cn<8,p.?,c.264+1G>C,Unknown,13:48881543-48881543
+39,CAL27,10,"head and neck",8,RB1,0<cn<8,p.?,c.1332+1G>A,Unknown,13:48951171-48951171
+39,CAL27,10,"head and neck",8,RB1,0<cn<8,p.?,c.2489+1G>T,Unknown,13:49039505-49039505
+39,CAL27,10,"head and neck",8,RB1,0<cn<8,p.?,c.540-1G>A,Unknown,13:48923091-48923091
+39,CAL27,10,"head and neck",8,RB1,0<cn<8,p.?,c.1961-2A>C,Unknown,13:49033822-49033822
+39,CAL27,10,"head and neck",8,RB1,0<cn<8,p.?,c.1049+1G>A,Unknown,13:48941740-48941740
+39,CAL27,10,"head and neck",8,RB1,0<cn<8,p.?,c.939+1G>A,Unknown,13:48939108-48939108
+39,CAL27,10,"head and neck",8,RB1,0<cn<8,p.?,c.607+1G>A,Unknown,13:48923160-48923160
+39,CAL27,10,"head and neck",8,RB1,0<cn<8,p.?,c.2212-1G>C,Unknown,13:49039133-49039133
+39,CAL27,10,"head and neck",8,RB1,0<cn<8,p.?,c.607+1G>T,Unknown,13:48923160-48923160
+39,CAL27,10,"head and neck",8,RB1,0<cn<8,p.?,c.608-2A>T,Unknown,13:48934151-48934151
+39,CAL27,10,"head and neck",8,RB1,0<cn<8,p.?,c.2520+6T>C,Unknown,13:49047532-49047532
+39,CAL27,10,"head and neck",8,RB1,0<cn<8,p.?,c.2490-7T>G,Unknown,13:49047489-49047489
+39,CAL27,10,"head and neck",8,RB1,0<cn<8,p.?,c.861+1G>T,Unknown,13:48937094-48937094
+39,CAL27,10,"head and neck",150,TP53,0<cn<8,p.R273C,c.817C>T,"Substitution - Missense",17:7577121-7577121
+39,CAL27,10,"head and neck",105,MSH2,0<cn<8,p.E768fs*44,,,
+39,CAL27,10,"head and neck",105,MSH2,0<cn<8,p.S860*,,,
+210,GVC8,10,"head and neck",109,NF1,0<cn<8,p.?,c.655-1G>T,Unknown,17:29508727-29508727
+210,GVC8,10,"head and neck",109,NF1,0<cn<8,p.?,c.4577+1G>C,Unknown,17:29587534-29587534
+210,GVC8,10,"head and neck",109,NF1,0<cn<8,p.?,c.4578-2A>G,Unknown,17:29588727-29588727
+210,GVC8,10,"head and neck",109,NF1,0<cn<8,p.?,c.1641+1G>A,Unknown,17:29546136-29546136
+210,GVC8,10,"head and neck",109,NF1,0<cn<8,p.?,c.204+1G>A,Unknown,17:29483145-29483145
+210,GVC8,10,"head and neck",109,NF1,0<cn<8,p.?,c.4333-1G>A,Unknown,17:29586049-29586049
+210,GVC8,10,"head and neck",109,NF1,0<cn<8,p.?,c.6428-1G>A,Unknown,17:29664385-29664385
+210,GVC8,10,"head and neck",109,NF1,0<cn<8,p.?,c.205-2A>G,Unknown,17:29486026-29486026
+210,GVC8,10,"head and neck",109,NF1,0<cn<8,p.?,c.6820-1G>C,Unknown,17:29667522-29667522
+210,GVC8,10,"head and neck",109,NF1,0<cn<8,p.?,c.3709-2A>G,Unknown,17:29562627-29562627
+210,GVC8,10,"head and neck",109,NF1,0<cn<8,p.?,c.3975-2A>G,Unknown,17:29576000-29576000
+210,GVC8,10,"head and neck",109,NF1,0<cn<8,p.?,c.731-1G>T,Unknown,17:29509525-29509525
+210,GVC8,10,"head and neck",109,NF1,0<cn<8,p.?,c.1186-1G>A,Unknown,17:29528428-29528428
+210,GVC8,10,"head and neck",109,NF1,0<cn<8,p.?,c.7971-1G>T,Unknown,17:29685497-29685497
+210,GVC8,10,"head and neck",109,NF1,0<cn<8,p.?,c.8161-1G>T,Unknown,17:29687504-29687504
+210,GVC8,10,"head and neck",109,NF1,0<cn<8,p.?,c.4110+1G>A,Unknown,17:29576138-29576138
+210,GVC8,10,"head and neck",109,NF1,0<cn<8,p.?,c.3709-2A>T,Unknown,17:29562627-29562627
+210,GVC8,10,"head and neck",109,NF1,0<cn<8,p.?,c.3870+1G>T,Unknown,17:29562791-29562791
+210,GVC8,10,"head and neck",109,NF1,0<cn<8,p.?,c.1393-2_1400delagAG,Unknown,17:29541467-29541476
+210,GVC8,10,"head and neck",109,NF1,0<cn<8,p.?,c.654+1_654+2insT,Unknown,17:29508508-29508509
+210,GVC8,10,"head and neck",109,NF1,0<cn<8,p.?,c.4722_4724+1delTAGg,Unknown,17:29588873-29588876
+210,GVC8,10,"head and neck",109,NF1,0<cn<8,p.?,c.5812+2T>A,Unknown,17:29657518-29657518
+210,GVC8,10,"head and neck",109,NF1,0<cn<8,p.?,c.7063-2A>G,Unknown,17:29670025-29670025
+210,GVC8,10,"head and neck",109,NF1,0<cn<8,p.?,c.6007-1G>T,Unknown,17:29663350-29663350
+210,GVC8,10,"head and neck",109,NF1,0<cn<8,p.?,c.1392+1G>T,Unknown,17:29533390-29533390
+210,GVC8,10,"head and neck",109,NF1,0<cn<8,p.?,c.1721+7G>A,Unknown,17:29548954-29548954
+210,GVC8,10,"head and neck",109,NF1,0<cn<8,p.?,c.7063-1G>T,Unknown,17:29670026-29670026
+210,GVC8,10,"head and neck",109,NF1,0<cn<8,p.?,c.4431-25_4434del29,Unknown,17:29587362-29587390
+210,GVC8,10,"head and neck",109,NF1,0<cn<8,p.?,c.1642-2A>G,Unknown,17:29548866-29548866
+210,GVC8,10,"head and neck",109,NF1,0<cn<8,p.?,c.2850+1G>A,Unknown,17:29556484-29556484
+210,GVC8,10,"head and neck",109,NF1,0<cn<8,p.?,c.3975-2A>T,Unknown,17:29576000-29576000
+210,GVC8,10,"head and neck",109,NF1,0<cn<8,p.?,c.4333-1G>T,Unknown,17:29586049-29586049
+210,GVC8,10,"head and neck",109,NF1,0<cn<8,p.?,c.4578-2A>T,Unknown,17:29588727-29588727
+210,GVC8,10,"head and neck",109,NF1,0<cn<8,p.?,c.7458-1G>A,Unknown,17:29679274-29679274
+210,GVC8,10,"head and neck",109,NF1,0<cn<8,p.?,c.7458-1G>T,Unknown,17:29679274-29679274
+210,GVC8,10,"head and neck",109,NF1,0<cn<8,p.?,c.7615+1G>A,Unknown,17:29679433-29679433
+210,GVC8,10,"head and neck",109,NF1,0<cn<8,p.?,c.7870-2A>G,Unknown,17:29684285-29684285
+210,GVC8,10,"head and neck",109,NF1,0<cn<8,p.?,c.7184_7189+1delTAAA,Unknown,17:29670148-29670154
+210,GVC8,10,"head and neck",109,NF1,0<cn<8,p.?,c.5609+1G>T,Unknown,17:29654858-29654858
+210,GVC8,10,"head and neck",109,NF1,0<cn<8,p.?,c.1186-2A>G,Unknown,17:29528427-29528427
+210,GVC8,10,"head and neck",109,NF1,0<cn<8,p.?,c.2851-2A>T,Unknown,17:29556851-29556851
+210,GVC8,10,"head and neck",109,NF1,0<cn<8,p.?,c.3497-5A>G,Unknown,17:29560015-29560015
+210,GVC8,10,"head and neck",109,NF1,0<cn<8,p.?,c.6643-8delt,Unknown,17:29664829-29664829
+210,GVC8,10,"head and neck",109,NF1,0<cn<8,p.?,c.586+2T>C,Unknown,17:29497017-29497017
+210,GVC8,10,"head and neck",109,NF1,0<cn<8,p.?,c.730+2_730+4deltaa,Unknown,17:29508805-29508807
+210,GVC8,10,"head and neck",109,NF1,0<cn<8,p.?,c.1186-1G>C,Unknown,17:29528428-29528428
+210,GVC8,10,"head and neck",109,NF1,0<cn<8,p.?,c.7970+1G>T,Unknown,17:29684388-29684388
+210,GVC8,10,"head and neck",109,NF1,0<cn<8,p.?,c.587-2A>G,Unknown,17:29508438-29508438
+210,GVC8,10,"head and neck",109,NF1,0<cn<8,p.?,c.587-1G>A,Unknown,17:29508439-29508439
+210,GVC8,10,"head and neck",109,NF1,0<cn<8,p.?,c.6007-2A>G,Unknown,17:29663349-29663349
+210,GVC8,10,"head and neck",109,NF1,0<cn<8,p.?,c.205-1G>A,Unknown,17:29486027-29486027
+210,GVC8,10,"head and neck",109,NF1,0<cn<8,p.?,c.1642-1G>A,Unknown,17:29548867-29548867
+210,GVC8,10,"head and neck",109,NF1,0<cn<8,p.?,c.7739-1G>A,Unknown,17:29683977-29683977
+210,GVC8,10,"head and neck",109,NF1,0<cn<8,p.?,c.6428-10T>G,Unknown,17:29664376-29664376
+210,GVC8,10,"head and neck",109,NF1,0<cn<8,p.?,c.1393-1G>C,Unknown,17:29541468-29541468
+210,GVC8,10,"head and neck",109,NF1,0<cn<8,p.?,c.3974+2T>C,Unknown,17:29563041-29563041
+210,GVC8,10,"head and neck",109,NF1,0<cn<8,p.?,c.730+2T>G,Unknown,17:29508805-29508805
+210,GVC8,10,"head and neck",109,NF1,0<cn<8,p.?,c.6819+3A>G,Unknown,17:29665160-29665160
+210,GVC8,10,"head and neck",109,NF1,0<cn<8,p.?,c.7458-2A>G,Unknown,17:29679273-29679273
+210,GVC8,10,"head and neck",109,NF1,0<cn<8,p.?,c.586+1G>A,Unknown,17:29497016-29497016
+210,GVC8,10,"head and neck",109,NF1,0<cn<8,p.?,c.3975-1G>A,Unknown,17:29576001-29576001
+210,GVC8,10,"head and neck",109,NF1,0<cn<8,p.?,c.6007-1G>C,Unknown,17:29663350-29663350
+210,GVC8,10,"head and neck",109,NF1,0<cn<8,p.?,c.7189+2T>A,Unknown,17:29670155-29670155
+210,GVC8,10,"head and neck",109,NF1,0<cn<8,p.?,c.730+1G>T,Unknown,17:29508804-29508804
+210,GVC8,10,"head and neck",109,NF1,0<cn<8,p.?,c.730+2T>C,Unknown,17:29508805-29508805
+210,GVC8,10,"head and neck",150,TP53,0<cn<8,p.R175L,c.524G>T,"Substitution - Missense",17:7578406-7578406
+210,GVC8,10,"head and neck",109,NF1,0<cn<8,p.M799fs*22,,,
+453,786-0,5,kidney,3,BRAF,0<cn<8,p.V600E,c.1799_1800TG>AA,"Substitution - Missense",7:140453135-140453136
+453,786-0,5,kidney,3,BRAF,0<cn<8,p.V600E,c.1799T>A,"Substitution - Missense",7:140453136-140453136
+453,786-0,5,kidney,135,SMARCA4,0<cn<8,p.E1582*,,,
+454,A498,5,kidney,150,TP53,0<cn<8,p.G245S,c.733G>A,"Substitution - Missense",17:7577548-7577548
+455,ACHN,5,kidney,94,KRAS,0<cn<8,p.G12D,c.35G>A,"Substitution - Missense",12:25398284-25398284
+455,ACHN,5,kidney,150,TP53,0<cn<8,p.H193R,c.578A>G,"Substitution - Missense",17:7578271-7578271
+400,BB65-RCC,5,kidney,150,TP53,0<cn<8,p.G245S,c.733G>A,"Substitution - Missense",17:7577548-7577548
+461,CAKI-1,5,kidney,150,TP53,0<cn<8,p.E298*,c.892G>T,"Substitution - Nonsense",17:7577046-7577046
+584,G-401,5,kidney,211,FBXW7,0<cn<8,p.R479Q,c.1436G>A,"Substitution - Missense",4:153247366-153247366
+584,G-401,5,kidney,150,TP53,0<cn<8,p.R175H,c.524G>A,"Substitution - Missense",17:7578406-7578406
+99,Caco2,18,"large intestine",150,TP53,0<cn<8,p.R248W,c.741_742CC>TT,"Substitution - Missense",17:7577539-7577540
+99,Caco2,18,"large intestine",150,TP53,0<cn<8,p.R248W,c.742C>T,"Substitution - Missense",17:7577539-7577539
+498,COLO-741,18,"large intestine",9,VHL,0<cn<8,p.?,c.464-1G>A,Unknown,3:10191470-10191470
+498,COLO-741,18,"large intestine",9,VHL,0<cn<8,p.?,c.464-1G>C,Unknown,3:10191470-10191470
+498,COLO-741,18,"large intestine",9,VHL,0<cn<8,p.?,c.464-2A>C,Unknown,3:10191469-10191469
+498,COLO-741,18,"large intestine",9,VHL,0<cn<8,p.?,c.341-1G>T,Unknown,3:10188197-10188197
+498,COLO-741,18,"large intestine",9,VHL,0<cn<8,p.?,c.463+1G>T,Unknown,3:10188321-10188321
+498,COLO-741,18,"large intestine",9,VHL,0<cn<8,p.?,c.463+2T>A,Unknown,3:10188322-10188322
+498,COLO-741,18,"large intestine",9,VHL,0<cn<8,p.?,c.340+2T>C,Unknown,3:10183873-10183873
+498,COLO-741,18,"large intestine",9,VHL,0<cn<8,p.?,c.464-2A>G,Unknown,3:10191469-10191469
+498,COLO-741,18,"large intestine",9,VHL,0<cn<8,p.?,c.464-1G>T,Unknown,3:10191470-10191470
+498,COLO-741,18,"large intestine",9,VHL,0<cn<8,p.?,c.463+1G>C,Unknown,3:10188321-10188321
+498,COLO-741,18,"large intestine",9,VHL,0<cn<8,p.?,c.463+2T>C,Unknown,3:10188322-10188322
+498,COLO-741,18,"large intestine",9,VHL,0<cn<8,p.?,c.340+1G>A,Unknown,3:10183872-10183872
+498,COLO-741,18,"large intestine",9,VHL,0<cn<8,p.?,c.341-2A>G,Unknown,3:10188196-10188196
+498,COLO-741,18,"large intestine",9,VHL,0<cn<8,p.?,c.341-2A>T,Unknown,3:10188196-10188196
+498,COLO-741,18,"large intestine",9,VHL,0<cn<8,p.?,c.463+1G>A,Unknown,3:10188321-10188321
+498,COLO-741,18,"large intestine",9,VHL,0<cn<8,p.?,c.341-1G>C,Unknown,3:10188197-10188197
+498,COLO-741,18,"large intestine",9,VHL,0<cn<8,p.?,c.340+1G>C,Unknown,3:10183872-10183872
+498,COLO-741,18,"large intestine",9,VHL,0<cn<8,p.?,c.340+1G>A,Unknown,3:10183872-10183872
+498,COLO-741,18,"large intestine",9,VHL,0<cn<8,p.?,c.341-8_341-2delcccg,Unknown,3:10188190-10188196
+498,COLO-741,18,"large intestine",9,VHL,0<cn<8,p.?,c.463+3A>C,Unknown,3:10188323-10188323
+44,colo205,18,"large intestine",150,TP53,0<cn<8,p.M237I,c.711G>A,"Substitution - Missense",17:7577570-7577570
+44,colo205,18,"large intestine",150,TP53,0<cn<8,p.M237I,c.711G>T,"Substitution - Missense",17:7577570-7577570
+44,colo205,18,"large intestine",150,TP53,0<cn<8,p.M237I,c.711G>C,"Substitution - Missense",17:7577570-7577570
+117,Colo320,18,"large intestine",96,SMAD4,0<cn<8,p.S144*,c.431C>G,"Substitution - Nonsense",18:48575671-48575671
+117,Colo320,18,"large intestine",96,SMAD4,0<cn<8,p.S144*,c.431C>A,"Substitution - Nonsense",18:48575671-48575671
+117,Colo320,18,"large intestine",150,TP53,0<cn<8,p.S183*,c.548C>G,"Substitution - Nonsense",17:7578382-7578382
+188,CRC,18,"large intestine",94,KRAS,0<cn<8,p.G12S,c.34G>A,"Substitution - Missense",12:25398285-25398285
+188,CRC,18,"large intestine",140,STK11,0<cn<8,p.Q37*,c.109C>T,"Substitution - Nonsense",19:1207021-1207021
+27,DLD1,18,"large intestine",85,HRAS,0<cn<8,p.Q61L,c.182A>T,"Substitution - Missense",11:533874-533874
+581,GP5d,18,"large intestine",150,TP53,0<cn<8,p.G266R,c.796G>A,"Substitution - Missense",17:7577142-7577142
+581,GP5d,18,"large intestine",150,TP53,0<cn<8,p.G266R,c.796G>C,"Substitution - Missense",17:7577142-7577142
+178,Bel7402,19,liver,1,APC,0<cn<8,p.T1556fs*3,c.4666_4667insA,"Insertion - Frameshift",5:112175957-112175958
+178,Bel7402,19,liver,1,APC,0<cn<8,p.T1556fs*3,c.4660_4661insA,"Insertion - Frameshift",5:112175951-112175952
+178,Bel7402,19,liver,1,APC,0<cn<8,p.E853*,c.2557G>T,"Substitution - Nonsense",5:112173848-112173848
+178,Bel7402,19,liver,3,BRAF,0<cn<8,p.V600E,c.1799_1800TG>AA,"Substitution - Missense",7:140453135-140453136
+178,Bel7402,19,liver,3,BRAF,0<cn<8,p.V600E,c.1799T>A,"Substitution - Missense",7:140453136-140453136
+178,Bel7402,19,liver,118,PIK3CA,0<cn<8,p.P449T,c.1345C>A,"Substitution - Missense",3:178928067-178928067
+178,Bel7402,19,liver,96,SMAD4,0<cn<8,p.Q311*,c.931C>T,"Substitution - Nonsense",18:48586262-48586262
+178,Bel7402,19,liver,150,TP53,0<cn<8,p.R273H,c.818G>A,"Substitution - Missense",17:7577120-7577120
+166,41,12,lung,3,BRAF,0<cn<8,p.K601N,c.1803A>T,"Substitution - Missense",7:140453132-140453132
+166,41,12,lung,8,RB1,0<cn<8,p.E440*,c.1318G>T,"Substitution - Nonsense",13:48951156-48951156
+166,41,12,lung,150,TP53,0<cn<8,p.A161T,c.481G>A,"Substitution - Missense",17:7578449-7578449
+166,41,12,lung,227,FLCN,0<cn<8,p.?,,,
+174,A459,12,lung,34,p16,0<cn<8,p.D84Y,c.250G>T,"Substitution - Missense",9:21971108-21971108
+174,A459,12,lung,6,MLH1,0<cn<8,p.?,c.1896+1G>A,Unknown,3:37089175-37089175
+174,A459,12,lung,6,MLH1,0<cn<8,p.?,c.790+1G>A,Unknown,3:37056036-37056036
+174,A459,12,lung,6,MLH1,0<cn<8,p.?,c.117-2A>T,Unknown,3:37038108-37038108
+174,A459,12,lung,6,MLH1,0<cn<8,p.?,c.117-2A>G,Unknown,3:37038108-37038108
+174,A459,12,lung,6,MLH1,0<cn<8,p.?,c.677+1G>A,Unknown,3:37053591-37053591
+174,A459,12,lung,6,MLH1,0<cn<8,p.?,c.1731+2T>C,Unknown,3:37083824-37083824
+174,A459,12,lung,6,MLH1,0<cn<8,p.?,c.791-2A>G,Unknown,3:37058995-37058995
+174,A459,12,lung,6,MLH1,0<cn<8,p.?,c.2104-1G>C,Unknown,3:37091976-37091976
+174,A459,12,lung,6,MLH1,0<cn<8,p.?,c.1039-1G>C,Unknown,3:37067127-37067127
+174,A459,12,lung,8,RB1,0<cn<8,p.K715*,c.2143A>T,"Substitution - Nonsense",13:49037903-49037903
+174,A459,12,lung,150,TP53,0<cn<8,p.V274F,c.820G>T,"Substitution - Missense",17:7577118-7577118
+174,A459,12,lung,150,TP53,0<cn<8,p.P223L,c.668C>T,"Substitution - Missense",17:7578181-7578181
+174,A459,12,lung,140,STK11,0<cn<8,p.K178fs*86,,,
+3,A549,12,lung,150,TP53,0<cn<8,p.R248Q,c.743G>A,"Substitution - Missense",17:7577538-7577538
+483,ABC-1,12,lung,3,BRAF,0<cn<8,p.V600E,c.1799_1800TG>AA,"Substitution - Missense",7:140453135-140453136
+483,ABC-1,12,lung,3,BRAF,0<cn<8,p.V600E,c.1799T>A,"Substitution - Missense",7:140453136-140453136
+483,ABC-1,12,lung,34,p16,0<cn<8,p.R80*,c.238C>T,"Substitution - Nonsense",9:21971120-21971120
+483,ABC-1,12,lung,150,TP53,0<cn<8,p.I251N,c.752T>A,"Substitution - Missense",17:7577529-7577529
+113,BEAS2B,12,lung,25,BRCA2,0<cn<8,p.K1517fs*23,c.4550_4559del10,"Deletion - Frameshift",13:32913042-32913051
+113,BEAS2B,12,lung,150,TP53,0<cn<8,p.?,c.376-1G>A,Unknown,17:7578555-7578555
+113,BEAS2B,12,lung,150,TP53,0<cn<8,p.?,c.559+1G>A,Unknown,17:7578370-7578370
+113,BEAS2B,12,lung,150,TP53,0<cn<8,p.?,c.672+1G>A,Unknown,17:7578176-7578176
+113,BEAS2B,12,lung,150,TP53,0<cn<8,p.?,c.672+2T>G,Unknown,17:7578175-7578175
+113,BEAS2B,12,lung,150,TP53,0<cn<8,p.?,c.673-2A>G,Unknown,17:7577610-7577610
+113,BEAS2B,12,lung,150,TP53,0<cn<8,p.?,c.783-1G>T,Unknown,17:7577156-7577156
+113,BEAS2B,12,lung,150,TP53,0<cn<8,p.?,c.920-1G>A,Unknown,17:7576927-7576927
+113,BEAS2B,12,lung,150,TP53,0<cn<8,p.?,c.993+1G>T,Unknown,17:7576852-7576852
+113,BEAS2B,12,lung,150,TP53,0<cn<8,p.?,c.673-2A>T,Unknown,17:7577610-7577610
+113,BEAS2B,12,lung,150,TP53,0<cn<8,p.?,c.1101-2A>C,Unknown,17:7573010-7573010
+113,BEAS2B,12,lung,150,TP53,0<cn<8,p.?,c.919+1G>T,Unknown,17:7577018-7577018
+113,BEAS2B,12,lung,150,TP53,0<cn<8,p.?,c.919+1G>C,Unknown,17:7577018-7577018
+113,BEAS2B,12,lung,150,TP53,0<cn<8,p.?,c.672+1G>T,Unknown,17:7578176-7578176
+113,BEAS2B,12,lung,150,TP53,0<cn<8,p.?,c.783-2A>C,Unknown,17:7577157-7577157
+113,BEAS2B,12,lung,150,TP53,0<cn<8,p.?,c.994-1G>C,Unknown,17:7574034-7574034
+113,BEAS2B,12,lung,150,TP53,0<cn<8,p.?,c.560-2A>G,Unknown,17:7578291-7578291
+113,BEAS2B,12,lung,150,TP53,0<cn<8,p.?,c.376-1G>A,Unknown,17:7578555-7578555
+113,BEAS2B,12,lung,150,TP53,0<cn<8,p.?,c.376-2A>T,Unknown,17:7578556-7578556
+113,BEAS2B,12,lung,150,TP53,0<cn<8,p.?,c.376-1G>T,Unknown,17:7578555-7578555
+113,BEAS2B,12,lung,150,TP53,0<cn<8,p.?,c.673-2A>G,Unknown,17:7577610-7577610
+113,BEAS2B,12,lung,150,TP53,0<cn<8,p.?,c.97-1G>C,Unknown,17:7579591-7579591
+113,BEAS2B,12,lung,150,TP53,0<cn<8,p.?,c.993+2T>G,Unknown,17:7576851-7576851
+113,BEAS2B,12,lung,150,TP53,0<cn<8,p.?,c.559+1G>C,Unknown,17:7578370-7578370
+113,BEAS2B,12,lung,150,TP53,0<cn<8,p.?,c.920-2A>G,Unknown,17:7576928-7576928
+113,BEAS2B,12,lung,150,TP53,0<cn<8,p.?,c.673-2A>T,Unknown,17:7577610-7577610
+113,BEAS2B,12,lung,150,TP53,0<cn<8,p.?,c.782+1G>A,Unknown,17:7577498-7577498
+113,BEAS2B,12,lung,150,TP53,0<cn<8,p.?,c.673-1G>A,Unknown,17:7577609-7577609
+113,BEAS2B,12,lung,150,TP53,0<cn<8,p.?,c.560-1G>A,Unknown,17:7578290-7578290
+113,BEAS2B,12,lung,150,TP53,0<cn<8,p.?,c.97-1G>A,Unknown,17:7579591-7579591
+113,BEAS2B,12,lung,150,TP53,0<cn<8,p.?,c.994-2A>T,Unknown,17:7574035-7574035
+113,BEAS2B,12,lung,150,TP53,0<cn<8,p.?,c.560-1G>T,Unknown,17:7578290-7578290
+113,BEAS2B,12,lung,150,TP53,0<cn<8,p.?,c.560-1G>C,Unknown,17:7578290-7578290
+113,BEAS2B,12,lung,150,TP53,0<cn<8,p.?,c.919+1G>A,Unknown,17:7577018-7577018
+113,BEAS2B,12,lung,150,TP53,0<cn<8,p.?,c.559+1G>T,Unknown,17:7578370-7578370
+113,BEAS2B,12,lung,150,TP53,0<cn<8,p.?,c.993+1G>A,Unknown,17:7576852-7576852
+113,BEAS2B,12,lung,150,TP53,0<cn<8,p.?,c.96+1G>A,Unknown,17:7579699-7579699
+113,BEAS2B,12,lung,150,TP53,0<cn<8,p.?,c.375+2T>C,Unknown,17:7579310-7579310
+113,BEAS2B,12,lung,150,TP53,0<cn<8,p.?,c.783-1G>A,Unknown,17:7577156-7577156
+113,BEAS2B,12,lung,150,TP53,0<cn<8,p.?,c.97-2A>T,Unknown,17:7579592-7579592
+113,BEAS2B,12,lung,150,TP53,0<cn<8,p.?,c.782+1G>T,Unknown,17:7577498-7577498
+113,BEAS2B,12,lung,150,TP53,0<cn<8,p.?,c.560-2A>C,Unknown,17:7578291-7578291
+113,BEAS2B,12,lung,150,TP53,0<cn<8,p.?,c.673-1G>T,Unknown,17:7577609-7577609
+113,BEAS2B,12,lung,150,TP53,0<cn<8,p.?,c.375+1G>A,Unknown,17:7579311-7579311
+113,BEAS2B,12,lung,150,TP53,0<cn<8,p.?,c.672+1G>C,Unknown,17:7578176-7578176
+113,BEAS2B,12,lung,150,TP53,0<cn<8,p.?,c.672+2T>C,Unknown,17:7578175-7578175
+113,BEAS2B,12,lung,150,TP53,0<cn<8,p.?,c.919+2T>G,Unknown,17:7577017-7577017
+113,BEAS2B,12,lung,150,TP53,0<cn<8,p.?,c.993+2T>C,Unknown,17:7576851-7576851
+113,BEAS2B,12,lung,150,TP53,0<cn<8,p.?,c.376-2A>G,Unknown,17:7578556-7578556
+113,BEAS2B,12,lung,150,TP53,0<cn<8,p.?,c.673-1G>C,Unknown,17:7577609-7577609
+113,BEAS2B,12,lung,150,TP53,0<cn<8,p.?,c.559+2T>G,Unknown,17:7578369-7578369
+113,BEAS2B,12,lung,150,TP53,0<cn<8,p.?,c.375+1G>C,Unknown,17:7579311-7579311
+113,BEAS2B,12,lung,150,TP53,0<cn<8,p.?,c.783-2A>T,Unknown,17:7577157-7577157
+113,BEAS2B,12,lung,150,TP53,0<cn<8,p.?,c.376-2A>C,Unknown,17:7578556-7578556
+113,BEAS2B,12,lung,150,TP53,0<cn<8,p.?,c.560-3T>G,Unknown,17:7578292-7578292
+113,BEAS2B,12,lung,150,TP53,0<cn<8,p.?,c.375+2T>A,Unknown,17:7579310-7579310
+113,BEAS2B,12,lung,150,TP53,0<cn<8,p.?,c.559+2T>C,Unknown,17:7578369-7578369
+113,BEAS2B,12,lung,150,TP53,0<cn<8,p.?,c.994-1G>T,Unknown,17:7574034-7574034
+113,BEAS2B,12,lung,150,TP53,0<cn<8,p.?,c.783-1_792delGTGGTA,Unknown,17:7577146-7577146
+113,BEAS2B,12,lung,150,TP53,0<cn<8,p.?,c.560-1_583del25,Unknown,17:7578266-7578290
+113,BEAS2B,12,lung,150,TP53,0<cn<8,p.?,c.994-1G>A,Unknown,17:7574034-7574034
+113,BEAS2B,12,lung,150,TP53,0<cn<8,p.?,c.375+1G>T,Unknown,17:7579311-7579311
+113,BEAS2B,12,lung,150,TP53,0<cn<8,p.?,c.375_375+10delGgcaa,Unknown,17:7579302-7579312
+113,BEAS2B,12,lung,150,TP53,0<cn<8,p.?,c.994-2A>G,Unknown,17:7574035-7574035
+113,BEAS2B,12,lung,150,TP53,0<cn<8,p.?,c.920-1G>T,Unknown,17:7576927-7576927
+113,BEAS2B,12,lung,150,TP53,0<cn<8,p.?,c.375+5G>T,Unknown,17:7579307-7579307
+113,BEAS2B,12,lung,150,TP53,0<cn<8,p.?,c.375+5G>C,Unknown,17:7579307-7579307
+113,BEAS2B,12,lung,150,TP53,0<cn<8,p.?,c.993+1G>C,Unknown,17:7576852-7576852
+113,BEAS2B,12,lung,150,TP53,0<cn<8,p.?,c.920-2A>T,Unknown,17:7576928-7576928
+113,BEAS2B,12,lung,150,TP53,0<cn<8,p.?,c.672+2T>A,Unknown,17:7578175-7578175
+113,BEAS2B,12,lung,150,TP53,0<cn<8,p.?,c.468_487del?,Unknown,17:7578463-7578482
+113,BEAS2B,12,lung,150,TP53,0<cn<8,p.?,c.96+1G>T,Unknown,17:7579699-7579699
+113,BEAS2B,12,lung,150,TP53,0<cn<8,p.?,c.375+1delg,Unknown,17:7579311-7579311
+113,BEAS2B,12,lung,150,TP53,0<cn<8,p.?,c.782+1G>C,Unknown,17:7577498-7577498
+113,BEAS2B,12,lung,150,TP53,0<cn<8,p.?,c.673-18_677del23,Unknown,17:7577604-7577626
+113,BEAS2B,12,lung,150,TP53,0<cn<8,p.?,c.672+1_672+2insGAGG,Unknown,17:7578175-7578176
+113,BEAS2B,12,lung,150,TP53,0<cn<8,p.?,c.647_672+3del29,Unknown,17:7578174-7578202
+113,BEAS2B,12,lung,150,TP53,0<cn<8,p.?,c.994-1G>A,Unknown,17:7574034-7574034
+113,BEAS2B,12,lung,150,TP53,0<cn<8,p.?,c.993+2T>A,Unknown,17:7576851-7576851
+113,BEAS2B,12,lung,150,TP53,0<cn<8,p.?,c.994-1G>C,Unknown,17:7574034-7574034
+113,BEAS2B,12,lung,150,TP53,0<cn<8,p.?,c.1101-2A>G,Unknown,17:7573010-7573010
+113,BEAS2B,12,lung,150,TP53,0<cn<8,p.?,c.559+1_559+2insG,Unknown,17:7578369-7578370
+113,BEAS2B,12,lung,150,TP53,0<cn<8,p.?,c.783-1_792delGTGGTA,Unknown,17:7577146-7577156
+113,BEAS2B,12,lung,150,TP53,0<cn<8,p.?,c.97-1G>T,Unknown,17:7579591-7579591
+113,BEAS2B,12,lung,150,TP53,0<cn<8,p.?,c.920-41_920-3del39,Unknown,17:7576929-7576967
+113,BEAS2B,12,lung,150,TP53,0<cn<8,p.?,c.782+2T>G,Unknown,17:7577497-7577497
+113,BEAS2B,12,lung,150,TP53,0<cn<8,p.?,c.994-8T>A,Unknown,17:7574041-7574041
+113,BEAS2B,12,lung,150,TP53,0<cn<8,p.?,c.994-2A>C,Unknown,17:7574035-7574035
+113,BEAS2B,12,lung,150,TP53,0<cn<8,p.?,c.988_993+4delCTTCAG,Unknown,17:7576849-7576858
+404,CAL-12T,12,lung,118,PIK3CA,0<cn<8,p.E545K,c.1633G>A,"Substitution - Missense",3:178936091-178936091
+404,CAL-12T,12,lung,150,TP53,0<cn<8,p.G245C,c.733G>T,"Substitution - Missense",17:7577548-7577548
+404,CAL-12T,12,lung,8,RB1,0<cn<8,p.S182fs*3,,,
+380,Calu-1,12,lung,94,KRAS,0<cn<8,p.A146T,c.436G>A,"Substitution - Missense",12:25378562-25378562
+380,Calu-1,12,lung,111,NOTCH1,0<cn<8,p.P2515fs*4,c.?_?del?,"Deletion - Frameshift",
+380,Calu-1,12,lung,111,NOTCH1,0<cn<8,p.P2515fs*4,c.?,Unknown,
+116,Calu1,12,lung,150,TP53,0<cn<8,p.R273L,c.818G>T,"Substitution - Missense",17:7577120-7577120
+40,Calu3,12,lung,118,PIK3CA,0<cn<8,p.E545K,c.1633G>A,"Substitution - Missense",3:178936091-178936091
+333,ChaGo-K-1,12,lung,94,KRAS,0<cn<8,p.G12V,c.35G>T,"Substitution - Missense",12:25398284-25398284
+333,ChaGo-K-1,12,lung,150,TP53,0<cn<8,p.I255T,c.764T>C,"Substitution - Missense",17:7577517-7577517
+493,COR-L105,12,lung,113,NRAS,0<cn<8,p.Q61K,c.181C>A,"Substitution - Missense",1:115256530-115256530
+493,COR-L105,12,lung,113,NRAS,0<cn<8,p.G12D,c.35G>A,"Substitution - Missense",1:115258747-115258747
+493,COR-L105,12,lung,150,TP53,0<cn<8,p.R175H,c.524G>A,"Substitution - Missense",17:7578406-7578406
+335,COR-L23,12,lung,110,NF2,0<cn<8,p.?,c.115-1G>A,Unknown,22:30032739-30032739
+335,COR-L23,12,lung,110,NF2,0<cn<8,p.?,c.448-2A>G,Unknown,22:30050644-30050644
+335,COR-L23,12,lung,110,NF2,0<cn<8,p.?,c.364-2A>G,Unknown,22:30038189-30038189
+335,COR-L23,12,lung,110,NF2,0<cn<8,p.?,c.810+1G>A,Unknown,22:30057329-30057329
+335,COR-L23,12,lung,110,NF2,0<cn<8,p.?,c.599+1G>A,Unknown,22:30051666-30051666
+335,COR-L23,12,lung,110,NF2,0<cn<8,p.?,c.1341-2A>G,Unknown,22:30070823-30070823
+335,COR-L23,12,lung,110,NF2,0<cn<8,p.?,c.999+1G>T,Unknown,22:30064436-30064436
+335,COR-L23,12,lung,110,NF2,0<cn<8,p.?,c.675+1G>A,Unknown,22:30054254-30054254
+335,COR-L23,12,lung,110,NF2,0<cn<8,p.?,c.600-2A>G,Unknown,22:30054176-30054176
+335,COR-L23,12,lung,110,NF2,0<cn<8,p.?,c.115-1G>C,Unknown,22:30032739-30032739
+335,COR-L23,12,lung,110,NF2,0<cn<8,p.?,c.516+1G>C,Unknown,22:30050715-30050715
+335,COR-L23,12,lung,110,NF2,0<cn<8,p.?,c.599+1G>C,Unknown,22:30051666-30051666
+335,COR-L23,12,lung,110,NF2,0<cn<8,p.?,c.600-1G>T,Unknown,22:30054177-30054177
+335,COR-L23,12,lung,110,NF2,0<cn<8,p.?,c.363+2T>G,Unknown,22:30035203-30035203
+335,COR-L23,12,lung,110,NF2,0<cn<8,p.?,c.363+1G>C,Unknown,22:30035202-30035202
+335,COR-L23,12,lung,110,NF2,0<cn<8,p.?,c.885+1G>T,Unknown,22:30061054-30061054
+335,COR-L23,12,lung,110,NF2,0<cn<8,p.?,c.363+5A>G,Unknown,22:30035206-30035206
+494,COR-L88,12,lung,150,TP53,0<cn<8,p.Y220C,c.659A>G,"Substitution - Missense",17:7578190-7578190
+408,CPC-N,12,lung,150,TP53,0<cn<8,p.R209*,c.625A>T,"Substitution - Nonsense",17:7578224-7578224
+408,CPC-N,12,lung,150,TP53,0<cn<8,p.R273H,c.818G>A,"Substitution - Missense",17:7577120-7577120
+408,CPC-N,12,lung,152,TSC1,0<cn<8,p.?,c.1264-1G>A,Unknown,9:135782758-135782758
+408,CPC-N,12,lung,152,TSC1,0<cn<8,p.?,c.211-2A>T,Unknown,9:135801128-135801128
+408,CPC-N,12,lung,152,TSC1,0<cn<8,p.?,c.2391+1G>A,Unknown,9:135777991-135777991
+408,CPC-N,12,lung,152,TSC1,0<cn<8,p.?,c.2209-1G>C,Unknown,9:135778175-135778175
+408,CPC-N,12,lung,152,TSC1,0<cn<8,p.?,c.2626-2A>T,Unknown,9:135772999-135772999
+408,CPC-N,12,lung,152,TSC1,0<cn<8,p.?,c.2502+5G>C,Unknown,9:135776971-135776971
+408,CPC-N,12,lung,152,TSC1,0<cn<8,p.?,c.2391+2T>G,Unknown,9:135777990-135777990
+408,CPC-N,12,lung,152,TSC1,0<cn<8,p.?,c.2626-4_2626-3insT,Unknown,9:135773000-135773001
+408,CPC-N,12,lung,152,TSC1,0<cn<8,p.?,c.2626-5_2626-4deltt,Unknown,9:135773001-135773002
+408,CPC-N,12,lung,152,TSC1,0<cn<8,p.?,c.2391+2T>C,Unknown,9:135777990-135777990
+408,CPC-N,12,lung,152,TSC1,0<cn<8,p.?,c.509-4C>G,Unknown,9:135797364-135797364
+347,DMS-114,12,lung,150,TP53,0<cn<8,p.G112_V122delGFLHSGTAKSV,,,
+348,DMS-273,12,lung,211,FBXW7,0<cn<8,p.R505C,c.1513C>T,"Substitution - Missense",4:153247289-153247289
+348,DMS-273,12,lung,105,MSH2,0<cn<8,p.R711*,c.2131C>T,"Substitution - Nonsense",2:47703631-47703631
+348,DMS-273,12,lung,150,TP53,0<cn<8,p.R196*,c.586C>T,"Substitution - Nonsense",17:7578263-7578263
+348,DMS-273,12,lung,7,PTEN,0<cn<8,p.Q245fs*20,,,
+348,DMS-273,12,lung,7,PTEN,0<cn<8,p.R234fs*11,c.699_700AC>GGCCCATG,"Complex - frameshift",10:89717674-89717675
+348,DMS-273,12,lung,150,TP53,0<cn<8,p.G361fs*8,,,
+582,DMS-53,12,lung,3,BRAF,0<cn<8,p.V600E,c.1799_1800TG>AA,"Substitution - Missense",7:140453135-140453136
+582,DMS-53,12,lung,3,BRAF,0<cn<8,p.V600E,c.1799T>A,"Substitution - Missense",7:140453136-140453136
+582,DMS-53,12,lung,34,p16,0<cn<8,p.D108N,c.322G>A,"Substitution - Missense",9:21971036-21971036
+582,DMS-53,12,lung,150,TP53,0<cn<8,p.P152L,c.455C>T,"Substitution - Missense",17:7578475-7578475
+582,DMS-53,12,lung,34,p16,0<cn<8,p.H66R,c.197A>G,"Substitution - Missense",9:21971161-21971161
+411,DMS-79,12,lung,94,KRAS,0<cn<8,p.Q61H,c.183A>C,"Substitution - Missense",12:25380275-25380275
+411,DMS-79,12,lung,94,KRAS,0<cn<8,p.Q61H,c.183A>T,"Substitution - Missense",12:25380275-25380275
+411,DMS-79,12,lung,7,PTEN,0<cn<8,p.R233*,c.697C>T,"Substitution - Nonsense",10:89717672-89717672
+411,DMS-79,12,lung,150,TP53,0<cn<8,p.R273H,c.818G>A,"Substitution - Missense",17:7577120-7577120
+411,DMS-79,12,lung,75,MSH6,0<cn<8,p.R911*,c.2731C>T,"Substitution - Nonsense",2:48027853-48027853
+464,EKVX,12,lung,1,APC,0<cn<8,p.T1556fs*9,c.4661delA,"Deletion - Frameshift",5:112175952-112175952
+464,EKVX,12,lung,118,PIK3CA,0<cn<8,p.R88Q,c.263G>A,"Substitution - Missense",3:178916876-178916876
+464,EKVX,12,lung,7,PTEN,0<cn<8,p.T319fs*1,c.950_953delTACT,"Deletion - Frameshift",10:89720799-89720802
+464,EKVX,12,lung,7,PTEN,0<cn<8,p.T319fs*1,c.955_958delACTT,"Deletion - Frameshift",10:89720804-89720807
+464,EKVX,12,lung,7,PTEN,0<cn<8,p.N323fs*2,c.968_969insA,"Insertion - Frameshift",10:89720817-89720818
+464,EKVX,12,lung,7,PTEN,0<cn<8,p.N323fs*2,c.962_963insA,"Insertion - Frameshift",10:89720811-89720812
+464,EKVX,12,lung,8,RB1,0<cn<8,p.V654fs*4,c.1954delA,"Deletion - Frameshift",13:49030479-49030479
+464,EKVX,12,lung,8,RB1,0<cn<8,p.V654fs*4,c.1960delG,"Deletion - Frameshift",13:49030485-49030485
+464,EKVX,12,lung,150,TP53,0<cn<8,p.R248Q,c.743G>A,"Substitution - Missense",17:7577538-7577538
+464,EKVX,12,lung,150,TP53,0<cn<8,p.R175H,c.524G>A,"Substitution - Missense",17:7578406-7578406
+464,EKVX,12,lung,1,APC,0<cn<8,p.Q1096*,c.3286C>T,"Substitution - Nonsense",5:112174577-112174577
+415,EPLC-272H,12,lung,94,KRAS,0<cn<8,p.G12A,c.35G>C,"Substitution - Missense",12:25398284-25398284
+415,EPLC-272H,12,lung,150,TP53,0<cn<8,p.R248L,c.743G>T,"Substitution - Missense",17:7577538-7577538
+415,EPLC-272H,12,lung,119,PIK3R1,0<cn<8,p.G719S,,,
+415,EPLC-272H,12,lung,135,SMARCA4,0<cn<8,p.E1399*,,,
+47,H1155,12,lung,140,STK11,0<cn<8,p.G56V,c.167G>T,"Substitution - Missense",19:1207079-1207079
+47,H1155,12,lung,150,TP53,0<cn<8,p.C275F,c.824G>T,"Substitution - Missense",17:7577114-7577114
+47,H1155,12,lung,150,TP53,0<cn<8,p.?,c.376-1G>A,Unknown,17:7578555-7578555
+47,H1155,12,lung,150,TP53,0<cn<8,p.?,c.559+1G>A,Unknown,17:7578370-7578370
+47,H1155,12,lung,150,TP53,0<cn<8,p.?,c.672+1G>A,Unknown,17:7578176-7578176
+47,H1155,12,lung,150,TP53,0<cn<8,p.?,c.672+2T>G,Unknown,17:7578175-7578175
+47,H1155,12,lung,150,TP53,0<cn<8,p.?,c.673-2A>G,Unknown,17:7577610-7577610
+47,H1155,12,lung,150,TP53,0<cn<8,p.?,c.783-1G>T,Unknown,17:7577156-7577156
+47,H1155,12,lung,150,TP53,0<cn<8,p.?,c.920-1G>A,Unknown,17:7576927-7576927
+47,H1155,12,lung,150,TP53,0<cn<8,p.?,c.993+1G>T,Unknown,17:7576852-7576852
+47,H1155,12,lung,150,TP53,0<cn<8,p.?,c.673-2A>T,Unknown,17:7577610-7577610
+47,H1155,12,lung,150,TP53,0<cn<8,p.?,c.1101-2A>C,Unknown,17:7573010-7573010
+47,H1155,12,lung,150,TP53,0<cn<8,p.?,c.919+1G>T,Unknown,17:7577018-7577018
+47,H1155,12,lung,150,TP53,0<cn<8,p.?,c.919+1G>C,Unknown,17:7577018-7577018
+47,H1155,12,lung,150,TP53,0<cn<8,p.?,c.672+1G>T,Unknown,17:7578176-7578176
+47,H1155,12,lung,150,TP53,0<cn<8,p.?,c.783-2A>C,Unknown,17:7577157-7577157
+47,H1155,12,lung,150,TP53,0<cn<8,p.?,c.994-1G>C,Unknown,17:7574034-7574034
+47,H1155,12,lung,150,TP53,0<cn<8,p.?,c.560-2A>G,Unknown,17:7578291-7578291
+47,H1155,12,lung,150,TP53,0<cn<8,p.?,c.376-1G>A,Unknown,17:7578555-7578555
+47,H1155,12,lung,150,TP53,0<cn<8,p.?,c.376-2A>T,Unknown,17:7578556-7578556
+47,H1155,12,lung,150,TP53,0<cn<8,p.?,c.376-1G>T,Unknown,17:7578555-7578555
+47,H1155,12,lung,150,TP53,0<cn<8,p.?,c.673-2A>G,Unknown,17:7577610-7577610
+47,H1155,12,lung,150,TP53,0<cn<8,p.?,c.97-1G>C,Unknown,17:7579591-7579591
+47,H1155,12,lung,150,TP53,0<cn<8,p.?,c.993+2T>G,Unknown,17:7576851-7576851
+47,H1155,12,lung,150,TP53,0<cn<8,p.?,c.559+1G>C,Unknown,17:7578370-7578370
+47,H1155,12,lung,150,TP53,0<cn<8,p.?,c.920-2A>G,Unknown,17:7576928-7576928
+47,H1155,12,lung,150,TP53,0<cn<8,p.?,c.673-2A>T,Unknown,17:7577610-7577610
+47,H1155,12,lung,150,TP53,0<cn<8,p.?,c.782+1G>A,Unknown,17:7577498-7577498
+47,H1155,12,lung,150,TP53,0<cn<8,p.?,c.673-1G>A,Unknown,17:7577609-7577609
+47,H1155,12,lung,150,TP53,0<cn<8,p.?,c.560-1G>A,Unknown,17:7578290-7578290
+47,H1155,12,lung,150,TP53,0<cn<8,p.?,c.97-1G>A,Unknown,17:7579591-7579591
+47,H1155,12,lung,150,TP53,0<cn<8,p.?,c.994-2A>T,Unknown,17:7574035-7574035
+47,H1155,12,lung,150,TP53,0<cn<8,p.?,c.560-1G>T,Unknown,17:7578290-7578290
+47,H1155,12,lung,150,TP53,0<cn<8,p.?,c.560-1G>C,Unknown,17:7578290-7578290
+47,H1155,12,lung,150,TP53,0<cn<8,p.?,c.919+1G>A,Unknown,17:7577018-7577018
+47,H1155,12,lung,150,TP53,0<cn<8,p.?,c.559+1G>T,Unknown,17:7578370-7578370
+47,H1155,12,lung,150,TP53,0<cn<8,p.?,c.993+1G>A,Unknown,17:7576852-7576852
+47,H1155,12,lung,150,TP53,0<cn<8,p.?,c.96+1G>A,Unknown,17:7579699-7579699
+47,H1155,12,lung,150,TP53,0<cn<8,p.?,c.375+2T>C,Unknown,17:7579310-7579310
+47,H1155,12,lung,150,TP53,0<cn<8,p.?,c.783-1G>A,Unknown,17:7577156-7577156
+47,H1155,12,lung,150,TP53,0<cn<8,p.?,c.97-2A>T,Unknown,17:7579592-7579592
+47,H1155,12,lung,150,TP53,0<cn<8,p.?,c.782+1G>T,Unknown,17:7577498-7577498
+47,H1155,12,lung,150,TP53,0<cn<8,p.?,c.560-2A>C,Unknown,17:7578291-7578291
+47,H1155,12,lung,150,TP53,0<cn<8,p.?,c.673-1G>T,Unknown,17:7577609-7577609
+47,H1155,12,lung,150,TP53,0<cn<8,p.?,c.375+1G>A,Unknown,17:7579311-7579311
+47,H1155,12,lung,150,TP53,0<cn<8,p.?,c.672+1G>C,Unknown,17:7578176-7578176
+47,H1155,12,lung,150,TP53,0<cn<8,p.?,c.672+2T>C,Unknown,17:7578175-7578175
+47,H1155,12,lung,150,TP53,0<cn<8,p.?,c.919+2T>G,Unknown,17:7577017-7577017
+47,H1155,12,lung,150,TP53,0<cn<8,p.?,c.993+2T>C,Unknown,17:7576851-7576851
+47,H1155,12,lung,150,TP53,0<cn<8,p.?,c.376-2A>G,Unknown,17:7578556-7578556
+47,H1155,12,lung,150,TP53,0<cn<8,p.?,c.673-1G>C,Unknown,17:7577609-7577609
+47,H1155,12,lung,150,TP53,0<cn<8,p.?,c.559+2T>G,Unknown,17:7578369-7578369
+47,H1155,12,lung,150,TP53,0<cn<8,p.?,c.375+1G>C,Unknown,17:7579311-7579311
+47,H1155,12,lung,150,TP53,0<cn<8,p.?,c.783-2A>T,Unknown,17:7577157-7577157
+47,H1155,12,lung,150,TP53,0<cn<8,p.?,c.376-2A>C,Unknown,17:7578556-7578556
+47,H1155,12,lung,150,TP53,0<cn<8,p.?,c.560-3T>G,Unknown,17:7578292-7578292
+47,H1155,12,lung,150,TP53,0<cn<8,p.?,c.375+2T>A,Unknown,17:7579310-7579310
+47,H1155,12,lung,150,TP53,0<cn<8,p.?,c.559+2T>C,Unknown,17:7578369-7578369
+47,H1155,12,lung,150,TP53,0<cn<8,p.?,c.994-1G>T,Unknown,17:7574034-7574034
+47,H1155,12,lung,150,TP53,0<cn<8,p.?,c.783-1_792delGTGGTA,Unknown,17:7577146-7577146
+47,H1155,12,lung,150,TP53,0<cn<8,p.?,c.560-1_583del25,Unknown,17:7578266-7578290
+47,H1155,12,lung,150,TP53,0<cn<8,p.?,c.994-1G>A,Unknown,17:7574034-7574034
+47,H1155,12,lung,150,TP53,0<cn<8,p.?,c.375+1G>T,Unknown,17:7579311-7579311
+47,H1155,12,lung,150,TP53,0<cn<8,p.?,c.375_375+10delGgcaa,Unknown,17:7579302-7579312
+47,H1155,12,lung,150,TP53,0<cn<8,p.?,c.994-2A>G,Unknown,17:7574035-7574035
+47,H1155,12,lung,150,TP53,0<cn<8,p.?,c.920-1G>T,Unknown,17:7576927-7576927
+47,H1155,12,lung,150,TP53,0<cn<8,p.?,c.375+5G>T,Unknown,17:7579307-7579307
+47,H1155,12,lung,150,TP53,0<cn<8,p.?,c.375+5G>C,Unknown,17:7579307-7579307
+47,H1155,12,lung,150,TP53,0<cn<8,p.?,c.993+1G>C,Unknown,17:7576852-7576852
+47,H1155,12,lung,150,TP53,0<cn<8,p.?,c.920-2A>T,Unknown,17:7576928-7576928
+47,H1155,12,lung,150,TP53,0<cn<8,p.?,c.672+2T>A,Unknown,17:7578175-7578175
+47,H1155,12,lung,150,TP53,0<cn<8,p.?,c.468_487del?,Unknown,17:7578463-7578482
+47,H1155,12,lung,150,TP53,0<cn<8,p.?,c.96+1G>T,Unknown,17:7579699-7579699
+47,H1155,12,lung,150,TP53,0<cn<8,p.?,c.375+1delg,Unknown,17:7579311-7579311
+47,H1155,12,lung,150,TP53,0<cn<8,p.?,c.782+1G>C,Unknown,17:7577498-7577498
+47,H1155,12,lung,150,TP53,0<cn<8,p.?,c.673-18_677del23,Unknown,17:7577604-7577626
+47,H1155,12,lung,150,TP53,0<cn<8,p.?,c.672+1_672+2insGAGG,Unknown,17:7578175-7578176
+47,H1155,12,lung,150,TP53,0<cn<8,p.?,c.647_672+3del29,Unknown,17:7578174-7578202
+47,H1155,12,lung,150,TP53,0<cn<8,p.?,c.994-1G>A,Unknown,17:7574034-7574034
+47,H1155,12,lung,150,TP53,0<cn<8,p.?,c.993+2T>A,Unknown,17:7576851-7576851
+47,H1155,12,lung,150,TP53,0<cn<8,p.?,c.994-1G>C,Unknown,17:7574034-7574034
+47,H1155,12,lung,150,TP53,0<cn<8,p.?,c.1101-2A>G,Unknown,17:7573010-7573010
+47,H1155,12,lung,150,TP53,0<cn<8,p.?,c.559+1_559+2insG,Unknown,17:7578369-7578370
+47,H1155,12,lung,150,TP53,0<cn<8,p.?,c.783-1_792delGTGGTA,Unknown,17:7577146-7577156
+47,H1155,12,lung,150,TP53,0<cn<8,p.?,c.97-1G>T,Unknown,17:7579591-7579591
+47,H1155,12,lung,150,TP53,0<cn<8,p.?,c.920-41_920-3del39,Unknown,17:7576929-7576967
+47,H1155,12,lung,150,TP53,0<cn<8,p.?,c.782+2T>G,Unknown,17:7577497-7577497
+47,H1155,12,lung,150,TP53,0<cn<8,p.?,c.994-8T>A,Unknown,17:7574041-7574041
+47,H1155,12,lung,150,TP53,0<cn<8,p.?,c.994-2A>C,Unknown,17:7574035-7574035
+47,H1155,12,lung,150,TP53,0<cn<8,p.?,c.988_993+4delCTTCAG,Unknown,17:7576849-7576858
+10,H1299,12,lung,8,RB1,0<cn<8,p.Q344*,c.1030C>T,"Substitution - Nonsense",13:48941720-48941720
+10,H1299,12,lung,150,TP53,0<cn<8,p.C176W,c.528C>G,"Substitution - Missense",17:7578402-7578402
+211,H157,12,lung,3,BRAF,0<cn<8,p.V600E,c.1799_1800TG>AA,"Substitution - Missense",7:140453135-140453136
+211,H157,12,lung,3,BRAF,0<cn<8,p.V600E,c.1799T>A,"Substitution - Missense",7:140453136-140453136
+48,H1650,12,lung,150,TP53,0<cn<8,p.M237I,c.711G>A,"Substitution - Missense",17:7577570-7577570
+48,H1650,12,lung,150,TP53,0<cn<8,p.M237I,c.711G>T,"Substitution - Missense",17:7577570-7577570
+48,H1650,12,lung,150,TP53,0<cn<8,p.M237I,c.711G>C,"Substitution - Missense",17:7577570-7577570
+49,H1792,12,lung,34,p16,0<cn<8,p.E26*,c.76G>T,"Substitution - Nonsense",9:21974751-21974751
+49,H1792,12,lung,28,RUNX1,0<cn<8,p.S450fs*30,,,
+212,H1819,12,lung,3,BRAF,0<cn<8,p.V600E,c.1799_1800TG>AA,"Substitution - Missense",7:140453135-140453136
+212,H1819,12,lung,3,BRAF,0<cn<8,p.V600E,c.1799T>A,"Substitution - Missense",7:140453136-140453136
+212,H1819,12,lung,34,p16,0<cn<8,p.?,c.151-1G>T,Unknown,9:21971208-21971208
+212,H1819,12,lung,34,p16,0<cn<8,p.?,c.151-2A>T,Unknown,9:21971209-21971209
+212,H1819,12,lung,34,p16,0<cn<8,p.?,c.151-1G>A,Unknown,9:21971208-21971208
+212,H1819,12,lung,34,p16,0<cn<8,p.?,c.150+2T>C,Unknown,9:21974675-21974675
+212,H1819,12,lung,34,p16,0<cn<8,p.?,c.458-2A>T,Unknown,9:21968243-21968243
+212,H1819,12,lung,34,p16,0<cn<8,p.?,c.458-2A>G,Unknown,9:21968243-21968243
+212,H1819,12,lung,34,p16,0<cn<8,p.?,c.458-1G>A,Unknown,9:21968242-21968242
+212,H1819,12,lung,34,p16,0<cn<8,p.?,c.151-1G>C,Unknown,9:21971208-21971208
+212,H1819,12,lung,34,p16,0<cn<8,p.?,c.458-1G>C,Unknown,9:21968242-21968242
+212,H1819,12,lung,34,p16,0<cn<8,p.?,c.151-2A>G,Unknown,9:21971209-21971209
+212,H1819,12,lung,34,p16,0<cn<8,p.?,c.150+1G>C,Unknown,9:21974676-21974676
+212,H1819,12,lung,34,p16,0<cn<8,p.?,c.151-6T>A,Unknown,9:21971213-21971213
+212,H1819,12,lung,34,p16,0<cn<8,p.?,c.458-1G>T,Unknown,9:21968242-21968242
+212,H1819,12,lung,150,TP53,0<cn<8,p.G266E,c.797G>A,"Substitution - Missense",17:7577141-7577141
+50,H1993,12,lung,1,APC,0<cn<8,p.W685*,c.2055G>A,"Substitution - Nonsense",5:112173346-112173346
+50,H1993,12,lung,1,APC,0<cn<8,p.W685*,c.2054G>A,"Substitution - Nonsense",5:112173345-112173345
+50,H1993,12,lung,34,p16,0<cn<8,p.D84Y,c.250G>T,"Substitution - Missense",9:21971108-21971108
+50,H1993,12,lung,150,TP53,0<cn<8,p.V272M,c.814G>A,"Substitution - Missense",17:7577124-7577124
+213,H226C,12,lung,3,BRAF,0<cn<8,p.V600E,c.1799_1800TG>AA,"Substitution - Missense",7:140453135-140453136
+213,H226C,12,lung,3,BRAF,0<cn<8,p.V600E,c.1799T>A,"Substitution - Missense",7:140453136-140453136
+213,H226C,12,lung,7,PTEN,0<cn<8,p.P248fs*5,c.741_742insA,"Insertion - Frameshift",10:89717716-89717717
+213,H226C,12,lung,7,PTEN,0<cn<8,p.P248fs*5,c.740_741insA,"Insertion - Frameshift",10:89717715-89717716
+214,H226T,12,lung,3,BRAF,0<cn<8,p.V600E,c.1799_1800TG>AA,"Substitution - Missense",7:140453135-140453136
+214,H226T,12,lung,3,BRAF,0<cn<8,p.V600E,c.1799T>A,"Substitution - Missense",7:140453136-140453136
+51,H23,12,lung,150,TP53,0<cn<8,p.R267P,c.800G>C,"Substitution - Missense",17:7577138-7577138
+52,H358,12,lung,150,TP53,0<cn<8,p.R273L,c.818G>T,"Substitution - Missense",17:7577120-7577120
+52,H358,12,lung,140,STK11,0<cn<8,p.L285Q,,,
+53,H441,12,lung,150,TP53,0<cn<8,p.L35fs*8,c.104_105insT,"Insertion - Frameshift",17:7579582-7579583
+216,H446,12,lung,110,NF2,0<cn<8,p.?,c.115-1G>A,Unknown,22:30032739-30032739
+216,H446,12,lung,110,NF2,0<cn<8,p.?,c.448-2A>G,Unknown,22:30050644-30050644
+216,H446,12,lung,110,NF2,0<cn<8,p.?,c.364-2A>G,Unknown,22:30038189-30038189
+216,H446,12,lung,110,NF2,0<cn<8,p.?,c.810+1G>A,Unknown,22:30057329-30057329
+216,H446,12,lung,110,NF2,0<cn<8,p.?,c.599+1G>A,Unknown,22:30051666-30051666
+216,H446,12,lung,110,NF2,0<cn<8,p.?,c.1341-2A>G,Unknown,22:30070823-30070823
+216,H446,12,lung,110,NF2,0<cn<8,p.?,c.999+1G>T,Unknown,22:30064436-30064436
+216,H446,12,lung,110,NF2,0<cn<8,p.?,c.675+1G>A,Unknown,22:30054254-30054254
+216,H446,12,lung,110,NF2,0<cn<8,p.?,c.600-2A>G,Unknown,22:30054176-30054176
+216,H446,12,lung,110,NF2,0<cn<8,p.?,c.115-1G>C,Unknown,22:30032739-30032739
+216,H446,12,lung,110,NF2,0<cn<8,p.?,c.516+1G>C,Unknown,22:30050715-30050715
+216,H446,12,lung,110,NF2,0<cn<8,p.?,c.599+1G>C,Unknown,22:30051666-30051666
+216,H446,12,lung,110,NF2,0<cn<8,p.?,c.600-1G>T,Unknown,22:30054177-30054177
+216,H446,12,lung,110,NF2,0<cn<8,p.?,c.363+2T>G,Unknown,22:30035203-30035203
+216,H446,12,lung,110,NF2,0<cn<8,p.?,c.363+1G>C,Unknown,22:30035202-30035202
+216,H446,12,lung,110,NF2,0<cn<8,p.?,c.885+1G>T,Unknown,22:30061054-30061054
+216,H446,12,lung,110,NF2,0<cn<8,p.?,c.363+5A>G,Unknown,22:30035206-30035206
+216,H446,12,lung,150,TP53,0<cn<8,p.E336*,c.1006G>T,"Substitution - Nonsense",17:7574021-7574021
+11,H460,12,lung,150,TP53,0<cn<8,p.?,c.376-1G>A,Unknown,17:7578555-7578555
+11,H460,12,lung,150,TP53,0<cn<8,p.?,c.559+1G>A,Unknown,17:7578370-7578370
+11,H460,12,lung,150,TP53,0<cn<8,p.?,c.672+1G>A,Unknown,17:7578176-7578176
+11,H460,12,lung,150,TP53,0<cn<8,p.?,c.672+2T>G,Unknown,17:7578175-7578175
+11,H460,12,lung,150,TP53,0<cn<8,p.?,c.673-2A>G,Unknown,17:7577610-7577610
+11,H460,12,lung,150,TP53,0<cn<8,p.?,c.783-1G>T,Unknown,17:7577156-7577156
+11,H460,12,lung,150,TP53,0<cn<8,p.?,c.920-1G>A,Unknown,17:7576927-7576927
+11,H460,12,lung,150,TP53,0<cn<8,p.?,c.993+1G>T,Unknown,17:7576852-7576852
+11,H460,12,lung,150,TP53,0<cn<8,p.?,c.673-2A>T,Unknown,17:7577610-7577610
+11,H460,12,lung,150,TP53,0<cn<8,p.?,c.1101-2A>C,Unknown,17:7573010-7573010
+11,H460,12,lung,150,TP53,0<cn<8,p.?,c.919+1G>T,Unknown,17:7577018-7577018
+11,H460,12,lung,150,TP53,0<cn<8,p.?,c.919+1G>C,Unknown,17:7577018-7577018
+11,H460,12,lung,150,TP53,0<cn<8,p.?,c.672+1G>T,Unknown,17:7578176-7578176
+11,H460,12,lung,150,TP53,0<cn<8,p.?,c.783-2A>C,Unknown,17:7577157-7577157
+11,H460,12,lung,150,TP53,0<cn<8,p.?,c.994-1G>C,Unknown,17:7574034-7574034
+11,H460,12,lung,150,TP53,0<cn<8,p.?,c.560-2A>G,Unknown,17:7578291-7578291
+11,H460,12,lung,150,TP53,0<cn<8,p.?,c.376-1G>A,Unknown,17:7578555-7578555
+11,H460,12,lung,150,TP53,0<cn<8,p.?,c.376-2A>T,Unknown,17:7578556-7578556
+11,H460,12,lung,150,TP53,0<cn<8,p.?,c.376-1G>T,Unknown,17:7578555-7578555
+11,H460,12,lung,150,TP53,0<cn<8,p.?,c.673-2A>G,Unknown,17:7577610-7577610
+11,H460,12,lung,150,TP53,0<cn<8,p.?,c.97-1G>C,Unknown,17:7579591-7579591
+11,H460,12,lung,150,TP53,0<cn<8,p.?,c.993+2T>G,Unknown,17:7576851-7576851
+11,H460,12,lung,150,TP53,0<cn<8,p.?,c.559+1G>C,Unknown,17:7578370-7578370
+11,H460,12,lung,150,TP53,0<cn<8,p.?,c.920-2A>G,Unknown,17:7576928-7576928
+11,H460,12,lung,150,TP53,0<cn<8,p.?,c.673-2A>T,Unknown,17:7577610-7577610
+11,H460,12,lung,150,TP53,0<cn<8,p.?,c.782+1G>A,Unknown,17:7577498-7577498
+11,H460,12,lung,150,TP53,0<cn<8,p.?,c.673-1G>A,Unknown,17:7577609-7577609
+11,H460,12,lung,150,TP53,0<cn<8,p.?,c.560-1G>A,Unknown,17:7578290-7578290
+11,H460,12,lung,150,TP53,0<cn<8,p.?,c.97-1G>A,Unknown,17:7579591-7579591
+11,H460,12,lung,150,TP53,0<cn<8,p.?,c.994-2A>T,Unknown,17:7574035-7574035
+11,H460,12,lung,150,TP53,0<cn<8,p.?,c.560-1G>T,Unknown,17:7578290-7578290
+11,H460,12,lung,150,TP53,0<cn<8,p.?,c.560-1G>C,Unknown,17:7578290-7578290
+11,H460,12,lung,150,TP53,0<cn<8,p.?,c.919+1G>A,Unknown,17:7577018-7577018
+11,H460,12,lung,150,TP53,0<cn<8,p.?,c.559+1G>T,Unknown,17:7578370-7578370
+11,H460,12,lung,150,TP53,0<cn<8,p.?,c.993+1G>A,Unknown,17:7576852-7576852
+11,H460,12,lung,150,TP53,0<cn<8,p.?,c.96+1G>A,Unknown,17:7579699-7579699
+11,H460,12,lung,150,TP53,0<cn<8,p.?,c.375+2T>C,Unknown,17:7579310-7579310
+11,H460,12,lung,150,TP53,0<cn<8,p.?,c.783-1G>A,Unknown,17:7577156-7577156
+11,H460,12,lung,150,TP53,0<cn<8,p.?,c.97-2A>T,Unknown,17:7579592-7579592
+11,H460,12,lung,150,TP53,0<cn<8,p.?,c.782+1G>T,Unknown,17:7577498-7577498
+11,H460,12,lung,150,TP53,0<cn<8,p.?,c.560-2A>C,Unknown,17:7578291-7578291
+11,H460,12,lung,150,TP53,0<cn<8,p.?,c.673-1G>T,Unknown,17:7577609-7577609
+11,H460,12,lung,150,TP53,0<cn<8,p.?,c.375+1G>A,Unknown,17:7579311-7579311
+11,H460,12,lung,150,TP53,0<cn<8,p.?,c.672+1G>C,Unknown,17:7578176-7578176
+11,H460,12,lung,150,TP53,0<cn<8,p.?,c.672+2T>C,Unknown,17:7578175-7578175
+11,H460,12,lung,150,TP53,0<cn<8,p.?,c.919+2T>G,Unknown,17:7577017-7577017
+11,H460,12,lung,150,TP53,0<cn<8,p.?,c.993+2T>C,Unknown,17:7576851-7576851
+11,H460,12,lung,150,TP53,0<cn<8,p.?,c.376-2A>G,Unknown,17:7578556-7578556
+11,H460,12,lung,150,TP53,0<cn<8,p.?,c.673-1G>C,Unknown,17:7577609-7577609
+11,H460,12,lung,150,TP53,0<cn<8,p.?,c.559+2T>G,Unknown,17:7578369-7578369
+11,H460,12,lung,150,TP53,0<cn<8,p.?,c.375+1G>C,Unknown,17:7579311-7579311
+11,H460,12,lung,150,TP53,0<cn<8,p.?,c.783-2A>T,Unknown,17:7577157-7577157
+11,H460,12,lung,150,TP53,0<cn<8,p.?,c.376-2A>C,Unknown,17:7578556-7578556
+11,H460,12,lung,150,TP53,0<cn<8,p.?,c.560-3T>G,Unknown,17:7578292-7578292
+11,H460,12,lung,150,TP53,0<cn<8,p.?,c.375+2T>A,Unknown,17:7579310-7579310
+11,H460,12,lung,150,TP53,0<cn<8,p.?,c.559+2T>C,Unknown,17:7578369-7578369
+11,H460,12,lung,150,TP53,0<cn<8,p.?,c.994-1G>T,Unknown,17:7574034-7574034
+11,H460,12,lung,150,TP53,0<cn<8,p.?,c.783-1_792delGTGGTA,Unknown,17:7577146-7577146
+11,H460,12,lung,150,TP53,0<cn<8,p.?,c.560-1_583del25,Unknown,17:7578266-7578290
+11,H460,12,lung,150,TP53,0<cn<8,p.?,c.994-1G>A,Unknown,17:7574034-7574034
+11,H460,12,lung,150,TP53,0<cn<8,p.?,c.375+1G>T,Unknown,17:7579311-7579311
+11,H460,12,lung,150,TP53,0<cn<8,p.?,c.375_375+10delGgcaa,Unknown,17:7579302-7579312
+11,H460,12,lung,150,TP53,0<cn<8,p.?,c.994-2A>G,Unknown,17:7574035-7574035
+11,H460,12,lung,150,TP53,0<cn<8,p.?,c.920-1G>T,Unknown,17:7576927-7576927
+11,H460,12,lung,150,TP53,0<cn<8,p.?,c.375+5G>T,Unknown,17:7579307-7579307
+11,H460,12,lung,150,TP53,0<cn<8,p.?,c.375+5G>C,Unknown,17:7579307-7579307
+11,H460,12,lung,150,TP53,0<cn<8,p.?,c.993+1G>C,Unknown,17:7576852-7576852
+11,H460,12,lung,150,TP53,0<cn<8,p.?,c.920-2A>T,Unknown,17:7576928-7576928
+11,H460,12,lung,150,TP53,0<cn<8,p.?,c.672+2T>A,Unknown,17:7578175-7578175
+11,H460,12,lung,150,TP53,0<cn<8,p.?,c.468_487del?,Unknown,17:7578463-7578482
+11,H460,12,lung,150,TP53,0<cn<8,p.?,c.96+1G>T,Unknown,17:7579699-7579699
+11,H460,12,lung,150,TP53,0<cn<8,p.?,c.375+1delg,Unknown,17:7579311-7579311
+11,H460,12,lung,150,TP53,0<cn<8,p.?,c.782+1G>C,Unknown,17:7577498-7577498
+11,H460,12,lung,150,TP53,0<cn<8,p.?,c.673-18_677del23,Unknown,17:7577604-7577626
+11,H460,12,lung,150,TP53,0<cn<8,p.?,c.672+1_672+2insGAGG,Unknown,17:7578175-7578176
+11,H460,12,lung,150,TP53,0<cn<8,p.?,c.647_672+3del29,Unknown,17:7578174-7578202
+11,H460,12,lung,150,TP53,0<cn<8,p.?,c.994-1G>A,Unknown,17:7574034-7574034
+11,H460,12,lung,150,TP53,0<cn<8,p.?,c.993+2T>A,Unknown,17:7576851-7576851
+11,H460,12,lung,150,TP53,0<cn<8,p.?,c.994-1G>C,Unknown,17:7574034-7574034
+11,H460,12,lung,150,TP53,0<cn<8,p.?,c.1101-2A>G,Unknown,17:7573010-7573010
+11,H460,12,lung,150,TP53,0<cn<8,p.?,c.559+1_559+2insG,Unknown,17:7578369-7578370
+11,H460,12,lung,150,TP53,0<cn<8,p.?,c.783-1_792delGTGGTA,Unknown,17:7577146-7577156
+11,H460,12,lung,150,TP53,0<cn<8,p.?,c.97-1G>T,Unknown,17:7579591-7579591
+11,H460,12,lung,150,TP53,0<cn<8,p.?,c.920-41_920-3del39,Unknown,17:7576929-7576967
+11,H460,12,lung,150,TP53,0<cn<8,p.?,c.782+2T>G,Unknown,17:7577497-7577497
+11,H460,12,lung,150,TP53,0<cn<8,p.?,c.994-8T>A,Unknown,17:7574041-7574041
+11,H460,12,lung,150,TP53,0<cn<8,p.?,c.994-2A>C,Unknown,17:7574035-7574035
+11,H460,12,lung,150,TP53,0<cn<8,p.?,c.988_993+4delCTTCAG,Unknown,17:7576849-7576858
+54,H596,12,lung,150,TP53,0<cn<8,p.?,c.376-1G>A,Unknown,17:7578555-7578555
+54,H596,12,lung,150,TP53,0<cn<8,p.?,c.559+1G>A,Unknown,17:7578370-7578370
+54,H596,12,lung,150,TP53,0<cn<8,p.?,c.672+1G>A,Unknown,17:7578176-7578176
+54,H596,12,lung,150,TP53,0<cn<8,p.?,c.672+2T>G,Unknown,17:7578175-7578175
+54,H596,12,lung,150,TP53,0<cn<8,p.?,c.673-2A>G,Unknown,17:7577610-7577610
+54,H596,12,lung,150,TP53,0<cn<8,p.?,c.783-1G>T,Unknown,17:7577156-7577156
+54,H596,12,lung,150,TP53,0<cn<8,p.?,c.920-1G>A,Unknown,17:7576927-7576927
+54,H596,12,lung,150,TP53,0<cn<8,p.?,c.993+1G>T,Unknown,17:7576852-7576852
+54,H596,12,lung,150,TP53,0<cn<8,p.?,c.673-2A>T,Unknown,17:7577610-7577610
+54,H596,12,lung,150,TP53,0<cn<8,p.?,c.1101-2A>C,Unknown,17:7573010-7573010
+54,H596,12,lung,150,TP53,0<cn<8,p.?,c.919+1G>T,Unknown,17:7577018-7577018
+54,H596,12,lung,150,TP53,0<cn<8,p.?,c.919+1G>C,Unknown,17:7577018-7577018
+54,H596,12,lung,150,TP53,0<cn<8,p.?,c.672+1G>T,Unknown,17:7578176-7578176
+54,H596,12,lung,150,TP53,0<cn<8,p.?,c.783-2A>C,Unknown,17:7577157-7577157
+54,H596,12,lung,150,TP53,0<cn<8,p.?,c.994-1G>C,Unknown,17:7574034-7574034
+54,H596,12,lung,150,TP53,0<cn<8,p.?,c.560-2A>G,Unknown,17:7578291-7578291
+54,H596,12,lung,150,TP53,0<cn<8,p.?,c.376-1G>A,Unknown,17:7578555-7578555
+54,H596,12,lung,150,TP53,0<cn<8,p.?,c.376-2A>T,Unknown,17:7578556-7578556
+54,H596,12,lung,150,TP53,0<cn<8,p.?,c.376-1G>T,Unknown,17:7578555-7578555
+54,H596,12,lung,150,TP53,0<cn<8,p.?,c.673-2A>G,Unknown,17:7577610-7577610
+54,H596,12,lung,150,TP53,0<cn<8,p.?,c.97-1G>C,Unknown,17:7579591-7579591
+54,H596,12,lung,150,TP53,0<cn<8,p.?,c.993+2T>G,Unknown,17:7576851-7576851
+54,H596,12,lung,150,TP53,0<cn<8,p.?,c.559+1G>C,Unknown,17:7578370-7578370
+54,H596,12,lung,150,TP53,0<cn<8,p.?,c.920-2A>G,Unknown,17:7576928-7576928
+54,H596,12,lung,150,TP53,0<cn<8,p.?,c.673-2A>T,Unknown,17:7577610-7577610
+54,H596,12,lung,150,TP53,0<cn<8,p.?,c.782+1G>A,Unknown,17:7577498-7577498
+54,H596,12,lung,150,TP53,0<cn<8,p.?,c.673-1G>A,Unknown,17:7577609-7577609
+54,H596,12,lung,150,TP53,0<cn<8,p.?,c.560-1G>A,Unknown,17:7578290-7578290
+54,H596,12,lung,150,TP53,0<cn<8,p.?,c.97-1G>A,Unknown,17:7579591-7579591
+54,H596,12,lung,150,TP53,0<cn<8,p.?,c.994-2A>T,Unknown,17:7574035-7574035
+54,H596,12,lung,150,TP53,0<cn<8,p.?,c.560-1G>T,Unknown,17:7578290-7578290
+54,H596,12,lung,150,TP53,0<cn<8,p.?,c.560-1G>C,Unknown,17:7578290-7578290
+54,H596,12,lung,150,TP53,0<cn<8,p.?,c.919+1G>A,Unknown,17:7577018-7577018
+54,H596,12,lung,150,TP53,0<cn<8,p.?,c.559+1G>T,Unknown,17:7578370-7578370
+54,H596,12,lung,150,TP53,0<cn<8,p.?,c.993+1G>A,Unknown,17:7576852-7576852
+54,H596,12,lung,150,TP53,0<cn<8,p.?,c.96+1G>A,Unknown,17:7579699-7579699
+54,H596,12,lung,150,TP53,0<cn<8,p.?,c.375+2T>C,Unknown,17:7579310-7579310
+54,H596,12,lung,150,TP53,0<cn<8,p.?,c.783-1G>A,Unknown,17:7577156-7577156
+54,H596,12,lung,150,TP53,0<cn<8,p.?,c.97-2A>T,Unknown,17:7579592-7579592
+54,H596,12,lung,150,TP53,0<cn<8,p.?,c.782+1G>T,Unknown,17:7577498-7577498
+54,H596,12,lung,150,TP53,0<cn<8,p.?,c.560-2A>C,Unknown,17:7578291-7578291
+54,H596,12,lung,150,TP53,0<cn<8,p.?,c.673-1G>T,Unknown,17:7577609-7577609
+54,H596,12,lung,150,TP53,0<cn<8,p.?,c.375+1G>A,Unknown,17:7579311-7579311
+54,H596,12,lung,150,TP53,0<cn<8,p.?,c.672+1G>C,Unknown,17:7578176-7578176
+54,H596,12,lung,150,TP53,0<cn<8,p.?,c.672+2T>C,Unknown,17:7578175-7578175
+54,H596,12,lung,150,TP53,0<cn<8,p.?,c.919+2T>G,Unknown,17:7577017-7577017
+54,H596,12,lung,150,TP53,0<cn<8,p.?,c.993+2T>C,Unknown,17:7576851-7576851
+54,H596,12,lung,150,TP53,0<cn<8,p.?,c.376-2A>G,Unknown,17:7578556-7578556
+54,H596,12,lung,150,TP53,0<cn<8,p.?,c.673-1G>C,Unknown,17:7577609-7577609
+54,H596,12,lung,150,TP53,0<cn<8,p.?,c.559+2T>G,Unknown,17:7578369-7578369
+54,H596,12,lung,150,TP53,0<cn<8,p.?,c.375+1G>C,Unknown,17:7579311-7579311
+54,H596,12,lung,150,TP53,0<cn<8,p.?,c.783-2A>T,Unknown,17:7577157-7577157
+54,H596,12,lung,150,TP53,0<cn<8,p.?,c.376-2A>C,Unknown,17:7578556-7578556
+54,H596,12,lung,150,TP53,0<cn<8,p.?,c.560-3T>G,Unknown,17:7578292-7578292
+54,H596,12,lung,150,TP53,0<cn<8,p.?,c.375+2T>A,Unknown,17:7579310-7579310
+54,H596,12,lung,150,TP53,0<cn<8,p.?,c.559+2T>C,Unknown,17:7578369-7578369
+54,H596,12,lung,150,TP53,0<cn<8,p.?,c.994-1G>T,Unknown,17:7574034-7574034
+54,H596,12,lung,150,TP53,0<cn<8,p.?,c.783-1_792delGTGGTA,Unknown,17:7577146-7577146
+54,H596,12,lung,150,TP53,0<cn<8,p.?,c.560-1_583del25,Unknown,17:7578266-7578290
+54,H596,12,lung,150,TP53,0<cn<8,p.?,c.994-1G>A,Unknown,17:7574034-7574034
+54,H596,12,lung,150,TP53,0<cn<8,p.?,c.375+1G>T,Unknown,17:7579311-7579311
+54,H596,12,lung,150,TP53,0<cn<8,p.?,c.375_375+10delGgcaa,Unknown,17:7579302-7579312
+54,H596,12,lung,150,TP53,0<cn<8,p.?,c.994-2A>G,Unknown,17:7574035-7574035
+54,H596,12,lung,150,TP53,0<cn<8,p.?,c.920-1G>T,Unknown,17:7576927-7576927
+54,H596,12,lung,150,TP53,0<cn<8,p.?,c.375+5G>T,Unknown,17:7579307-7579307
+54,H596,12,lung,150,TP53,0<cn<8,p.?,c.375+5G>C,Unknown,17:7579307-7579307
+54,H596,12,lung,150,TP53,0<cn<8,p.?,c.993+1G>C,Unknown,17:7576852-7576852
+54,H596,12,lung,150,TP53,0<cn<8,p.?,c.920-2A>T,Unknown,17:7576928-7576928
+54,H596,12,lung,150,TP53,0<cn<8,p.?,c.672+2T>A,Unknown,17:7578175-7578175
+54,H596,12,lung,150,TP53,0<cn<8,p.?,c.468_487del?,Unknown,17:7578463-7578482
+54,H596,12,lung,150,TP53,0<cn<8,p.?,c.96+1G>T,Unknown,17:7579699-7579699
+54,H596,12,lung,150,TP53,0<cn<8,p.?,c.375+1delg,Unknown,17:7579311-7579311
+54,H596,12,lung,150,TP53,0<cn<8,p.?,c.782+1G>C,Unknown,17:7577498-7577498
+54,H596,12,lung,150,TP53,0<cn<8,p.?,c.673-18_677del23,Unknown,17:7577604-7577626
+54,H596,12,lung,150,TP53,0<cn<8,p.?,c.672+1_672+2insGAGG,Unknown,17:7578175-7578176
+54,H596,12,lung,150,TP53,0<cn<8,p.?,c.647_672+3del29,Unknown,17:7578174-7578202
+54,H596,12,lung,150,TP53,0<cn<8,p.?,c.994-1G>A,Unknown,17:7574034-7574034
+54,H596,12,lung,150,TP53,0<cn<8,p.?,c.993+2T>A,Unknown,17:7576851-7576851
+54,H596,12,lung,150,TP53,0<cn<8,p.?,c.994-1G>C,Unknown,17:7574034-7574034
+54,H596,12,lung,150,TP53,0<cn<8,p.?,c.1101-2A>G,Unknown,17:7573010-7573010
+54,H596,12,lung,150,TP53,0<cn<8,p.?,c.559+1_559+2insG,Unknown,17:7578369-7578370
+185,CNE1,34,nasopharynx,118,PIK3CA,0<cn<8,p.E545K,c.1633G>A,"Substitution - Missense",3:178936091-178936091
+329,8-MG-BA,7,"nervous system",113,NRAS,0<cn<8,p.Q61R,c.181_182CA>AG,"Substitution - Missense",1:115256529-115256530
+329,8-MG-BA,7,"nervous system",113,NRAS,0<cn<8,p.Q61R,c.182A>G,"Substitution - Missense",1:115256529-115256529
+329,8-MG-BA,7,"nervous system",150,TP53,0<cn<8,p.V272M,c.814G>A,"Substitution - Missense",17:7577124-7577124
+29,A172,7,"nervous system",150,TP53,0<cn<8,p.C275G,c.823T>G,"Substitution - Missense",17:7577115-7577115
+492,ACN,7,"nervous system",150,TP53,0<cn<8,p.?,c.376-1G>A,Unknown,17:7578555-7578555
+492,ACN,7,"nervous system",150,TP53,0<cn<8,p.?,c.559+1G>A,Unknown,17:7578370-7578370
+492,ACN,7,"nervous system",150,TP53,0<cn<8,p.?,c.672+1G>A,Unknown,17:7578176-7578176
+492,ACN,7,"nervous system",150,TP53,0<cn<8,p.?,c.672+2T>G,Unknown,17:7578175-7578175
+492,ACN,7,"nervous system",150,TP53,0<cn<8,p.?,c.673-2A>G,Unknown,17:7577610-7577610
+492,ACN,7,"nervous system",150,TP53,0<cn<8,p.?,c.783-1G>T,Unknown,17:7577156-7577156
+492,ACN,7,"nervous system",150,TP53,0<cn<8,p.?,c.920-1G>A,Unknown,17:7576927-7576927
+492,ACN,7,"nervous system",150,TP53,0<cn<8,p.?,c.993+1G>T,Unknown,17:7576852-7576852
+492,ACN,7,"nervous system",150,TP53,0<cn<8,p.?,c.673-2A>T,Unknown,17:7577610-7577610
+492,ACN,7,"nervous system",150,TP53,0<cn<8,p.?,c.1101-2A>C,Unknown,17:7573010-7573010
+492,ACN,7,"nervous system",150,TP53,0<cn<8,p.?,c.919+1G>T,Unknown,17:7577018-7577018
+492,ACN,7,"nervous system",150,TP53,0<cn<8,p.?,c.919+1G>C,Unknown,17:7577018-7577018
+492,ACN,7,"nervous system",150,TP53,0<cn<8,p.?,c.672+1G>T,Unknown,17:7578176-7578176
+492,ACN,7,"nervous system",150,TP53,0<cn<8,p.?,c.783-2A>C,Unknown,17:7577157-7577157
+492,ACN,7,"nervous system",150,TP53,0<cn<8,p.?,c.994-1G>C,Unknown,17:7574034-7574034
+492,ACN,7,"nervous system",150,TP53,0<cn<8,p.?,c.560-2A>G,Unknown,17:7578291-7578291
+492,ACN,7,"nervous system",150,TP53,0<cn<8,p.?,c.376-1G>A,Unknown,17:7578555-7578555
+492,ACN,7,"nervous system",150,TP53,0<cn<8,p.?,c.376-2A>T,Unknown,17:7578556-7578556
+492,ACN,7,"nervous system",150,TP53,0<cn<8,p.?,c.376-1G>T,Unknown,17:7578555-7578555
+492,ACN,7,"nervous system",150,TP53,0<cn<8,p.?,c.673-2A>G,Unknown,17:7577610-7577610
+492,ACN,7,"nervous system",150,TP53,0<cn<8,p.?,c.97-1G>C,Unknown,17:7579591-7579591
+492,ACN,7,"nervous system",150,TP53,0<cn<8,p.?,c.993+2T>G,Unknown,17:7576851-7576851
+492,ACN,7,"nervous system",150,TP53,0<cn<8,p.?,c.559+1G>C,Unknown,17:7578370-7578370
+492,ACN,7,"nervous system",150,TP53,0<cn<8,p.?,c.920-2A>G,Unknown,17:7576928-7576928
+492,ACN,7,"nervous system",150,TP53,0<cn<8,p.?,c.673-2A>T,Unknown,17:7577610-7577610
+492,ACN,7,"nervous system",150,TP53,0<cn<8,p.?,c.782+1G>A,Unknown,17:7577498-7577498
+492,ACN,7,"nervous system",150,TP53,0<cn<8,p.?,c.673-1G>A,Unknown,17:7577609-7577609
+492,ACN,7,"nervous system",150,TP53,0<cn<8,p.?,c.560-1G>A,Unknown,17:7578290-7578290
+492,ACN,7,"nervous system",150,TP53,0<cn<8,p.?,c.97-1G>A,Unknown,17:7579591-7579591
+492,ACN,7,"nervous system",150,TP53,0<cn<8,p.?,c.994-2A>T,Unknown,17:7574035-7574035
+492,ACN,7,"nervous system",150,TP53,0<cn<8,p.?,c.560-1G>T,Unknown,17:7578290-7578290
+492,ACN,7,"nervous system",150,TP53,0<cn<8,p.?,c.560-1G>C,Unknown,17:7578290-7578290
+492,ACN,7,"nervous system",150,TP53,0<cn<8,p.?,c.919+1G>A,Unknown,17:7577018-7577018

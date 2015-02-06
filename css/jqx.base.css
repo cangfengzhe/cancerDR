@@ -277,7 +277,7 @@ button.jqx-button, input[type=button].jqx-button, input[type=submit].jqx-button 
     border-style: solid;
     font-weight: normal;
     overflow: hidden;
-    text-align: left;
+    
     padding: 0px;
     margin: 0px;
 }
@@ -526,6 +526,7 @@ button.jqx-button, input[type=button].jqx-button, input[type=submit].jqx-button 
     border-width: 0px 1px 1px 0px;
     margin-right: 1px;
     margin-bottom: 1px;
+    /*margin-top: 5px;*/
     border-color: transparent;
     background: #fff;
     white-space: nowrap;
@@ -534,6 +535,9 @@ button.jqx-button, input[type=button].jqx-button, input[type=submit].jqx-button 
     overflow: hidden;
     position: absolute !important;
     height: 100%;
+    text-indent:10px;
+    /*text-align: justify;*/
+    /*text-align: center;*/
 }
 .jqx-grid-cell-locked {
     color: #aaa !important;

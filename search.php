@@ -1,57 +1,39 @@
 
 
 <?php
-include('header.php');
-include('security.php');
+include 'header.php';
+include 'security.php';
+include 'gridjs.php';
 $type = $_GET['type'];
 $value = $_GET['value'];
-if (!empty($value)){
-echo '<div><h4>Search by ', $type, ' : ' , $value, '</h4></div>';
-}
+if (!empty($value)) {
 
-
-else{
-  echo '<div><h4>Browser by ', $type, '</h4></div>';
+	echo '<div><h4>Search returned following results by ', $type, ' : ', $value, '</h4></div>';
+} else {
+	echo '<div><h4>Browser by ', $type, '</h4></div>';
 }
 ?>
 
-<link rel="stylesheet" href="/css/jqx.base.css" type="text/css" />
-    <link rel="stylesheet" href="/css/jqx.energyblue.css" type="text/css" />
-    <!-- <link rel="stylesheet" href="../../jqwidgets/styles/jqx.classic.css" type="text/css" /> -->
-    <script type="text/javascript" src="/js/jquery-1.10.2.min.js"></script>  
-  <script type="text/javascript" src="/js/jqxcore.js"></script>
-    <script type="text/javascript" src="/js/jqxbuttons.js"></script>
-    <script type="text/javascript" src="/js/jqxscrollbar.js"></script>
-    <script type="text/javascript" src="/js/jqxlistbox.js"></script>
-    <script type="text/javascript" src="/js/jqxdropdownlist.js"></script>
-    <script type="text/javascript" src="/js/jqxmenu.js"></script>
-    <script type="text/javascript" src="/js/jqxdata.js"></script>
-    <script type="text/javascript" src="/js/jqxgrid.js"></script>
-  <script type="text/javascript" src="/js/jqxgrid.sort.js"></script>  
-  <script type="text/javascript" src="/js/jqxgrid.selection.js"></script>
-    <script type="text/javascript" src="/js/jqxgrid.pager.js"></script>
-  <script type="text/javascript" src="/js/jqxgrid.filter.js"></script>
-   <script type="text/javascript" src="/js/link.js"></script>
+
 <?php
 # 判断type
 
-switch ($type)
-{
-case 'cellLine':
-  include('celllineBrowser.php');
-  break;
-case 'disease':
-  include('diseaseSearch.php');
-  break;
-case 'drug':
-  include('drugBrowser.php');
-  break;
-case 'gene':
-	include('geneSearch.php');
-	break;
+switch ($type) {
+	case 'cellLine':
+		include 'celllineBrowser.php';
+		break;
+	case 'disease':
+		include 'diseaseSearch.php';
+		break;
+	case 'drug':
+		include 'drugBrowser.php';
+		break;
+	case 'gene':
+		include 'geneSearch.php';
+		break;
 
-default:
-  echo "No data";
+	default:
+		echo "No data";
 }
 
 ?>
@@ -60,5 +42,5 @@ default:
 
 
 <?php
-include('footer.php');
+include 'footer.php';
 ?>

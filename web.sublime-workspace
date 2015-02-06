@@ -4,6 +4,50 @@
 		"selected_items":
 		[
 			[
+				"border",
+				"border-radius"
+			],
+			[
+				"select",
+				"selector"
+			],
+			[
+				"color",
+				"background-color"
+			],
+			[
+				"black",
+				"black"
+			],
+			[
+				"lin",
+				"line-color"
+			],
+			[
+				"selec",
+				"selector"
+			],
+			[
+				"con",
+				"concentric"
+			],
+			[
+				"ele",
+				"elements"
+			],
+			[
+				"sele",
+				"selector"
+			],
+			[
+				"margin",
+				"margin-top"
+			],
+			[
+				"mar",
+				"margin-top"
+			],
+			[
 				"mysqlerr",
 				"mysql_error"
 			],
@@ -96,10 +140,6 @@
 				"border-bottom-color"
 			],
 			[
-				"select",
-				"select_value"
-			],
-			[
 				"get",
 				"getCookie"
 			],
@@ -114,10 +154,6 @@
 			[
 				"tex",
 				"text-align"
-			],
-			[
-				"border",
-				"border-bottom"
 			],
 			[
 				"ra",
@@ -228,99 +264,29 @@
 	"buffers":
 	[
 		{
-			"file": "gene.php",
-			"settings":
-			{
-				"buffer_size": 3728,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "meth_detail.php",
-			"settings":
-			{
-				"buffer_size": 7148,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "security.php",
-			"settings":
-			{
-				"buffer_size": 789,
-				"line_ending": "Windows"
-			}
-		},
-		{
 			"file": "search.php",
 			"settings":
 			{
-				"buffer_size": 1798,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "css/css.css",
-			"settings":
-			{
-				"buffer_size": 6675,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "drugBrowser.php",
-			"settings":
-			{
-				"buffer_size": 6967,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "data.php",
-			"settings":
-			{
-				"buffer_size": 11546,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "index.php",
-			"settings":
-			{
-				"buffer_size": 1926,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "diseaseSearch.php",
-			"settings":
-			{
-				"buffer_size": 4001,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "mut2_detail.php",
-			"settings":
-			{
-				"buffer_size": 5605,
-				"line_ending": "Windows"
-			}
-		},
-		{
-			"file": "mail.php",
-			"settings":
-			{
-				"buffer_size": 1261,
-				"line_ending": "Windows",
-				"name": "require_once('class.phpmailer.php');"
+				"buffer_size": 630,
+				"line_ending": "Unix"
 			}
 		},
 		{
 			"file": "cytoscape.js-2.3.7/data.php",
 			"settings":
 			{
-				"buffer_size": 3712,
+				"buffer_size": 3755,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "<!DOCTYPE html>\n<html lang=\"en\">\n\n<head>\n    <meta charset=\"UTF-8\">\n    <title>Document</title>\n    <link href=\"style.css\" rel=\"stylesheet\" />\n    <script src=\"./build/cytoscape.js\"></script>\n    <script src='./build/jquery-2.1.1.min.js'></script>\n    <!--     <script src=\"./lib/layout.cose.js\"></script>\n    <script src=\"./lib/arbor.js\"></script>\n    <script src=\"./lib/dagre.js\"></script>\n    <script src=\"./lib/layout.breadthfirst.js\"></script>\n    <script src=\"./lib/layout.circle.js\"></script>\n    <script src=\"./lib/layout.concentric.js\"></script>\n    <script src=\"./lib/layout.cose.js\"></script>\n    <script src=\"./lib/layout.grid.js\"></script>\n    <script src=\"./lib/layout.null.js\"></script>\n    <script src=\"./lib/layout.preset.js\"></script>\n    <script src=\"./lib/layout.random.js\"></script>\n    <script src=\"./lib/springy.js\"></script> -->\n    \n    <script>\n    $(function() {\n                  var url = './network.json';\n        $.ajax(url, {\n            async: false,\n            success: function(data) {\n                bb = data; // bb为全局变量\n                console.log(jQuery.parseJSON(bb))\n\n\n            },\n\n\n        });\n\n                 var aa = jQuery.parseJSON(bb);\n       \n        // var cy = cytoscape({\n\n        //     container: document.getElementById('cy'),\n        //     elements: {nodes:aa.elements.nodes,\n        //                 edges:aa.elements.edges},\n\n\n\n        //     // style: cytoscape.stylesheet()\n        //     //     .selector('node[id ^= \"gene\"]')\n        //     //     .css({\n        //     //         'background-color': 'red'\n        //     //     })\n        //     //     .selector('node[id ^= \"mir\"]')\n        //     //     .css({\n        //     //         'background-color': 'orange'\n        //     //     })\n        //     //     .selector('node[id ^= \"lnc\"]')\n        //     //     .css({\n        //     //         'background-color': 'yellow'\n        //     //     })\n        //     //     .selector('node[id ^= \"dis\"]')\n        //     //     .css({\n        //     //         'background-color': 'green'\n        //     //     })\n        //     //     .selector('node[id ^= \"drug\"]')\n        //     //     .css({\n        //     //         'background-color': 'blue'\n        //     //     })\n        //     //     .selector('edge')\n        //     //     .css({\n        //     //         'line-color': '#F6C28C'\n        //     //     }),\n        //     ready: function() {\n        //         console.log('ready')\n        //         console.log(cy.json());\n        //         $('#png').html('<a href=\"' + cy.png() + '\" >dfsa</a>')\n        //     },\n           \n\n\n\n\n        // })\n\n        // cy.on('tap', 'node', function(evt) {\n        //     evt.cyTarget.css('background-color', 'blue');\n        //     // evt.cyTarget.neighborhood().css('background-color', 'red');\n        //     // $('#info').text(evt.cyTarget.degree() + evt.cyTarget.data('id'));\n            \n        // });\n\n\n                })\n    </script>\n</head>\n\n<body>\n    <div id=\"cy\">lipidong</div>\n</body>\n\n</html>\n",
+			"file": "cytoscape.js-2.3.7/cy.html",
+			"file_size": 3143,
+			"file_write_time": 130674481574276012,
+			"settings":
+			{
+				"buffer_size": 3034,
 				"line_ending": "Windows"
 			}
 		},
@@ -328,8 +294,32 @@
 			"file": "cytoscape.js-2.3.7/test.html",
 			"settings":
 			{
-				"buffer_size": 4613,
+				"buffer_size": 9345,
 				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "cytoscape.js-2.3.7/cy.php",
+			"settings":
+			{
+				"buffer_size": 9266,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/D/deskTop/cytoscape.js-toolbar-master/README.md",
+			"settings":
+			{
+				"buffer_size": 5407,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "cytoscape.js-2.3.7/build/cytoscape.js",
+			"settings":
+			{
+				"buffer_size": 671174,
+				"line_ending": "Unix"
 			}
 		},
 		{
@@ -353,36 +343,38 @@
 				"read_only": true,
 				"scratch": true
 			}
-		},
-		{
-			"contents": "",
-			"settings":
-			{
-				"buffer_size": 0,
-				"line_ending": "Windows",
-				"name": "Xdebug Stack",
-				"read_only": true,
-				"scratch": true
-			}
-		},
-		{
-			"contents": "",
-			"settings":
-			{
-				"buffer_size": 0,
-				"line_ending": "Windows",
-				"name": "Xdebug Breakpoint",
-				"read_only": true,
-				"scratch": true
-			}
 		}
 	],
 	"build_system": "Packages/User/php.sublime-build",
 	"command_palette":
 	{
-		"height": 392.0,
+		"height": 150.0,
 		"selected_items":
 		[
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"phpf",
+				"phpfmt: format now"
+			],
+			[
+				"aligent",
+				"BracketHighlighter: Fold Bracket Content"
+			],
+			[
+				"colo",
+				"Color Picker"
+			],
+			[
+				"jquery",
+				"Snippet: jQuery.ajax"
+			],
+			[
+				"instal pa",
+				"Package Control: Install Package"
+			],
 			[
 				"brackethight",
 				"BracketHighlighter: Jump to Right Bracket"
@@ -406,10 +398,6 @@
 			[
 				"xdebug ",
 				"Xdebug: Restart Session"
-			],
-			[
-				"install",
-				"Package Control: Install Package"
 			],
 			[
 				"markdown",
@@ -547,48 +535,102 @@
 	},
 	"expanded_folders":
 	[
-		"/F/web"
+		"/F/web",
+		"/F/web/cytoscape.js-2.3.7"
 	],
 	"file_history":
 	[
-		"/F/web/geneSearch.php",
+		"/D/deskTop/cytoscape.js-panzoom-master/cytoscape.js-panzoom.js",
+		"/F/web/contact.php",
+		"/F/web/cytoscape.js-2.3.7/faguang.html",
+		"/D/Desktop/小白色.txt",
+		"/F/web/cytoscape.js-2.3.7/Initialisation/code.js",
+		"/F/web/cytoscape.js-2.3.7/gene/gist29419ca0e6430a7185a5-6ff73fdca18157f76043e33bbb0fcc05bcd538e4/code.js",
+		"/F/web/cytoscape.js-2.3.7/aa.json",
+		"/F/web/cytoscape.js-2.3.7/jquery.illuminate.0.7.min.js",
+		"/F/web/cytoscape.js-2.3.7/build/cytoscape.js",
+		"/F/web/cell.php",
+		"/F/web/cytoscape.js-2.3.7/network.json",
+		"/F/web/cytoscape.js-2.3.7/test.html",
+		"/F/web/cytoscape.js-2.3.7/cy.html",
+		"/D/Desktop/cancerdr/web_session/data/index.html",
+		"/F/web/web_session/data/index.html",
+		"/F/web/diseaseSearch.php",
+		"/F/web/css/jqx.energyblue.css",
+		"/D/deskTop/cancerdr/web_session/data/93d0d7e7.main.css",
+		"/F/web/index.php",
+		"/F/web/download.php",
+		"/F/web/cytoscape.js-2.3.7/lib/layout.cose.js",
+		"/F/web - 副本/connect.php",
+		"/F/web - 副本/gridjs.php",
+		"/F/web/cytoscape.js-2.3.7/lib/layout.arbor.js",
 		"/F/web/header.php",
+		"/F/web/guide.php",
+		"/F/web/mailex.php",
+		"/F/web/receive.php",
+		"/F/web/submit.php",
+		"/F/web/js/link.js",
+		"/F/web/tmp/index.php",
+		"/F/web/ms.php",
+		"/F/web/css/jqx.base.css",
+		"/F/web/disease.php",
+		"/F/web/css/css.css",
+		"/F/web/detail/mut_detail.php",
+		"/F/web/detail/ic50_detail.php",
+		"/F/web/test.html",
+		"/F/web/c7ff3c24-60e6-4185-a155-5d026a394a86.dmp",
+		"/F/web/meth_data.php",
+		"/F/web/detail/meth_detail.php",
+		"/F/web/detail/mir_detail.php",
+		"/F/web/drug.php",
+		"/F/web/detail/lnc_detail.php",
+		"/F/web/detail/ms_detail.php",
+		"/F/web/gridjs.php",
+		"/F/web/search.php",
+		"/F/web/detail/mut2_detail.php-tmp",
+		"/F/web/jqwidgets-ver3.6.0/demos/jqxcalendar/calendar-fluid-size.htm",
+		"/F/web/cytoscape.js-2.3.7/aa.html",
+		"/F/web/security.php",
+		"/F/web/header.php-tmp",
+		"/F/web/cytoscape.js-2.3.7/data.php",
+		"/F/web/cytoscape.js-2.3.7/data.json",
+		"/F/web/js/cdric.js",
+		"/F/web/gene.php",
+		"/F/web/mir.php",
+		"/F/web/lnc.php",
+		"/F/web/detail/mut2_detail.php",
+		"/F/web/data.php",
+		"/C/Users/Administrator.7J3FXA4TRMAIT95/AppData/Roaming/Sublime Text 3/Packages/phpfmt/Default.sublime-keymap",
+		"/F/web/css/submit.php",
+		"/F/web/css/download.php",
+		"/F/web/geneSearch.php",
+		"/F/web/celllineBrowser.php",
+		"/F/web/connect.php",
+		"/F/web/drugBrowser.php",
+		"/F/web/ajax.php",
+		"/F/web/meth_detail.php",
+		"/F/web/mut2_detail.php",
+		"/F/web/mail.php",
+		"/F/web/cytoscape.js-2.3.7/lib/arbor.js",
+		"/F/web/cytoscape.js-2.3.7/lib/dagre.js",
+		"/F/web/cytoscape.js-2.3.7/qtip/code.js",
+		"/F/web/cytoscape.js-2.3.7/tuninig/gist57e7cc43342193d9d21a-907a460fd74d591e80bb05928742a6f4a0f8f301/code.js",
 		"/F/web/cytoscape.js-2.3.7/tmp.php",
 		"/F/web/browser.php",
 		"/F/web/tmp.php",
-		"/F/web/mailex.php",
 		"/F/迅雷下载/bootstrap-3.3.2/test-infra/README.md",
-		"/F/web/drugBrowser.php",
-		"/F/web/js/link.js",
-		"/F/web/data.php",
-		"/F/web/disease.php",
-		"/F/web/mut2_detail.php",
 		"/F/web/mir_detail.php",
-		"/F/web/drug.php",
 		"/F/web/ic50_detail.php",
-		"/F/web/meth_detail.php",
-		"/F/web/css/jqx.base.css",
 		"/F/web/lnc_detail.php",
 		"/F/web/ms_detail.php",
 		"/F/web/mut_detail.php",
-		"/F/web/ms.php",
-		"/F/web/cell.php",
-		"/F/web/cytoscape.js-2.3.7/test.html",
 		"/C/Users/Administrator.7J3FXA4TRMAIT95/AppData/Roaming/Sublime Text 3/Packages/BracketHighlighter/Example.sublime-keymap",
 		"/C/Users/Administrator.7J3FXA4TRMAIT95/AppData/Roaming/Sublime Text 3/Packages/BracketHighlighter/bh_core.sublime-settings",
-		"/F/web/mir.php",
-		"/F/web/search.php",
-		"/F/web/index.php",
-		"/F/web/celllineBrowser.php",
-		"/F/web/gene.php",
-		"/F/web/cytoscape.js-2.3.7/data.php",
 		"/C/Users/Administrator.7J3FXA4TRMAIT95/AppData/Roaming/Sublime Text 3/Packages/User/Default (Windows).sublime-keymap",
 		"/F/web/filtering.htm",
 		"/F/web/ic5-_detail.php",
 		"/F/web/cytoscape.js-2.3.7/ajax.html",
-		"/F/web/lnc.php",
 		"/F/web/ms_detail",
-		"/F/web/cytoscape.js-2.3.7/aa.html",
 		"/D/deskTop/cytoscape.js-2.3.7/test.html",
 		"/D/Desktop/cytoscape.js-2.3.7/aa.html",
 		"/D/Desktop/cytoscape.js-2.3.7/ajax.html",
@@ -597,7 +639,6 @@
 		"/D/deskTop/cytoscape_qtip/gist546dd8ca4872cc87106a-d092e31cc462e0fbb6ae22257520a1ba59f477b6/code.js",
 		"/F/web/mut_data.php",
 		"/F/web/jqwidgets-ver3.6.0/phpdemos/server_side_grid__with_nested_grids/data.php",
-		"/F/web/css/css.css",
 		"/F/web/drugSearch.php",
 		"/F/web/search.html",
 		"/F/web/jqwidgets-ver3.6.0/demos/jqxslider/jquery-slider-events.htm",
@@ -607,7 +648,6 @@
 		"/F/web/jqwidgets-ver3.6.0/phpdemos/server_side_grid__with_nested_grids/methdata.php",
 		"/F/web/jqwidgets-ver3.6.0/phpdemos/server_side_grid__with_nested_grids/index.php",
 		"/D/Desktop/cytoscape.js-2.3.7/test.html",
-		"/F/web/meth_data.php",
 		"/F/web/jqwidgets-ver3.6.0/phpdemos/server_side_grid__with_nested_grids/Methdata.php",
 		"/F/web/jqwidgets-ver3.6.0/demos/jqxdatatable/javascript-datatable-rows-details.htm",
 		"/F/web/jqwidgets-ver3.6.0/jqwidgets/jqxgrid.js",
@@ -627,62 +667,11 @@
 		"/F/web/jqwidgets-ver3.5.0/phpdemos/server_side_grid_filtering_and_sorting_and_paging/data.php",
 		"/F/web/jqwidgets-ver3.5.0/demos/jqxgrid/nestedgrids.htm",
 		"/F/web/jqwidgets-ver3.5.0/demos/jqxdatatable/javascript-datatable-nested-tables.htm",
-		"/F/cancerDR/jqwidgets-ver3.5.0/demos/jqxdatatable/javascript-datatable-nested-tables.htm",
-		"/F/web/result.php",
-		"/F/cancerDR/jqwidgets-ver3.5.0/phpdemos/bind_grid_to_mysql_database/index.php",
-		"/F/web/drugData.php",
-		"/F/web/ajax.html",
-		"/F/web/ajax.php",
-		"/F/web/tmp.html",
-		"/F/web/test.php",
-		"/F/web/localData.php",
-		"/C/Users/Administrator.7J3FXA4TRMAIT95/AppData/Local/Temp/HZ$D.989.1217/HZ$D.989.1218/2080693911447095755.txt",
-		"/C/Users/Administrator.7J3FXA4TRMAIT95/AppData/Local/Temp/HZ$D.443.4747/HZ$D.443.4748/4529342934346600784.txt",
-		"/C/Users/Administrator.7J3FXA4TRMAIT95/AppData/Local/Temp/HZ$D.685.3698/HZ$D.685.3699/4529342934346600784.txt",
-		"/C/Users/Administrator.7J3FXA4TRMAIT95/AppData/Local/Temp/HZ$D.189.2929/HZ$D.189.2930/1287296827076534733.txt",
-		"/C/Users/Administrator.7J3FXA4TRMAIT95/AppData/Local/Temp/HZ$D.443.4747/HZ$D.443.4749/4529342934346600784.txt",
-		"/D/deskTop/ip.txt",
-		"/F/web/footer.php",
-		"/F/web/css/layout.css",
-		"/F/cancerDR/jqwidgets-ver3.5.0/demos/jqxgrid/generatedata.js",
-		"/F/cancerDR/jqwidgets-ver3.5.0/demos/jqxgrid/filtering.htm",
-		"/F/cancerDR/jqwidgets-ver3.5.0/demos/jqxgrid/filterrow.htm",
-		"/F/web/connect.php",
-		"/F/cancerDR/data.php",
-		"/F/blog/js/min/duoshuo.js",
-		"/F/blog/_posts/2015-01-09-javascript.md",
-		"/F/blog/_layouts/post.html",
-		"/F/blog/_posts/template.md",
-		"/C/Users/Administrator.7J3FXA4TRMAIT95/AppData/Local/Temp/lncRNA-2015-1-13-11-24-40.txt",
-		"/F/blog/_includes/duoshuo.html",
-		"/F/blog/_posts/2014-12-30-advR_vocabulary.md",
-		"/F/blog/_posts/2014-12-13-New-Blog-Sytle.md",
-		"/F/blog/Public/sitemap.txt",
-		"/C/Users/Administrator.7J3FXA4TRMAIT95/AppData/Roaming/Sublime Text 3/Packages/User/php.sublime-build",
-		"/C/Users/Administrator.7J3FXA4TRMAIT95/AppData/Roaming/Sublime Text 3/Packages/SublimeLinter/Default (Windows).sublime-keymap",
-		"/C/Users/Administrator.7J3FXA4TRMAIT95/AppData/Roaming/Sublime Text 3/Packages/CodeFormatter/CodeFormatter.sublime-settings",
-		"/C/Users/Administrator.7J3FXA4TRMAIT95/AppData/Roaming/Sublime Text 3/Packages/Alignment/Default (Windows).sublime-keymap",
-		"/F/blog/_posts/2014-12-26-funSet.md",
-		"/F/web/tmp.css",
-		"/F/web/js/grid.js",
-		"/F/blog/_posts/2015-1-7-Systematic identification of genomic.md",
-		"/F/cancerDR/grid.php",
-		"/F/cancerDR/headerTable.php",
-		"/F/web/search_box.html",
-		"/F/web/mutation.php",
-		"/F/web/tmp/index.php",
-		"/F/cancerDR/cell.php",
-		"/F/迅雷下载/14.1-1-(1+3)-1/index.html",
-		"/F/迅雷下载/14.1-1-(1+3)-1/layout.css",
-		"/F/cancerDR/css/layout.css",
-		"/C/Users/Administrator.7J3FXA4TRMAIT95/AppData/Roaming/Sublime Text 3/Packages/HTML-CSS-JS Prettify/HTMLPrettify.sublime-settings",
-		"/F/cancerDR/header.php",
-		"/F/web/index.html",
-		"/C/Users/Administrator.7J3FXA4TRMAIT95/AppData/Roaming/Sublime Text 3/Packages/HTML-CSS-JS Prettify/.jsbeautifyrc"
+		"/F/cancerDR/jqwidgets-ver3.5.0/demos/jqxdatatable/javascript-datatable-nested-tables.htm"
 	],
 	"find":
 	{
-		"height": 38.0
+		"height": 43.0
 	},
 	"find_in_files":
 	{
@@ -696,6 +685,64 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"faguang",
+			"width",
+			"script",
+			"drag",
+			"tap ",
+			"tap$",
+			"tap",
+			"balcked",
+			"^=",
+			"layout",
+			"'",
+			"]",
+			"[",
+			"sql_drug_dis",
+			"sql_drug",
+			"sql_drug_dis",
+			"html",
+			"</html>",
+			"layout",
+			".left",
+			"x",
+			"crossRef",
+			".left",
+			"header",
+			".left",
+			"\"text\"",
+			"th>",
+			"aaa",
+			"disease_id",
+			"search",
+			"]",
+			"[",
+			"href=\"#\"",
+			"drug_id",
+			"IC",
+			"mut_view",
+			"cn",
+			"aa",
+			"930",
+			"*",
+			"body",
+			"search",
+			"search_box",
+			"#search",
+			"search",
+			"search_box",
+			"nav",
+			"box",
+			".header",
+			"#header",
+			"header",
+			"z-index",
+			"search_box",
+			"#69a6db",
+			"#form",
+			"form",
+			"930",
+			"/js/",
 			"info_drug",
 			"com",
 			"id",
@@ -765,72 +812,23 @@
 			"dataAdapter",
 			"cell_id",
 			"drug_id",
-			"cell_id",
-			"cell_name",
-			"cell_id",
-			"tab1",
-			"where",
-			"$where",
-			"cell_name",
-			"cell_id",
-			"id",
-			"detail",
-			">\n",
-			"showrowdetails",
-			"jqxgrid",
-			"bindingcomplete",
-			"pin",
-			"jqx-grid-column-menubutton",
-			"iconscontainer",
-			"showrowdetailscolumn",
-			"jqx-icon-arrow-right",
-			"gridcell",
-			"\\$query",
-			"$query",
-			"customer",
-			"customerid",
-			"id",
-			"customerid",
-			"CustomerID",
-			"query",
-			"Orders",
-			"tab2",
-			"CustomerID",
-			"Customers",
-			"Orders",
-			"orders",
-			"order",
-			"operator",
-			"CompanyName",
-			"CompanyNameoperator",
-			"filter.js",
-			"filter",
-			"$_GET",
-			"\\\\$_GET",
-			"\\$_GET",
-			"$_GET",
-			"local",
-			".canlen.",
-			"canl",
-			"cur",
-			"active",
-			"}\n",
-			"heading",
-			"\\#heading",
-			"#heading",
-			"heading",
-			"#heading",
-			"nav",
-			"ul",
-			"heading",
-			"');\n"
+			"cell_id"
 		],
 		"highlight": true,
 		"in_selection": false,
 		"preserve_case": false,
-		"regex": false,
+		"regex": true,
 		"replace_history":
 		[
+			"=",
+			"",
+			"\"text\"/",
+			"td>",
+			"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+			"href=\"javascript:;\"",
+			"#055db5",
+			"1000",
+			"./js/",
 			"$(\"#ic50\")",
 			"disease_name",
 			"disease_id",
@@ -880,289 +878,24 @@
 	"groups":
 	[
 		{
-			"selected": 12,
+			"selected": 4,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "gene.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3728,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								2133,
-								2133
-							]
-						],
-						"settings":
-						{
-							"BracketHighlighterBusy": false,
-							"bh_regions":
-							[
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content"
-							],
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 1386.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 8,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "meth_detail.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 7148,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								7068,
-								7068
-							]
-						],
-						"settings":
-						{
-							"BracketHighlighterBusy": false,
-							"bh_regions":
-							[
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content"
-							],
-							"syntax": "Packages/PHP/PHP.tmLanguage"
-						},
-						"translation.x": 66.0,
-						"translation.y": 4488.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 7,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "security.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 789,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								175,
-								175
-							]
-						],
-						"settings":
-						{
-							"BracketHighlighterBusy": false,
-							"bh_regions":
-							[
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content"
-							],
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 396.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 6,
-					"type": "text"
-				},
-				{
-					"buffer": 3,
 					"file": "search.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 1798,
+						"buffer_size": 630,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								238,
-								238
+								171,
+								171
 							]
 						],
 						"settings":
@@ -1170,21 +903,6 @@
 							"BracketHighlighterBusy": false,
 							"bh_regions":
 							[
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
 								"bh_round",
 								"bh_round_center",
 								"bh_round_open",
@@ -1195,70 +913,11 @@
 								"bh_default_open",
 								"bh_default_close",
 								"bh_default_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
 								"bh_unmatched",
 								"bh_unmatched_center",
 								"bh_unmatched_open",
 								"bh_unmatched_close",
 								"bh_unmatched_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content"
-							],
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 4,
-					"type": "text"
-				},
-				{
-					"buffer": 4,
-					"file": "css/css.css",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 6675,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								5931,
-								5839
-							]
-						],
-						"settings":
-						{
-							"BracketHighlighterBusy": false,
-							"bh_regions":
-							[
 								"bh_single_quote",
 								"bh_single_quote_center",
 								"bh_single_quote_open",
@@ -1269,451 +928,6 @@
 								"bh_angle_open",
 								"bh_angle_close",
 								"bh_angle_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content"
-							],
-							"syntax": "Packages/CSS/CSS.tmLanguage",
-							"tab_size": 4,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 0.0,
-						"translation.y": 5973.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 3,
-					"type": "text"
-				},
-				{
-					"buffer": 5,
-					"file": "drugBrowser.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 6967,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								5964,
-								5964
-							]
-						],
-						"settings":
-						{
-							"BracketHighlighterBusy": false,
-							"bh_regions":
-							[
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content"
-							],
-							"syntax": "Packages/PHP/PHP.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 4537.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 9,
-					"type": "text"
-				},
-				{
-					"buffer": 6,
-					"file": "data.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 11546,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								6186,
-								6186
-							]
-						],
-						"settings":
-						{
-							"BracketHighlighterBusy": false,
-							"bh_regions":
-							[
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content"
-							],
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 4369.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 10,
-					"type": "text"
-				},
-				{
-					"buffer": 7,
-					"file": "index.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1926,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								893,
-								893
-							]
-						],
-						"settings":
-						{
-							"BracketHighlighterBusy": false,
-							"bh_regions":
-							[
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content"
-							],
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"tab_size": 2,
-							"translate_tabs_to_spaces": true
-						},
-						"translation.x": 26.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 5,
-					"type": "text"
-				},
-				{
-					"buffer": 8,
-					"file": "diseaseSearch.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 4001,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								240,
-								240
-							]
-						],
-						"settings":
-						{
-							"BracketHighlighterBusy": false,
-							"bh_regions":
-							[
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content"
-							],
-							"syntax": "Packages/PHP/PHP.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 11,
-					"type": "text"
-				},
-				{
-					"buffer": 9,
-					"file": "mut2_detail.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 5605,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								4273,
-								4273
-							]
-						],
-						"settings":
-						{
-							"BracketHighlighterBusy": false,
-							"bh_regions":
-							[
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
 								"bh_regex",
 								"bh_regex_center",
 								"bh_regex_open",
@@ -1724,104 +938,6 @@
 								"bh_double_quote_open",
 								"bh_double_quote_close",
 								"bh_double_quote_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content"
-							],
-							"syntax": "Packages/PHP/PHP.tmLanguage"
-						},
-						"translation.x": 144.0,
-						"translation.y": 2983.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 12,
-					"type": "text"
-				},
-				{
-					"buffer": 10,
-					"file": "mail.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 1261,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								1261,
-								1261
-							]
-						],
-						"settings":
-						{
-							"BracketHighlighterBusy": false,
-							"auto_name": "require_once('class.phpmailer.php');",
-							"bh_regions":
-							[
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
 								"bh_curly",
 								"bh_curly_center",
 								"bh_curly_open",
@@ -1832,18 +948,464 @@
 								"bh_c_define_open",
 								"bh_c_define_close",
 								"bh_c_define_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content"
+							],
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 324.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "cytoscape.js-2.3.7/data.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3755,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2162,
+								2162
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
 								"bh_unmatched",
 								"bh_unmatched_center",
 								"bh_unmatched_open",
 								"bh_unmatched_close",
 								"bh_unmatched_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
 								"bh_regex",
 								"bh_regex_center",
 								"bh_regex_open",
 								"bh_regex_close",
-								"bh_regex_content"
+								"bh_regex_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content"
 							],
-							"syntax": "Packages/PHP/PHP.tmLanguage"
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 4.0,
+						"translation.y": 2956.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "cytoscape.js-2.3.7/cy.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3034,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1168,
+								1184
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content"
+							],
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 675.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "cytoscape.js-2.3.7/test.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 9345,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								9345
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content"
+							],
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "cytoscape.js-2.3.7/cy.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 9266,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								9023,
+								9023
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content"
+							],
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 8001.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "/D/deskTop/cytoscape.js-toolbar-master/README.md",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 5407,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								166,
+								166
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content"
+							],
+							"parser": "github",
+							"syntax": "Packages/Markdown Extended/Syntaxes/Markdown Extended.tmLanguage",
+							"target": "browser",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -1853,20 +1415,20 @@
 					"type": "text"
 				},
 				{
-					"buffer": 11,
-					"file": "cytoscape.js-2.3.7/data.php",
+					"buffer": 6,
+					"file": "cytoscape.js-2.3.7/build/cytoscape.js",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 3712,
+						"buffer_size": 671174,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								1870,
-								1870
+								381507,
+								381507
 							]
 						],
 						"settings":
@@ -1874,21 +1436,31 @@
 							"BracketHighlighterBusy": false,
 							"bh_regions":
 							[
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
 								"bh_angle",
 								"bh_angle_center",
 								"bh_angle_open",
 								"bh_angle_close",
 								"bh_angle_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
 								"bh_regex",
 								"bh_regex_center",
 								"bh_regex_open",
@@ -1899,74 +1471,6 @@
 								"bh_double_quote_open",
 								"bh_double_quote_close",
 								"bh_double_quote_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content"
-							],
-							"syntax": "Packages/PHP/PHP.tmLanguage",
-							"translate_tabs_to_spaces": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 1056.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 12,
-					"file": "cytoscape.js-2.3.7/test.html",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 4613,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								432,
-								432
-							]
-						],
-						"settings":
-						{
-							"BracketHighlighterBusy": false,
-							"bh_regions":
-							[
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
 								"bh_curly",
 								"bh_curly_center",
 								"bh_curly_open",
@@ -1977,56 +1481,26 @@
 								"bh_c_define_open",
 								"bh_c_define_close",
 								"bh_c_define_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
 								"bh_square",
 								"bh_square_center",
 								"bh_square_open",
 								"bh_square_close",
 								"bh_square_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content"
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content"
 							],
-							"syntax": "Packages/HTML/HTML.tmLanguage",
-							"tab_size": 4,
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
 							"translate_tabs_to_spaces": true
 						},
-						"translation.x": 0.0,
-						"translation.y": 219.0,
+						"translation.x": 39.0,
+						"translation.y": 361468.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 0,
+					"stack_index": 6,
 					"type": "text"
 				}
 			]
@@ -2036,7 +1510,7 @@
 			"sheets":
 			[
 				{
-					"buffer": 13,
+					"buffer": 7,
 					"semi_transient": false,
 					"settings":
 					{
@@ -2066,11 +1540,11 @@
 								"bh_default_open",
 								"bh_default_close",
 								"bh_default_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
 								"bh_single_quote",
 								"bh_single_quote_center",
 								"bh_single_quote_open",
@@ -2086,16 +1560,21 @@
 								"bh_regex_open",
 								"bh_regex_close",
 								"bh_regex_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
 								"bh_c_define",
 								"bh_c_define_center",
 								"bh_c_define_open",
 								"bh_c_define_close",
 								"bh_c_define_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
 								"bh_square",
 								"bh_square_center",
 								"bh_square_open",
@@ -2105,12 +1584,7 @@
 								"bh_tag_center",
 								"bh_tag_open",
 								"bh_tag_close",
-								"bh_tag_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content"
+								"bh_tag_content"
 							],
 							"syntax": "Packages/Xdebug Client/Xdebug.tmLanguage",
 							"word_wrap": false
@@ -2119,11 +1593,11 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 13,
+					"stack_index": 7,
 					"type": "text"
 				},
 				{
-					"buffer": 14,
+					"buffer": 8,
 					"semi_transient": false,
 					"settings":
 					{
@@ -2206,195 +1680,20 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 14,
+					"stack_index": 8,
 					"type": "text"
 				}
 			]
 		},
 		{
-			"selected": 1,
 			"sheets":
 			[
-				{
-					"buffer": 15,
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 0,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"BracketHighlighterBusy": false,
-							"bh_regions":
-							[
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content"
-							],
-							"syntax": "Packages/Xdebug Client/Xdebug.tmLanguage",
-							"word_wrap": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 16,
-					"type": "text"
-				},
-				{
-					"buffer": 16,
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 0,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								0,
-								0
-							]
-						],
-						"settings":
-						{
-							"BracketHighlighterBusy": false,
-							"bh_regions":
-							[
-								"bh_c_define",
-								"bh_c_define_center",
-								"bh_c_define_open",
-								"bh_c_define_close",
-								"bh_c_define_content",
-								"bh_round",
-								"bh_round_center",
-								"bh_round_open",
-								"bh_round_close",
-								"bh_round_content",
-								"bh_single_quote",
-								"bh_single_quote_center",
-								"bh_single_quote_open",
-								"bh_single_quote_close",
-								"bh_single_quote_content",
-								"bh_curly",
-								"bh_curly_center",
-								"bh_curly_open",
-								"bh_curly_close",
-								"bh_curly_content",
-								"bh_square",
-								"bh_square_center",
-								"bh_square_open",
-								"bh_square_close",
-								"bh_square_content",
-								"bh_default",
-								"bh_default_center",
-								"bh_default_open",
-								"bh_default_close",
-								"bh_default_content",
-								"bh_double_quote",
-								"bh_double_quote_center",
-								"bh_double_quote_open",
-								"bh_double_quote_close",
-								"bh_double_quote_content",
-								"bh_unmatched",
-								"bh_unmatched_center",
-								"bh_unmatched_open",
-								"bh_unmatched_close",
-								"bh_unmatched_content",
-								"bh_angle",
-								"bh_angle_center",
-								"bh_angle_open",
-								"bh_angle_close",
-								"bh_angle_content",
-								"bh_tag",
-								"bh_tag_center",
-								"bh_tag_open",
-								"bh_tag_close",
-								"bh_tag_content",
-								"bh_regex",
-								"bh_regex_center",
-								"bh_regex_open",
-								"bh_regex_close",
-								"bh_regex_content"
-							],
-							"syntax": "Packages/Xdebug Client/Xdebug.tmLanguage",
-							"word_wrap": false
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 15,
-					"type": "text"
-				}
 			]
 		}
 	],
 	"incremental_find":
 	{
-		"height": 30.0
+		"height": 35.0
 	},
 	"input":
 	{
@@ -2432,14 +1731,14 @@
 		"rows":
 		[
 			0.0,
-			0.912126537786,
+			0.84760121971,
 			1.0
 		]
 	},
 	"menu_visible": true,
 	"output.exec":
 	{
-		"height": 97.0
+		"height": 72.0
 	},
 	"output.find_results":
 	{
@@ -2456,7 +1755,7 @@
 	"project": "web.sublime-project",
 	"replace":
 	{
-		"height": 70.0
+		"height": 80.0
 	},
 	"save_all_on_build": false,
 	"select_file":
@@ -2464,6 +1763,10 @@
 		"height": 0.0,
 		"selected_items":
 		[
+			[
+				"css.",
+				"css\\css.css"
+			],
 			[
 				"search.p",
 				"search.php"
@@ -2475,10 +1778,6 @@
 			[
 				"nest",
 				"jqwidgets-ver3.6.0\\demos\\jqxgrid\\nestedgrids.htm"
-			],
-			[
-				"css.",
-				"css\\css.css"
 			],
 			[
 				"css",
@@ -2569,7 +1868,7 @@
 	"show_open_files": true,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 373.0,
+	"side_bar_width": 328.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

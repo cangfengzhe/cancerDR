@@ -1,41 +1,13 @@
 
-	<style type="text/css">
-     .cir{
-     	width:15px;
-     	height: 15px;
-     	float:left;
-     	display: block;
-     	border-radius: 50%;
-     	margin: 10px 0px 0 10px;
-     }
-	#cir0{
-		background-color: grey;
-	}
-     #cir_mut{
-		background-color: red;
-     }
-     #cir_meth{
-		background-color: orange;
-     }
-     #cir_mir{
-     	background-color: yellow;
-     }
-	#cir_lnc{
-		background-color: green;
-	}
-	#cir_msi{
-		background-color: blue;
-	}
 
-</style>
 
 	<!-- php调用javacript -->
     <script type="text/javascript">
-  
+
         $(document).ready(function () {
             // prepare the data
             var theme = 'energyblue';
-      		var value ="<?php echo $_GET['value']; ?>";
+      		var value ="<?php echo $_GET['value'];?>";
             var source =
             {
                  datatype: "json",
@@ -56,7 +28,7 @@
                 ],
 			    url: 'data.php?table=info_drug' + '&value=' + value +
 			     '&colName=other_name',
-				
+
 				cache: false,
 				filter: function()
 				{
@@ -69,18 +41,18 @@
 					$("#jqxgrid").jqxGrid('updatebounddata', 'sort');
 				},
 				root: 'Rows',
-				
+
 				beforeprocessing: function(data)
-				{		
+				{
 					if (data != null)
 					{
-						source.totalrecords = data[0].TotalRows;					
+						source.totalrecords = data[0].TotalRows;
 					}
-					
+
 				}
 
 
-            };		
+            };
 
 
 		    var dataadapter = new $.jqx.dataAdapter(source, {
@@ -90,7 +62,7 @@
 					}
 				}
 			);
-	
+
 
 // # lpd 添加 链接
 
@@ -99,143 +71,103 @@
 
 var crossRef =  function (row, columnfield, value, defaulthtml, columnproperties, rowdata) {
    return '<div style="margin:5px 0 0 10px;"><a href="./drug.php?drugid=' + rowdata.drug_id + '">' + value + '</a></div>';
-                
+
 }
 
-// var factorType =  function (row, columnfield, value, defaulthtml, columnproperties, rowdata) {
-//   // txt='<a id="tip" href="#"><span id="tip_info">Mutation:red; Methylation:orange; miRNA:yellow; lncRNA:green; MSI:blue; None:grey</span>';
-//    txt='';
-//    if(rowdata.mut==1){
-//    	txt += '<span class="cir" id="cir_mut"></span>';
-//    }
-//    else{
-//    	txt += '<span class="cir" id="cir0"></span>';
-//    }
-//    if(rowdata.meth==1){
-//    	txt += '<span class="cir"  id="cir_meth"></span>';
-//    }
-//    else{
-//    	txt += '<span class="cir"  id="cir0"></span>';
-//    }
 
-//    if(rowdata.mir==1){
-//    	txt += '<span class="cir"  id="cir_mir"></span>';
-//    }
-//    else{
-//   	txt += '<span class="cir"  id="cir0"></span>';
-//    }
-
-//    if(rowdata.lnc==1){
-//   	txt += '<span class="cir"  id="cir_lnc"></span>';
-//    }
-//    else{
-//    	txt += '<span class="cir"  id="cir0"></span>';
-
-//    }
-
-//    if(rowdata.msi==1){
-//    	   	txt += '<span class="cir" id="cir_msi"></span>';
-
-//    }
-//    else{
-//    	txt += '<span class="cir" id="cir0"></span>';
-
-//    }
-   
-
-
-//    return txt;
-                
-// }
 var columnsrenderer = function (value) {
 	return '<div style="margin: 15px 0 0 14px;">' + value + '</div>';
 }
 // <a href="#" title="Mutation:red; Methylation:orange;<br/> miRNA:yellow; lncRNA:green; MSI:blue; None:grey">
  var colType = function(value){
- 	txt = 'which factor to show'; 
+ 	txt = 'which factor to show';
  	return txt;
- }    
+ }
             // initialize jqxGrid
             if(value!=''){
             	$("#jqxgrid").jqxGrid(
-            {		
-                source: dataadapter,
-                theme: theme,
-				filterable: true,
-				sortable: true,
-				// autoheight: false,
-				pagermode: "simple",
+            {
+                 source: dataadapter,
+                width:1000,
+                theme: 'energyblue',
 				pageable: true,
-				virtualmode: true,
-				// height:300,
+				sortable: true,
+				autoheight: true,
+				// rowsheight: 30,
 				columnsheight: 40,
-				rowsheight: 30,
+				// height:40px;
+                virtualmode: true,
+
+                filterable: true,
+				sortable: true,
 				selectionmode: 'none',
-				pagerbuttonscount: 6,
+				altrows: true,//交替颜色
+				autoshowfiltericon: false,
+				showpinnedcolumnbackground: false,
+				showrowdetailscolumn:false,
+				autorowheight: true,
 				pagesize: 20,
 				enablehover: false,
 				enablebrowserselection:'enable', //是否可以选中字体
-				autoheight: true,
-				width: 900,
-				autorowheight: true,
 				rendergridrows: function(obj)
 				{
-					 return obj.data;    
+					 return obj.data;
 				},
 			    columns: [
                       // { text: 'Drug ID' , datafield:'<a href="./drug.php?drugID=afd'">drugID</a>', width: 200 , cellsrenderer:cellsrenderer},
-                      { text: 'Search Value', datafield: 'other_name', width: 380 ,renderer:columnsrenderer},
-                       
+                      { text: 'Search Value', datafield: 'other_name', width: 400 ,renderer:columnsrenderer},
                       { text: 'Drug Name', datafield: 'drug_name', width: 200 , cellsrenderer:crossRef,renderer:columnsrenderer},
                       { text: 'Drug ID', datafield: 'id', width: 130 , cellsrenderer:crossRef, renderer:columnsrenderer},
-                      // { text: 'Search Value', datafield: 'other_name', width: 330 ,renderer:columnsrenderer},
-                      // { text: 'Pubchem ID', datafield: 'pubchem_id', width: 150 ,renderer:columnsrenderer},
-                      { text: 'type', datafield: 'sum', width: 190, cellsrenderer:factorType }
+                    	{ text: 'type', datafield: 'sum', width: 190, cellsrenderer:factorType,renderer:columnsrenderer }
                   ]
             });
 			}else{
 				$("#jqxgrid").jqxGrid(
-            {		
+            {
                 source: dataadapter,
-                theme: theme,
-				filterable: true,
-				sortable: true,
-				// autoheight: false,
-				pagermode: "simple",
+                width:1000,
+                theme: 'energyblue',
 				pageable: true,
-				virtualmode: true,
-				// height:300,
-				columnsheight: 40,
+				sortable: true,
+				autoheight: true,
 				rowsheight: 30,
+				columnsheight: 40,
+				// height:40px;
+                virtualmode: true,
+
+                filterable: true,
+				sortable: true,
 				selectionmode: 'none',
-				pagerbuttonscount: 6,
+				altrows: true,//交替颜色
+				autoshowfiltericon: false,
+				showpinnedcolumnbackground: false,
+				// showrowdetailscolumn:false,
+				// autorowheight: true,
 				pagesize: 20,
 				enablehover: false,
 				enablebrowserselection:'enable', //是否可以选中字体
-				autoheight: true,
-				width: 900,
 				// autorowheight: true,
 				rendergridrows: function(obj)
 				{
-					 return obj.data;    
+					 return obj.data;
 				},
 			    columns: [
                       // { text: 'Drug ID' , datafield:'<a href="./drug.php?drugID=afd'">drugID</a>', width: 200 , cellsrenderer:cellsrenderer},
                       // { text: 'Search Value', datafield: 'other_name', width: 380 ,renderer:columnsrenderer},
-                       
+
                       { text: 'Drug Name', datafield: 'drug_name', width: 200 , cellsrenderer:crossRef,renderer:columnsrenderer},
-                      { text: 'Drug ID', datafield: 'id', width: 110 , cellsrenderer:crossRef, renderer:columnsrenderer},
-                      { text: 'Description', datafield: 'description', width: 440 ,renderer:columnsrenderer},
+                      { text: 'Drug ID', datafield: 'id', width: 120 , cellsrenderer:crossRef, renderer:columnsrenderer},
+                      { text: 'Description', datafield: 'description', width: 530 ,renderer:columnsrenderer},
                       // { text: 'Pubchem ID', datafield: 'pubchem_id', width: 150 ,renderer:columnsrenderer},
                       { text: 'type', datafield: 'sum', width: 150, cellsrenderer:factorType }
                   ]
             });
 			}
-            
+
         });
     </script>
 
-    <div id='jqxWidget'>	
+    <div id='jqxWidget'>
         <div id="jqxgrid"></div>
     </div>
 
