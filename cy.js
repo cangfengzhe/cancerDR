@@ -102,12 +102,14 @@
             ready: function() {
                 console.log('ready')
                 $('#load').remove();
-                $('#png').html('<a href="' + cy.png() + '" >Save image</a>');
+                $('#png').html('<a target="_blank" href="' + cy.png({full:true,scale:100}) + '" >Save image</a>');
 
             },
         })
 
-
+        cy.on('touchmove',function(){
+            $('#png').html('<a target="_blank" href="' + cy.png({full:true,scale:100}) + '" >Save image</a>');
+        })
 
         cy.on('tap', 'node', function(evt) {
             cy.nodes().removeClass('show')
@@ -170,7 +172,7 @@
                             level: 0.5,
                             renderedPosition: eles.renderedPosition()
                         });
-
+                        // $('#png').html('<a target="_blank" href="' + cy.png({full:true,scale:100}) + '" >Save image</a>');
                         // console.log(eles.renderedPosition());
                     }
                 });
@@ -178,14 +180,14 @@
             }
             // cy.center(neighborhood);
 
-            $('#png').html('<a target="_blank" href="' + cy.png() + '" >Save image</a>');
+             $('#png').html('<a target="_blank" href="' + cy.png({full:true,scale:100}) + '" >Save image</a>');
             setInterval('eles.flashClass(".faguang",2000);', 2000);
 
         })
 
         // idValue= $('#li_cy').attr('flag');
 
-        if(idValue){
+        if(typeof(idValue) != "undefined" ){
             var id = "node[ref_id='" + idValue + "']";
         
         // cy.$('node[ref_id="DRUG020"]').trigger('tap'); 
@@ -204,13 +206,10 @@
                     edges: aa.elements.edges
                 })
                 // cy.fit();
-
+    $('#png').html('<a target="_blank" href="' + cy.png({full:true,scale:100}) + '" >Save image</a>');
         })
         cy.fit();
-
-        cy.panzoom({    sliderHandleIcon: 'fa fa-minus',
-    zoomInIcon: 'fa fa-plus',
-    zoomOutIcon: 'fa fa-minus',
-    resetIcon: 'fa fa-expand'});
+       
+        cy.panzoom();
 
     })

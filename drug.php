@@ -91,11 +91,8 @@ mysql_close();
 
 
 <div>
-  <div id="jqxgrid" class='factor'>
-
-  </div>
-
-
+  <div id="jqxgrid" class='factor'></div>
+  
   <div id="meth" class='factor'></div>
   <div id="mir" class='factor'></div>
   <div id="ms" class='factor'></div>
@@ -105,6 +102,7 @@ mysql_close();
 include './cy.php';
 ?>
 </div>
+<div id="note">Note:</div>
 <?php
 include './footer.php';
 ?>

@@ -170,4 +170,10 @@ var columnsrenderer = function (value) {
     <div id='jqxWidget'>
         <div id="jqxgrid"></div>
     </div>
-
+    <div id="note">Note:
+    <span class="cir_note cir_mut"></span><span>&nbsp;Mutation&nbsp;&nbsp;&nbsp;</span>
+    <span class="cir_note cir_meth"></span><span>&nbsp;Methylation&nbsp;&nbsp;&nbsp;</span>
+    <span class="cir_note cir_mir"></span><span>&nbsp;miRNA&nbsp;&nbsp;&nbsp;</span>
+    <span class="cir_note cir_lnc"></span><span>&nbsp;lncRNA&nbsp;&nbsp;&nbsp;</span>
+    <span class="cir_note cir_msi"></span><span>&nbsp;MicroSatellite</span>
+    </div>

@@ -119,6 +119,7 @@
 					filterable: true,
 					// autoheight: true,
 					showemptyrow: false,
+					columnsheight: 40,
 					selectionmode: 'none',
 
 				enablehover: false,
@@ -131,8 +132,8 @@
 
 
 						  { text: 'Gene Name', datafield: 'gene_name', width: 120, cellsrenderer:empty ,renderer:columnsrenderer,renderer:columnsrenderer},
-						  { text: 'Copy Numer', datafield: 'cn', width: 100 ,renderer:columnsrenderer,renderer:columnsrenderer},
-						  { text: 'AA Mutation', datafield: 'mut_aa', width: 180 ,renderer:columnsrenderer,renderer:columnsrenderer},
+						  { text: 'Copy Numer', datafield: 'cn', width: 120 ,renderer:columnsrenderer,renderer:columnsrenderer},
+						  { text: 'AA Mutation', datafield: 'mut_aa', width: 160 ,renderer:columnsrenderer,renderer:columnsrenderer},
 						  // { text: 'mut_cds', datafield: 'mut_cds', width: 200 },
 						  { text: 'Description', datafield: 'mut_desc', width: 240 ,renderer:columnsrenderer,renderer:columnsrenderer},
 						  { text: 'Position', datafield: 'mut_pos', width: 240,renderer:columnsrenderer,renderer:columnsrenderer },

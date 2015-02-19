@@ -95,11 +95,6 @@ mysql_close();
 </div>
 <div id="note" >note:lipidong</div>
 <style>
-	#note{
-		border: 1px solid rgb(224,223,245);
-		background-color: rgb(224,223,245);
-		display: none;
-	}
 
 
 </style>

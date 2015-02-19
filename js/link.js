@@ -63,29 +63,29 @@
 	}
 	var factorType = function(row, columnfield, value, defaulthtml, columnproperties, rowdata) {
 	    // txt='<a id="tip" href="#"><span id="tip_info">Mutation:red; Methylation:orange; miRNA:yellow; lncRNA:green; MSI:blue; None:grey</span>';
-	    txt = '';
+	    txt = '<div id="cir_type">';
 	    if (rowdata.mut == 1) {
-	        txt += '<span class="cir" id="cir_mut"></span>';
+	        txt += '<span class="cir cir_mut"></span>';
 	    } 
 	    // else {
 	    //     txt += '<span class="cir" id="cir0"></span>';
 	    // }
 	    if (rowdata.meth == 1) {
-	        txt += '<span class="cir"  id="cir_meth"></span>';
+	        txt += '<span class="cir cir_meth"></span>';
 	    } 
 	    // else {
 	    //     txt += '<span class="cir"  id="cir0"></span>';
 	    // }
 
 	    if (rowdata.mir == 1) {
-	        txt += '<span class="cir"  id="cir_mir"></span>';
+	        txt += '<span class="cir cir_mir"></span>';
 	    } 
 	    // else {
 	    //     txt += '<span class="cir"  id="cir0"></span>';
 	    // }
 
 	    if (rowdata.lnc == 1) {
-	        txt += '<span class="cir"  id="cir_lnc"></span>';
+	        txt += '<span class="cir cir_lnc"></span>';
 	    } 
 	    // else {
 	    //     txt += '<span class="cir"  id="cir0"></span>';
@@ -93,7 +93,7 @@
 	    // }
 
 	    if (rowdata.msi == 1) {
-	        txt += '<span class="cir" id="cir_msi"></span>';
+	        txt += '<span class="cir cir_msi"></span>';
 
 	    } 
 	    // else {
@@ -101,7 +101,7 @@
 
 	    // }
 
-
+	    txt += '</div>';
 
 	    return txt;
 
@@ -112,13 +112,13 @@
 
 	var crossRef = function(row, columnfield, value, defaulthtml, columnproperties, rowdata) {
 	    if (value == -1) {
-	        return '<div style="margin-top:5px;text-align:center; text-indent:0"><span style="background-color:blue;border:1px solid black;padding:0px 4px;">sensitivity</span></div>';
+	        return '<div style="margin-top:5px;text-align:center; text-indent:0"><span style="background-color:rgb(39,151,6);color:white;padding:0px 4px;">sensitivity</span></div>';
 	    } else if (value == 1) {
-	        return '<div style="margin-top:5px;text-align:center; text-indent:0"><span style="background-color:red;border:1px solid black;padding:0px 4px;">resistance</span></div>';
+	        return '<div style="margin-top:5px;text-align:center; text-indent:0"><span style="background-color:rgb(112,48,160);color:white;padding:0px 4px;">resistance</span></div>';
 	    }
 	    
 	     else {
-	        return '<div style="margin-top:5px;text-align:center; text-indent:0"><span style="background-color:red;border:1px solid black;padding:0px 4px;">normal</span></div>';
+	        return '<div style="margin-top:5px;text-align:center; text-indent:0"><span style="background-color:rgb(244,140,55);color:white;padding:0px 4px;">normal</span></div>';
 
 	    }
 	}

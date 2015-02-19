@@ -1,10 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="UTF-8">
-	<title>Document</title>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <script src='./js/jquery-2.1.1.min.js'></script>
+    <style>
+    .base {
+        background-color: blue;
+        height: 100px;
+        width: 50px;
+    }
+    #show_note {
+    	position:absolute;
+
+        background-color: red;
+        height: 100px;
+        width: 50px;
+        display: none;
+
+    }
+    </style>
+    <script>
+    $(function() {
+        $('.base').mouseover(function(e) {
+            
+            var xx = e.originalEvent.x || e.originalEvent.layerX || 0;
+            var yy = e.originalEvent.y || e.originalEvent.layerY || 0;
+            $('#show_note').show()
+            	.css({'top':yy, 'left':xx})
+
+        });
+        $('.base').mouseout(function(event) {
+            $('#show_note').hide();
+            
+        });;
+
+    })
+    </script>
 </head>
+
 <body>
-	<span style='border: 1px solid red;margin-top:200px; padding:0 55px;'>aaa</span>
+    <div class="base">dianji</div>
+    <div id="show_note">jianchijiushishengli</div>
+    <div>diafdsaf;jfdsakl</div>
 </body>
+
 </html>

@@ -7,7 +7,7 @@ include 'header.php';
   <ul id="tabs">
   <li><a href="#"  id='drug' tag='doxorubicin' >Drug</a></li>
   <li><a href="#"  id='disease' tag='breast cancer'>Disease</a></li>
-  <li><a href="#"  id='cellLine' tag='MCF-7'>Cell Line</a></li>
+  <li><a href="#"  id='cellLine' tag='MCF7'>Cell Line</a></li>
 
   <li><a href="#" id='gene' tag='BRCA1'>Gene&Transcript</a></li>
 
@@ -23,19 +23,20 @@ include 'header.php';
 
                     <ul class='example'>
                     <h4>Example</h4>
-                        <li>Drug<br/>doxorubicin</li>
-                        <li>Disease<br/>breast cancer</li>
-                        <li>Cell Line<br/>MCF-7</li>
-                        <li>Gene&Transcript<br/>BRCA1</li>
+                        <li>Drug<br/><a href='./drug.php?drugid=1'>Doxorubicin</a></li>
+                        <li>Disease<br/><a href='./disease.php?diseaseid=1'>Breast cancer</a></li>
+                        <li>Cell Line<br/><a href='./cell.php?cellid=1'>MCF7</a></li>
+                        <li>Gene&Transcript<br/><a href='./gene.php?geneid=2'>BRCA1</a></li>
 
                     </ul>
                 </div>
                 <input type='submit' id='btn' value='Search' />
             </form>
         </div>
+
 </div>
 
-<div id="intro">
+<div id="intro" >
 <div class='intro1'>
   <h3>Defination</h3>
   <p>CDRIC is an integrated catalogue of drug resistance in cancers, which encompasses 944 cancer cell lines, 199 anticancer drugs and 237 genes or transcripts related to drug resistance in five categories i.e. mutation, methylation, microsatellite, lncRNA and miRNA. The data is collected manually from the 2199 relevant articles of PubMed and the database of GDSC. </p>
@@ -49,18 +50,10 @@ include 'header.php';
   <h3>Future</h3>
   <p>Ongoing efforts will be made in the further analysis of the information as well as the up-to-date synchronization of the data accompanied with the emergency of novel investigations, which are expected to make contributions to the improvement of global human health in the new era. </p>
 </div>
-</div>
-
-<div id="tuwen">
-<div id='tu'>
 
 </div>
-<div id='wen'>
 
-  <p>CDRIC is an integrated catalogue of drug resistance in cancers</p>
-</div>
 
-</div>
 
 <!-- search tab js -->
 

@@ -127,7 +127,7 @@
                     // { text: 'Disease', datafield: 'disease_name', width: 200, cellsrenderer:disease_link},
                		{ text: 'Drug Name', datafield: 'drug_name', width: 200, cellsrenderer:drug_link, renderer:columnsrenderer},
                 	{ text: 'miRNA', datafield: 'mir_name', width:200, cellsrenderer:mir_link, renderer:columnsrenderer},
-               		{ text: 'pmid', datafield: 'pmid', width: 100, cellsrenderer: pub_link},
+               		{ text: 'Pubmed ID', datafield: 'pmid', width: 100, cellsrenderer: pub_link},
                		{ text: 'Detail', datafield: 'detail', width: 500, renderer:columnsrenderer},
                   ]
             });

@@ -2,19 +2,23 @@
 include 'header.php';
 include 'gridjs.php';
 ?>
+
 <script>
 
 		$(function(){
 		$('#left').css('visibility','visible');
+        $('#cy').html('');
+        $('#cy').prepend('<div id="load">Loading......</div>');
+
 		});
 
 </script>
-
+<script src="./cy.js"></script>
 <div class='foreword'><h1>Network</h1>
 
 </div>
 
-<div style='margin-left:20px;' id="network" >
+<div style='margin-left: 40px' id="network" >
         <div id='cy'></div>
 
     <div id="info">
@@ -62,11 +66,7 @@ include 'gridjs.php';
 </div>
 
 <script>
- $(function(){
- 	$('#cy').html('');
-                  $('#cy').prepend('<div id="load">Loading......</div>');
-                  $.getScript('./cy.js');
- })
+
 </script>
 <?php
 

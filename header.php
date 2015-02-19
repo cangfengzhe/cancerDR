@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html lang="en">
 <head>
 
@@ -14,8 +14,11 @@
 <body>
 <div id="container">
 	<div class="header">
-	<!-- <div id="logo"></div> -->
+
 	<div id="nav">
+<div id="logo">
+<img src="./images/cdric.png" alt=""/>
+</div>
 		<ul class='heading'>
 			<li><a href="/index.php">Home</a></li>
 			<li><a href="">Browse</a>
@@ -27,10 +30,10 @@
 
 			</ul></li>
 			<li><a href="./network.php">Network</a></li>
-			<li><a href="./guide.php">Guide</a>
-			</li>
+
 			<li><a href="./submit.php">Submit</a></li>
-			<li><a href="./contact.php">Contact</a></li>
+			<li><a href="./guide.php">Guide</a></li>
+
 
 
 		</ul>
@@ -63,6 +66,7 @@
 	</form>
 
 			</div>
+
 	</div>
 	</div>
 <div id="left">
@@ -81,9 +85,13 @@
         <h2>Download</h2>
     <ul>
 
-      <li><a href='./download.php'>Data</a></li>
-      <li><a href='#'>Publication</a></li>
+      <li><a href='./download.php'>Download Data</a></li>
 
+
+        </ul>
+        <h2>Contact</h2>
+        <ul>
+        	<li><a href="./contact.php">Contact us</a></li>
         </ul>
         <h2>Hot links</h2>
     <ul>

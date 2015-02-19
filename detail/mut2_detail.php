@@ -10,7 +10,7 @@
                  datatype: "json",
                  datafields: [
 				{ name: 'gene_id' , type: 'string'},
-				{name: 'c,renderer:columnsrendererell_id', type: 'string'},
+				{name: 'cell_id', type: 'string'},
 
 				{name: 'cell_name', type: 'string'},
 				{ name: 'gene_name' , type: 'string'},
@@ -142,7 +142,8 @@
                  if(colName == 'gene_id'){
             	 $("#mut").jqxGrid(
             {
-                source: dataadapter,,renderer:columnsrenderer                width:1000,
+                source: dataadapter,
+                width:1000,
                 theme: 'energyblue',
 				pageable: true,
 				sortable: true,
@@ -170,8 +171,8 @@
 			    columns: [
                    			// { text: 'Drug', datafield: 'drug_name', width: 120, cellsrenderer:drug_link },
 
-						  { text: 'Cell Name', datafield: 'cell_name', width: 150, cellsrenderer:cell_link ,renderer:columnsrenderer,
-						  { text: 'Copy Numer', datafield: 'cn', width: 120,renderer:columnsrenderer},
+						  { text: 'Cell Name', datafield: 'cell_name', width: 150, cellsrenderer:cell_link ,renderer:columnsrenderer},
+						  { text: 'Copy Number', datafield: 'cn', width: 120,renderer:columnsrenderer},
 						  { text: 'AA Mutation', datafield: 'mut_aa', width: 230,renderer:columnsrenderer},
 						  { text: 'Description', datafield: 'mut_desc', width: 250,renderer:columnsrenderer},
 						  { text: 'Position', datafield: 'mut_pos', width: 250,renderer:columnsrenderer},

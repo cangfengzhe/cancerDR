@@ -31,7 +31,7 @@ $row = mysql_fetch_assoc($result);
 
 echo '<h1 id="name">', $row['disease_name'], '</h1>';
 echo '<table border=0><tr><th>Disease ID</th><td>', $row['id'], '</td></tr>';
-if (!empty($row['meth_id'])) {
+if (!empty($row['mesh_id'])) {
 	echo '<tr><th>Mesh ID</th><td>', $row['mesh_id'], '</td>';
 }
 
@@ -79,12 +79,7 @@ mysql_close();
 include './cy.php';
 ?>
 </div>
-
-
-
-
-
-
+<div id="note">Note:</div>
 
 
 <?php
