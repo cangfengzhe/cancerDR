@@ -25,7 +25,7 @@
 					 { name: 'msi', type: 'string'},
 
                 ],
-			    url: 'data.php?table=info_disease' + '&value=' + "<?php echo $_GET['value'];?>" +
+			    url: 'data.php?table=disease_view' + '&value=' + "<?php echo $_GET['value'];?>" +
 			     '&colName=disease_name',
 
 				cache: false,

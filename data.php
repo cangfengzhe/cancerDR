@@ -384,7 +384,7 @@ switch ($tableName) {
 		}
 		break;
 
-	case 'info_disease':
+	case 'disease_view':
 
 		while ($row = mysql_fetch_array($result, MYSQL_ASSOC)) {
 

@@ -27,12 +27,12 @@ $(document).ready(function() {
 
     $('#' + $('#tabs li:first').attr('factor')).css('display', 'block');
 
-    if ($("#tabs li:first").attr('factor') == 'jqxgrid' | $("#tabs li:first").attr('factor') == 'ic50') {
+    if ($("#tabs li:first").attr('factor') == 'jqxgrid' | $("#tabs li:first").attr('factor') == 'ic50' |$("#tabs li:first").attr('factor') == 'mut') {
         $('#note').css('display', 'block');
     }
 
     $('#tabs li').click(function() {
-        if ($(this).attr('factor') == 'jqxgrid' | $(this).attr('factor') == 'ic50') {
+        if ($(this).attr('factor') == 'jqxgrid' | $(this).attr('factor') == 'ic50' |$(this).attr('factor') == 'mut') {
             $('#note').css('display', 'block');
         } else {
             $('#note').css('display', 'none');

@@ -25,7 +25,7 @@ $bool = mysql_select_db($database, $connect);
 if ($bool === False) {
 	print "can't find $database";
 }
-$sql = 'select * from info_disease  where disease_id=' . $disease_id;
+$sql = 'select * from disease_view  where disease_id=' . $disease_id;
 $result = mysql_query($sql) or die(mysql_error());
 $row = mysql_fetch_assoc($result);
 
@@ -34,27 +34,28 @@ echo '<table border=0><tr><th>Disease ID</th><td>', $row['id'], '</td></tr>';
 if (!empty($row['mesh_id'])) {
 	echo '<tr><th>Mesh ID</th><td>', $row['mesh_id'], '</td>';
 }
+echo '<tr><th>Discription</th><td>', $row['desc'], '</td>';
 
 echo '</table></div>';
 echo '<div id="kind"><ul id="tabs">';
 
-if ($row['meth'] == 1) {
+if ($row['meth'] >= 1) {
 	echo '<li  factor="meth"><a href="javascript:;">Methylation</a></li>';
 
 	include './detail/meth_detail.php';
 }
 
-if ($row['mir'] == 1) {
+if ($row['mir'] >= 1) {
 	echo '<li  factor="mir"><a href="javascript:;">miRNA</a></li>';
 	include './detail/mir_detail.php';
 }
 
-if ($row['lnc'] == 1) {
+if ($row['lnc'] >= 1) {
 	echo '<li  factor="lnc"><a href="javascript:;">lncRNA</a></li>';
 	include './detail/lnc_detail.php';
 }
 
-if ($row['ms'] == 1) {
+if ($row['ms'] >= 1) {
 	echo '<li  factor="ms"><a href="javascript:;">MSI</a></li>';
 	include './detail/ms_detail.php';
 }
@@ -78,8 +79,9 @@ mysql_close();
 <?php
 include './cy.php';
 ?>
-</div>
 <div id="note">Note:</div>
+
+</div>
 
 
 <?php

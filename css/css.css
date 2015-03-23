@@ -117,7 +117,7 @@ a:link, a:visited {
     position: relative;
     top: 50px;
     margin: 0px auto;
-    margin-right: 30px;
+    /*margin-right: 30px;*/
     overflow: hidden;
 }
 #left {
@@ -164,7 +164,7 @@ h4 {
 
 
 #search {
-    margin: 30px 0px 30px 200px;
+    margin: 30px 0px 30px 150px;
     /*margin-top: 10px;*/
     
     position: relative;
@@ -292,9 +292,8 @@ border: 1px solid #69a6db;
     margin: 0px 35px 0px 35px;
     line-height: 23px;
 }
-.example{
 
-}
+
 #btn {
     font-size: 24px;
     height: 35px;
@@ -318,14 +317,14 @@ border: 1px solid #69a6db;
     /*clear:both;*/
     
     position: absolute;
-    
+    float:left;
      border-radius: 3px;
     display: inline-block;
     /*width: 325px;*/
     /*height: 30px;*/
     overflow: hidden;
     border: 1px solid #ddd;
-    margin-left: 80px;
+    
     /*left:-50px;*/
     
     top: 8px;

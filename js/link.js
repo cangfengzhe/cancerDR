@@ -64,27 +64,27 @@
 	var factorType = function(row, columnfield, value, defaulthtml, columnproperties, rowdata) {
 	    // txt='<a id="tip" href="#"><span id="tip_info">Mutation:red; Methylation:orange; miRNA:yellow; lncRNA:green; MSI:blue; None:grey</span>';
 	    txt = '<div id="cir_type">';
-	    if (rowdata.mut == 1) {
+	    if (rowdata.mut >= 1) {
 	        txt += '<span class="cir cir_mut"></span>';
 	    } 
 	    // else {
 	    //     txt += '<span class="cir" id="cir0"></span>';
 	    // }
-	    if (rowdata.meth == 1) {
+	    if (rowdata.meth >= 1) {
 	        txt += '<span class="cir cir_meth"></span>';
 	    } 
 	    // else {
 	    //     txt += '<span class="cir"  id="cir0"></span>';
 	    // }
 
-	    if (rowdata.mir == 1) {
+	    if (rowdata.mir >= 1) {
 	        txt += '<span class="cir cir_mir"></span>';
 	    } 
 	    // else {
 	    //     txt += '<span class="cir"  id="cir0"></span>';
 	    // }
 
-	    if (rowdata.lnc == 1) {
+	    if (rowdata.lnc >= 1) {
 	        txt += '<span class="cir cir_lnc"></span>';
 	    } 
 	    // else {
@@ -92,7 +92,7 @@
 
 	    // }
 
-	    if (rowdata.msi == 1) {
+	    if (rowdata.msi >= 1) {
 	        txt += '<span class="cir cir_msi"></span>';
 
 	    } 
