@@ -1,0 +1,989 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"drug",
+				"drug_dis"
+			],
+			[
+				"for",
+				"foreach	foreach …"
+			],
+			[
+				"mysql_fetch",
+				"mysql_fetch_row"
+			],
+			[
+				"mysqlfet",
+				"mysql_fetch_array"
+			],
+			[
+				"padd",
+				"padding-top"
+			],
+			[
+				"padding",
+				"padding-right"
+			],
+			[
+				"desc",
+				"description"
+			],
+			[
+				"margin",
+				"margin"
+			],
+			[
+				"border",
+				"border-radius"
+			],
+			[
+				"select",
+				"selector"
+			],
+			[
+				"color",
+				"background-color"
+			],
+			[
+				"black",
+				"black"
+			],
+			[
+				"lin",
+				"line-color"
+			],
+			[
+				"selec",
+				"selector"
+			],
+			[
+				"con",
+				"concentric"
+			],
+			[
+				"ele",
+				"elements"
+			],
+			[
+				"sele",
+				"selector"
+			],
+			[
+				"mar",
+				"margin-top"
+			],
+			[
+				"mysqlerr",
+				"mysql_error"
+			],
+			[
+				"row",
+				"rowdata"
+			],
+			[
+				"ohter",
+				"other_name"
+			],
+			[
+				"back",
+				"background-color"
+			],
+			[
+				"gene_",
+				"gene_node"
+			],
+			[
+				"arramer",
+				"array_merge"
+			],
+			[
+				"mysqlf",
+				"mysql_fetch_array"
+			],
+			[
+				"jq",
+				"jqxGrid"
+			],
+			[
+				"cell",
+				"cell_id"
+			],
+			[
+				"pub",
+				"pub_link"
+			],
+			[
+				"drug_id",
+				"drug_id"
+			],
+			[
+				"IC",
+				"IC50"
+			],
+			[
+				"cross",
+				"crossLink"
+			],
+			[
+				"cn",
+				"cn"
+			],
+			[
+				"colu",
+				"columnindex"
+			],
+			[
+				"sh",
+				"showdetail"
+			],
+			[
+				"column",
+				"columnproperties"
+			],
+			[
+				"Z",
+				"Z_Score"
+			],
+			[
+				"print",
+				"print_r"
+			],
+			[
+				"lpd",
+				"lpd_jj"
+			],
+			[
+				"show",
+				"showqisqus"
+			],
+			[
+				"border-b",
+				"border-bottom-color"
+			],
+			[
+				"get",
+				"getCookie"
+			],
+			[
+				"bl",
+				"inline-block"
+			],
+			[
+				"b",
+				"inline-block"
+			],
+			[
+				"tex",
+				"text-align"
+			],
+			[
+				"ra",
+				"border-radius"
+			],
+			[
+				"text",
+				"text-decoration:   (property)"
+			],
+			[
+				"ind",
+				"z-index"
+			],
+			[
+				"send",
+				"sendResponse"
+			],
+			[
+				"create",
+				"createElement  (function)"
+			],
+			[
+				"onmouse",
+				"onmousemove  (function)"
+			],
+			[
+				"onmo",
+				"onmousemove	Attr"
+			],
+			[
+				"getEle",
+				"getElementById  (function)"
+			],
+			[
+				"getEleme",
+				"getElementById  (function)"
+			],
+			[
+				"getElemetn",
+				"getElementsByTagName  (function)"
+			],
+			[
+				"onm",
+				"onmousemove	Attr"
+			],
+			[
+				"border-color",
+				"border-bottom-color"
+			],
+			[
+				"ulShort",
+				"ulShortCut"
+			],
+			[
+				"lists",
+				"list-style"
+			],
+			[
+				"fonts",
+				"font-size"
+			],
+			[
+				"font",
+				"font-style"
+			],
+			[
+				"list",
+				"list-style"
+			],
+			[
+				"loca",
+				"localStorage"
+			],
+			[
+				"json",
+				"JSONObject"
+			],
+			[
+				"Json",
+				"JSONObject"
+			],
+			[
+				"loc",
+				"localStorage"
+			],
+			[
+				"background-ima",
+				"background-image:   (property)"
+			],
+			[
+				"z",
+				"z-index"
+			],
+			[
+				"in",
+				"inline-block"
+			],
+			[
+				"visi",
+				"visible"
+			],
+			[
+				"marg",
+				"margin-left"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 87.0,
+		"last_filter": "install",
+		"selected_items":
+		[
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"phpf",
+				"phpfmt: format now"
+			],
+			[
+				"aligent",
+				"BracketHighlighter: Fold Bracket Content"
+			],
+			[
+				"colo",
+				"Color Picker"
+			],
+			[
+				"jquery",
+				"Snippet: jQuery.ajax"
+			],
+			[
+				"instal pa",
+				"Package Control: Install Package"
+			],
+			[
+				"brackethight",
+				"BracketHighlighter: Jump to Right Bracket"
+			],
+			[
+				"bracket",
+				"BracketHighlighter: Select Next Attribute (right)"
+			],
+			[
+				"xdebug",
+				"Xdebug: Start Debugging"
+			],
+			[
+				"xde",
+				"Xdebug: Restore Layout"
+			],
+			[
+				"xbug",
+				"Xdebug: Stop Debugging"
+			],
+			[
+				"xdebug ",
+				"Xdebug: Restart Session"
+			],
+			[
+				"markdown",
+				"Markdown Slideshow"
+			],
+			[
+				"package",
+				"Package Control: Remove Package"
+			],
+			[
+				"preview",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"mark",
+				"Set Syntax: Markdown Extended"
+			],
+			[
+				"previ",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"prev",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"markdwonpre",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"markdow",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"markd pre",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"markdownpreview",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"markdownbro",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"",
+				":0 - BOF"
+			],
+			[
+				"sidebar",
+				"View: Toggle Open Files in Side Bar"
+			],
+			[
+				"instll",
+				"Package Control: Install Package"
+			],
+			[
+				"markdownex",
+				"Set Syntax: Markdown Extended"
+			],
+			[
+				"markdpre",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"mar",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"markdwonp",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"markd",
+				"Markdown Preview: Open Markdown Cheat sheet"
+			],
+			[
+				"markdownbr",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"utf",
+				"ConvertToUTF8: Reload with Encoding"
+			],
+			[
+				"remove ",
+				"Package Control: Remove Package"
+			],
+			[
+				"web",
+				"Web Inspector"
+			],
+			[
+				"sideb",
+				"Side Bar: Refresh"
+			],
+			[
+				"install	",
+				"Package Control: Install Package"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 539.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"import urllib.request,os; pr='Preferences.sublime-settings'; ip='ignored_packages'; n='Package Control'; s=sublime.load_settings(pr); ig=s.get(ip); ig.append(n); s.set(ip,ig); sublime.save_settings('Preferences.sublime-settings'); pf=n+'.sublime-package'; urllib.request.install_opener(urllib.request.build_opener(urllib.request.ProxyHandler())); by=urllib.request.urlopen('https://packagecontrol.io/'+pf.replace(' ','%20')).read(); open(os.path.join(sublime.installed_packages_path(),pf),'wb').write(by); ig.remove(n); s.set(ip,ig); sublime.save_settings(pr); print('Package Control: 3.0.0 upgrade successful!')",
+			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)  ",
+			"import urllib2,os; pf='Package Control.sublime-package'; ipp=sublime.installed_packages_path(); os.makedirs(ipp) if not os.path.exists(ipp) else None; urllib2.install_opener(urllib2.build_opener(urllib2.ProxyHandler())); open(os.path.join(ipp,pf),'wb').write(urllib2.urlopen('http://sublime.wbond.net/'+pf.replace(' ','%20')).read()); print('Please restart Sublime Text to finish installation')  "
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Users/lipidong/Downloads/data_script 2/igraph.r",
+		"/Users/lipidong/Downloads/evilcos_rss_2014.opml",
+		"/Users/lipidong/Sites/network.php",
+		"/Users/lipidong/Sites/jquery-autocomplete-master 2/demo/data.php",
+		"/Users/lipidong/Sites/output.php",
+		"/Users/lipidong/Sites/jquery-autocomplete-master 2/demo/index.html",
+		"/Users/lipidong/Sites/js/link.js",
+		"/Users/lipidong/Sites/enrichment.php",
+		"/Users/lipidong/Sites/cytoscape/cy.php",
+		"/Users/lipidong/Sites/css/css.css",
+		"/Users/lipidong/Sites/drug.php",
+		"/Users/lipidong/Sites/data.php",
+		"/Users/lipidong/Library/Application Support/Sublime Text 3/Packages/phpfmt/message",
+		"/Users/lipidong/Library/Application Support/Sublime Text 3/Packages/User/Default (OSX).sublime-keymap",
+		"/Users/lipidong/Library/Application Support/Sublime Text 3/Settings/SideBarEnhancements.json",
+		"/Users/lipidong/Sites/jqwidgets-ver3.6.0/demos/jqxchart/javascript_chart_spline_series.htm",
+		"/Users/lipidong/Sites/jqwidgets-ver3.6.0/demos/jqxcalendar/calendar-fluid-size.htm",
+		"/Users/lipidong/Sites/cell.php",
+		"/Users/lipidong/Sites/js/enrichment.php",
+		"/Users/lipidong/Sites/index.php",
+		"/Users/lipidong/Sites/footer.php",
+		"/Users/lipidong/Sites/js/cdric.js",
+		"/Users/lipidong/Sites/diseaseBrowser.php",
+		"/Users/lipidong/Sites/web.sublime-project",
+		"/Users/lipidong/Sites/disease.php",
+		"/Users/lipidong/Sites/detail/meth_detail.php",
+		"/Users/lipidong/Sites/drugBrowser.php",
+		"/Users/lipidong/Sites/connect.php",
+		"/Users/lipidong/Sites/gridjs.php",
+		"/Users/lipidong/Sites/test.php",
+		"/Users/lipidong/Sites/connect - 副本.php",
+		"/Users/lipidong/Sites/header.php",
+		"/Users/lipidong/Sites/css/download.php",
+		"/Users/lipidong/Sites/jqwidgets-ver3.6.0/ReleaseNotes.txt",
+		"/Users/lipidong/Sites/jqwidgets-ver3.6.0/demos/jqxangular/notification.htm",
+		"/Users/lipidong/Sites/search.php",
+		"/Users/lipidong/Sites/search_box.html",
+		"/Users/lipidong/Sites/jqwidgets-ver3.6.0/demos/jqxinput/input-fluid-size.htm",
+		"/Users/lipidong/Sites/cytoscape/Initialisation/style.css",
+		"/Users/lipidong/Sites/jqwidgets-ver3.6.0/demos/jqxdatatable/javascript-datatable-nested-tables.htm",
+		"/Users/lipidong/Sites/jqwidgets-ver3.6.0/demos/jqxchart/javascript_chart_100percent_stacked_line_series.htm",
+		"/Users/lipidong/Sites/jqwidgets-ver3.6.0/demos/aspnetmvc/DatabaseSetup/EmployeeTable_Schema.sql",
+		"/Users/lipidong/Downloads/ipi.genes.HUMAN.xrefs",
+		"/Users/lipidong/work/protein bundunce/data/sce_gene_cds_utr.fasta",
+		"/Users/lipidong/work/RFile/TF_Target/data/all_data.rdata",
+		"/Users/lipidong/Downloads/Homo_sapiens.gene_info",
+		"/Users/lipidong/work/RFile/TF_Target/data/Homo_PARS_Score_MBE/Cal_PARS_MBE.R",
+		"/Users/lipidong/Sites/test.html",
+		"/F/blog/_posts/2015-02-12-ff-package.md",
+		"/D/deskTop/html5-canvas-side-text/js/index.js",
+		"/D/deskTop/html5-canvas-side-text/index.html",
+		"/F/web/network.php",
+		"/F/web/header.php",
+		"/F/web/css/css.css",
+		"/F/web/cy.js",
+		"/F/web/drug.php",
+		"/D/deskTop/search.php",
+		"/F/web/cellBrowser.php",
+		"/F/web/disease.php",
+		"/F/web/detail/mut_detail.php",
+		"/F/web/search.php",
+		"/F/web/js/link.js",
+		"/F/web/cell.php",
+		"/F/web/drug1.php",
+		"/C/Users/Administrator.7J3FXA4TRMAIT95/AppData/Local/Temp/fz3temp-1/diseaseBrowser.php",
+		"/F/web/diseaseBrowser.php",
+		"/D/deskTop/connect.php",
+		"/F/web/drugBrowser.php",
+		"/F/web - 副本/contact.php",
+		"/F/web - 副本/connect.php",
+		"/F/web/gridjs.php",
+		"/F/web/cy.php",
+		"/F/web/geneBrowser.php",
+		"/F/web/index.php",
+		"/F/web/jqwidgets-ver3.6.0/demos/jqxcalendar/calendar-fluid-size.htm",
+		"/F/web/cy_copy.php",
+		"/F/web/jqwidgets-ver3.6.0/demos/jqxchart/javascript_chart_column_series.htm",
+		"/F/web/detail/meth_detail.php",
+		"/F/web/detail/mut2_detail.php",
+		"/F/web/detail/mir_detail.php-tmp",
+		"/F/web/detail/mir_detail.php",
+		"/F/web/test.html",
+		"/F/web/guide.php",
+		"/F/web/footer.php",
+		"/F/web/detail/ic50_detail.php",
+		"/F/web/detail/lnc_detail.php",
+		"/F/web/detail/ms_detail.php",
+		"/F/web/celllineBrowser.php",
+		"/F/web/cytoscape/test.html",
+		"/F/web/drugSearch.php",
+		"/F/web/lnc.php",
+		"/F/web/geneSearch.php",
+		"/F/web/data.php",
+		"/F/web/aa.html",
+		"/F/web/drugSearch1.php",
+		"/F/web/jqwidgets-ver3.6.0/demos/jqxangular/directive-attribute.htm",
+		"/F/web/del.js",
+		"/F/web/gene.php",
+		"/F/web/js/cdric.js",
+		"/F/web/ms.php",
+		"/F/web/mir.php",
+		"/F/web/cytoscape.js-2.3.7/cy.html",
+		"/D/deskTop/cytoscape.js-toolbar-master/README.md",
+		"/D/deskTop/299/canvas.js",
+		"/F/web/cytoscape.js-2.3.7/build/cytoscape.js",
+		"/F/web/cytoscape.js-2.3.7/test.html",
+		"/F/web/cytoscape.js-2.3.7/data.php",
+		"/F/web/cytoscape.js-2.3.7/cy.php",
+		"/D/deskTop/cytoscape.js-panzoom-master/cytoscape.js-panzoom.js",
+		"/F/web/contact.php",
+		"/F/web/cytoscape.js-2.3.7/faguang.html",
+		"/D/Desktop/小白色.txt",
+		"/F/web/cytoscape.js-2.3.7/Initialisation/code.js",
+		"/F/web/cytoscape.js-2.3.7/gene/gist29419ca0e6430a7185a5-6ff73fdca18157f76043e33bbb0fcc05bcd538e4/code.js",
+		"/F/web/cytoscape.js-2.3.7/aa.json",
+		"/F/web/cytoscape.js-2.3.7/jquery.illuminate.0.7.min.js",
+		"/F/web/cytoscape.js-2.3.7/network.json",
+		"/D/Desktop/cancerdr/web_session/data/index.html",
+		"/F/web/web_session/data/index.html",
+		"/F/web/diseaseSearch.php",
+		"/F/web/css/jqx.energyblue.css",
+		"/D/deskTop/cancerdr/web_session/data/93d0d7e7.main.css",
+		"/F/web/download.php",
+		"/F/web/cytoscape.js-2.3.7/lib/layout.cose.js",
+		"/F/web - 副本/gridjs.php",
+		"/F/web/cytoscape.js-2.3.7/lib/layout.arbor.js",
+		"/F/web/mailex.php",
+		"/F/web/receive.php"
+	],
+	"find":
+	{
+		"height": 26.0
+	},
+	"find_in_files":
+	{
+		"height": 102.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"toggle",
+			"flush",
+			"clini",
+			"main",
+			"#search",
+			"search_box",
+			"ENSG00000020219",
+			"tD(GUC)G1",
+			"disease",
+			"scale:10",
+			"png",
+			"p",
+			"crossref",
+			"z-index",
+			"header",
+			"0px",
+			"header",
+			"search",
+			"main",
+			"intro",
+			"pmid",
+			"render",
+			"main",
+			"heading",
+			"subhead",
+			"pubmed",
+			",renderer",
+			"renderer",
+			"cir",
+			"info_tran",
+			"name",
+			"png",
+			"ready",
+			"$row",
+			"$row['id']",
+			"layout",
+			"kind",
+			"contain1",
+			"faguang",
+			"width",
+			"script",
+			"drag",
+			"tap ",
+			"tap$",
+			"tap",
+			"balcked",
+			"^=",
+			"layout",
+			"'",
+			"]",
+			"[",
+			"sql_drug_dis",
+			"sql_drug",
+			"sql_drug_dis",
+			"html",
+			"</html>",
+			"layout",
+			".left",
+			"x",
+			"crossRef",
+			".left",
+			"header",
+			".left",
+			"\"text\"",
+			"th>",
+			"aaa",
+			"disease_id",
+			"search",
+			"]",
+			"[",
+			"href=\"#\"",
+			"drug_id",
+			"IC",
+			"mut_view",
+			"cn",
+			"aa",
+			"930",
+			"*",
+			"body",
+			"search",
+			"search_box",
+			"#search",
+			"search",
+			"search_box",
+			"nav",
+			"box",
+			".header",
+			"#header",
+			"header",
+			"z-index",
+			"search_box",
+			"#69a6db",
+			"#form",
+			"form",
+			"930",
+			"/js/",
+			"info_drug",
+			"com",
+			"id",
+			"info_dr",
+			"table",
+			"'],\n",
+			"ms_view",
+			"$(\"#mut\")",
+			"tissue",
+			"echo",
+			"data",
+			"disea",
+			"disease",
+			"tissue",
+			"tissue_name",
+			"tissue_id",
+			"disease_id",
+			"disease_name",
+			"disease_id",
+			"disease",
+			"diseaseid",
+			"disease_id",
+			"cell_id",
+			"cellid",
+			"term_link",
+			"$(\"#ms\")",
+			"mir",
+			"value",
+			"binding",
+			"colName",
+			"cellName",
+			"drug"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"scale:100",
+			"network",
+			"=",
+			"",
+			"\"text\"/",
+			"td>",
+			"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+			"href=\"javascript:;\"",
+			"#055db5",
+			"1000",
+			"./js/",
+			"$(\"#ic50\")",
+			"disease_name",
+			"disease_id",
+			"tissue_id",
+			"tissue_name",
+			"tissue_id",
+			"lnc",
+			"mir",
+			"ms",
+			"geneid",
+			"gene_id",
+			"disease_id",
+			"diseaseid",
+			"$(\"#mut\")",
+			"$(\"#ms\")",
+			"$(\"#lnc\")",
+			"$(\"#ms\")",
+			"$(\"#mir\")",
+			"$drug_id",
+			"",
+			"&nbsp;&nbsp;&nbsp;",
+			"&nbsp;&nbsp;&nbsp;&nbsp;",
+			"$(\"#mut\")",
+			"$(\"#meth\")",
+			"/js/",
+			"pub_id",
+			"$tab1",
+			"$tab2",
+			".heading",
+			"mysql",
+			"tabs",
+			"tabs_search",
+			"#tabs_search",
+			"#42ACDC",
+			"rgb(157, 79, 81)",
+			"rgb(140, 31, 34)",
+			"tab1",
+			"\" . $tableName . \"",
+			""
+		],
+		"reverse": false,
+		"show_context": false,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 26.0
+	},
+	"input":
+	{
+		"height": 38.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 263.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.markdown":
+	{
+		"height": 130.0
+	},
+	"output.xdebug":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "receive.sublime-project",
+	"replace":
+	{
+		"height": 48.0
+	},
+	"save_all_on_build": false,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"dat.",
+				"data.php"
+			],
+			[
+				"netwo",
+				"network.php"
+			],
+			[
+				"css.c",
+				"css/css.css"
+			],
+			[
+				"enric",
+				"js/enrichment.php"
+			],
+			[
+				"note",
+				"jqwidgets-ver3.6.0/ReleaseNotes.txt"
+			],
+			[
+				"",
+				"index.php"
+			],
+			[
+				"inde",
+				"index.php"
+			],
+			[
+				"css.cc",
+				"css\\css.css"
+			],
+			[
+				"index",
+				"index.php"
+			],
+			[
+				"data",
+				"data.php"
+			],
+			[
+				"css.",
+				"css\\css.css"
+			],
+			[
+				"search.p",
+				"search.php"
+			],
+			[
+				"rowda",
+				"jqwidgets-ver3.6.0\\demos\\jqxdatatable\\javascript-datatable-rows-details.htm"
+			],
+			[
+				"nest",
+				"jqwidgets-ver3.6.0\\demos\\jqxgrid\\nestedgrids.htm"
+			],
+			[
+				"css",
+				"css\\css.css"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 267.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

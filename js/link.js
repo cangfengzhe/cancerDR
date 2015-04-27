@@ -3,7 +3,7 @@
 	    return '<div style="margin:10px  10px;"><a href="/disease.php?diseaseid=' + rowdata.disease_id + '">' + value + '</a></div>';
 	}
 	var cell_link = function(row, columnfield, value, defaulthtml, columnproperties, rowdata) {
-	    if (value != 'clinical samples') {
+	    if (value != 'Clinical samples') {
 	        return '<div style="margin:10px  10px;"><a href="/cell.php?cellid=' + rowdata.cell_id + '">' + value + '</a></div>';
 	    }
 

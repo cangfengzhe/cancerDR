@@ -17,7 +17,7 @@ include 'gridjs.php';
 
 <div id='baseinfo'>
 <?php
-error_reporting(E_ALL^E_DEPRECATED);
+error_reporting(E_ALL ^ E_DEPRECATED);
 #Include the connect.php file
 include 'connect.php';
 if (isset($_GET['drugid']) & !empty($_GET['drugid'])) {

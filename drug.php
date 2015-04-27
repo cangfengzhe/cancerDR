@@ -92,14 +92,14 @@ mysql_close();
 
 <div>
   <div id="jqxgrid" class='factor'></div>
-  
+
   <div id="meth" class='factor'></div>
   <div id="mir" class='factor'></div>
   <div id="ms" class='factor'></div>
   <div id="lnc" class='factor'></div>
 
 <?php
-include './cy.php';
+include './cy_copy.php';
 ?>
 <div id="note">Note:</div>
 

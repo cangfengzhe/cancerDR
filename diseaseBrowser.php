@@ -19,6 +19,7 @@
 					 { name: 'disease_id', type: 'string'},
 					 { name: 'disease_name', type: 'string'},
 					 { name: 'mesh_id', type: 'string'},
+					 { name: 'mut', type: 'string'},
 					 { name: 'meth', type: 'string'},
 					 { name: 'mir', type: 'string'},
 					 { name: 'lnc', type: 'string'},
@@ -108,6 +109,8 @@
         <div id="jqxgrid"></div>
     </div>
   <div id="note">Note:
+      <span class="cir_note cir_mut"></span><span>&nbsp;Methylation&nbsp;&nbsp;&nbsp;</span>
+
     <span class="cir_note cir_meth"></span><span>&nbsp;Methylation&nbsp;&nbsp;&nbsp;</span>
     <span class="cir_note cir_mir"></span><span>&nbsp;miRNA&nbsp;&nbsp;&nbsp;</span>
     <span class="cir_note cir_lnc"></span><span>&nbsp;lncRNA&nbsp;&nbsp;&nbsp;</span>

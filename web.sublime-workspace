@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"drug",
+				"drug_dis"
+			],
+			[
+				"for",
+				"foreach	foreach …"
+			],
+			[
 				"mysql_fetch",
 				"mysql_fetch_row"
 			],
@@ -82,10 +90,6 @@
 			[
 				"back",
 				"background-color"
-			],
-			[
-				"drug",
-				"drug_node"
 			],
 			[
 				"gene_",
@@ -284,21 +288,35 @@
 	"buffers":
 	[
 		{
-			"file": "test.php",
+			"contents": "<?php\ninclude 'header.php';\n?>\n    <script type=\"text/javascript\" src=\"./js/jquery.autocomplete.min.js\"></script>\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"./css/jquery.autocomplete.css\">\n\n<input type='text' id = 'drug_dis' style='width:200px;'/>\n<script type=\"text/javascript\">\n\n		$(function(){ //\n			//./autocomplete/search.php?output=json\n        var type = $('#sel_type').value;\n		$(\"#drug_dis\").autocomplete('./autocomplete/search.php?output=json' + '&type=' + type, {\n        remoteDataType: 'json',\n        processData: function(data) {\n			var i, processed = [];\n			for (i=0; i < data.length; i++) {\n				processed.push([data[i][0] + \" - \" + data[i][1]]);\n			}\n			return processed;\n        },\n        minChars: 1,\n        useDelimiter: false,\n        selectFirst: true,\n        autoFill: true\n\n    });\n		})\n\n\n\n</script>\n\n<?php\n\ninclude 'footer.php';\n?>",
+			"file": "autocomplete.php",
+			"file_size": 810,
+			"file_write_time": 130716332650000000,
 			"settings":
 			{
-				"buffer_size": 325,
+				"buffer_size": 865,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"contents": "<?php\n# FileName=\"connect.php\"\n$hostname = \"localhost\";\n$database = \"cancerdr\";\n$username = \"root\";\n$password = \"\";\n?>",
-			"file": "connect - 副本.php",
-			"file_size": -1,
-			"file_write_time": -1,
+			"contents": "<?php\ninclude 'header.php';\n?>\n    <script type=\"text/javascript\" src=\"./js/jquery.autocomplete.min.js\"></script>\n    <link rel=\"stylesheet\" type=\"text/css\" href=\"./css/jquery.autocomplete.css\">\n\n<script type=\"text/javascript\">\n\n		$(function(){ //\n			//./autocomplete/search.php?output=json\n		var type = 'drug';\n		$('#disease').hide();\n		complete(type);\n\n			$(\"#radio_dis\").focus(function(){\n				type = $(\"#radio_dis\").val();\n				$('#disease').show()\n				$('#drug').hide();\n				console.log(type);\n				complete(type);\n\n			});\n			$(\"#radio_drug\").focus(function(){\n				type = $(\"#radio_drug\").val();\n				$('#disease').hide()\n				$('#drug').show();\n				console.log(type);\n				complete(type);\n\n			});\n\n			function complete(type){\n\n\n			$(\"#\" + type).autocomplete('./autocomplete/search.php?output=json' + '&type=' + type, {\n        remoteDataType: 'json',\n        processData: function(data) {\n			var i, processed = [];\n			console.log(type);\n			for (i=0; i < data.length; i++) {\n				// processed.push([data[i][0] + \" - \" + data[i][1]]);\n				processed.push([data[i][1]]);\n\n			}\n			return processed;\n        },\n        minChars: 1,\n        useDelimiter: false,\n        selectFirst: true,\n        autoFill: true\n\n    });\n		}\n\n		var name = $('#' + type).val();\n 		var dr_value = '';\n 		  $('input[type=\"checkbox\"][name=\"dr_type\"]:checked').each(function(){\n 		  	dr_value += $(this).val();\n\n 		  })\n\n		  var url = './autocomplete/gene.php?type=' + type + '&name=' + name + '&value=' + dr_value;\n		  $('#submit').click(function(){\n		  $.ajax(url, {\n            async: false,\n			dataType: \"json\",\n            success: function(data) {\n            var tmp = '';\n            $.each(data, function(index, value){\n            	tmp += value;\n            	tmp += '\\r';\n	        	// console.log(tmp);\n\n            })\n\n            $('#multiline').val(tmp);\n\n            },\n\n\n        });\n		 		  // console.log(dr_value + name);\n\n\n		  })\n\n\n		})\n\n\n\n</script>\n\n<style type=\"text/css\">\n	#multiline{\n		width:300px;\n		height:150px;\n	}\n\n</style>\n<div class='foreword'><h1>Enrichment of Pathway & GO</h1>\n<p>Enrichment of Pathway & GO</p>\n</div>\n\n<input id=\"radio_drug\" type=\"radio\" name=\"type\" value=\"drug\" checked=\"checked\"/> Drug\n<input id=\"radio_dis\" type=\"radio\" name=\"type\" value=\"disease\" /> Disease\n<br/>\n<input type='text' class = 'drug_dis'  id='drug' style='width:200px;'/>\n<input type='text' class = 'drug_dis' id='disease' style='width:200px;'/>\n\n<br/>\n<input type = 'checkbox' name = 'dr_type' value = 'a' checked=\"checked\"/> Mutation Genes\n<input type = 'checkbox' name = 'dr_type' value = 'b' /> Methylation Genes\n<input type = 'checkbox' name = 'dr_type' value = 'c' /> miRNA predicted Targets\n\n<br	/>\n<input type='button' value = 'submit' id = 'submit' />\n<br/>\n<textarea id='multiline' ></textarea>\n<?php\ninclude 'footer.php';\n?>\ns",
+			"file": "enrichment.php",
+			"file_size": 2776,
+			"file_write_time": 130721035080000000,
 			"settings":
 			{
-				"buffer_size": 118,
+				"buffer_size": 2822,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "<!DOCTYPE html>\n<html>\n<head>\n	<title></title>\n	<script type=\"text/javascript\">\nfunction uploadList(page){\n	//alert(\"start upload\");\n	var FM = document.frmManager;\n	\n	if(FM.Identifier.value ==\"\"){\n		alert(\"Please choose an identifier\");\n		return;\n	}\n	FM.idType.value=FM.Identifier.value;\n	if(FM.cbMulti.checked)\n	{\n		FM.multiList.value=\"true\";\n	}\n\n	if(FM.rbUploadType[0].checked)\n	{\n		FM.uploadType.value=FM.rbUploadType[0].value;\n	}\n	else if(FM.rbUploadType[1].checked)\n	{\n		FM.uploadType.value=FM.rbUploadType[1].value;\n	}\n	else\n	{\n		alert(\"Error: Please specify whether this is a Gene list or a Background in step 3\");\n		return;emmet\n	}\n\n\n	if(FM.fileBrowser.value !=\"\")\n	{\n		FM.Mode.value=\"file\";\n		FM.action=page+\".jsp\";\n		FM.target=\"\";\n		FM.submit();\n		return;\n	}\n\n	if(FM.pasteBox.value == \"\"){\n		alert(\"Error: Please either upload a file or paste a list in step 1.\");\n		return;\n	}\n	var ident=FM.Identifier.value;\n	//alert(\"upload:\"+ident);\n\n	\n		FM.Mode.value=\"paste\";\n		FM.ids.value=FM.pasteBox.value;\n		FM.action=page+\".jsp\";\n		FM.target=\"\";\n		FM.submit();\n\n	}\n\n	</script>\n</head>\n\n<body>\n\n</body>\n</html>",
+			"file": "david.html",
+			"file_size": 982,
+			"file_write_time": 130722042490000000,
+			"settings":
+			{
+				"buffer_size": 1112,
 				"line_ending": "Unix"
 			}
 		},
@@ -306,7 +324,7 @@
 			"file": "diseaseBrowser.php",
 			"settings":
 			{
-				"buffer_size": 3397,
+				"buffer_size": 3529,
 				"line_ending": "Unix"
 			}
 		},
@@ -314,27 +332,145 @@
 			"file": "data.php",
 			"settings":
 			{
-				"buffer_size": 11475,
+				"buffer_size": 11502,
 				"line_ending": "Unix"
 			}
 		},
 		{
-			"file": "connect.php",
+			"contents": " <?php\ninclude 'header.php';\ninclude 'gridjs.php';\n?>\n\n<div id='baseinfo'>\n<?php\nerror_reporting(E_ALL ^ E_DEPRECATED);\n#Include the connect.php file\ninclude 'connect.php';\n\nif (isset($_GET['diseaseid']) & !empty($_GET['diseaseid'])) {\n	$disease_id = $_GET['diseaseid'];\n\n} else {\n	include 'footer.php';\n	die();\n}\n$colName = 'disease_id'; //传入*_detail.php\n$value = $disease_id;\n$connect = mysql_connect($hostname, $username, $password)\nor die('Could not connect: ' . mysql_error());\n//Select The database\n$bool = mysql_select_db($database, $connect);\nif ($bool === False) {\n	print \"can't find $database\";\n}\n$sql = 'select * from disease_view  where disease_id=' . $disease_id;\n$result = mysql_query($sql) or die(mysql_error());\n$row = mysql_fetch_assoc($result);\n\necho '<h1 id=\"name\">', $row['disease_name'], '</h1>';\necho '<table border=0><tr><th>Disease ID</th><td>', $row['id'], '</td></tr>';\nif (!empty($row['mesh_id'])) {\n	echo '<tr><th>Mesh ID</th><td>', $row['mesh_id'], '</td>';\n}\necho '<tr><th>Discription</th><td>', $row['desc'], '</td>';\n\necho '</table></div>';\necho '<div id=\"kind\"><ul id=\"tabs\">';\n\nif ($row['mut'] >= 1) {\n	echo '<li  factor=\"mut\"><a href=\"javascript:;\">Mutation</a></li>';\n\n	include './detail/mut2_detail.php';\n}\n\nif ($row['meth'] >= 1) {\n	echo '<li  factor=\"meth\"><a href=\"javascript:;\">Methylation</a></li>';\n\n	include './detail/meth_detail.php';\n}\n\nif ($row['mir'] >= 1) {\n	echo '<li  factor=\"mir\"><a href=\"javascript:;\">miRNA</a></li>';\n	include './detail/mir_detail.php';\n}\n\nif ($row['lnc'] >= 1) {\n	echo '<li  factor=\"lnc\"><a href=\"javascript:;\">lncRNA</a></li>';\n	include './detail/lnc_detail.php';\n}\n\nif ($row['ms'] >= 1) {\n	echo '<li  factor=\"ms\"><a href=\"javascript:;\">MSI</a></li>';\n	include './detail/ms_detail.php';\n}\necho '<li  factor=\"network\" flag=\"0\"><a href=\"javascript:;\">Network</a></li>';\necho '</ul></div>';\nmysql_close();\n\n?>\n\n\n\n<div>\n<div id=\"mut\" class='factor'></div>\n  <div id=\"jqxgrid\" class='facor'></div>\n\n\n  <div id=\"meth\" class='factor'></div>\n  <div id=\"mir\" class='factor'></div>\n  <div id=\"ms\" class='factor'></div>\n  <div id=\"lnc\" class='factor'></div>\n<?php\ninclude './cy.php';\n?>\n<div id=\"note\">Note:</div>\n\n</div>\n\n\n<?php\n// include('meth_detail.php');\ninclude 'footer.php';\n?>",
+			"file": "disease.php",
+			"file_size": 2250,
+			"file_write_time": 130722859230000000,
 			"settings":
 			{
-				"buffer_size": 157,
+				"buffer_size": 2247,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "drug.php",
+			"settings":
+			{
+				"buffer_size": 2654,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "cy_copy.php",
+			"settings":
+			{
+				"buffer_size": 8943,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "cy.js",
+			"settings":
+			{
+				"buffer_size": 6955,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "cy.php",
+			"settings":
+			{
+				"buffer_size": 1317,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/Volumes/Papers Library/All Papers/Ω Export/All Papers.bib",
+			"settings":
+			{
+				"buffer_size": 0,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "<?php\ninclude 'header.php';\ninclude 'gridjs.php';\n?>\n\n<script>\n\n		$(function(){\n		$('#left').css('visibility','visible');\n        $('#cy').html('');\n        $('#cy').prepend('<div id=\"load\">Loading......</div>');\n\n		});\n\n</script>\n<script src=\"./cy.js\"></script>\n<div class='foreword'><h1>Network</h1>\n\n</div>\n\n<div style='margin-left: 40px' id=\"network\" >\n        <div id='cy'></div>\n\n    <div id=\"info\">\n        <h3>Node Information</h3>\n        <table>\n            <tbody>\n                <tr>\n                    <td>Type</td>\n                    <td id='type'>Null</td>\n                </tr>\n                <tr>\n                    <td>Name</td>\n                    <td id='cy_name'>Null</td>\n                </tr>\n                <tr>\n                    <td>ID</td>\n                    <td id='cy_id'>Null</td>\n                </tr>\n                <tr>\n                    <td>Degree</td>\n                    <td id='degree'></td>\n                </tr>\n                <tr>\n                    <td>Betweenness Centrality</td>\n                    <td id='BetweennessCentrality'></td>\n                </tr>\n                <tr>\n                    <td>Closeness Centrality</td>\n                    <td id='ClosenessCentrality'></td>\n                </tr>\n                <tr>\n                    <td>Average Shortest Path Length</td>\n                    <td id='AverageShortestPathLength'></td>\n                </tr>\n            </tbody>\n        </table>\n\n\n        <button id='reset'>Full Nodes</button>\n\n        <button id='png'>Save Image</button>\n    </div>\n\n</div>\n</div>\n<?php\n\ninclude 'footer.php';\n?>",
+			"file": "network.php",
+			"file_size": 1635,
+			"file_write_time": 130706214830000000,
+			"settings":
+			{
+				"buffer_size": 1614,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "drug1.php",
+			"settings":
+			{
+				"buffer_size": 3171,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "cell.php",
+			"settings":
+			{
+				"buffer_size": 2375,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "<!DOCTYPE html>\n<html>\n\n<head>\n    <title></title>\n    	<script type=\"text/javascript\">\n    	var page = 'http://david.abcc.ncifcrf.gov/tools';\nfunction uploadList(page){\n	//alert(\"start upload\");\n	var FM = document.frmManager;\n	\n	if(FM.Identifier.value ==\"\"){\n		alert(\"Please choose an identifier\");\n		return;\n	}\n	FM.idType.value=FM.Identifier.value;\n	if(FM.cbMulti.checked)\n	{\n		FM.multiList.value=\"true\";\n	}\n\n	if(FM.rbUploadType[0].checked)\n	{\n		FM.uploadType.value=FM.rbUploadType[0].value;\n	}\n	else if(FM.rbUploadType[1].checked)\n	{\n		FM.uploadType.value=FM.rbUploadType[1].value;\n	}\n	else\n	{\n		alert(\"Error: Please specify whether this is a Gene list or a Background in step 3\");\n		return;emmet\n	}\n\n\n	if(FM.fileBrowser.value !=\"\")\n	{\n		FM.Mode.value=\"file\";\n		FM.action=page+\".jsp\";\n		FM.target=\"\";\n		FM.submit();\n		return;\n	}\n\n	if(FM.pasteBox.value == \"\"){\n		alert(\"Error: Please either upload a file or paste a list in step 1.\");\n		return;\n	}\n	var ident=FM.Identifier.value;\n	//alert(\"upload:\"+ident);\n\n	\n		FM.Mode.value=\"paste\";\n		FM.ids.value=FM.pasteBox.value;\n		FM.action=page+\".jsp\";\n		FM.target=\"\";\n		FM.submit();\n\n	}\n\n	</script>\n</head>\n\n<body>\n    <form method=\"post\" action=\"\" name=\"frmManager\" id=\"frmManager\" enctype=\"multipart/form-data\">\n        <br>paste\n        <script type=\"text/javascript\">\n        setProgress2(20);\n        </script>\n        <input type=\"Hidden\" name=\"idType\" value=\"null\">\n        <input type=\"Hidden\" name=\"uploadType\" value=\"null\">\n        <input type=\"Hidden\" name=\"multiList\" value=\"false\">\n        <input type=\"Hidden\" name=\"Mode\" value=\"null\">\n        <input type=\"Hidden\" name=\"useIndex\" value=\"null\">\n        <input type=\"Hidden\" name=\"usePopIndex\" value=\"null\">\n        <input type=\"Hidden\" name=\"demoIndex\" value=\"null\">\n        <input type=\"Hidden\" name=\"ids\" value=\"null\">\n        <input type=\"Hidden\" name=\"removeIndex\" value=\"null\">\n        <input type=\"Hidden\" name=\"renameIndex\" value=\"null\">\n        <input type=\"Hidden\" name=\"renamePopIndex\" value=\"null\">\n        <input type=\"Hidden\" name=\"newName\" value=\"null\">\n        <input type=\"Hidden\" name=\"combineIndex\" value=\"null\">\n        <input type=\"Hidden\" name=\"selectedSpecies\" value=\"null\">\n        <input type=\"Hidden\" name=\"SESSIONID\" value=\"A668D38B3015\">\n        <input type=\"Hidden\" name=\"uploadHTML\" value=\"null\">\n        <input type=\"Hidden\" name=\"managerHTML\" value=\"null\">\n        <input type=\"hidden\" name=\"sublist\" id=\"sublist\">\n        <input type=\"hidden\" name=\"rowids\" id=\"rowids\">\n        <input type=\"Hidden\" name=\"convertedListName\" value=\"null\">\n        <input type=\"Hidden\" name=\"convertedPopName\" value=\"null\">\n        <base target=\"_self\" onkeydown=\"return catchEnter();\">\n        <ul id=\"tablist\">\n           <!--  <li><a href=\"Upload a Gene List or Population\" class=\"current\" onclick=\"return expandcontent('divUpload', this)\" theme=\"#9FB6CD\" style=\"background-color: rgb(159, 182, 205);\">&nbsp;&nbsp;Upload&nbsp;&nbsp;</a></li>\n            <li><a href=\"Gene List Manager\" onclick=\"return expandcontent('divManager', this)\" theme=\"#6699CC\" class=\"eye-protector-processed\" style=\"-webkit-transition: background 0.3s ease; transition: background 0.3s ease; background-color: rgb(193, 230, 198);\">&nbsp;&nbsp;List&nbsp;&nbsp;</a></li>\n            <li><a href=\"Population List Manager\" onclick=\"return expandcontent('divPop', this)\" theme=\"#336699\" class=\"eye-protector-processed\" style=\"-webkit-transition: background 0.3s ease; transition: background 0.3s ease; background-color: rgb(193, 230, 198);\">&nbsp;&nbsp;Background&nbsp;</a></li> -->\n        </ul>\n        <div id=\"tabcontentcontainer\" style=\"height: 1000px; background-color: rgb(159, 182, 205);\">\n            <!--Upload div section-->\n            <div id=\"divUpload\" class=\"tabcontent\" style=\"display: block;\">\n                <table border=\"0\" cellpadding=\"2\" width=\"100%\" align=\"top\">\n                    <tbody>\n                        <tr>\n                            <td class=\"sidebar_header\">\n                                <br>Upload Gene List\n                                <br>\n                                <br>\n                            </td>\n                        </tr>\n                        <tr>\n                            <td>\n                                <font class=\"regular\"><a href=\"javascript:demoList(page,'1');\">Demolist 1</a></font>\n                                <font class=\"regular\"><a href=\"javascript:demoList(page,'2');\">Demolist 2</a></font>\n                            </td>\n                        </tr>\n                        <tr>\n                            <td>\n                                <font class=\"regular\"><a href=\"/helps/list_manager.html#upload\" target=\"_blank\">Upload Help</a></font>\n                            </td>\n                        </tr>\n                        <tr>\n                            <td class=\"sidebar_subheader\">\n                                <br>Step 1: Enter Gene List\n                            </td>\n                        </tr>\n                        <tr>\n                            <td align=\"left\" height=\"15\">\n                                <font class=\"regular\">A: Paste a list</font>\n                            </td>\n                        </tr>\n                        <tr>\n                            <td valign=\"top\" align=\"left\">\n                                <textarea rows=\"4\" id=\"LISTBox\" class=\"paste eye-protector-processed\" name=\"pasteBox\" style=\"-webkit-transition: background 0.3s ease; transition: background 0.3s ease; background-color: rgb(193, 230, 198);\"></textarea>\n                                <script type=\"text/javascript\">\n                                clearPaste();\n                                </script>\n                                <input type=\"Button\" value=\"Clear\" onclick=\"clearPaste();\" name=\"B3\" class=\"upload\">\n                            </td>\n                        </tr>\n                        <tr>\n                            <td align=\"left\" height=\"8\">\n                                <b><font color=\"white\" face=\"Verdana\" size=\"2\">Or&nbsp;</font></b>\n                            </td>\n                        </tr>\n                        <tr>\n                            <td>\n                                <font class=\"regular\">B:Choose From a File</font>\n                            </td>\n                        </tr>\n                        <tr>\n                            <td align=\"left\" height=\"25\">\n                                <p style=\"word-spacing: 0; line-height: 100%; text-indent: 0; margin: 0\">\n                                    <input type=\"file\" class=\"browse\" name=\"fileBrowser\" accept=\"text/plain\" size=\"14\">\n                                </p>\n                            </td>\n                        </tr>\n                        <tr>\n                            <td>\n                                <input type=\"checkbox\" name=\"cbMulti\" id=\"cbMulti\">Multi-List File\n                                <a href=\"/helps/multilist.html\" class=\"jTip\" id=\"Multi-list File Upload\" name=\"Multi-list File Upload\"><img style=\"border:0px;\" src=\"images/help-icon.png\"></a>\n                            </td>\n                        </tr>\n                        <tr>\n                            <td>&nbsp;</td>\n                        </tr>\n                        <tr>\n                            <td class=\"sidebar_subheader\">Step 2: Select Identifier\n                            </td>\n                        </tr>\n                        <tr>\n                            <td>\n                                <p align=\"left\" style=\"word-spacing: 0; line-height: 100%; text-indent: 0; margin: 0\">\n                                    <font face=\"Verdana\" size=\"1\">\n                                        <select id=\"IDT\" size=\"1\" name=\"Identifier\" class=\"eye-protector-processed\" style=\"-webkit-transition: background 0.3s ease; transition: background 0.3s ease; border-color: rgba(0, 0, 0, 0.34902); background-color: rgb(193, 230, 198);\">\n                                            <option value=\"AFFYMETRIX_3PRIME_IVT_ID\">AFFYMETRIX_3PRIME_IVT_ID</option>\n                                            <option value=\"AFFYMETRIX_EXON_GENE_ID\">AFFYMETRIX_EXON_GENE_ID</option>\n                                            <option value=\"AFFYMETRIX_SNP_ID\">AFFYMETRIX_SNP_ID</option>\n                                            <option value=\"AGILENT_CHIP_ID\">AGILENT_CHIP_ID</option>\n                                            <option value=\"AGILENT_ID\">AGILENT_ID</option>\n                                            <option value=\"AGILENT_OLIGO_ID\">AGILENT_OLIGO_ID</option>\n                                            <option value=\"ENSEMBL_GENE_ID\">ENSEMBL_GENE_ID</option>\n                                            <option value=\"ENSEMBL_TRANSCRIPT_ID\">ENSEMBL_TRANSCRIPT_ID</option>\n                                            <option value=\"ENTREZ_GENE_ID\">ENTREZ_GENE_ID</option>\n                                            <option value=\"FLYBASE_GENE_ID\">FLYBASE_GENE_ID</option>\n                                            <option value=\"FLYBASE_TRANSCRIPT_ID\">FLYBASE_TRANSCRIPT_ID</option>\n                                            <option value=\"GENBANK_ACCESSION\">GENBANK_ACCESSION</option>\n                                            <option value=\"GENOMIC_GI_ACCESSION\">GENOMIC_GI_ACCESSION</option>\n                                            <option value=\"GENPEPT_ACCESSION\">GENPEPT_ACCESSION</option>\n                                            <option value=\"ILLUMINA_ID\">ILLUMINA_ID</option>\n                                            <option value=\"IPI_ID\">IPI_ID</option>\n                                            <option value=\"MGI_ID\">MGI_ID</option>\n                                            <option value=\"OFFICIAL_GENE_SYMBOL\">OFFICIAL_GENE_SYMBOL</option>\n                                            <option value=\"PFAM_ID\">PFAM_ID</option>\n                                            <option value=\"PIR_ID\">PIR_ID</option>\n                                            <option value=\"PROTEIN_GI_ACCESSION\">PROTEIN_GI_ACCESSION</option>\n                                            <option value=\"REFSEQ_GENOMIC\">REFSEQ_GENOMIC</option>\n                                            <option value=\"REFSEQ_MRNA\">REFSEQ_MRNA</option>\n                                            <option value=\"REFSEQ_PROTEIN\">REFSEQ_PROTEIN</option>\n                                            <option value=\"REFSEQ_RNA\">REFSEQ_RNA</option>\n                                            <option value=\"RGD_ID\">RGD_ID</option>\n                                            <option value=\"SGD_ID\">SGD_ID</option>\n                                            <option value=\"TAIR_ID\">TAIR_ID</option>\n                                            <option value=\"UCSC_GENE_ID\">UCSC_GENE_ID</option>\n                                            <option value=\"UNIGENE\">UNIGENE</option>\n                                            <option value=\"UNIPROT_ACCESSION\">UNIPROT_ACCESSION</option>\n                                            <option value=\"UNIPROT_ID\">UNIPROT_ID</option>\n                                            <option value=\"UNIREF100_ID\">UNIREF100_ID</option>\n                                            <option value=\"WORMBASE_GENE_ID\">WORMBASE_GENE_ID</option>\n                                            <option value=\"WORMPEP_ID\">WORMPEP_ID</option>\n                                            <option value=\"ZFIN_ID\">ZFIN_ID</option>\n                                            <option value=\"NA\">Not Sure </option>\n                                        </select>\n                                    </font>\n                                </p>\n                                <br>\n                            </td>\n                        </tr>\n                        <tr>\n                            <td class=\"sidebar_subheader\">\n                                <br>Step 3: List Type</td>\n                        </tr>\n                        <tr>\n                            <td class=\"sidebar_subheader\">\n                                <table>\n                                    <tbody>\n                                        <tr>\n                                            <td class=\"sidebar_text\">Gene List</td>\n                                            <td>\n                                                <input type=\"radio\" name=\"rbUploadType\" value=\"list\">\n                                            </td>\n                                        </tr>\n                                        <tr>\n                                            <td class=\"sidebar_text\">Background</td>\n                                            <td>\n                                                <input type=\"radio\" name=\"rbUploadType\" value=\"population\">\n                                            </td>\n                                        </tr>\n                                    </tbody>\n                                </table>\n                            </td>\n                        </tr>\n                        <tr>\n                            <td>\n                                <table>\n                                    <tbody>\n                                        <tr>\n                                            <td class=\"sidebar_subheader\">\n                                                <br> Step 4: Submit List </td>\n                                        </tr>\n                                    </tbody>\n                                </table>\n                                <input type=\"button\" onclick=\"uploadList(page);\" value=\"Submit List\" name=\"B52\" class=\"upload\">\n                            </td>\n                        </tr>\n                    </tbody>\n                </table>\n            </div>\n            <!--List manager div-->\n            <div id=\"divManager\" class=\"tabcontent\">\n                <table border=\"0\" cellpadding=\"2\" width=\"100%\" align=\"top\">\n                    <tbody>\n                        <tr>\n                            <td class=\"sidebar_header\">\n                                <br>Gene List Manager\n                                <br>\n                                <br>\n                            </td>\n                        </tr>\n                        <tr>\n                            <td colspan=\"2\" align=\"left\">\n                                <font class=\"regular\">Select to limit annotations by one or more species&nbsp;&nbsp;&nbsp;\n                                    <u><a href=\"/helps/list_manager.html#list\" target=\"_blank\">\n												Help\n											</a></u>\n                                </font>\n                            </td>\n                        </tr>\n                        <tr>\n                            <td colspan=\"2\" align=\"top\">\n                                <p align=\"left\" style=\"word-spacing: 0; margin: 0\">\n                                    <font face=\"Verdana\" size=\"1\">\n                                        <select size=\"4\" class=\"lists eye-protector-processed\" multiple=\"\" name=\"speciesList\" style=\"z-index: -1; -webkit-transition: background 0.3s ease; transition: background 0.3s ease; border-color: rgba(0, 0, 0, 0.34902); background-color: rgb(193, 230, 198);\">\n                                        </select>\n                                    </font>\n                                </p>\n                                <p align=\"left\" style=\"word-spacing: 0; margin: 0\">\n                                    <font face=\"Verdana\" size=\"1\">\n                                        <input onclick=\"selectSpecies(page);\" type=\"button\" name=\"B1\" value=\"Select Species\" class=\"list\">\n                                    </font>\n                                </p>\n                            </td>\n                        </tr>\n                        <tr>\n                            <td valign=\"top\" align=\"top\" colspan=\"2\">\n                                <p style=\"word-spacing: 0; line-height: 100%; text-indent: 0; margin: 0\" align=\"left\">\n                                    <b><font color=\"white\" face=\"Verdana\" size=\"1\"><br>&nbsp;</font><font color=\"white\" face=\"Verdana\" size=\"2\">List Manager</font><font color=\"white\" face=\"Verdana\" size=\"1\">&nbsp;&nbsp;&nbsp; </font></b><u><font color=\"#0000FF\" size=\"1\" face=\"Verdana\"><a href=\"javascript:OpenHelp('manager');\"><b><font color=\"white\">Help</font></b></a></font></u>\n                                </p>\n                            </td>\n                        </tr>\n                        <tr>\n                            <td valign=\"top\" align=\"top\" colspan=\"2\">\n                                <p align=\"left\" style=\"word-spacing: 0; line-height: 100%; text-indent: 0; margin: 0\">\n                                    <font face=\"Verdana\" size=\"1\">\n                                        <select size=\"3\" name=\"myLists\" id=\"myLists\" class=\"lists eye-protector-processed\" multiple=\"\" style=\"-webkit-transition: background 0.3s ease; transition: background 0.3s ease; border-color: rgba(0, 0, 0, 0.34902); background-color: rgb(193, 230, 198);\">\n                                        </select>\n                                    </font>\n                                </p>\n                                <p align=\"left\" style=\"word-spacing: 0; line-height: 100%; text-indent: 0; margin: 0\">\n                                    <font color=\"white\" face=\"Verdana\" size=\"1\">\n                                        <b>Select List to:</b>\n                                    </font>\n                                </p>\n                                <p align=\"left\" style=\"word-spacing: 0; line-height: 100%; text-indent: 0; margin: 0\">\n                                    <table>\n                                        <tbody>\n                                            <tr>\n                                                <td>\n                                                    <input onclick=\"useList(page);\" type=\"button\" name=\"B100\" value=\"Use\" class=\"list\">\n                                                </td>\n                                                <td>\n                                                    <input onclick=\"renameList(page);\" type=\"button\" name=\"B1\" value=\"Rename\" class=\"list\">\n                                                </td>\n                                            </tr>\n                                            <tr>\n                                                <td>\n                                                    <input onclick=\"removeList(page);\" type=\"button\" name=\"B1\" value=\"Remove\" class=\"list\">\n                                                </td>\n                                                <td>\n                                                    <input onclick=\"combineList(page);\" type=\"button\" name=\"B1\" value=\"Combine\" class=\"list\">\n                                                </td>\n                                            </tr>\n                                        </tbody>\n                                    </table>\n                                    <table>\n                                        <tbody>\n                                            <tr>\n                                                <td>\n                                                    <button class=\"term\" onclick=\"ShowGeneList();\" type=\"button\" value=\"Show Gene List\" name=\"B23\">Show Gene List</button>\n                                                </td>\n                                            </tr>\n                                        </tbody>\n                                    </table>\n                                </p>\n                            </td>\n                        </tr>\n                    </tbody>\n                </table>\n                <table>\n                    <tbody>\n                        <tr>\n                            <td>\n                                <div id=\"unmapped\" name=\"unmapped\" style=\"visibility: hidden;\"><a href=\"unmapped.jsp\" target=\"_blank\">View Unmapped Ids</a></div>\n                            </td>\n                        </tr>\n                    </tbody>\n                </table>\n            </div>\n            <!--End List manager div-->\n            <!--Population manager div-->\n            <div id=\"divPop\" class=\"tabcontent\">\n                <table border=\"0\" cellpadding=\"2\" width=\"100%\" align=\"top\">\n                    <tbody>\n                        <tr>\n                            <td class=\"sidebar_header\">\n                                <br>Population Manager\n                                <br>\n                                <br>\n                            </td>\n                        </tr>\n                        <tr>\n                            <td colspan=\"2\" align=\"left\">\n                                <p align=\"left\">\n                                    <b>\n									<font color=\"white\" face=\"Verdana\" size=\"1\">\n										<br>Select a background&nbsp;&nbsp;&nbsp;\n											<u><a href=\"/helps/list_manager.html#background\" target=\"_blank\">\n												<font color=\"white\">Help</font>\n											</a></u>\n									</font></b></p>\n                            </td>\n                        </tr>\n                        <tr>\n                            <td valign=\"top\" align=\"top\" colspan=\"2\">\n                                <p align=\"left\" style=\"word-spacing: 0; line-height: 100%; text-indent: 0; margin: 0; width: 100%;\">\n                                    <font face=\"Verdana\" size=\"1\">\n                                        <select size=\"4\" class=\"lists eye-protector-processed\" name=\"popLists\" id=\"popLists\" style=\"-webkit-transition: background 0.3s ease; transition: background 0.3s ease; border-color: rgba(0, 0, 0, 0.34902); background-color: rgb(193, 230, 198);\">\n                                        </select>\n                                    </font>\n                                </p>\n                                <p align=\"left\" style=\"word-spacing: 0; line-height: 100%; text-indent: 0; margin: 0\">\n                                    <font color=\"white\" face=\"Verdana\" size=\"1\"> <b>Select List to:</b>\n                                    </font>\n                                </p>\n                                <p align=\"left\" style=\"word-spacing: 0; line-height: 100%; text-indent: 0; margin: 0\">\n                                    <font face=\"Verdana\" size=\"1\">\n                                        <input onclick=\"usePopList(page);\" type=\"button\" name=\"B100Pop\" value=\"Use\" class=\"back\">\n                                        <input onclick=\"renamePop(page);\" type=\"button\" name=\"B1Pop\" value=\"Rename\" class=\"back\">\n                                    </font>\n                                </p>\n                            </td>\n                        </tr>\n                        <tr>\n                            <td colspan=\"2\" align=\"left\">\n                                <p align=\"left\">\n                                    <b>\n			  									<font color=\"white\" face=\"Verdana\" size=\"1\">\n			  										<br>Affymetrix 3' IVT Backgrounds&nbsp;&nbsp;&nbsp;\n			  											<u><a href=\"/helps/list_manager.html#background\" target=\"_blank\">\n			  												<font color=\"white\">Help</font>\n			  											</a></u>\n			  									</font></b></p>\n                            </td>\n                        </tr>\n                        <tr>\n                            <td valign=\"top\" align=\"top\" colspan=\"2\">\n                                <p align=\"left\" style=\"word-spacing: 0; line-height: 100%; text-indent: 0; margin: 0;> \n										  <font face=\" verdana \"=\" \" size=\"1 \" color=\"white \"> \n										  </p><div style=\"overflow: auto; height: 60px; width: 100%; \" name=\"affyBGs \" id=\"affyBGs \">\n										  	<font face=\"Verdana \" size=\"1 \" color=\"white \">\n										  	<br><input type=\"checkbox \" onclick=\"addBackground(this); \" value=\"AFFYMETRIX_3PRIME_IVT_ID~Affymetrix Barley Genome Array \">Affymetrix Barley Genome Array\n											<br><input type=\"checkbox \" onclick=\"addBackground(this); \" value=\"AFFYMETRIX_3PRIME_IVT_ID~Affymetrix Bsubtilis Genome Array \">Affymetrix Bsubtilis Genome Array\n											<br><input type=\"checkbox \" onclick=\"addBackground(this); \" value=\"AFFYMETRIX_3PRIME_IVT_ID~Affymetrix Mu19KsubA \">Affymetrix Mu19KsubA\n											<br><input type=\"checkbox \" onclick=\"addBackground(this); \" value=\"AFFYMETRIX_3PRIME_IVT_ID~Affymetrix Mu19KsubB \">Affymetrix Mu19KsubB\n											<br><input type=\"checkbox \" onclick=\"addBackground(this); \" value=\"AFFYMETRIX_3PRIME_IVT_ID~Affymetrix Mu19KsubC \">Affymetrix Mu19KsubC\n											<br><input type=\"checkbox \" onclick=\"addBackground(this); \" value=\"AFFYMETRIX_3PRIME_IVT_ID~Arabidopsis ATH1-121501 Genome Array \">Arabidopsis ATH1-121501 Genome Array\n											<br><input type=\"checkbox \" onclick=\"addBackground(this); \" value=\"AFFYMETRIX_3PRIME_IVT_ID~Arabidopsis Genome Array \">Arabidopsis Genome Array\n											<br><input type=\"checkbox \" onclick=\"addBackground(this); \" value=\"AFFYMETRIX_3PRIME_IVT_ID~Bovine Array \">Bovine Array\n											<br><input type=\"checkbox \" onclick=\"addBackground(this); \" value=\"AFFYMETRIX_3PRIME_IVT_ID~C. elegans Genome Array \">C. elegans Genome Array\n											<br><input type=\"checkbox \" onclick=\"addBackground(this); \" value=\"AFFYMETRIX_3PRIME_IVT_ID~Canine Array \">Canine Array\n											<br><input type=\"checkbox \" onclick=\"addBackground(this); \" value=\"AFFYMETRIX_3PRIME_IVT_ID~Canine_2 Genome Array \">Canine_2 Genome Array\n											<br><input type=\"checkbox \" onclick=\"addBackground(this); \" value=\"AFFYMETRIX_3PRIME_IVT_ID~Chicken Array \">Chicken Array\n											<br><input type=\"checkbox \" onclick=\"addBackground(this); \" value=\"AFFYMETRIX_3PRIME_IVT_ID~Citrus Genome Array \">Citrus Genome Array\n											<br><input type=\"checkbox \" onclick=\"addBackground(this); \" value=\"AFFYMETRIX_3PRIME_IVT_ID~Cotton Genome Array \">Cotton Genome Array\n											<br><input type=\"checkbox \" onclick=\"addBackground(this); \" value=\"AFFYMETRIX_3PRIME_IVT_ID~Drosophila Genome Array \">Drosophila Genome Array\n											<br><input type=\"checkbox \" onclick=\"addBackground(this); \" value=\"AFFYMETRIX_3PRIME_IVT_ID~Drosophila_2 Array \">Drosophila_2 Array\n											<br><input type=\"checkbox \" onclick=\"addBackground(this); \" value=\"AFFYMETRIX_3PRIME_IVT_ID~E. coli Genome Antisense Array \">E. coli Genome Antisense Array\n											<br><input type=\"checkbox \" onclick=\"addBackground(this); \" value=\"AFFYMETRIX_3PRIME_IVT_ID~E. coli Genome Sense Array \">E. coli Genome Sense Array\n											<br><input type=\"checkbox \" onclick=\"addBackground(this); \" value=\"AFFYMETRIX_3PRIME_IVT_ID~E_coli_2 Array \">E_coli_2 Array\n											<br><input type=\"checkbox \" onclick=\"addBackground(this); \" value=\"AFFYMETRIX_3PRIME_IVT_ID~GeneChip TEST3 Array \">GeneChip TEST3 Array\n											<br><input type=\"checkbox \" onclick=\"addBackground(this); \" value=\"AFFYMETRIX_3PRIME_IVT_ID~HT Human Genome U133 Plus Set \">HT Human Genome U133 Plus Set\n											<br><input type=\"checkbox \" onclick=\"addBackground(this); \" value=\"AFFYMETRIX_3PRIME_IVT_ID~HT Human Genome U133A \">HT Human Genome U133A\n											<br><input type=\"checkbox \" onclick=\"addBackground(this); \" value=\"AFFYMETRIX_3PRIME_IVT_ID~HT Human Genome U133B \">HT Human Genome U133B\n											<br><input type=\"checkbox \" onclick=\"addBackground(this); \" value=\"AFFYMETRIX_3PRIME_IVT_ID~HT Mouse Genome MG-430A \">HT Mouse Genome MG-430A\n											<br><input type=\"checkbox \" onclick=\"addBackground(this); \" value=\"AFFYMETRIX_3PRIME_IVT_ID~HT Mouse Genome MG-430B \">HT Mouse Genome MG-430B\n											<br><input type=\"checkbox \" onclick=\"addBackground(this); \" value=\"AFFYMETRIX_3PRIME_IVT_ID~HT Rat Focus Array \">HT Rat Focus Array\n											<br><input type=\"checkbox \" onclick=\"addBackground(this); \" value=\"AFFYMETRIX_3PRIME_IVT_ID~HT Rat Genome 230 \">HT Rat Genome 230\n											<br><input type=\"checkbox \" onclick=\"addBackground(this); \" value=\"AFFYMETRIX_3PRIME_IVT_ID~Hu35KsubA Array \">Hu35KsubA Array\n											<br><input type=\"checkbox \" onclick=\"addBackground(this); \" value=\"AFFYMETRIX_3PRIME_IVT_ID~Hu35KsubB Array \">Hu35KsubB Array\n											<br><input type=\"checkbox \" onclick=\"addBackground(this); \" value=\"AFFYMETRIX_3PRIME_IVT_ID~Hu35KsubC Array \">Hu35KsubC Array\n											<br><input type=\"checkbox \" onclick=\"addBackground(this); \" value=\"AFFYMETRIX_3PRIME_IVT_ID~Hu35KsubD Array \">Hu35KsubD Array\n											<br><input type=\"checkbox \" onclick=\"addBackground(this); \" value=\"AFFYMETRIX_3PRIME_IVT_ID~Human Cancer Biology Array \">Human Cancer Biology Array\n											<br><input type=\"checkbox \" onclick=\"addBackground(this); \" value=\"AFFYMETRIX_3PRIME_IVT_ID~Human Genome Focus Array \">Human Genome Focus Array\n											<br><input type=\"checkbox \" onclick=\"addBackground(this); \" value=\"AFFYMETRIX_3PRIME_IVT_ID~Human Genome U133 Plus 2 Array \">Human Genome U133 Plus 2 Array\n											<br><input type=\"checkbox \" onclick=\"addBackground(this); \" value=\"AFFYMETRIX_3PRIME_IVT_ID~Human Genome U133 Plus 2 Perfect Match Peg Array \">Human Genome U133 Plus 2 Perfect Match Peg Array\n											<br><input type=\"checkbox \" onclick=\"addBackground(this); \" value=\"AFFYMETRIX_3PRIME_IVT_ID~Human Genome U133A 2 Array \">Human Genome U133A 2 Array\n											<br><input type=\"checkbox \" onclick=\"addBackground(this); \" value=\"AFFYMETRIX_3PRIME_IVT_ID~Human Genome U133A Array \">Human Genome U133A Array\n											<br><input type=\"checkbox \" onclick=\"addBackground(this); \" value=\"AFFYMETRIX_3PRIME_IVT_ID~Human Genome U133B Array \">Human Genome U133B Array\n											<br><input type=\"checkbox \" onclick=\"addBackground(this); \" value=\"AFFYMETRIX_3PRIME_IVT_ID~Human Genome U95A Array \">Human Genome U95A Array\n											<br><input type=\"checkbox \" onclick=\"addBackground(this); \" value=\"AFFYMETRIX_3PRIME_IVT_ID~Human Genome U95Av2 Array \">Human Genome U95Av2 Array\n											<br><input type=\"checkbox \" onclick=\"addBackground(this); \" value=\"AFFYMETRIX_3PRIME_IVT_ID~Human Genome U95B Array \">Human Genome U95B Array\n											<br><input type=\"checkbox \" onclick=\"addBackground(this); \" value=\"AFFYMETRIX_3PRIME_IVT_ID~Human Genome U95C Array \">Human Genome U95C Array\n											<br><input type=\"checkbox \" onclick=\"addBackground(this); \" value=\"AFFYMETRIX_3PRIME_IVT_ID~Human Genome U95D Array \">Human Genome U95D Array\n											<br><input type=\"checkbox \" onclick=\"addBackground(this); \" value=\"AFFYMETRIX_3PRIME_IVT_ID~Human Genome U95E Array \">Human Genome U95E Array\n											<br><input type=\"checkbox \" onclick=\"addBackground(this); \" value=\"AFFYMETRIX_3PRIME_IVT_ID~HumanGeneFL Array \">HumanGeneFL Array\n											<br><input type=\"checkbox \" onclick=\"addBackground(this); \" value=\"AFFYMETRIX_3PRIME_IVT_ID~Maize Array \">Maize Array\n											<br><input type=\"checkbox \" onclick=\"addBackground(this); \" value=\"AFFYMETRIX_3PRIME_IVT_ID~Medicago truncutala Genome Array \">Medicago truncutala Genome Array\n											<br><input type=\"checkbox \" onclick=\"addBackground(this); \" value=\"AFFYMETRIX_3PRIME_IVT_ID~Mouse Genome 430 2 Array \">Mouse Genome 430 2 Array\n											<br><input type=\"checkbox \" onclick=\"addBackground(this); \" value=\"AFFYMETRIX_3PRIME_IVT_ID~Mouse Genome 430 2 Perfect Match Peg Array \">Mouse Genome 430 2 Perfect Match Peg Array\n											<br><input type=\"checkbox \" onclick=\"addBackground(this); \" value=\"AFFYMETRIX_3PRIME_IVT_ID~Mouse Genome 430A 2 Array \">Mouse Genome 430A 2 Array\n											<br><input type=\"checkbox \" onclick=\"addBackground(this); \" value=\"AFFYMETRIX_3PRIME_IVT_ID~Mouse Genome MOE430A Array \">Mouse Genome MOE430A Array\n											<br><input type=\"checkbox \" onclick=\"addBackground(this); \" value=\"AFFYMETRIX_3PRIME_IVT_ID~Mouse Genome MOE430B Array \">Mouse Genome MOE430B Array\n											<br><input type=\"checkbox \" onclick=\"addBackground(this); \" value=\"AFFYMETRIX_3PRIME_IVT_ID~Mu11KsubA Array \">Mu11KsubA Array\n											<br><input type=\"checkbox \" onclick=\"addBackground(this); \" value=\"AFFYMETRIX_3PRIME_IVT_ID~Mu11KsubB Array \">Mu11KsubB Array\n											<br><input type=\"checkbox \" onclick=\"addBackground(this); \" value=\"AFFYMETRIX_3PRIME_IVT_ID~Murine Genome U74A Array \">Murine Genome U74A Array\n											<br><input type=\"checkbox \" onclick=\"addBackground(this); \" value=\"AFFYMETRIX_3PRIME_IVT_ID~Murine Genome U74Av2 Array \">Murine Genome U74Av2 Array\n											<br><input type=\"checkbox \" onclick=\"addBackground(this); \" value=\"AFFYMETRIX_3PRIME_IVT_ID~Murine Genome U74B Array \">Murine Genome U74B Array\n											<br><input type=\"checkbox \" onclick=\"addBackground(this); \" value=\"AFFYMETRIX_3PRIME_IVT_ID~Murine Genome U74Bv2 Array \">Murine Genome U74Bv2 Array\n											<br><input type=\"checkbox \" onclick=\"addBackground(this); \" value=\"AFFYMETRIX_3PRIME_IVT_ID~Murine Genome U74C Array \">Murine Genome U74C Array\n											<br><input type=\"checkbox \" onclick=\"addBackground(this); \" value=\"AFFYMETRIX_3PRIME_IVT_ID~Murine Genome U74Cv2 Array \">Murine Genome U74Cv2 Array\n											<br><input type=\"checkbox \" onclick=\"addBackground(this); \" value=\"AFFYMETRIX_3PRIME_IVT_ID~P. aeruginosa Genome Array \">P. aeruginosa Genome Array\n											<br><input type=\"checkbox \" onclick=\"addBackground(this); \" value=\"AFFYMETRIX_3PRIME_IVT_ID~Plasmodium Anopheles Array \">Plasmodium Anopheles Array\n											<br><input type=\"checkbox \" onclick=\"addBackground(this); \" value=\"AFFYMETRIX_3PRIME_IVT_ID~Poplar Genome Array \">Poplar Genome Array\n											<br><input type=\"checkbox \" onclick=\"addBackground(this); \" value=\"AFFYMETRIX_3PRIME_IVT_ID~Porcine Array \">Porcine Array\n											<br><input type=\"checkbox \" onclick=\"addBackground(this); \" value=\"AFFYMETRIX_3PRIME_IVT_ID~Rat Expression Array 230 2 \">Rat Expression Array 230 2\n											<br><input type=\"checkbox \" onclick=\"addBackground(this); \" value=\"AFFYMETRIX_3PRIME_IVT_ID~Rat Genome 230 2 Perfect Match Peg Array \">Rat Genome 230 2 Perfect Match Peg Array\n											<br><input type=\"checkbox \" onclick=\"addBackground(this); \" value=\"AFFYMETRIX_3PRIME_IVT_ID~Rat Genome RAE230A Array \">Rat Genome RAE230A Array\n											<br><input type=\"checkbox \" onclick=\"addBackground(this); \" value=\"AFFYMETRIX_3PRIME_IVT_ID~Rat Genome RAE230B Array \">Rat Genome RAE230B Array\n											<br><input type=\"checkbox \" onclick=\"addBackground(this); \" value=\"AFFYMETRIX_3PRIME_IVT_ID~Rat Genome U34A Array \">Rat Genome U34A Array\n											<br><input type=\"checkbox \" onclick=\"addBackground(this); \" value=\"AFFYMETRIX_3PRIME_IVT_ID~Rat Genome U34B Array \">Rat Genome U34B Array\n											<br><input type=\"checkbox \" onclick=\"addBackground(this); \" value=\"AFFYMETRIX_3PRIME_IVT_ID~Rat Genome U34C Array \">Rat Genome U34C Array\n											<br><input type=\"checkbox \" onclick=\"addBackground(this); \" value=\"AFFYMETRIX_3PRIME_IVT_ID~Rat Neurobiology U34 Array \">Rat Neurobiology U34 Array\n											<br><input type=\"checkbox \" onclick=\"addBackground(this); \" value=\"AFFYMETRIX_3PRIME_IVT_ID~Rat Tox FX \">Rat Tox FX\n											<br><input type=\"checkbox \" onclick=\"addBackground(this); \" value=\"AFFYMETRIX_3PRIME_IVT_ID~Rat Toxicology U34 Array \">Rat Toxicology U34 Array\n											<br><input type=\"checkbox \" onclick=\"addBackground(this); \" value=\"AFFYMETRIX_3PRIME_IVT_ID~Rhesus Genome Array \">Rhesus Genome Array\n											<br><input type=\"checkbox \" onclick=\"addBackground(this); \" value=\"AFFYMETRIX_3PRIME_IVT_ID~Rice Array \">Rice Array\n											<br><input type=\"checkbox \" onclick=\"addBackground(this); \" value=\"AFFYMETRIX_3PRIME_IVT_ID~S. aureus Array \">S. aureus Array\n											<br><input type=\"checkbox \" onclick=\"addBackground(this); \" value=\"AFFYMETRIX_3PRIME_IVT_ID~Soybean Array \">Soybean Array\n											<br><input type=\"checkbox \" onclick=\"addBackground(this); \" value=\"AFFYMETRIX_3PRIME_IVT_ID~Sugar Cane Genome Array \">Sugar Cane Genome Array\n											<br><input type=\"checkbox \" onclick=\"addBackground(this); \" value=\"AFFYMETRIX_3PRIME_IVT_ID~Tomato Array \">Tomato Array\n											<br><input type=\"checkbox \" onclick=\"addBackground(this); \" value=\"AFFYMETRIX_3PRIME_IVT_ID~U133_X3P Array \">U133_X3P Array\n											<br><input type=\"checkbox \" onclick=\"addBackground(this); \" value=\"AFFYMETRIX_3PRIME_IVT_ID~Vitis_Vinifera Array \">Vitis_Vinifera Array\n											<br><input type=\"checkbox \" onclick=\"addBackground(this); \" value=\"AFFYMETRIX_3PRIME_IVT_ID~wheat Array \">wheat Array\n											<br><input type=\"checkbox \" onclick=\"addBackground(this); \" value=\"AFFYMETRIX_3PRIME_IVT_ID~X_laevis_2 Array \">X_laevis_2 Array\n											<br><input type=\"checkbox \" onclick=\"addBackground(this); \" value=\"AFFYMETRIX_3PRIME_IVT_ID~Xenopus_laevis Array \">Xenopus_laevis Array\n											<br><input type=\"checkbox \" onclick=\"addBackground(this); \" value=\"AFFYMETRIX_3PRIME_IVT_ID~Xenopus_tropicalis Array \">Xenopus_tropicalis Array\n											<br><input type=\"checkbox \" onclick=\"addBackground(this); \" value=\"AFFYMETRIX_3PRIME_IVT_ID~Yeast Genome S98 Array \">Yeast Genome S98 Array\n											<br><input type=\"checkbox \" onclick=\"addBackground(this); \" value=\"AFFYMETRIX_3PRIME_IVT_ID~Yeast_2 Array \">Yeast_2 Array\n											<br><input type=\"checkbox \" onclick=\"addBackground(this); \" value=\"AFFYMETRIX_3PRIME_IVT_ID~Zebrafish Array \">Zebrafish Array\n											</font>\n										  </div>\n										   <p></p>\n									  </td>\n				</tr>\n				<tr><td><br></td></tr>\n				<tr>\n							  						<td colspan=\"2 \" align=\"left \">\n							  							<p align=\"left \">\n							  								<b>\n							  									<font color=\"white \" face=\"Verdana \" size=\"1 \">\n							  										<br>Affymetrix Exon Backgrounds&nbsp;&nbsp;&nbsp;\n							  											<u><a href=\"/helps/list_manager.html#background \" target=\"_blank \">\n							  												<font color=\"white \">Help</font>\n							  											</a></u>\n							  									</font></b></p>\n							  						</td>\n									</tr>\n									<tr> \n													  <td valign=\"top \" align=\"top \" colspan=\"2 \"> \n														<p align=\"left \" style=\"word-spacing: 0; line-height: 100%; text-indent: 0; margin: 0;>\n                                    <font face=\" verdana\"=\"\" size=\"1\" color=\"white\">\n                                </p>\n                                <div style=\"overflow: auto; height: 60px; width: 100%;\" name=\"affyBGs\" id=\"affyBGs\">\n                                    <font face=\"Verdana\" size=\"1\" color=\"white\">\n                                        <br>\n                                        <input type=\"checkbox\" onclick=\"addBackground(this);\" value=\"AFFYMETRIX_EXON_GENE_ID~HuEx-1_0-st-v2\">HuEx-1_0-st-v2\n                                        <br>\n                                        <input type=\"checkbox\" onclick=\"addBackground(this);\" value=\"AFFYMETRIX_EXON_GENE_ID~HuGene-1_0-st-v1\">HuGene-1_0-st-v1\n                                        <br>\n                                        <input type=\"checkbox\" onclick=\"addBackground(this);\" value=\"AFFYMETRIX_EXON_GENE_ID~MoEx-1_0-st-v1\">MoEx-1_0-st-v1\n                                        <br>\n                                        <input type=\"checkbox\" onclick=\"addBackground(this);\" value=\"AFFYMETRIX_EXON_GENE_ID~MoGene-1_0-st-v1\">MoGene-1_0-st-v1\n                                        <br>\n                                        <input type=\"checkbox\" onclick=\"addBackground(this);\" value=\"AFFYMETRIX_EXON_GENE_ID~RaEx-1_0-st-v1\">RaEx-1_0-st-v1\n                                        <br>\n                                        <input type=\"checkbox\" onclick=\"addBackground(this);\" value=\"AFFYMETRIX_EXON_GENE_ID~RaGene-1_0-st-v1\">RaGene-1_0-st-v1\n                                    </font>\n                                </div>\n                                <p></p>\n                            </td>\n                        </tr>\n                        <tr>\n                            <td>\n                                <br>\n                            </td>\n                        </tr>\n                        <tr>\n                            <td colspan=\"2\" align=\"left\">\n                                <p align=\"left\">\n                                    <b>\n							  									<font color=\"white\" face=\"Verdana\" size=\"1\">\n							  										<br>Affymetrix SNP Backgrounds&nbsp;&nbsp;&nbsp;\n							  											<u><a href=\"/helps/list_manager.html#background\" target=\"_blank\">\n							  												<font color=\"white\">Help</font>\n							  											</a></u>\n							  									</font></b></p>\n                            </td>\n                        </tr>\n                        <tr>\n                            <td valign=\"top\" align=\"top\" colspan=\"2\">\n                                <p align=\"left\" style=\"word-spacing: 0; line-height: 100%; text-indent: 0; margin: 0;> \n														  <font face=\" verdana \"=\" \" size=\"1 \" color=\"white \"> \n														  </p><div style=\"overflow: auto; height: 60px; width: 100%; \" name=\"affyBGs \" id=\"affyBGs \">\n														  	<font face=\"Verdana \" size=\"1 \" color=\"white \">\n														  	<br><input type=\"checkbox \" onclick=\"addBackground(this); \" value=\"AFFYMETRIX_SNP_ID~cSNP_I+II_20KPanel_R1 \">cSNP_I+II_20KPanel_R1\n															<br><input type=\"checkbox \" onclick=\"addBackground(this); \" value=\"AFFYMETRIX_SNP_ID~cSNP_I_10KPanel_R1 \">cSNP_I_10KPanel_R1\n															<br><input type=\"checkbox \" onclick=\"addBackground(this); \" value=\"AFFYMETRIX_SNP_ID~Cytogenetics_Array \">Cytogenetics_Array\n															<br><input type=\"checkbox \" onclick=\"addBackground(this); \" value=\"AFFYMETRIX_SNP_ID~DMET_Panel \">DMET_Panel\n															<br><input type=\"checkbox \" onclick=\"addBackground(this); \" value=\"AFFYMETRIX_SNP_ID~GenomeWideSNP_5 \">GenomeWideSNP_5\n															<br><input type=\"checkbox \" onclick=\"addBackground(this); \" value=\"AFFYMETRIX_SNP_ID~GenomeWideSNP_6 \">GenomeWideSNP_6\n															<br><input type=\"checkbox \" onclick=\"addBackground(this); \" value=\"AFFYMETRIX_SNP_ID~HT_GenomeWide_6_p1 \">HT_GenomeWide_6_p1\n															<br><input type=\"checkbox \" onclick=\"addBackground(this); \" value=\"AFFYMETRIX_SNP_ID~HuGeneFocused50K \">HuGeneFocused50K\n															<br><input type=\"checkbox \" onclick=\"addBackground(this); \" value=\"AFFYMETRIX_SNP_ID~Immune_and_Inflam_9KPanel_R1 \">Immune_and_Inflam_9KPanel_R1\n															<br><input type=\"checkbox \" onclick=\"addBackground(this); \" value=\"AFFYMETRIX_SNP_ID~MALD_3KPanel_R1 \">MALD_3KPanel_R1\n															<br><input type=\"checkbox \" onclick=\"addBackground(this); \" value=\"AFFYMETRIX_SNP_ID~Mapping10K_Xba131 \">Mapping10K_Xba131\n															<br><input type=\"checkbox \" onclick=\"addBackground(this); \" value=\"AFFYMETRIX_SNP_ID~Mapping10K_Xba142 \">Mapping10K_Xba142\n															<br><input type=\"checkbox \" onclick=\"addBackground(this); \" value=\"AFFYMETRIX_SNP_ID~Mapping250K_Nsp \">Mapping250K_Nsp\n															<br><input type=\"checkbox \" onclick=\"addBackground(this); \" value=\"AFFYMETRIX_SNP_ID~Mapping250K_Sty \">Mapping250K_Sty\n															<br><input type=\"checkbox \" onclick=\"addBackground(this); \" value=\"AFFYMETRIX_SNP_ID~Mapping50K_Hind240 \">Mapping50K_Hind240\n															<br><input type=\"checkbox \" onclick=\"addBackground(this); \" value=\"AFFYMETRIX_SNP_ID~Mapping50K_Xba240 \">Mapping50K_Xba240\n															</font>\n														  </div>\n														   <p></p>\n													  </td>\n								</tr>\n				<tr><td><br></td></tr>\n				<!--Agilent backgrounds-->\n				<tr>\n							  						<td colspan=\"2 \" align=\"left \">\n							  							<p align=\"left \">\n							  								<b>\n							  									<font color=\"white \" face=\"Verdana \" size=\"1 \">\n							  										<br>Agilent Backgrounds&nbsp;&nbsp;&nbsp;\n							  											<u><a href=\"/helps/list_manager.html#background \" target=\"_blank \">\n							  												<font color=\"white \">Help</font>\n							  											</a></u>\n							  									</font></b></p>\n							  						</td>\n									</tr>\n									<tr> \n													  <td valign=\"top \" align=\"top \" colspan=\"2 \"> \n														<p align=\"left \" style=\"word-spacing: 0; line-height: 100%; text-indent: 0; margin: 0 \"> \n														  <font face=\"Verdana \" size=\"1 \" color=\"white \"> \n														  </font></p><div style=\"overflow: auto; height: 60px; width: 100%; \" name=\"affyBGs \" id=\"affyBGs \"><font face=\"Verdana \" size=\"1 \" color=\"white \">\n														  	<font face=\"Verdana \" size=\"1 \" color=\"white \">\n														  	<br><input type=\"checkbox \" onclick=\"addBackground(this); \" value=\"AGILENT_CHIP_ID~HumanCpGIsland \">HumanCpGIsland\n															<br><input type=\"checkbox \" onclick=\"addBackground(this); \" value=\"AGILENT_CHIP_ID~HumanENCODE \">HumanENCODE\n															<br><input type=\"checkbox \" onclick=\"addBackground(this); \" value=\"AGILENT_CHIP_ID~HumanPromoter \">HumanPromoter\n															<br><input type=\"checkbox \" onclick=\"addBackground(this); \" value=\"AGILENT_CHIP_ID~HumanPromoter2 \">HumanPromoter2\n															<br><input type=\"checkbox \" onclick=\"addBackground(this); \" value=\"AGILENT_CHIP_ID~MouseCpGIsland \">MouseCpGIsland\n															<br><input type=\"checkbox \" onclick=\"addBackground(this); \" value=\"AGILENT_CHIP_ID~ZebrafishExpandedPromoter1 \">ZebrafishExpandedPromoter1\n															<br><input type=\"checkbox \" onclick=\"addBackground(this); \" value=\"AGILENT_CHIP_ID~ZebrafishExpandedPromoter2 \">ZebrafishExpandedPromoter2\n															<br><input type=\"checkbox \" onclick=\"addBackground(this); \" value=\"AGILENT_CHIP_ID~ZebrafishExpandedPromoter3 \">ZebrafishExpandedPromoter3\n															<br><input type=\"checkbox \" onclick=\"addBackground(this); \" value=\"AGILENT_CHIP_ID~ZebrafishExpandedPromoter4 \">ZebrafishExpandedPromoter4\n															<br><input type=\"checkbox \" onclick=\"addBackground(this); \" value=\"AGILENT_CHIP_ID~ZebrafishExpandedPromoter5 \">ZebrafishExpandedPromoter5\n															<br><input type=\"checkbox \" onclick=\"addBackground(this); \" value=\"AGILENT_CHIP_ID~ZebrafishExpandedPromoter6 \">ZebrafishExpandedPromoter6\n															<br><input type=\"checkbox \" onclick=\"addBackground(this); \" value=\"AGILENT_CHIP_ID~ZebrafishExpandedPromoter7 \">ZebrafishExpandedPromoter7\n															<br><input type=\"checkbox \" onclick=\"addBackground(this); \" value=\"AGILENT_CHIP_ID~ZebrafishExpandedPromoter8 \">ZebrafishExpandedPromoter8\n															<br><input type=\"checkbox \" onclick=\"addBackground(this); \" value=\"AGILENT_CHIP_ID~ZebrafishExpandedPromoter9 \">ZebrafishExpandedPromoter9\n															<br><input type=\"checkbox \" onclick=\"addBackground(this); \" value=\"AGILENT_CHIP_ID~ZebrafishProximalPromoter1 \">ZebrafishProximalPromoter1\n															<br><input type=\"checkbox \" onclick=\"addBackground(this); \" value=\"AGILENT_CHIP_ID~ZebrafishProximalPromoter2 \">ZebrafishProximalPromoter2\n															<br><input type=\"checkbox \" onclick=\"addBackground(this); \" value=\"AGILENT_ID~Arabidopsis3 \">Arabidopsis3\n															<br><input type=\"checkbox \" onclick=\"addBackground(this); \" value=\"AGILENT_ID~Caenorhabditiselegans \">Caenorhabditiselegans\n															<br><input type=\"checkbox \" onclick=\"addBackground(this); \" value=\"AGILENT_ID~Canine \">Canine\n															<br><input type=\"checkbox \" onclick=\"addBackground(this); \" value=\"AGILENT_ID~Chicken \">Chicken\n															<br><input type=\"checkbox \" onclick=\"addBackground(this); \" value=\"AGILENT_ID~Frog \">Frog\n															<br><input type=\"checkbox \" onclick=\"addBackground(this); \" value=\"AGILENT_ID~HumanGenome \">HumanGenome\n															<br><input type=\"checkbox \" onclick=\"addBackground(this); \" value=\"AGILENT_ID~MouseV2 \">MouseV2\n															<br><input type=\"checkbox \" onclick=\"addBackground(this); \" value=\"AGILENT_ID~RatGenome \">RatGenome\n															<br><input type=\"checkbox \" onclick=\"addBackground(this); \" value=\"AGILENT_ID~RatGenome,RatV2 \">RatGenome,RatV2\n															<br><input type=\"checkbox \" onclick=\"addBackground(this); \" value=\"AGILENT_ID~RatV2 \">RatV2\n															<br><input type=\"checkbox \" onclick=\"addBackground(this); \" value=\"AGILENT_ID~Rice \">Rice\n															<br><input type=\"checkbox \" onclick=\"addBackground(this); \" value=\"AGILENT_ID~YeasetV2 \">YeasetV2\n															<br><input type=\"checkbox \" onclick=\"addBackground(this); \" value=\"AGILENT_ID~Zebrafish \">Zebrafish\n															<br><input type=\"checkbox \" onclick=\"addBackground(this); \" value=\"AGILENT_OLIGO_ID~HumanGenomeCGH105A \">HumanGenomeCGH105A\n															<br><input type=\"checkbox \" onclick=\"addBackground(this); \" value=\"AGILENT_OLIGO_ID~HumanGenomeCGH244A \">HumanGenomeCGH244A\n															<br><input type=\"checkbox \" onclick=\"addBackground(this); \" value=\"AGILENT_OLIGO_ID~HumanGenomeCGH44B \">HumanGenomeCGH44B\n															<br><input type=\"checkbox \" onclick=\"addBackground(this); \" value=\"AGILENT_OLIGO_ID~HumanGenomeCGH44K \">HumanGenomeCGH44K\n															<br><input type=\"checkbox \" onclick=\"addBackground(this); \" value=\"AGILENT_OLIGO_ID~MouseGenomeCGH105A \">MouseGenomeCGH105A\n															<br><input type=\"checkbox \" onclick=\"addBackground(this); \" value=\"AGILENT_OLIGO_ID~MouseGenomeCGH244A \">MouseGenomeCGH244A\n															<br><input type=\"checkbox \" onclick=\"addBackground(this); \" value=\"AGILENT_OLIGO_ID~MouseGenomeCGH44A \">MouseGenomeCGH44A\n															<br><input type=\"checkbox \" onclick=\"addBackground(this); \" value=\"AGILENT_OLIGO_ID~MouseGenomeCGH44K \">MouseGenomeCGH44K\n															<br><input type=\"checkbox \" onclick=\"addBackground(this); \" value=\"AGILENT_OLIGO_ID~RatGenomeCGH105A \">RatGenomeCGH105A\n															<br><input type=\"checkbox \" onclick=\"addBackground(this); \" value=\"AGILENT_OLIGO_ID~RatGenomeCGH244A \">RatGenomeCGH244A\n															</font>\n														  </font></div><font face=\"Verdana \" size=\"1 \" color=\"white \">\n														  </font> <p></p>\n													  </td>\n				</tr>\n				\n				<tr><td><br></td></tr>\n								<!--Illumina backgrounds-->\n								<tr>\n											  						<td colspan=\"2 \" align=\"left \">\n											  							<p align=\"left \">\n											  								<b>\n											  									<font color=\"white \" face=\"Verdana \" size=\"1 \">\n											  										<br>Illumina Backgrounds&nbsp;&nbsp;&nbsp;\n											  											<u><a href=\"/helps/list_manager.html#background \" target=\"_blank \">\n											  												<font color=\"white \">Help</font>\n											  											</a></u>\n											  									</font></b></p>\n											  						</td>\n													</tr>\n													<tr> \n																	  <td valign=\"top \" align=\"top \" colspan=\"2 \"> \n																		<p align=\"left \" style=\"word-spacing: 0; line-height: 100%; text-indent: 0; margin: 0 \"> \n																		  <font face=\"Verdana \" size=\"1 \" color=\"white \"> \n																		  </font></p><div style=\"overflow: auto; height: 60px; width: 100%; \" name=\"affyBGs \" id=\"affyBGs \"><font face=\"Verdana \" size=\"1 \" color=\"white \">\n																		  	<font face=\"Verdana \" size=\"1 \" color=\"white \">\n																		  	<br><input type=\"checkbox \" onclick=\"addBackground(this); \" value=\"ILLUMINA_ID~HumanHT-12_V3_0_R2_11283641_A \">HumanHT-12_V3_0_R2_11283641_A\n																			<br><input type=\"checkbox \" onclick=\"addBackground(this); \" value=\"ILLUMINA_ID~HumanRef-8_V2_0_R4_11223162_A \">HumanRef-8_V2_0_R4_11223162_A\n																			<br><input type=\"checkbox \" onclick=\"addBackground(this); \" value=\"ILLUMINA_ID~HumanRef-8_V3_0_R1_11282963_A_WGDASL \">HumanRef-8_V3_0_R1_11282963_A_WGDASL\n																			<br><input type=\"checkbox \" onclick=\"addBackground(this); \" value=\"ILLUMINA_ID~HumanRef-8_V3_0_R2_11282963_A \">HumanRef-8_V3_0_R2_11282963_A\n																			<br><input type=\"checkbox \" onclick=\"addBackground(this); \" value=\"ILLUMINA_ID~HumanWG-6_V2_0_R4_11223189_A \">HumanWG-6_V2_0_R4_11223189_A\n																			<br><input type=\"checkbox \" onclick=\"addBackground(this); \" value=\"ILLUMINA_ID~HumanWG-6_V3_0_R2_11282955_A \">HumanWG-6_V3_0_R2_11282955_A\n																			<br><input type=\"checkbox \" onclick=\"addBackground(this); \" value=\"ILLUMINA_ID~IBCv2 \">IBCv2\n																			<br><input type=\"checkbox \" onclick=\"addBackground(this); \" value=\"ILLUMINA_ID~MouseRef-8_V1_1_R4_11234312_A \">MouseRef-8_V1_1_R4_11234312_A\n																			<br><input type=\"checkbox \" onclick=\"addBackground(this); \" value=\"ILLUMINA_ID~MouseRef-8_V2_0_R2_11278551_A \">MouseRef-8_V2_0_R2_11278551_A\n																			<br><input type=\"checkbox \" onclick=\"addBackground(this); \" value=\"ILLUMINA_ID~MouseWG-6_V1_1_R4_11234304_A \">MouseWG-6_V1_1_R4_11234304_A\n																			<br><input type=\"checkbox \" onclick=\"addBackground(this); \" value=\"ILLUMINA_ID~MouseWG-6_V2_0_R2_11278593_A \">MouseWG-6_V2_0_R2_11278593_A\n																			<br><input type=\"checkbox \" onclick=\"addBackground(this); \" value=\"ILLUMINA_ID~RatRef-12_V1_0_R4_11222119_A \">RatRef-12_V1_0_R4_11222119_A\n</font>\n																		  </font></div><font face=\"Verdana \" size=\"1 \" color=\"white \">\n																		  </font> <p></p>\n																	  </td>\n				</tr>\n				\n				<!--*******************************************User Requested Backgrounds**********************************************-->\n				\n				\n				\n				<tr>\n											  						<td colspan=\"2 \" align=\"left \">\n											  							<p align=\"left \">\n											  								<b>\n											  									<font color=\"white \" face=\"Verdana \" size=\"1 \">\n											  										<br>User Requested Backgrounds &nbsp;&nbsp;&nbsp;\n											  											<u><a href=\"/helps/list_manager.html#background \" target=\"_blank \">\n											  												<font color=\"white \">Help</font>\n											  											</a></u>\n											  											<br><br>****Please note that these backgrounds have been submitted by users without QC from the DAVID Team\n											  									</font></b></p>\n											  						</td>\n													</tr>\n													<tr> \n																	  <td valign=\"top \" align=\"top \" colspan=\"2 \"> \n																		<p align=\"left \" style=\"word-spacing: 0; line-height: 100%; text-indent: 0; margin: 0;>\n                                    <font face=\" verdana\"=\"\" size=\"1\" color=\"white\">\n                                </p>\n                                <div style=\"overflow: auto; height: 60px; width: 100%;\" name=\"affyBGs\" id=\"affyBGs\">\n                                    <font face=\"Verdana\" size=\"1\" color=\"white\">\n                                        <br>\n                                        <input type=\"checkbox\" onclick=\"addBackground(this);\" value=\"ENSEMBL_GENE_ID~STICKLEBACK_HUMAN_HOMOLOG\">STICKLEBACK_HUMAN_HOMOLOG\n                                    </font>\n                                </div>\n                                <p></p>\n                            </td>\n                        </tr>\n                        <tr>\n                            <td>\n                                <br>\n                            </td>\n                        </tr>\n                        <!--******************************************End user requested backgrounds-->\n                    </tbody>\n                </table>\n            </div>\n            <!--End Population manager div-->\n        </div>\n    </form>\n</body>\n\n</html>\n",
+			"file": "aa.html",
+			"file_size": 54952,
+			"file_write_time": 130722757010000000,
+			"settings":
+			{
+				"buffer_size": 54961,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "untitled folder/post.html",
+			"settings":
+			{
+				"buffer_size": 4490,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"contents": "",
+			"settings":
+			{
+				"buffer_size": 0,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "header.php",
+			"settings":
+			{
+				"buffer_size": 3182,
 				"line_ending": "Unix"
 			}
 		}
 	],
 	"build_system": "Packages/User/php.sublime-build",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
 	"command_palette":
 	{
-		"height": 150.0,
+		"height": 87.0,
+		"last_filter": "install",
 		"selected_items":
 		[
 			[
 				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"",
+				"About"
+			],
+			[
+				"ins",
 				"Package Control: Install Package"
 			],
 			[
@@ -434,10 +570,6 @@
 				"Package Control: Install Package"
 			],
 			[
-				"",
-				":0 - BOF"
-			],
-			[
 				"sidebar",
 				"View: Toggle Open Files in Side Bar"
 			],
@@ -494,7 +626,7 @@
 				"Package Control: Install Package"
 			]
 		],
-		"width": 528.0
+		"width": 575.0
 	},
 	"console":
 	{
@@ -517,16 +649,63 @@
 	},
 	"expanded_folders":
 	[
-		"/Users/lipidong/Sites"
+		"/Users/lipidong/Sites",
+		"/Users/lipidong/Sites/detail"
 	],
 	"file_history":
 	[
+		"/Users/lipidong/Sites/autocomplete/output.php",
+		"/Users/lipidong/Sites/css/jquery.autocomplete.css",
+		"/Users/lipidong/Sites/autocomplete/search.php",
+		"/Users/lipidong/Sites/data.php",
+		"/Users/lipidong/Sites/autocomplete/gene.php",
+		"/Users/lipidong/Sites/test.html",
+		"/Users/lipidong/Library/Application Support/Sublime Text 3/Packages/HTML-CSS-JS Prettify/HTMLPrettify.sublime-settings",
+		"/Users/lipidong/Downloads/evilcos_rss_2014.opml",
+		"/Users/lipidong/Sites/network.php",
+		"/Users/lipidong/Sites/jquery-autocomplete-master 2/demo/data.php",
+		"/Users/lipidong/Sites/output.php",
+		"/Users/lipidong/Sites/jquery-autocomplete-master 2/demo/index.html",
+		"/Users/lipidong/Sites/js/link.js",
+		"/Users/lipidong/Sites/enrichment.php",
+		"/Users/lipidong/Sites/cytoscape/cy.php",
+		"/Users/lipidong/Sites/css/css.css",
+		"/Users/lipidong/Sites/drug.php",
+		"/Users/lipidong/Library/Application Support/Sublime Text 3/Packages/phpfmt/message",
+		"/Users/lipidong/Library/Application Support/Sublime Text 3/Packages/User/Default (OSX).sublime-keymap",
+		"/Users/lipidong/Library/Application Support/Sublime Text 3/Settings/SideBarEnhancements.json",
+		"/Users/lipidong/Sites/jqwidgets-ver3.6.0/demos/jqxchart/javascript_chart_spline_series.htm",
+		"/Users/lipidong/Sites/jqwidgets-ver3.6.0/demos/jqxcalendar/calendar-fluid-size.htm",
+		"/Users/lipidong/Sites/cell.php",
+		"/Users/lipidong/Sites/js/enrichment.php",
+		"/Users/lipidong/Sites/index.php",
+		"/Users/lipidong/Sites/footer.php",
+		"/Users/lipidong/Sites/js/cdric.js",
+		"/Users/lipidong/Sites/diseaseBrowser.php",
+		"/Users/lipidong/Sites/web.sublime-project",
+		"/Users/lipidong/Sites/disease.php",
+		"/Users/lipidong/Sites/detail/meth_detail.php",
+		"/Users/lipidong/Sites/drugBrowser.php",
+		"/Users/lipidong/Sites/connect.php",
+		"/Users/lipidong/Sites/gridjs.php",
+		"/Users/lipidong/Sites/test.php",
+		"/Users/lipidong/Sites/connect - 副本.php",
+		"/Users/lipidong/Sites/header.php",
+		"/Users/lipidong/Sites/css/download.php",
+		"/Users/lipidong/Sites/jqwidgets-ver3.6.0/ReleaseNotes.txt",
+		"/Users/lipidong/Sites/jqwidgets-ver3.6.0/demos/jqxangular/notification.htm",
+		"/Users/lipidong/Sites/search.php",
+		"/Users/lipidong/Sites/search_box.html",
+		"/Users/lipidong/Sites/jqwidgets-ver3.6.0/demos/jqxinput/input-fluid-size.htm",
+		"/Users/lipidong/Sites/cytoscape/Initialisation/style.css",
+		"/Users/lipidong/Sites/jqwidgets-ver3.6.0/demos/jqxdatatable/javascript-datatable-nested-tables.htm",
+		"/Users/lipidong/Sites/jqwidgets-ver3.6.0/demos/jqxchart/javascript_chart_100percent_stacked_line_series.htm",
+		"/Users/lipidong/Sites/jqwidgets-ver3.6.0/demos/aspnetmvc/DatabaseSetup/EmployeeTable_Schema.sql",
 		"/Users/lipidong/Downloads/ipi.genes.HUMAN.xrefs",
 		"/Users/lipidong/work/protein bundunce/data/sce_gene_cds_utr.fasta",
 		"/Users/lipidong/work/RFile/TF_Target/data/all_data.rdata",
 		"/Users/lipidong/Downloads/Homo_sapiens.gene_info",
 		"/Users/lipidong/work/RFile/TF_Target/data/Homo_PARS_Score_MBE/Cal_PARS_MBE.R",
-		"/Users/lipidong/Sites/test.html",
 		"/F/blog/_posts/2015-02-12-ff-package.md",
 		"/D/deskTop/html5-canvas-side-text/js/index.js",
 		"/D/deskTop/html5-canvas-side-text/index.html",
@@ -602,53 +781,7 @@
 		"/F/web/css/jqx.energyblue.css",
 		"/D/deskTop/cancerdr/web_session/data/93d0d7e7.main.css",
 		"/F/web/download.php",
-		"/F/web/cytoscape.js-2.3.7/lib/layout.cose.js",
-		"/F/web - 副本/gridjs.php",
-		"/F/web/cytoscape.js-2.3.7/lib/layout.arbor.js",
-		"/F/web/mailex.php",
-		"/F/web/receive.php",
-		"/F/web/submit.php",
-		"/F/web/tmp/index.php",
-		"/F/web/css/jqx.base.css",
-		"/F/web/c7ff3c24-60e6-4185-a155-5d026a394a86.dmp",
-		"/F/web/meth_data.php",
-		"/F/web/detail/mut2_detail.php-tmp",
-		"/F/web/cytoscape.js-2.3.7/aa.html",
-		"/F/web/security.php",
-		"/F/web/header.php-tmp",
-		"/F/web/cytoscape.js-2.3.7/data.json",
-		"/C/Users/Administrator.7J3FXA4TRMAIT95/AppData/Roaming/Sublime Text 3/Packages/phpfmt/Default.sublime-keymap",
-		"/F/web/css/submit.php",
-		"/F/web/css/download.php",
-		"/F/web/connect.php",
-		"/F/web/ajax.php",
-		"/F/web/meth_detail.php",
-		"/F/web/mut2_detail.php",
-		"/F/web/mail.php",
-		"/F/web/cytoscape.js-2.3.7/lib/arbor.js",
-		"/F/web/cytoscape.js-2.3.7/lib/dagre.js",
-		"/F/web/cytoscape.js-2.3.7/qtip/code.js",
-		"/F/web/cytoscape.js-2.3.7/tuninig/gist57e7cc43342193d9d21a-907a460fd74d591e80bb05928742a6f4a0f8f301/code.js",
-		"/F/web/cytoscape.js-2.3.7/tmp.php",
-		"/F/web/browser.php",
-		"/F/web/tmp.php",
-		"/F/迅雷下载/bootstrap-3.3.2/test-infra/README.md",
-		"/F/web/mir_detail.php",
-		"/F/web/ic50_detail.php",
-		"/F/web/lnc_detail.php",
-		"/F/web/ms_detail.php",
-		"/F/web/mut_detail.php",
-		"/C/Users/Administrator.7J3FXA4TRMAIT95/AppData/Roaming/Sublime Text 3/Packages/BracketHighlighter/Example.sublime-keymap",
-		"/C/Users/Administrator.7J3FXA4TRMAIT95/AppData/Roaming/Sublime Text 3/Packages/BracketHighlighter/bh_core.sublime-settings",
-		"/C/Users/Administrator.7J3FXA4TRMAIT95/AppData/Roaming/Sublime Text 3/Packages/User/Default (Windows).sublime-keymap",
-		"/F/web/filtering.htm",
-		"/F/web/ic5-_detail.php",
-		"/F/web/cytoscape.js-2.3.7/ajax.html",
-		"/F/web/ms_detail",
-		"/D/deskTop/cytoscape.js-2.3.7/test.html",
-		"/D/Desktop/cytoscape.js-2.3.7/aa.html",
-		"/D/Desktop/cytoscape.js-2.3.7/ajax.html",
-		"/D/deskTop/cytoscape.js-2.3.7/code.js"
+		"/F/web/cytoscape.js-2.3.7/lib/layout.cose.js"
 	],
 	"find":
 	{
@@ -666,6 +799,27 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"idValue",
+			"acor",
+			"pasteBox",
+			"listBox",
+			"ids",
+			"idType",
+			"pasteBox",
+			"ids",
+			"idType",
+			"submit",
+			"ids",
+			"idType",
+			"fileBrowser",
+			"rbUploadType",
+			"Identifier",
+			"toggle",
+			"flush",
+			"clini",
+			"main",
+			"#search",
+			"search_box",
 			"ENSG00000020219",
 			"tD(GUC)G1",
 			"disease",
@@ -772,28 +926,7 @@
 			"tissue",
 			"tissue_name",
 			"tissue_id",
-			"disease_id",
-			"disease_name",
-			"disease_id",
-			"disease",
-			"diseaseid",
-			"disease_id",
-			"cell_id",
-			"cellid",
-			"term_link",
-			"$(\"#ms\")",
-			"mir",
-			"value",
-			"binding",
-			"colName",
-			"cellName",
-			"drug",
-			"option",
-			"mi",
-			"mir",
-			"ms_name",
-			"$(\"#mir\")",
-			"mir"
+			"disease_id"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -861,44 +994,311 @@
 	"groups":
 	[
 		{
-			"selected": 2,
+			"selected": 10,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "test.php",
+					"file": "autocomplete.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 325,
+						"buffer_size": 865,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								322,
-								322
+								305,
+								305
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/PHP/PHP.tmLanguage"
+							"auto_name": "",
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 3,
+					"stack_index": 16,
 					"type": "text"
 				},
 				{
 					"buffer": 1,
-					"file": "connect - 副本.php",
+					"file": "enrichment.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 118,
+						"buffer_size": 2822,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1783,
+								1783
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 17,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "david.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1112,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1080,
+								47
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 11,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "diseaseBrowser.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3529,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3119,
+								3119
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1549.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 10,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "data.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 11502,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								11237,
+								11237
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 9,
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "disease.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2247,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1966,
+								1966
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1186.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 7,
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "drug.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2654,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2576,
+								2576
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 1405.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 5,
+					"type": "text"
+				},
+				{
+					"buffer": 7,
+					"file": "cy_copy.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 8943,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								7059,
+								7059
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 6.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				},
+				{
+					"buffer": 8,
+					"file": "cy.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6955,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3088,
+								3088
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 600.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 9,
+					"file": "cy.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1317,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								953,
+								953
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 325.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 10,
+					"file": "/Volumes/Papers Library/All Papers/Ω Export/All Papers.bib",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 0,
 						"regions":
 						{
 						},
@@ -911,35 +1311,7 @@
 						],
 						"settings":
 						{
-							"syntax": "Packages/PHP/PHP.tmLanguage"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 2,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "diseaseBrowser.php",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3397,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								470,
-								470
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/PHP/PHP.tmLanguage"
+							"syntax": "Packages/LaTeX/Bibtex.tmLanguage"
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -949,20 +1321,50 @@
 					"type": "text"
 				},
 				{
-					"buffer": 3,
-					"file": "data.php",
+					"buffer": 11,
+					"file": "network.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 11475,
+						"buffer_size": 1614,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								10975,
-								10975
+								219,
+								219
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 145.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 12,
+					"file": "drug1.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3171,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3108,
+								3108
 							]
 						],
 						"settings":
@@ -971,27 +1373,145 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 6758.0,
+						"translation.y": 1672.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 1,
+					"stack_index": 6,
 					"type": "text"
 				},
 				{
-					"buffer": 4,
-					"file": "connect.php",
+					"buffer": 13,
+					"file": "cell.php",
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 157,
+						"buffer_size": 2375,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								136,
-								136
+								1173,
+								1173
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 318.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 8,
+					"type": "text"
+				},
+				{
+					"buffer": 14,
+					"file": "aa.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 54961,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								809,
+								815
+							]
+						],
+						"settings":
+						{
+							"auto_name": "",
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 1454.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 13,
+					"type": "text"
+				},
+				{
+					"buffer": 15,
+					"file": "untitled folder/post.html",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4490,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								847,
+								847
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/HTML/HTML.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 271.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 12,
+					"type": "text"
+				},
+				{
+					"buffer": 16,
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 0,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"auto_name": "",
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 14,
+					"type": "text"
+				},
+				{
+					"buffer": 17,
+					"file": "header.php",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3182,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1457,
+								1596
 							]
 						],
 						"settings":
@@ -999,10 +1519,10 @@
 							"syntax": "Packages/PHP/PHP.tmLanguage"
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 622.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 4,
+					"stack_index": 15,
 					"type": "text"
 				}
 			]
@@ -1058,14 +1578,14 @@
 		"rows":
 		[
 			0.0,
-			0.905838041431,
+			0.924471299094,
 			1.0
 		]
 	},
 	"menu_visible": true,
 	"output.exec":
 	{
-		"height": 169.0
+		"height": 263.0
 	},
 	"output.find_results":
 	{
@@ -1079,6 +1599,7 @@
 	{
 		"height": 0.0
 	},
+	"pinned_build_system": "",
 	"project": "web.sublime-project",
 	"replace":
 	{
@@ -1088,8 +1609,61 @@
 	"select_file":
 	{
 		"height": 0.0,
+		"last_filter": "",
 		"selected_items":
 		[
+			[
+				"network",
+				"network.php"
+			],
+			[
+				"cy.js",
+				"cy.js"
+			],
+			[
+				"cy_co",
+				"cy_copy.php"
+			],
+			[
+				"cy.php",
+				"cy.php"
+			],
+			[
+				"drug.php",
+				"drug.php"
+			],
+			[
+				"disease",
+				"disease.php"
+			],
+			[
+				"head",
+				"header.php"
+			],
+			[
+				"dat.",
+				"data.php"
+			],
+			[
+				"netwo",
+				"network.php"
+			],
+			[
+				"css.c",
+				"css/css.css"
+			],
+			[
+				"enric",
+				"js/enrichment.php"
+			],
+			[
+				"note",
+				"jqwidgets-ver3.6.0/ReleaseNotes.txt"
+			],
+			[
+				"",
+				"index.php"
+			],
 			[
 				"inde",
 				"index.php"
@@ -1101,10 +1675,6 @@
 			[
 				"index",
 				"index.php"
-			],
-			[
-				"css.c",
-				"css\\css.css"
 			],
 			[
 				"data",
@@ -1136,6 +1706,7 @@
 	"select_project":
 	{
 		"height": 500.0,
+		"last_filter": "",
 		"selected_items":
 		[
 		],
@@ -1144,6 +1715,7 @@
 	"select_symbol":
 	{
 		"height": 0.0,
+		"last_filter": "",
 		"selected_items":
 		[
 		],

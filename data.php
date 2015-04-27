@@ -1,6 +1,6 @@
 <?php
 // header('Content-type: application/json');
-error_reporting(E_ALL^E_DEPRECATED);
+error_reporting(E_ALL ^ E_DEPRECATED);
 #Include the connect.php file
 include 'connect.php';
 #Connect to the database
@@ -394,7 +394,7 @@ switch ($tableName) {
 				"disease_id" => $row['disease_id'],
 				'disease_name' => $row['disease_name'],
 				'mesh_id' => $row['mesh_id'],
-
+				'mut' => $row['mut'],
 				'meth' => $row['meth'],
 				'mir' => $row['mir'],
 				'lnc' => $row['lnc'],

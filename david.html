@@ -1,0 +1,53 @@
+function uploadList(page){
+	//alert("start upload");
+	var FM = document.frmManager;
+	
+	if(FM.Identifier.value ==""){
+		alert("Please choose an identifier");
+		return;
+	}
+	FM.idType.value=FM.Identifier.value;
+	if(FM.cbMulti.checked)
+	{
+		FM.multiList.value="true";
+	}
+
+	if(FM.rbUploadType[0].checked)
+	{
+		FM.uploadType.value=FM.rbUploadType[0].value;
+	}
+	else if(FM.rbUploadType[1].checked)
+	{
+		FM.uploadType.value=FM.rbUploadType[1].value;
+	}
+	else
+	{
+		alert("Error: Please specify whether this is a Gene list or a Background in step 3");
+		return;
+	}
+
+
+	if(FM.fileBrowser.value !="")
+	{
+		FM.Mode.value="file";
+		FM.action=page+".jsp";
+		FM.target="";
+		FM.submit();
+		return;
+	}
+
+	if(FM.pasteBox.value == ""){
+		alert("Error: Please either upload a file or paste a list in step 1.");
+		return;
+	}
+	var ident=FM.Identifier.value;
+	//alert("upload:"+ident);
+
+	
+		FM.Mode.value="paste";
+		FM.ids.value=FM.pasteBox.value;
+		FM.action=page+".jsp";
+		FM.target="";
+		FM.submit();
+
+	}

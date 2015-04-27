@@ -5,7 +5,7 @@ include 'gridjs.php';
 
 <div id='baseinfo'>
 <?php
-error_reporting(E_ALL^E_DEPRECATED);
+error_reporting(E_ALL ^ E_DEPRECATED);
 #Include the connect.php file
 include 'connect.php';
 
@@ -38,6 +38,12 @@ echo '<tr><th>Discription</th><td>', $row['desc'], '</td>';
 
 echo '</table></div>';
 echo '<div id="kind"><ul id="tabs">';
+
+if ($row['mut'] >= 1) {
+	echo '<li  factor="mut"><a href="javascript:;">Mutation</a></li>';
+
+	include './detail/mut_detail.php';
+}
 
 if ($row['meth'] >= 1) {
 	echo '<li  factor="meth"><a href="javascript:;">Methylation</a></li>';

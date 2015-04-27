@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title></title>
+        <script type="text/javascript">
+        var page = 'http://david.abcc.ncifcrf.gov/tools'
+function uploadList(page){
+    //alert("start upload");
+
+    var FM = document.frmManager;
+    
+    FM.idType.value=FM.Identifier.value;
+    
+    var ident=FM.Identifier.value;
+    //alert("upload:"+ident);
+
+    
+        FM.Mode.value="paste";
+        FM.ids.value=FM.pasteBox.value;
+        FM.action=page+".jsp";
+        FM.target="";
+        FM.submit();
+
+    }
+
+    </script>
+
+</head>
+
+<body>
+    <form method="post" name = 'frmManager' action="http://david.abcc.ncifcrf.gov/tools.jsp"  enctype='multipart/form-data'>
+<input type='Hidden' name='Mode' value = 'paste' />
+<input type="Hidden" name="idType" value="null">
+<input type="Hidden" name="ids" value="null">
+<textarea rows="4" id="LISTBox" class="paste" name="pasteBox"></textarea>
+
+
+<!-- <input type='text' name='SESSIONID'  value = 'A668D38B3015'/> -->
+
+
+
+
+
+ <!-- <input type="file" class="browse" name="fileBrowser"/> -->
+<input type='Hidden' name='uploadType' value = 'list'/>
+<!-- <input type='text' name='multiList' value = 'false'/> -->
+
+<!-- <input type='text' name='useIndex' value = 'null'/>
+<input type='text' name='usePopIndex' value = 'null'/>
+<input type='text' name='demoIndex  ' value = 'null' />
+ -->
+<!-- <input type='text' name='removeIndex' value = 'null'/>
+<input type='text' name='renameIndex' value = 'null'/>
+<input type='text' name='renamePopIndex' value = 'null'/>
+<input type='text' name='newName' value = 'null'/>
+<input type='text' name='combineIndex' value = 'null'/>
+<input type='text' name='selectedSpecies' value = ' null'/>
+<input type='text' name='uploadHTML' value = 'null'/>
+<input type='text' name='managerHTML' value = 'null'/>
+
+<input type='text' name='convertedListName' value = 'null'/>
+<input type='text' name='convertedPopName' value = 'null'/> -->
+
+
+
+        <select id="IDT" size="1" name="Identifier">
+            <option value="AFFYMETRIX_3PRIME_IVT_ID">AFFYMETRIX_3PRIME_IVT_ID</option>
+            <option value="AFFYMETRIX_EXON_GENE_ID">AFFYMETRIX_EXON_GENE_ID</option>
+            <option value="AFFYMETRIX_SNP_ID">AFFYMETRIX_SNP_ID</option>
+            <option value="AGILENT_CHIP_ID">AGILENT_CHIP_ID</option>
+            <option value="AGILENT_ID">AGILENT_ID</option>
+            <option value="AGILENT_OLIGO_ID">AGILENT_OLIGO_ID</option>
+            <option value="ENSEMBL_GENE_ID">ENSEMBL_GENE_ID</option>
+            <option value="ENSEMBL_TRANSCRIPT_ID">ENSEMBL_TRANSCRIPT_ID</option>
+            <option value="ENTREZ_GENE_ID">ENTREZ_GENE_ID</option>
+            <option value="FLYBASE_GENE_ID">FLYBASE_GENE_ID</option>
+            <option value="FLYBASE_TRANSCRIPT_ID">FLYBASE_TRANSCRIPT_ID</option>
+            <option value="GENBANK_ACCESSION">GENBANK_ACCESSION</option>
+            <option value="GENOMIC_GI_ACCESSION">GENOMIC_GI_ACCESSION</option>
+            <option value="GENPEPT_ACCESSION">GENPEPT_ACCESSION</option>
+            <option value="ILLUMINA_ID">ILLUMINA_ID</option>
+            <option value="IPI_ID">IPI_ID</option>
+            <option value="MGI_ID">MGI_ID</option>
+            <option value="OFFICIAL_GENE_SYMBOL">OFFICIAL_GENE_SYMBOL</option>
+            <option value="PFAM_ID">PFAM_ID</option>
+            <option value="PIR_ID">PIR_ID</option>
+            <option value="PROTEIN_GI_ACCESSION">PROTEIN_GI_ACCESSION</option>
+            <option value="REFSEQ_GENOMIC">REFSEQ_GENOMIC</option>
+            <option value="REFSEQ_MRNA">REFSEQ_MRNA</option>
+            <option value="REFSEQ_PROTEIN">REFSEQ_PROTEIN</option>
+            <option value="REFSEQ_RNA">REFSEQ_RNA</option>
+            <option value="RGD_ID">RGD_ID</option>
+            <option value="SGD_ID">SGD_ID</option>
+            <option value="TAIR_ID">TAIR_ID</option>
+            <option value="UCSC_GENE_ID">UCSC_GENE_ID</option>
+            <option value="UNIGENE">UNIGENE</option>
+            <option value="UNIPROT_ACCESSION">UNIPROT_ACCESSION</option>
+            <option value="UNIPROT_ID">UNIPROT_ID</option>
+            <option value="UNIREF100_ID">UNIREF100_ID</option>
+            <option value="WORMBASE_GENE_ID">WORMBASE_GENE_ID</option>
+            <option value="WORMPEP_ID">WORMPEP_ID</option>
+            <option value="ZFIN_ID">ZFIN_ID</option>
+            <option value="NA">Not Sure </option>
+        </select>
+<input type="button" onclick="uploadList(page);" value="Submit List" >
+    </form>
+</body>
+
+</html>
